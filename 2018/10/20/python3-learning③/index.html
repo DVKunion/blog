@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>Category - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -54,30 +54,39 @@
                 <header class="major">
                     <h2>python3--learning--③</h2>
                     <p>2018-10-20</p>
-                     <p>文章共计 - 967 字 阅读需要 - 3 分钟</p>
+                     <p>文章共计 - 950 字 阅读需要 - 3 分钟</p>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
-                    <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/4c06e311gy1fwbjsvozt1j215o0mm1kx.jpg);" ></div>
+                    <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/background/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg);" ></div>
                     <hr>
                     <div id="head"></div>
-
-<h1 id="Python-3"><a href="#Python-3" class="headerlink" title="Python 3"></a>Python 3</h1><hr>
-<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a><b><i><font color="LightSkyBlue">目录</font><i><b></b></i></i></b></h4><p><a href="https://dvkunion.github.io/2018/10/17/python3-learning①/" target="_blank" rel="noopener">①<br><a href="https://dvkunion.github.io/2018/10/19/python3-learning②/" target="_blank" rel="noopener">②<br><a href="https://dvkunion.github.io/2018/10/20/python3-learning③/" target="_blank" rel="noopener">③</a></a></a></p>
+<h1>Python 3</h1>
+<hr>
+<h4><b><i><font color="LightSkyBlue">目录</font><i><b></b></i></i></b></h4>
+<p><a href="https://dvkunion.github.io/2018/10/17/python3-learning①/" target="_blank" rel="noopener">①<br>
+<a href="https://dvkunion.github.io/2018/10/19/python3-learning②/" target="_blank" rel="noopener">②<br>
+<a href="https://dvkunion.github.io/2018/10/20/python3-learning③/" target="_blank" rel="noopener">③</a></a></a></p>
 <ol>
-<li><a href="#0x07">0x07--输入输出&amp;文件操作</a><ol>
+<li><a href="#0x07">0x07--输入输出&amp;文件操作</a>
+<ol>
 <li><a href="#0x07-1">输入输出</a></li>
 <li><a href="#0x07-2">文件操作</a></li>
 </ol>
 </li>
 <li><a href="#0x08">0x08--CSV数据</a></li>
-<li><a href="#0x09">0x09--系统监测</a><ol>
-<li><a href="#0x04-1">工具使用</a> <!--vmstat,iostat,top,sar,dstat,ifstat--></li>
+<li><a href="#0x09">0x09--系统监测</a>
+<ol>
+<li><a href="#0x04-1">工具使用</a></li>
+</ol>
+<!--vmstat,iostat,top,sar,dstat,ifstat-->
+<ol start="2">
 <li><a href="#0x04-2">类--class</a></li>
 </ol>
 </li>
-<li><a href="#0x0A">0x0A--系统监测</a><ol>
+<li><a href="#0x0A">0x0A--系统监测</a>
+<ol>
 <li><a href="#0x05-1"></a></li>
 <li><a href="#0x05-2"></a></li>
 </ol>
@@ -86,32 +95,38 @@
 </ol>
 <hr>
 <div id="0x07"></div>
-
-<h3 id="0x07-输入输出-amp-文件操作"><a href="#0x07-输入输出-amp-文件操作" class="headerlink" title="0x07- - 输入输出&amp;文件操作"></a><b>0x07- - 输入输出&amp;文件操作<b></b></b></h3><div id="0x07-1"></div>
-
-<h4 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a><font color="blue">输入输出</font><br></h4><p>输入：input()<br>输出：print()<br>输出字符串：str()/repr()<br>Python的输出自带换行，当我们想要进行不换行的输出时，应使用 end 参数。</p>
+<h3><b>0x07- - 输入输出&amp;文件操作<b></b></b></h3>
+<div id="0x07-1"></div>
+<h4><font color="blue">输入输出</font><br></h4>
+<p>输入：input()<br>
+输出：print()<br>
+输出字符串：str()/repr()<br>
+Python的输出自带换行，当我们想要进行不换行的输出时，应使用 end 参数。</p>
 <p><code>print(&quot;不换行输出&quot;,end=&quot;&quot;)</code></p>
-<p>当我们想要控制输出格式时候，可以使用占位符或format参数。<br>占位符要紧跟在其后：</p>
+<p>当我们想要控制输出格式时候，可以使用占位符或format参数。<br>
+占位符要紧跟在其后：</p>
 <p><code>print(&quot;int %d &quot; % 1+&quot;float %.3f &quot;% 2.3)</code></p>
-<p>而format函数则需要位置映射/关键字映射/元素映射。<br>位置映射就是指默认的一一对应，一个萝卜一个坑：</p>
-<p><code>print(&quot;{},{}&quot;.format(&#39;第一个萝卜&#39;,&#39;第二个萝卜&#39;))</code></p>
+<p>而format函数则需要位置映射/关键字映射/元素映射。<br>
+位置映射就是指默认的一一对应，一个萝卜一个坑：</p>
+<p><code>print(&quot;{},{}&quot;.format('第一个萝卜','第二个萝卜'))</code></p>
 <p>关键字映射就是指key，类似占位一样,没人占的位置就遵循位置映射规则：</p>
-<p><code>print(&quot;{Lisi},{Zhangsan},{}&quot;.format(&#39;noname&#39;,Lisi=&quot;Lisi&#39;s&quot;,Zhangsan=&quot;Zhangsan&#39;s&quot;))</code></p>
-<p>关键字映射无视format函数内的参数位置。<br>最后的元素映射就是将format当作一个元组用下表访问：</p>
-<p><code>print(&quot;{0[0]},{0[1]}&quot;.format((&#39;first&#39;,&#39;second&#39;)))</code></p>
-<p>format还可以进行居中(^),左对齐(&lt;),右对齐(&gt;)操作<br>格式为：</p>
+<p><code>print(&quot;{Lisi},{Zhangsan},{}&quot;.format('noname',Lisi=&quot;Lisi's&quot;,Zhangsan=&quot;Zhangsan's&quot;))</code></p>
+<p>关键字映射无视format函数内的参数位置。<br>
+最后的元素映射就是将format当作一个元组用下表访问：</p>
+<p><code>print(&quot;{0[0]},{0[1]}&quot;.format(('first','second')))</code></p>
+<p>format还可以进行居中(^),左对齐(&lt;),右对齐(&gt;)操作<br>
+格式为：</p>
 <p><code>{索引:(填充符)(对齐符)(字符宽度)}</code></p>
 <p>例如</p>
 <p><code>print(&quot;{0},{1}={2:*&gt;3&quot;.format(3,2,2*3))</code></p>
 <p>对于输入，有一个一行输入多个数据的方法：</p>
 <p><code>a, b, c = map(int, input().split())</code></p>
 <div id="0x07-2"></div>
-
-<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a><font color="blue">文件操作</font><br></h4><p>open可以返回一个file对象</p>
+<h4><font color="blue">文件操作</font><br></h4>
+<p>open可以返回一个file对象</p>
 <p><code>f = open(&quot;/tmp/test.txt,&quot;w&quot;)</code></p>
-<p>第一个参数为路径&amp;文件名，第二个参数为mode模式，分为’r’只读、’w’只写、’a’读写。</p>
+<p>第一个参数为路径&amp;文件名，第二个参数为mode模式，分为'r'只读、'w'只写、'a'读写。</p>
 <p>对于file对象，存在以下的方法:</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -126,7 +141,7 @@
 </tr>
 <tr>
 <td>f.readline()</td>
-<td>读取文件的单独一行，遇到’\n’结束，返回str</td>
+<td>读取文件的单独一行，遇到'\n'结束，返回str</td>
 </tr>
 <tr>
 <td>f.readlines()</td>
@@ -146,10 +161,10 @@
 </tr>
 </tbody>
 </table>
-</div>
 <div id="0x08"></div>
-
-<h3 id="0x08-CSV数据"><a href="#0x08-CSV数据" class="headerlink" title="0x08- - CSV数据"></a><b>0x08- - CSV数据<b></b></b></h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;逗号分隔值(Comma-Separated Values，CSV，有时也称为字符分隔值，因为分隔字符也可以不是逗号)。其文件以纯文本形式存储表格数据（数字和文本）。纯文本意味着该文件是一个字符序列，不含必须像二进制数字那样被解读的数据。CSV文件由任意数目的记录组成，记录间以某种换行符分隔；每条记录由字段组成，字段间的分隔符是其它字符或字符串，最常见的是逗号或制表符。通常，所有记录都有完全相同的字段序列。通常都是纯文本文件。<br>存在以下特征的即可称为CSV格式：</p>
+<h3><b>0x08- - CSV数据<b></b></b></h3>
+<p>     逗号分隔值(Comma-Separated Values，CSV，有时也称为字符分隔值，因为分隔字符也可以不是逗号)。其文件以纯文本形式存储表格数据（数字和文本）。纯文本意味着该文件是一个字符序列，不含必须像二进制数字那样被解读的数据。CSV文件由任意数目的记录组成，记录间以某种换行符分隔；每条记录由字段组成，字段间的分隔符是其它字符或字符串，最常见的是逗号或制表符。通常，所有记录都有完全相同的字段序列。通常都是纯文本文件。<br>
+存在以下特征的即可称为CSV格式：</p>
 <ol>
 <li>1.纯文本，使用某个字符集，比如ASCII、Unicode、EBCDIC或GB2312；</li>
 <li>2.由记录组成（典型的是每行一条记录）；</li>
@@ -157,7 +172,7 @@
 <li>4.每条记录都有同样的字段序列。</li>
 </ol>
 <p>Python中有内置的CSV库，可以方便的帮助处理CSV数据。</p>
-<p><a href="#head"><center><font color="Crimson">back --返回</font></center>
+<p><a href="#head"><center><font color="Crimson">back --返回</font></center><br>
 </a></p>
 
                 </section>

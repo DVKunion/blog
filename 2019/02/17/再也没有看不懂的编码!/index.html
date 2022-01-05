@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>Category - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -61,21 +61,25 @@
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://s2.ax1x.com/2019/01/30/k1k0Df.jpg);" ></div>
                     <hr>
-                    <h1 id="再也没有看不懂的编码！"><a href="#再也没有看不懂的编码！" class="headerlink" title="再也没有看不懂的编码！"></a>再也没有看不懂的编码！</h1><hr>
-<center><small>2018-12-22</small></center>
-
-<p>这一阵子做的比赛突然感觉，自己基础真的是太差了。月赛的base32码硬生生以为是base64，这才反应过来看到编码就直接扔一波工具解码碰大运，错了乱码就解不开了。其实对于编码的内容和性质、一般的形式等等跟不讲不出什么所以然来。吃了这次的亏以后，决定重新一点一点一步一步的从最基本的东西开始积累，不要在急着做一些表面的东西。<br>总之，工具虽好,emmmmmmmm。</p>
-<center><small>2019/2/17</small></center>
-
-<p>终于把这篇文章算是更新完结了。<br>揣摩了大佬的编码讲解文章，修改和增添了一些内容。<br>在未来遇到更多的编码时会不断的向这其中添加。</p>
-<p><br></p>
-<center><small>华丽的分割线</small></center>
-
+                    <h1>再也没有看不懂的编码！</h1>
 <hr>
-<h3 id="0x00-简介"><a href="#0x00-简介" class="headerlink" title="0x00- - 简介"></a><b>0x00- - 简介</b></h3><p>什么是编码?区分编码和加密以及hash在于,编码只是信息的转换，其目的不在于隐蔽消息的内容，而在于方便传输以及保证传输数据内容不失真等。重点在转换为方便计算机传输的二进制数据。<br>所以个人认为，编码处理后的信息，仍可以视为是明文传输。</p>
+<center><small>2018-12-22</small></center>
+<p>这一阵子做的比赛突然感觉，自己基础真的是太差了。月赛的base32码硬生生以为是base64，这才反应过来看到编码就直接扔一波工具解码碰大运，错了乱码就解不开了。其实对于编码的内容和性质、一般的形式等等跟不讲不出什么所以然来。吃了这次的亏以后，决定重新一点一点一步一步的从最基本的东西开始积累，不要在急着做一些表面的东西。<br>
+总之，工具虽好,emmmmmmmm。</p>
+<center><small>2019/2/17</small></center>
+<p>终于把这篇文章算是更新完结了。<br>
+揣摩了大佬的编码讲解文章，修改和增添了一些内容。<br>
+在未来遇到更多的编码时会不断的向这其中添加。</p>
+<br>
+<center><small>华丽的分割线</small></center>
+<hr>
+<h3><b>0x00- - 简介</b></h3>
+<p>什么是编码?区分编码和加密以及hash在于,编码只是信息的转换，其目的不在于隐蔽消息的内容，而在于方便传输以及保证传输数据内容不失真等。重点在转换为方便计算机传输的二进制数据。<br>
+所以个人认为，编码处理后的信息，仍可以视为是明文传输。</p>
 <p>列一下目录：</p>
 <ul>
-<li><b>normal decode</b><ul>
+<li><b>normal decode</b>
+<ul>
 <li>ASCII</li>
 <li>Unicode</li>
 <li>UTF-8</li>
@@ -83,7 +87,8 @@
 <li>html编码</li>
 </ul>
 </li>
-<li><b>base</b><ul>
+<li><b>base</b>
+<ul>
 <li>base64</li>
 <li>base32</li>
 <li>base16</li>
@@ -93,14 +98,16 @@
 <li>XXencoding</li>
 </ul>
 </li>
-<li><b>js decode</b><ul>
+<li><b>js decode</b>
+<ul>
 <li>aaencode</li>
 <li>jjencode</li>
 <li>jsfuck</li>
 <li>社会主义核心价值观编码</li>
 </ul>
 </li>
-<li><b>others</b><ul>
+<li><b>others</b>
+<ul>
 <li>正则表达式</li>
 <li>Morse code</li>
 <li>盲文编码</li>
@@ -108,10 +115,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="0x01-normal-decode"><a href="#0x01-normal-decode" class="headerlink" title="0x01- - normal decode"></a><b>0x01- - normal decode</b></h3><p>这一部分写一些最最最耳熟能详的编码格式。</p>
-<h4 id="ascii码"><a href="#ascii码" class="headerlink" title="ascii码"></a><font color="blue">ascii码</font><br></h4><p><b>定义</b><br>不知道 ASCII 码是不是最早意义上的编码，这种编码的出现是为了解决计算机使用二进制来进行运算和存储所有的数据。为了使用二进制来表示我们生活中所使用的字符(abcd)或是罗马数字，美国有关的标准化组织就出台了 ASCII 编码，统一规定了上述常用符号用哪些二进制数来表示。</p>
-<p><b>编码方式</b><br> ASCII 码通常使用 7bit / 8bit 来表示一个字符。二进制所表示的十进制在这个表中一一对应即可…</p>
-<p> <a href="https://imgchr.com/i/kyH7t0" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/02/17/kyH7t0.md.jpg" class="lazyload" data-srcset="https://s2.ax1x.com/2019/02/17/kyH7t0.md.jpg" srcset="/css/images/overlay.png" alt="kyH7t0.md.jpg"></a></p>
+<h3><b>0x01- - normal decode</b></h3>
+<p>这一部分写一些最最最耳熟能详的编码格式。</p>
+<h4><font color="blue">ascii码</font><br></h4>
+<p><b>定义</b><br>
+不知道 ASCII 码是不是最早意义上的编码，这种编码的出现是为了解决计算机使用二进制来进行运算和存储所有的数据。为了使用二进制来表示我们生活中所使用的字符(abcd)或是罗马数字，美国有关的标准化组织就出台了 ASCII 编码，统一规定了上述常用符号用哪些二进制数来表示。</p>
+<p><b>编码方式</b><br>
+ASCII 码通常使用 7bit / 8bit 来表示一个字符。二进制所表示的十进制在这个表中一一对应即可...</p>
+<p><a href="https://imgchr.com/i/kyH7t0" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/02/17/kyH7t0.md.jpg" class="lazyload" data-srcset="https://s2.ax1x.com/2019/02/17/kyH7t0.md.jpg" srcset="/css/images/overlay.png" alt="kyH7t0.md.jpg"></a></p>
 <blockquote>
 <p>小结</p>
 <ul>
@@ -119,13 +130,20 @@
 <li>2.数字部分48-57,大写字母65-90,小写字母96到122</li>
 </ul>
 </blockquote>
-<h4 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a><font color="blue">Unicode</font><br></h4><p><b>定义</b><br>在ascii码出现之后，各个国家为了适应自己国家语言分分独立研发的编码体制。如GB2312,来弥(mi)补ascii码的不足。出现了非常混乱的编码现象。因此Unicode应情而生。<br>Unicode也叫统一码，万国码。满足了跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布。</p>
-<p><b>编码方式</b><br>Unicode统一使用两个字节表示一个字符，对于英文只需要把高字节填零即可。这样既能表示了英文也可以表示中文。因此对于英文的Unicode编码就是明文本身(大写会变为小写)。</p>
-<p>Unicode在线转换工具：<br><a href="http://www.bejson.com/convert/unicode_chinese/" target="_blank" rel="noopener">http://www.bejson.com/convert/unicode_chinese/</a></p>
-<h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a><font color="blue">UTF-8</font><br></h4><p><b>定义</b><br>看了Unicode编码后，很容易发现这样的编码一下子就把存储量翻了一个倍。对于英文来说，浪费了大量的存储空间。于是又产生了UTF-8编码。<br>UTF-8就是在Unicode的编码上，对Unicode进行分组处理。</p>
+<h4><font color="blue">Unicode</font><br></h4>
+<p><b>定义</b><br>
+在ascii码出现之后，各个国家为了适应自己国家语言分分独立研发的编码体制。如GB2312,来弥(mi)补ascii码的不足。出现了非常混乱的编码现象。因此Unicode应情而生。<br>
+Unicode也叫统一码，万国码。满足了跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布。</p>
+<p><b>编码方式</b><br>
+Unicode统一使用两个字节表示一个字符，对于英文只需要把高字节填零即可。这样既能表示了英文也可以表示中文。因此对于英文的Unicode编码就是明文本身(大写会变为小写)。</p>
+<p>Unicode在线转换工具：<br>
+<a href="http://www.bejson.com/convert/unicode_chinese/" target="_blank" rel="noopener">http://www.bejson.com/convert/unicode_chinese/</a></p>
+<h4><font color="blue">UTF-8</font><br></h4>
+<p><b>定义</b><br>
+看了Unicode编码后，很容易发现这样的编码一下子就把存储量翻了一个倍。对于英文来说，浪费了大量的存储空间。于是又产生了UTF-8编码。<br>
+UTF-8就是在Unicode的编码上，对Unicode进行分组处理。</p>
 <p><b>编码方式</b></p>
 <p>处理方式如下表：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -152,24 +170,41 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>对不同Unicode编码段进行不同字节的编码处理。节省了大量的空间。</p>
-<p>例：Unicode编码0x20C30在0x010000-0x10FFFF之间，使用4字节模板：11110xxx 10xxxxxx 10xxxxxx 10xxxxxx。将0x20C30写成21位二进制数字（不足21位就在前面补0）：0 0010 0000 1100 0011 0000，用这个比特流依次代替模板中的x，得到：11110000 10100000 10110000 10110000，即F0 A0 B0 B0。<br>同样的还存在UTF-16、UTF-32，但是只有UTF-8才兼容ASCII码</p>
-<h4 id="Url编码"><a href="#Url编码" class="headerlink" title="Url编码"></a><font color="blue">Url编码</font><br></h4><p>对于url编码，是因为对于url有许多歧义的符号。如：’&amp;’、’=’ 等。<br>我们依旧从定义开始了解。</p>
+<p>例：Unicode编码0x20C30在0x010000-0x10FFFF之间，使用4字节模板：11110xxx 10xxxxxx 10xxxxxx 10xxxxxx。将0x20C30写成21位二进制数字（不足21位就在前面补0）：0 0010 0000 1100 0011 0000，用这个比特流依次代替模板中的x，得到：11110000 10100000 10110000 10110000，即F0 A0 B0 B0。<br>
+同样的还存在UTF-16、UTF-32，但是只有UTF-8才兼容ASCII码</p>
+<h4><font color="blue">Url编码</font><br></h4>
+<p>对于url编码，是因为对于url有许多歧义的符号。如：'&amp;'、'=' 等。<br>
+我们依旧从定义开始了解。</p>
 <p><b>定义</b></p>
-<p>讲到底，到底什么是url。不知道，继续找度娘：<br>url(Uniform/Universal Resource Locator)是统一资源定位符，对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。<br>它最初是由蒂姆·伯纳斯·李发明用来作为万维网的地址。现在它已经被万维网联盟编制为互联网标准RFC1738了。（来源百度百科）</p>
+<p>讲到底，到底什么是url。不知道，继续找度娘：<br>
+url(Uniform/Universal Resource Locator)是统一资源定位符，对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。<br>
+它最初是由蒂姆·伯纳斯·李发明用来作为万维网的地址。现在它已经被万维网联盟编制为互联网标准RFC1738了。（来源百度百科）</p>
 <p>P.S.又发现了一个和这个东西很像的一个玩意，叫做URI，那么在简单地写一下什么是URI吧。</p>
 <p>URI:(Uniform Resource Identifier)统一资源标识符，URI 属于 URL 更低层次的抽象，一种字符串文本标准。就是说，URI 属于父类，而 URL 属于 URI 的子类。URL 是 URI 的一个子集。</p>
-<p>URL的格式如下：协议：//用户名:密码@子域名.域名.顶级域名:端口号/目录/文件名.文件后缀?参数=值#标志。<br>（标准化一下）：scheme://host[:port#]/path/…/[;url-params][?query-string][#anchor]</p>
-<p>依旧举个例子比较好理解：例如我的一篇博客的地址：<br><a href="https://dvkunion.github.io/2018/10/26/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" target="_blank" rel="noopener">https://dvkunion.github.io/2018/10/26/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/</a></p>
-<p>它的第一部分—scheme：协议/模式，在上例中就是指 ‘https://‘ 部分<br>第二部分—authority：IP/域名+端口号，在上例中就是指 ‘dvkunion.github.io’ 部分，端口号被省略，默认为80端口。<br>第三部分—path：路径，在上例中就是指 ‘/2018/10/26/….’ 部分，指访问的主机目录。<br>可能后面还会带有？(query)和一些参数(fragment),基本结构就是这样。</p>
-<p>根据文档规定，URL中只允许出现 大小写字母(a-z)&amp;(A-Z)、数字(0-9)、’-‘、’_‘、’~’、’·’ 这些符号。<br>保留字符有：! * ‘ ( ) ; : @ &amp; = + $ , / ? # [ ]<br>不安全字符：空格、引号、尖括号、#、%、{}|\^[]`~之类。</p>
+<p>URL的格式如下：协议：<a href="//%E7%94%A8%E6%88%B7%E5%90%8D:%E5%AF%86%E7%A0%81@xn--eqrt2grvd.xn--eqrt2g.xn--eqrt2g7w0ccuv">//用户名:密码@子域名.域名.顶级域名</a>:端口号/目录/文件名.文件后缀?参数=值#标志。<br>
+（标准化一下）：scheme://host[:port#]/path/.../[;url-params][?query-string][#anchor]</p>
+<p>依旧举个例子比较好理解：例如我的一篇博客的地址：<br>
+<a href="https://dvkunion.github.io/2018/10/26/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" target="_blank" rel="noopener">https://dvkunion.github.io/2018/10/26/RSA加密算法原理/</a></p>
+<p>它的第一部分--scheme：协议/模式，在上例中就是指 'https://' 部分<br>
+第二部分--authority：IP/域名+端口号，在上例中就是指 '<a href="http://dvkunion.github.io" target="_blank" rel="noopener">dvkunion.github.io</a>' 部分，端口号被省略，默认为80端口。<br>
+第三部分--path：路径，在上例中就是指 '/2018/10/26/....' 部分，指访问的主机目录。<br>
+可能后面还会带有？(query)和一些参数(fragment),基本结构就是这样。</p>
+<p>根据文档规定，URL中只允许出现 大小写字母(a-z)&amp;(A-Z)、数字(0-9)、'-'、'_'、'~'、'·' 这些符号。<br>
+保留字符有：! * ' ( ) ; : @ &amp; = + $ , / ? # [ ]<br>
+不安全字符：空格、引号、尖括号、#、%、{}|^[]`~之类。</p>
 <p><b>编码方式<b></b></b></p>
-<p>URL也称为 %编码,其编码方式非常简单，只需要使用US-ASCII将字符转化为十六进制字符并加一个%即可。<br>要注意URL编码采用的是ASCII而不是Unicode，所以url内不能存在中文。<br>如下是js三个函数的url编码规则：即不对一下字符进行编码。</p>
-<p>escape（69个）：<em>/@+-._0-9a-zA-Z<br>encodeURI（82个）：!#$&amp;’()</em>+,/:;=?@-.<em>~0-9a-zA-Z<br>encodeURIComponent（71个）：!’()*-.</em>~0-9a-zA-Z</p>
-<h4 id="Html编码"><a href="#Html编码" class="headerlink" title="Html编码"></a><font color="blue">Html编码</font><br></h4><p><b>定义</b><br>同url一样，html编码也是为了防止歧义。</p>
-<p><b>编码方式</b><br>其实常用的只是过滤了几个关键的字符，其他的依旧是十六进制的表示ASCII码的方法。</p>
-<div class="table-container">
+<p>URL也称为 %编码,其编码方式非常简单，只需要使用US-ASCII将字符转化为十六进制字符并加一个%即可。<br>
+要注意URL编码采用的是ASCII而不是Unicode，所以url内不能存在中文。<br>
+如下是js三个函数的url编码规则：即不对一下字符进行编码。</p>
+<p>escape（69个）：<em>/@+-._0-9a-zA-Z<br>
+encodeURI（82个）：!#$&amp;'()</em>+,/:;=?@-.<em>~0-9a-zA-Z<br>
+encodeURIComponent（71个）：!'()*-.</em>~0-9a-zA-Z</p>
+<h4><font color="blue">Html编码</font><br></h4>
+<p><b>定义</b><br>
+同url一样，html编码也是为了防止歧义。</p>
+<p><b>编码方式</b><br>
+其实常用的只是过滤了几个关键的字符，其他的依旧是十六进制的表示ASCII码的方法。</p>
 <table>
 <thead>
 <tr>
@@ -181,7 +216,7 @@
 </thead>
 <tbody>
 <tr>
-<td>“</td>
+<td>&quot;</td>
 <td><code>&amp;#34;</code></td>
 <td><code>&amp;#x22;</code></td>
 <td><code>&amp;quot;</code></td>
@@ -212,28 +247,33 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><b><font color="red">注意不能丢掉分号！</font></b></p>
-<h3 id="0x02-base"><a href="#0x02-base" class="headerlink" title="0x02- - base"></a><b>0x02- - base</b></h3><p>吃过最多次亏的一个编码，最早认为后面有两个==的就是base64…而且只知道一个base64…<br>base全家福：<a href="https://www.qqxiuzi.cn/bianma/base.php?type=16" target="_blank" rel="noopener">https://www.qqxiuzi.cn/bianma/base.php?type=16</a></p>
-<h4 id="base64"><a href="#base64" class="headerlink" title="base64"></a><font color="blue">base64</font><br></h4><p><b>定义</b></p>
+<h3><b>0x02- - base</b></h3>
+<p>吃过最多次亏的一个编码，最早认为后面有两个==的就是base64...而且只知道一个base64...<br>
+base全家福：<a href="https://www.qqxiuzi.cn/bianma/base.php?type=16" target="_blank" rel="noopener">https://www.qqxiuzi.cn/bianma/base.php?type=16</a></p>
+<h4><font color="blue">base64</font><br></h4>
+<p><b>定义</b></p>
 <p>Base64是网络上最常见的用于传输<font color="red">8Bit字节码的编码</font>方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。可查看RFC2045～RFC2049，上面有MIME的详细规范。</p>
 <p>Base64编码是从二进制到字符的过程，可用于在HTTP环境下传递较长的标识信息。例如，在Java Persistence系统Hibernate中，就采用了Base64来将一个较长的唯一标识符（一般为128-bit的UUID）编码为一个字符串，用作HTTP表单和HTTP GET URL中的参数。在其他应用程序中，也常常需要把二进制数据编码为适合放在URL（包括隐藏表单域）中的形式。此时，采用Base64编码具有不可读性，需要解码后才能阅读。(来源于百度百科)</p>
 <p>由于某些系统中只能使用ASCII字符。Base64就是用来将非ASCII字符的数据转换成ASCII字符的一种方法。</p>
 <p>base64特别适合在http，mime协议下快速传输数据。</p>
 <p><b>编码方式</b></p>
 <p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfwmuac6lj30hv0dg74g.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfwmuac6lj30hv0dg74g.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p>如图可见，base64用64个可以打印的ASCII字符来转换任意的二进制,2^6=64,所以base64以6位一分割，且分割的之前的二进制应该为24的倍数（6、8的最小公倍数），不足的位数用base通用补码’=’补齐。</p>
-<p>举个例子会更好理解：<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfw58qtsrj30iz04ht8l.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfw58qtsrj30iz04ht8l.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p>当位数不足时候，先用0把前面的凑出一个6位，再用’=’可以补出24的倍数即可。所以，可以总结出：</p>
+<p>如图可见，base64用64个可以打印的ASCII字符来转换任意的二进制,2^6=64,所以base64以6位一分割，且分割的之前的二进制应该为24的倍数（6、8的最小公倍数），不足的位数用base通用补码'='补齐。</p>
+<p>举个例子会更好理解：<br>
+<img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfw58qtsrj30iz04ht8l.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfw58qtsrj30iz04ht8l.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p>当位数不足时候，先用0把前面的凑出一个6位，再用'='可以补出24的倍数即可。所以，可以总结出：</p>
 <p><b><font color="red">在Base64中4个字符为一个块，对应铭文中的三个字符。因此Base64编码后会比原文本多出1/3左右</font></b></p>
-<p>因此我们可以轻松的依此计算：DVKD——&gt;RFZLRA==；DVKDV——&gt;RFZLRFY=；DVKDVK——&gt;RFZLRFZL</p>
-<h4 id="base32"><a href="#base32" class="headerlink" title="base32"></a><font color="blue">base32</font><br></h4><p><b>定义</b></p>
+<p>因此我们可以轻松的依此计算：DVKD----&gt;RFZLRA==；DVKDV----&gt;RFZLRFY=；DVKDVK----&gt;RFZLRFZL</p>
+<h4><font color="blue">base32</font><br></h4>
+<p><b>定义</b></p>
 <p>Base32看名字就知道和64不会相差很多，只是用32个字符来进行编码。2^5=32,所以5位一分割，公倍数40(5,8)。所以必须是40倍数。</p>
 <p><b>编码方式</b></p>
 <p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfwmt5r59j30fi0dimx6.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfwmt5r59j30fi0dimx6.jpg" srcset="/css/images/overlay.png" alt=""></p>
 <p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfxbvaiwsj30qg04lwef.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfxbvaiwsj30qg04lwef.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p>明文五个字符—-&gt;转码八个字符。</p>
-<h4 id="base16"><a href="#base16" class="headerlink" title="base16"></a><font color="blue">base16</font><br></h4><p><b>定义</b></p>
+<p>明文五个字符---&gt;转码八个字符。</p>
+<h4><font color="blue">base16</font><br></h4>
+<p><b>定义</b></p>
 <p>Base家族也就这样了，大同小异。16个字符，2^4=16,4位一分割，公倍数8(4,8)。8的倍数即可。</p>
 <p><b>编码方式</b></p>
 <p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfwrl8o1pj30fl0bja9y.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fyfwrl8o1pj30fl0bja9y.jpg" srcset="/css/images/overlay.png" alt=""></p>
@@ -241,42 +281,78 @@
 <blockquote>
 <p><b>总结</b></p>
 <ul>
-<li>1.base64中包含大写字母、小写字母、数字1~9以及特殊字符’+’和’/‘</li>
+<li>1.base64中包含大写字母、小写字母、数字1~9以及特殊字符'+'和'/'</li>
 <li>2.base64为6bit一转换，所以编码后通常比明文多1/3</li>
 <li>3.base64常用于传输，注意是传输，如UTF-8编码的中文，可以通过Base64进行良好的传输。</li>
 <li>4.base32中只包含大写字母、数字2~7</li>
-<li>5.base32为5bit一转换,由于其编码不包含’\’,其结果可以用作文件名。</li>
+<li>5.base32为5bit一转换,由于其编码不包含'',其结果可以用作文件名。</li>
 <li>6.base32比base64多出 20% 左右的大小，通常比明文多3/5</li>
-<li>7.base16中只包含数字0~9以及大写字母’A’~‘F’</li>
-<li>8.base16为4bit一转换，所以编码结果准确的为明文的一倍，且不存在填充用的’=’</li>
+<li>7.base16中只包含数字0~9以及大写字母'A'~'F'</li>
+<li>8.base16为4bit一转换，所以编码结果准确的为明文的一倍，且不存在填充用的'='</li>
 </ul>
 </blockquote>
-<h4 id="UTF-7"><a href="#UTF-7" class="headerlink" title="UTF-7"></a><font color="blue">UTF-7</font><br></h4><p><b>定义</b><br>UTF-7 是base64的修改版，主要目的是为了将UTF-16的数据用Base64的方法进行编码传输。</p>
-<p><b>编码方式</b><br>UTF-7编码的规则为：</p>
-<p>1&gt; UTF16小于等于 0x7F 的字符，采用ASCII编码；<br>2&gt; UTF16大于0x7F的字符，采用Base64编码，然后在首尾分别加上+-；<br>3&gt; UTF-7编码后，所有字符均小于等于 0x7F。</p>
+<h4><font color="blue">UTF-7</font><br></h4>
+<p><b>定义</b><br>
+UTF-7 是base64的修改版，主要目的是为了将UTF-16的数据用Base64的方法进行编码传输。</p>
+<p><b>编码方式</b><br>
+UTF-7编码的规则为：</p>
+<p>1&gt; UTF16小于等于 0x7F 的字符，采用ASCII编码；<br>
+2&gt; UTF16大于0x7F的字符，采用Base64编码，然后在首尾分别加上+-；<br>
+3&gt; UTF-7编码后，所有字符均小于等于 0x7F。</p>
 <p>UTF-7在线工具：<a href="http://toolswebtop.com/text/process/decode/UTF-7" target="_blank" rel="noopener">http://toolswebtop.com/text/process/decode/UTF-7</a></p>
-<h4 id="Quoted-printable"><a href="#Quoted-printable" class="headerlink" title="Quoted-printable"></a><font color="blue">Quoted-printable</font><br></h4><p><b>定义</b><br>同base64一样，Quoted-printable也是用于满足将非ASCII码转化为ASCII码。可译为“可打印字符引用编码”、“使用可打印字符的编码”。当非ASCII字符较少时，Quoted-printable有着较好的可读性。</p>
+<h4><font color="blue">Quoted-printable</font><br></h4>
+<p><b>定义</b><br>
+同base64一样，Quoted-printable也是用于满足将非ASCII码转化为ASCII码。可译为“可打印字符引用编码”、“使用可打印字符的编码”。当非ASCII字符较少时，Quoted-printable有着较好的可读性。</p>
 <p><b>编码方式</b></p>
-<p>Quoted-printable编码规则为：将任意一个8 bit 表示为：一个’=’和两个十六进制字符。</p>
+<p>Quoted-printable编码规则为：将任意一个8 bit 表示为：一个'='和两个十六进制字符。</p>
 <p>Quoted-printable在线工具：<a href="https://www.w3cschool.cn/tools/index?name=decode_encode_tool" target="_blank" rel="noopener">https://www.w3cschool.cn/tools/index?name=decode_encode_tool</a></p>
-<h4 id="uuencode-uudecode"><a href="#uuencode-uudecode" class="headerlink" title="uuencode/uudecode"></a><font color="blue">uuencode/uudecode</font><br></h4><p><b>定义</b></p>
-<p>uuencode这个名字是衍生自”Unix-to-Unix encoding”，原先是Unix系统下将二进制的资料借由uucp邮件系统传输的一个编码程式，是一种二进制到文字的编码。</p>
-<p><b>加密方式</b><br>uuencode编码序列：从ascii码的32位算为uudecode的0位。<br>uuencode只是格式复杂。其编码同base64一样，只是每一组都要加32。</p>
-<p>例如：cat 加密后-&gt; #8V%T<br>begin 644 为uudecode标识。</p>
-<p><code>begin 644 cat.txt</code><br><code>#8V%T</code><br>`<br><code>end</code></p>
-<h4 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a><font color="blue">XXencode</font><br></h4><p><b>定义</b></p>
+<h4><font color="blue">uuencode/uudecode</font><br></h4>
+<p><b>定义</b></p>
+<p>uuencode这个名字是衍生自&quot;Unix-to-Unix encoding&quot;，原先是Unix系统下将二进制的资料借由uucp邮件系统传输的一个编码程式，是一种二进制到文字的编码。</p>
+<p><b>加密方式</b><br>
+uuencode编码序列：从ascii码的32位算为uudecode的0位。<br>
+uuencode只是格式复杂。其编码同base64一样，只是每一组都要加32。</p>
+<p>例如：cat 加密后-&gt; #8V%T<br>
+begin 644 为uudecode标识。</p>
+<p><code>begin 644 cat.txt</code><br>
+<code>#8V%T</code><br>
+`<br>
+<code>end</code></p>
+<h4><font color="blue">XXencode</font><br></h4>
+<p><b>定义</b></p>
 <p>Xxencode是一种类似于uuencode的一种二进制到文字的编码，它只使用字母数字字符，以及加号和减号。也是一种用于传输文件的编码格式。</p>
-<p><b>编码方式</b><br>xxencode编码序列: ‘+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz’<br>uuencode不去减32直接转化为xxencode码就是xxencode</p>
+<p><b>编码方式</b><br>
+xxencode编码序列: '+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'<br>
+uuencode不去减32直接转化为xxencode码就是xxencode</p>
 <p>uuencode &amp;&amp; xxencode 工具：<a href="http://web.chacuo.net/charsetxxencode" target="_blank" rel="noopener">http://web.chacuo.net/charsetxxencode</a></p>
-<h3 id="0x03-JS"><a href="#0x03-JS" class="headerlink" title="0x03- - JS"></a><b>0x03- - JS</b></h3><p>在url中提到，js对url有三种编码函数，其不编码的字符分别如下：<br>escape（69个）：<em>/@+-._0-9a-zA-Z<br>encodeURI（82个）：!#$&amp;’()</em>+,/:;=?@-.<em>~0-9a-zA-Z<br>encodeURIComponent（71个）：!’()*-.</em>~0-9a-zA-Z</p>
+<h3><b>0x03- - JS</b></h3>
+<p>在url中提到，js对url有三种编码函数，其不编码的字符分别如下：<br>
+escape（69个）：<em>/@+-._0-9a-zA-Z<br>
+encodeURI（82个）：!#$&amp;'()</em>+,/:;=?@-.<em>~0-9a-zA-Z<br>
+encodeURIComponent（71个）：!'()*-.</em>~0-9a-zA-Z</p>
 <p>同时js还有着几种特殊的编码</p>
-<h4 id="Aaencode"><a href="#Aaencode" class="headerlink" title="Aaencode"></a><font color="blue">Aaencode</font><br></h4><p>一种将js编码转化为颜文字的编码格式<br>AAencode在线工具：<a href="https://www.sojson.com/aaencode.html" target="_blank" rel="noopener">https://www.sojson.com/aaencode.html</a><br>AAdecode在线工具：<a href="https://tool.zcmzcm.org/aadecode" target="_blank" rel="noopener">https://tool.zcmzcm.org/aadecode</a></p>
-<h4 id="JJencode"><a href="#JJencode" class="headerlink" title="JJencode"></a><font color="blue">JJencode</font><br></h4><p>一种将js编码转化为非正常编码的格式<br>JJencode在线工具：<a href="https://www.sojson.com/jjencode.html" target="_blank" rel="noopener">https://www.sojson.com/jjencode.html</a></p>
-<h4 id="JSfuck"><a href="#JSfuck" class="headerlink" title="JSfuck"></a><font color="blue">JSfuck</font><br></h4><p>一种将js编码转化为![]等符号的编码格式。<br>jsfuck在线工具：<a href="http://utf-8.jp/public/jsfuck.html" target="_blank" rel="noopener">http://utf-8.jp/public/jsfuck.html</a></p>
+<h4><font color="blue">Aaencode</font><br></h4>
+<p>一种将js编码转化为颜文字的编码格式<br>
+AAencode在线工具：<a href="https://www.sojson.com/aaencode.html" target="_blank" rel="noopener">https://www.sojson.com/aaencode.html</a><br>
+AAdecode在线工具：<a href="https://tool.zcmzcm.org/aadecode" target="_blank" rel="noopener">https://tool.zcmzcm.org/aadecode</a></p>
+<h4><font color="blue">JJencode</font><br></h4>
+<p>一种将js编码转化为非正常编码的格式<br>
+JJencode在线工具：<a href="https://www.sojson.com/jjencode.html" target="_blank" rel="noopener">https://www.sojson.com/jjencode.html</a></p>
+<h4><font color="blue">JSfuck</font><br></h4>
+<p>一种将js编码转化为![]等符号的编码格式。<br>
+jsfuck在线工具：<a href="http://utf-8.jp/public/jsfuck.html" target="_blank" rel="noopener">http://utf-8.jp/public/jsfuck.html</a></p>
 <p>基本js的加密都是不可逆的，所以只能在控制台观察一下运行结果。</p>
-<h4 id="社会主义核心价值观编码"><a href="#社会主义核心价值观编码" class="headerlink" title="社会主义核心价值观编码"></a><font color="blue">社会主义核心价值观编码</font><br></h4><p>…这个第一次见到时候也是挺无语的…<br>js源码开放：<a href="https://github.com/sym233/core-values-encoder" target="_blank" rel="noopener">https://github.com/sym233/core-values-encoder</a><br>在线工具：<a href="https://sym233.github.io/core-values-encoder/" target="_blank" rel="noopener">https://sym233.github.io/core-values-encoder/</a><br>        <a href="https://atool.vip/morse" target="_blank" rel="noopener">https://atool.vip/morse</a> (这个很强大)</p>
-<h3 id="0x03-Others"><a href="#0x03-Others" class="headerlink" title="0x03- - Others"></a><b>0x03- - Others</b></h3><h4 id="Morse-code"><a href="#Morse-code" class="headerlink" title="Morse code"></a><font color="blue">Morse code</font><br></h4><p>这个就已经很古老了…..直接对应表查表就好了。<br>有些地方把这个算作密码……我觉得还是莫尔斯还是一种编码的性质，作为信息的传输作用，并没有隐藏信息的功能。</p>
-<p>莫尔斯电码表：<br><a href="https://imgchr.com/i/k69H4e" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/02/18/k69H4e.md.jpg" class="lazyload" data-srcset="https://s2.ax1x.com/2019/02/18/k69H4e.md.jpg" srcset="/css/images/overlay.png" alt="k69H4e.md.jpg"></a></p>
+<h4><font color="blue">社会主义核心价值观编码</font><br></h4>
+<p>...这个第一次见到时候也是挺无语的...<br>
+js源码开放：<a href="https://github.com/sym233/core-values-encoder" target="_blank" rel="noopener">https://github.com/sym233/core-values-encoder</a><br>
+在线工具：<a href="https://sym233.github.io/core-values-encoder/" target="_blank" rel="noopener">https://sym233.github.io/core-values-encoder/</a><br>
+		<a href="https://atool.vip/morse" target="_blank" rel="noopener">https://atool.vip/morse</a> (这个很强大)</p>
+<h3><b>0x03- - Others</b></h3>
+<h4><font color="blue">Morse code</font><br></h4>
+<p>这个就已经很古老了.....直接对应表查表就好了。<br>
+有些地方把这个算作密码......我觉得还是莫尔斯还是一种编码的性质，作为信息的传输作用，并没有隐藏信息的功能。</p>
+<p>莫尔斯电码表：<br>
+<a href="https://imgchr.com/i/k69H4e" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/02/18/k69H4e.md.jpg" class="lazyload" data-srcset="https://s2.ax1x.com/2019/02/18/k69H4e.md.jpg" srcset="/css/images/overlay.png" alt="k69H4e.md.jpg"></a></p>
 <p>在线文字转莫尔斯电码工具：<a href="http://www.atool.org/morse.php" target="_blank" rel="noopener">http://www.atool.org/morse.php</a></p>
 
                 </section>
