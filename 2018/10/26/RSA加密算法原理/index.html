@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>about - DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K CTFer" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
+    <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://cdn.dvkunion.cn/bg.jpg");
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/12/">2019 - 12</a></li><li><a class="archive-link" href="/archives/2019/10/">2019 - 10</a></li><li><a class="archive-link" href="/archives/2019/08/">2019 - 08</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/05/">2019 - 05</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>RSA加密算法原理</h2>
+                    <p>2018-10-26</p>
+                     <p>文章共计 - 476 字 阅读需要 - 1 分钟</p>
+                </header>
+
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/006IjVYfgy1fwj46cxdylj30qo0ci0zz.jpg);" ></div>
+                    <hr>
+                    <div id="head"></div>
+
+<h1 id="RSA加密算法原理"><a href="#RSA加密算法原理" class="headerlink" title="RSA加密算法原理"></a>RSA加密算法原理</h1><h3 id="0x01-RSA简介"><a href="#0x01-RSA简介" class="headerlink" title="0x01- - RSA简介"></a><b>0x01- - RSA简介<b></b></b></h3><p>RSA加密算法是一种非对称加密算法。在公开密钥加密和电子商业中RSA被广泛使用。RSA是1977年由罗纳德·李维斯特（Ron Rivest）、阿迪·萨莫尔（Adi Shamir）和伦纳德·阿德曼（Leonard Adleman）一起提出的。当时他们三人都在麻省理工学院工作。RSA就是他们三人姓氏开头字母拼在一起组成的。</p>
+<p>RSA算法基于这样的一个事实：将两个大质数相乘十分容易，但是想要对其乘积进行因式分解却极其困难。换言之，对一极大整数做因数分解愈困难，RSA算法愈可靠。如果找到一种快速因数分解的算法的话，那么用RSA加密的信息的可靠性就肯定会极度下降。至2008年，世界上还没有任何可靠的攻击RSA算法的方式。只要其钥匙的长度足够长，用RSA加密的信息实际上是不能被解破的。</p>
+<p>所谓非对称加密算法，是指将加密密钥公开，解密密钥保密，并且加密和解密算法也同时公开的加密算法。</p>
+<h3 id="0x01-RSA欧拉函数"><a href="#0x01-RSA欧拉函数" class="headerlink" title="0x01- - RSA欧拉函数"></a><b>0x01- - RSA欧拉函数<b></b></b></h3><p>RSA算法能够加密的原因，由于无法计算出大数n的欧拉函数$phi(N)$，因此无法根据公开密钥来计算解密密钥。因此在了解RSA之前，必须要理解欧拉函数。</p>
+<p>欧拉函数中有几个关键性的定义：</p>
+<ol>
+<li>互质 ： 对于x,y,有 gcd(x,y) = 1 我们称x,y互质</li>
+<li>质因子 ：对于一个合数x ,若质数y能将其整除，则称y是x的质因子。</li>
+</ol>
+<p>现在给定欧拉函数的定义:<br>欧拉函数<br>$\sum<em>{i=0}^N\int</em>{a}^{b}g(t,i)\text{d}t$</p>
+<script type="math/tex; mode=display">\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t</script>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <!--  copyright  -->
+        <ul class="copyright">
+            <li>&copy;2018-2022 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+            <img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        <script type="text/javascript" src="/js/mouse.js"></script>
+    </footer><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+
+</html>

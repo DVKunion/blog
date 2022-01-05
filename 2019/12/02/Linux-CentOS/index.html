@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>about - DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K CTFer" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
+    <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://cdn.dvkunion.cn/bg.jpg");
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/12/">2019 - 12</a></li><li><a class="archive-link" href="/archives/2019/10/">2019 - 10</a></li><li><a class="archive-link" href="/archives/2019/08/">2019 - 08</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/05/">2019 - 05</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>Linux--CentOS</h2>
+                    <p>2019-12-02</p>
+                     <p>文章共计 - 7.4k 字 阅读需要 - 29 分钟</p>
+                </header>
+
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(http://cdn.dvkunion.cn/942bf6c451da81cb7e4194c25f66d016082431da.jpg);" ></div>
+                    <hr>
+                    <h1 id="Linux-CentOS7-0"><a href="#Linux-CentOS7-0" class="headerlink" title="Linux--CentOS7.0"></a>Linux--CentOS7.0</h1><hr>
+<p>目录:</p>
+<ul>
+<li>0x00 前言</li>
+<li>0x01 Linux简介</li>
+<li>0x02 Linux简单命令</li>
+<li>0x03 用户和权限管理</li>
+<li>0x04 vim使用</li>
+<li>0x05 网络配置</li>
+</ul>
+<h3 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00- - 前言"></a><b>0x00- - 前言<b></b></b></h3><p>2018-12-20<br>趁着这一阶段系统性的把 Linux 的操作记录一下。<br>结合着 《鸟哥私房菜》 以及学习的知识进行一个系统性的总结。<br>关于 Linux，我目前的感受是——</p>
+<ul>
+<li>· 在没碰过Linux系统时，用Ubuntu桌面化都觉得：这是个什么鬼玩意？</li>
+<li>· 用了一阵之后，记不住杂多命令的我：为什么会有人觉得这种东西会比图形化的win好？</li>
+<li>· 习惯了以后：Linux 真香，来一口老弟，来一口。<br>总的来说Linux的管理和操作还是较清晰化和便捷的，至少对于我这种强迫症感觉文件的存放和分类都好清爽啊orz…</li>
+</ul>
+<p>2018-12-20<br>贴一个有趣的讲解：<br><a href="http://mp.weixin.qq.com/s?__biz=MzA4ODIwMDUyNw==&mid=2652994636&idx=2&sn=1f3b66c94de485c35b717c2295a196d5&chksm=8bf8186cbc8f917a241b0724dffb618547326cda89199d7a4b8cd14326f987b5189ba9335139&mpshare=1&scene=24&srcid=#rd" target="_blank" rel="noopener">有趣的命令</a><br><a href="
+http://mp.weixin.qq.com/s?__biz=MzA4ODIwMDUyNw==&mid=2652994485&idx=1&sn=7999fb43eca8f3c1eadb1a02475aa4b5&chksm=8bf81f95bc8f96831c00e6d780c06c104b8316fd8696d7134222850dc5ba1d2380d558e33774&mpshare=1&scene=24&srcid=#rd" target="_blank" rel="noopener">漫画讲解Linux内核</a></p>
+<h3 id="0x01-Linux简介"><a href="#0x01-Linux简介" class="headerlink" title="0x01- - Linux简介"></a><b>0x01- - Linux简介<b></b></b></h3><p>首先简单的介绍一下Linux的发展历史，简单的…</p>
+<p>Linux的前身是Unix老大哥。</p>
+<p>在当时的年代，计算机是稀有的巨型资源，为了解决多用户，MIT在20世纪90年代开发了分时操作系统（CTSS），可以让大型主机通过提供多个终端（terminal）连入主机。这个系统在未来逐渐演化成了Multics。</p>
+<p>在此之后，开发上述系统的人员中的Ken Thompson 在1969年开发出了Unix的原型，实现了Linux中最著名的一句话：万物皆文件。</p>
+<p>1973:Unix正式诞生。这是基于C语言的第一个正式版本。</p>
+<p>1993：Debian诞生</p>
+<p>1994年3月，Linux1.0发布，代码量17万行，当时是按照完全自由免费的协议发布，随后正式采用GPL协议。</p>
+<p>1996年6月，Linux 2.0内核发布，此内核有大约40万行代码，并可以支持多个处理器。此时的Linux 已经进入了实用阶段，全球大约有350万人使用。</p>
+<p>2004：Ubuntu诞生—版本号采用年份+月份的格式（如04.10，即Ubuntu2004.10版本），每半年就发行一个版本，其中只有2006.04因为发行LTS（long term support）版本而进行了跳票。</p>
+<p>Linux是开源的Unix系统，可免费使用和传播。</p>
+<p>一般学习 Linux，都要多多少少的夹杂一些硬件和内核的知识。对于硬件知识总觉得有些无聊…这里记一下老师推荐的一本关于内核的书 《深入理解Linux内核》。希望自己在对于基本操作熟练了以后能够继续去深读与研究。</p>
+<p>那么到底什么是Linux—我也说不出来，靠着万能的搜索引擎给出一组定义：Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+<p>对于操作系统有一定了解的话，大致的将Linux可以看做是内核与系统调用的两层。对于不同架构的CPU，其功能函数也不相同。</p>
+<p>因此，对于不同CPU内核架构，Linux可以分为：x86系列，i386系列,arm系列等等……</p>
+<p>说到分类，在Linux中还存在着两个派系：Redhat的红帽系列和Ubuntu系列。对于这两者的区别：Ubuntu更适合新手，其桌面化的GUI模式对新手比较友好；而Redhat更多的应用于企业级服务器。<br>更多的来说，这二者的内核差距并不是很大，最大的区别也就是安装包的管理上，Ubuntu使用的是基于Debian的deb包，而Redhat使用的是自己研发的yum管理。</p>
+<p><b>总结一下：</b></p>
+<ol>
+<li>1.Linux根据内核分类：i386,x86,arm;<br>  根据distrabution分类：Redhat,Debian。</li>
+<li>2.Linux的优点：开源免费，消耗资源少，安全性高等等。</li>
+</ol>
+<h3 id="0x02-Linux-的简单操作"><a href="#0x02-Linux-的简单操作" class="headerlink" title="0x02- - Linux 的简单操作"></a><b>0x02- - Linux 的简单操作<b></b></b></h3><p>打开一台Linux的机器，我们都需要做什么？或者是能够做什么呢？</p>
+<p>贴一个关于Linux命令的网址：<a href="http://man.linuxde.net/" target="_blank" rel="noopener">http://man.linuxde.net/</a><br>同时也可以使用自带的手册：man+[your commoand]查看命令帮助。</p>
+<p><b>几个快捷键</b>：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键组合</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ctrl + shift + c</td>
+<td style="text-align:left">鼠标选中后复制</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + shift + v</td>
+<td style="text-align:left">鼠标选中后粘贴</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + shift + t</td>
+<td style="text-align:left">打开另一个命令行窗口</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + c</td>
+<td style="text-align:left">强制终止</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + d</td>
+<td style="text-align:left">离开当前界面(EOF)</td>
+</tr>
+<tr>
+<td style="text-align:left">alt + 窗口号</td>
+<td style="text-align:left">在窗口之间切换</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + a</td>
+<td style="text-align:left">光标跳转到命令行的行首</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + e</td>
+<td style="text-align:left">光标跳转到命令行的行尾</td>
+</tr>
+<tr>
+<td style="text-align:left">上下方向键</td>
+<td style="text-align:left">历史命令</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>熟悉了几个操作之后，我们打开终端：<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fydbmxztwnj30kg0bhwgb.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fydbmxztwnj30kg0bhwgb.jpg" srcset="/css/images/overlay.png" alt=""><br>(1)最外围的方括号是固定的<br>(2)dvk表示当前登录操作系统的用户名<br>(3)@符号，固定格式<br>(4)localhost表示当前系统的FQDN名称的主机名部分<br>(5)~表示当前用户所在目录层级的位置<br>(6)$号，代表的是其他普通用户，如果是root，会变成#符号</p>
+<p><b>清屏</b>：clear</p>
+<p><b>查看自己当前所处位置</b>：pwd<br>pwd命令显示的是绝对路径：<br>(1)绝对路径：就是按照目录树的层次结构，从根目录依次往下写路径的方式<br>(2)相对路径：就是相对于当前位置的路径表达方式</p>
+<p><b>获取主机名</b>：hostname<br>如何设置主机名<br>(1)临时设置主机名<br>hostname [yourname]<br>这样设置的主机名在重启后会被重置掉<br>(2)永久设置主机名<br>hostnamectl set-hostname [yourname]<br>或是修改文件 /etc/sysconfig/network<br>以及 /etc/hosts 两个文件可以实现。</p>
+<p><b>路径目录切换</b>：cd</p>
+<p>cd + 目标路径（绝对路径/相对路径写法）<br>cd - 返回上次所在路径<br>cd ~ 跳转到当前登录用户的家目录<br>cd .. 返回上一层</p>
+<p><b>创建文件、文件夹</b>：<br>(1)创建一个目录（文件夹）<br>mkdir + 创建对象的路径（绝对路径/相对路径写法）<br>(2)创建一个普通文件<br>touch + 创建对象的路径（绝对路径/相对路径）<br>(3)删除一个目录（文件夹）<br>rmdir + 删除对象的路径（绝对路径/相对路径），弃之不用<br>rm -r + 删除对象的路径（绝对路径/相对路径）<br>rm -rf + 删除对象的路径（绝对路径/相对路径），表示强制递归删除<br>(4)删除一个普通文件<br>rm + 删除对象的路径（绝对路径/相对路径），可选用-rf参数</p>
+<p><b>拷贝、粘贴、重命名</b>：<br>cp /root/anaconda-ks.cfg /root/Desktop/        拷贝<br>cp /root/anaconda-ks.cfg /root/Desktop/xxx.txt    拷贝的同时重命名<br>mv /root/Desktop/anaconda-ks.cfg /root/Desktop/yyy.txt    重命名<br>/root/anaconda-ks.cfg /root/Desktop/        剪切<br>mv /root/anaconda-ks.cfg /root/Desktop/xxx.txt    剪切的同时重命名</p>
+<p><b>查看目录下的文件</b>：<br>ls + [查看对象路径]  类似windows中的大图标方式查看，只看到文件名<br>ls -l [查看对象路径] 类似windows中详细信息方式查看，看到文件名，创建者等<br>ls -al [查看对象路径] 可看到对象路径下的所有文件<br>.    表示当前路径<br>..    表示上层路径</p>
+<p><b>查看文件</b>：<br>cat /root/anaconda-ks.cfg    一次性将对象内容读出<br>more /root/anaconda-ks.cfg    查看对象的路径    将对象内容读出，并逐屏展示，只能向下不能向上<br>less /root/anaconda-ks.cfg    查看对象的路径    将对象内容如初，并逐屏展示，可向上向下，q退出<br>tail /root/anaconda-ks.cfg<br>tail -n 5 /root/anaconda-ks.cfg<br>head /root/anaconda-ks.cfg   查看文件的头部，默认前十行<br>head -n 5 /root/anaconda-ks.cfg</p>
+<p><b>显示时间</b>：date</p>
+<p><b>日历</b>：cal</p>
+<p><b>简要查询</b>：wahtis+[your command]</p>
+<p><b>切换工作空间</b>：ctrl+F1-F6</p>
+<h3 id="0x03-用户和权限管理"><a href="#0x03-用户和权限管理" class="headerlink" title="0x03- - 用户和权限管理"></a><b>0x03- - 用户和权限管理<b></b></b></h3><p>Linux 支持多用户、多任务环境。</p>
+<h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a><font color="blue">用户</font><br></h4><p><b>创建用户</b><br>useradd + username<br>普通用户默认的家目录在/home/username<br>useradd -u 5000 username创建用户时指定用户的uid<br>useradd -g groupname username    创建用户时同时指定用户的所属组<br>useradd -G groupname1,groupname2 username 创建用户时同时执行用户所属哪几个组</p>
+<p><b>增加密码</b><br>passwd username</p>
+<p><b>删除用户</b><br>userdel + username    删除用户的登录信息（用户/密码）<br>这样会发现在home目录下依旧存留着删除用户的文件夹<br>userdel -r username    彻底删除用户信息</p>
+<p><b>创建用户组</b><br>groupadd + CCIE<br>groupadd -g 10000 LINUX 创建组的同时指定组ID</p>
+<p><b>删除用户组</b><br>groupdel CCIE</p>
+<p><b>查看用户信息</b><br>id + username</p>
+<p><b>用户信息文件</b><br>/etc/passwd 和 /etc/shadow</p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fydczrvejfj30hg092td5.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fydczrvejfj30hg092td5.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p>其格式：$id$salt$encrypted</p>
+<p>1    MD5</p>
+<p>2a    Blowfish(not in mainline glibc;added in some Linux distribution)</p>
+<p>5    SHA-256(since glibc 2.7)</p>
+<p>6    SHA-512(since glibc 2.7)</p>
+<p>修改日期：这个是表明上一次修改密码的日期与1970-1-1相距的天数密码不可改的天数：假如这个数字是8，则8天内不可改密码，如果是0，则随时可以改。<br>密码需要修改的期限：如果是99999则永远不用改。如果是其其他数字比如12345，那么必须在距离1970-1-1的12345天内修改密码，否则密码失效。<br>修改期限前N天发出警告：比如你在第五条规定今年6月20号规定密码必须被修改，系统会从距离6-20号的N天前向对应的用户发出警告。<br>密码过期的宽限：假设这个数字被设定为M，那么帐号过期的M天内修改密码是可以修改的，改了之后账户可以继续使用。<br>帐号失效日期：假设这个日期为X，与第三条一样，X表示的日期依然是1970-1-1相距的天数，过了X之后，帐号失效。<br>保留：被保留项，暂时还没有被用上。</p>
+<p><b>用户组信息文件</b><br>/etc/group</p>
+<p><b>切换用户</b></p>
+<p>su -username<br>退出用户/注销：exit</p>
+<h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a><font color="blue">权限</font><br></h4><p><b>文件权限</b><br>ls -l (等于ll)</p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fydd7un284j30tk0fgwkj.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fydd7un284j30tk0fgwkj.jpg" srcset="/css/images/overlay.png" alt=""><br>前部分显示的即为文件权限：</p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fydd964r0rj30l40caju3.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fydd964r0rj30l40caju3.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p>d:目录类型的文件<br>-:普通文件<br>l:连接文件<br>b:块文件</p>
+<p>r:读，数学值为4<br>w:写，数学值为2<br>x:执行，数学值为1，针对目录，x是表示是否可进入</p>
+<p>rwx     rwx     rwx<br>user    group    other</p>
+<p><b>修改文件权限</b></p>
+<p><code># chmod u-w /root/Desktop/file-1</code><br><code># chmod u+w /root/Desktop/file-1</code><br><code># chmod g-x /root/Desktop/file-1</code><br><code># chmod o-x /root/Desktop/file-1</code></p>
+<p><code># chmod 577 /root/Desktop/file-1</code><br><code># chmod 767 /root/Desktop/file-1</code><br><code># cmmod 776 /root/Desktop/file-1</code></p>
+<p><b>修改文件所有者/所属组</b></p>
+<p><code># chown student file-1</code>        将文件的所有者修改为student<br><code># chgrp harry file-1</code>    将文件的所属组修改为harry<br><code># chown student:harry file-1</code>一次性同时修改文件所有者和所属组</p>
+<p><b>umask值</b><br>创建一个文件时，文件的默认权限是由创建它们的进程设置。如，root用户通过touch创建的文件的权限为644，普通用户通过touch创建的文件的权限为664，root用户和普通用户创建的目录的权限为755。这些默认权限是由umask值控制。</p>
+<p>获取当前环境用户的umask值：<br><code># umask</code><br>所有普通用户umask值的设置<br><code># vim /etc/profile</code><br><code># vim /etc/bashrc</code></p>
+<p><b>特殊权限</b><br>1.suid(set uid)<br>(1)含义<br>只对文件有效，对目录无效。文件设置了suid后，其他用户执行该文件时，是以文件owner的身份来执行该文件。</p>
+<p>(2)示例<br>Linux系统中一切皆文件，调用touch命令执行创建文件操作时，是调用touch这个可执行文件来创建文件。<br><code># which touch</code><br>/usr/bin/touch<br><code># ll /usr/bin/touch</code><br>-rwxr-xr-x. 1 root root 62432 Nov 20  2015 /usr/bin/touch</p>
+<p>针对/usr/bin/touch这个可执行文件，所有者所属组和其他用户均有执行权限，即任何可登录系统的用户均可调用touch命令创建文件，且默认情况下“谁创建谁拥有”<br><code># su - harry</code><br><code>$ touch file-1</code><br><code>$ ll</code><br>-rw-rw-r—. 1 harry harry  0 Nov 26 10:01 file-1</p>
+<p>设置/usr/bin/touch这个可执行文件的suid位<br><code># chmod u+s /usr/bin/touch</code><br><code># ll /usr/bin/touch</code><br>-rwsr-xr-x. 1 root root 62432 Nov 20  2015 /usr/bin/touch</p>
+<p>/usr/bin/touch被设置了suid位后，harry用户再次调用touch创建文件<br><code># su - harry</code><br><code>$ touch file-2</code><br><code>$ ll</code><br>-rw-rw-r—. 1 harry harry 0 Nov 26 10:01 file-1<br>-rw-rw-r—. 1 root  harry 0 Nov 26 10:05 file-2</p>
+<p>(3)设置suid位<br><code># chmod u+s filename</code><br><code># chmod 4755 filename</code></p>
+<p>(4)应用场景<br>系统中任何用户都允许调用passwd命令修改自己的密码，修改密码时需要修改/etc/passwd /etc/shadow两个文件，但这两个文件的权限不允许普通用户修改，因此针对passwd这个可执行文件设置了suid<br><code># ll /etc/passwd /etc/shadow</code><br>-rw-r—r—. 1 root root 2538 Nov 25 11:35 /etc/passwd<br>—————. 1 root root 1716 Nov 25 13:45 /etc/shadow<br><code># which passwd</code><br>/usr/bin/passwd<br><code># ll /usr/bin/passwd</code><br>-rwsr-xr-x. 1 root root 27832 Jun 10  2014 /usr/bin/passwd</p>
+<p>(5)总结<br>从系统安全角度出发，对于有些文件只允许管理员进行修改，但普通用于又需要通过某些进程命令访问修改，此时可以设置这些文件针对普通用户没有w和x权限，同时设置访问文件的进程命令的suid</p>
+<p>2.sgid(set gid)<br>(1)含义<br>针对文件：文件设置了sgid后，其他用户执行该文件时，是以文件group的身份来执行该文件。<br>针对目录：目录设置了sgid后，用户在目录中新建的文件所属组将被自动设置为该目录的组。</p>
+<p>(2)示例一，针对文件，以/usr/bin/touch这个可执行文件为例<br>未设置sgid之前，/usr/bin/touch这个可执行文件的权限状态<br><code># ll /usr/bin/touch</code><br>-rwxr-xr-x. 1 root root 62432 Nov 20  2015 /usr/bin/touch</p>
+<p>切换到harry用户创建file-1，其所有者为harry，所属组为harry<br><code># su - harry</code><br><code>$ touch file-1</code><br><code>$ ll</code><br>-rw-rw-r—. 1 harry harry 0 Nov 26 11:02 file-1</p>
+<p>以root用户设置/usr/bin/touch的sgid位<br><code># chmod g+s /usr/bin/touch</code><br><code># ll /usr/bin/touch</code><br>-rwxr-sr-x. 1 root root 62432 Nov 20  2015 /usr/bin/touch</p>
+<p>以harry用户再创建一个文件file-2，file-2文件被创建时是以root组身份创建，因此file-2的所属组为root<br><code># su - harry</code><br><code>$ touch file-2</code><br><code>$ ll</code><br>-rw-rw-r—. 1 harry harry 0 Nov 26 11:02 file-1<br>-rw-rw-r—. 1 harry root  0 Nov 26 11:02 file-2</p>
+<p>(3)示例二，针对目录<br>root用户创建一个共享目录，并修改权限使得普通用户具有写权限<br><code># mkdir /public</code><br><code># ll -d /public</code><br>drwxr-xr-x. 2 root root 6 Nov 26 11:11 /public<br><code># chmod 777 /public</code><br><code># ll -d /public</code><br>drwxrwxrwx. 2 root root 6 Nov 26 11:11 /public</p>
+<p>未设置sgid情况下，harry用户创建的目录，其所有者和所属组均为harry<br><code># su - harry</code><br><code>$ mkdir /public/dir-harry-1</code><br><code>$ ll -d /public/dir-harry-1/</code><br>drwxrwxr-x. 2 harry harry 6 Nov 26 11:13 /public/dir-harry-1/</p>
+<p>使用root用户设置/public的sgid位<br><code># chmod g+s /public</code><br><code># ll -d /public</code><br>drwxrwsrwx. 4 root root 42 Nov 26 11:15 /public</p>
+<p>设置了sgid后，再使用harry用户创建目录，其所有者依然为harry，但所属组与/public所属组一致<br><code># su - harry</code><br><code>$ mkdir /public/dir-harry-2</code><br><code>$ ll /public</code><br>drwxrwxr-x. 2 harry harry 6 Nov 26 11:13 dir-harry-1<br>drwxrwsr-x. 2 harry root  6 Nov 26 11:15 dir-harry-2</p>
+<p>(4)设置sgid位<br><code># chmod g+s filename</code><br><code># chmod 2755 filename</code></p>
+<p>3.sticky<br>(1)含义<br>只对目录有效，对文件无效。目录设置了sticky后，对目录有写权限的用户只能删除其所拥有的文件，无法删除其他用户所拥有的文件，root用户除外。</p>
+<p>(2)示例<br>未设置sticky时，权限足够的情况下，harry用户可删除root用户的文件<br><code># ll -d /public</code><br>drwxrwxrwx. 2 root root 6 Nov 26 11:43 /public<br><code># touch /public/file-root</code></p>
+<p><code># su - harry</code><br><code>$ rm -rf /public/file-root</code></p>
+<p>设置sticky时，权限足够的情况下，harry用户无法删除root用户的文件<br><code># chmod o+t /public/</code><br><code># ll -d /public/</code><br>drwxrwxrwt. 2 root root 6 Nov 26 11:44 /public/<br><code># touch /public/file-root</code></p>
+<p><code># su - harry</code><br><code>$ rm -rf /public/file-root</code><br>rm: cannot remove ‘/public/file-root’: Operation not permitted</p>
+<p>4.设置suid sgid sticky后，代表文件权限的9位字符的变化<br>suid：显示在文件user的x位，若文件user有x权限，则显示s；若没有x权限，则显示S<br>sgid：显示在文件group的x位，若文件group有x权限，则显示s；若没有x权限，则显示S<br>sticky：显示在文件other的x位，若文件other有x权限，则显示t；若没有x权限，则显示T</p>
+<p><b>ACL权限</b><br>1.获取文件或目录的ACL信息<br><code># ll /public/file-root</code><br>-rw-r—r—. 1 root root 0 Nov 26 11:44 /public/file-root<br><code># getfacl /public/file-root</code><br>getfacl: Removing leading ‘/‘ from absolute path names<br># file: public/file-root<br># owner: root<br># group: root<br>user::rw-<br>group::r—<br>other::r—</p>
+<p>2.设置ACL<br>针对file-root文件，other用户没有写权限，设置harry这个other类的用户可读可写可执行<br><code># setfacl -m u:harry:rwx /public/file-root</code><br><code># ll /public/file-root</code><br>-rw-rwxr—+ 1 root root 0 Nov 26 12:21 /public/file-root<br><code># getfacl /public/file-root</code><br>getfacl: Removing leading ‘/‘ from absolute path names<br># file: public/file-root<br># owner: root<br># group: root<br>user::rw-<br>user:harry:rwx<br>group::r—<br>mask::rwx<br>other::r—</p>
+<p>3.ACL中的mask值<br>(1)mask值限制了ACL中的用户或组的最大权限<br>(2)默认情况下，mask值跟随ACL条目中最大的权限，确保相应的权限设置能被顺利实现（重新计算mask）<br>(3)每次设置一个新ACL条目时，如果当前mask所表示的权限小于新条目的设置权限，则mask跟随新条目的权限，反之则保持不变<br>(4)在设置ACL条目时，可加上-n参数让mask值不随新条目的权限增长变化</p>
+<p>4.默认ACL，目录可这只默认ACL，这些ACL将由所有子文件自动继承<br><code># setfacl -m d:u:harry:rwx dir-1</code></p>
+<p>5.删除ACL<br>-x, —remove=acl        remove entries from the ACL(s) of file(s)<br>-b, —remove-all        remove all extended ACL entries<br>-k, —remove-default    remove the default ACL</p>
+<h3 id="0x04-Vim-使用"><a href="#0x04-Vim-使用" class="headerlink" title="0x04- - Vim 使用"></a><b>0x04- - Vim 使用<b></b></b></h3><p><code># vim /root/Desktop/file-1</code><br>(1)阅读模式:只能阅读<br>(2)阅读模式进入编辑模式:<br>   i(当前光标所在处插入)<br>   a(当前光标所在处后一个字符插入)<br>   o(当前光标所在行的下一行插入)<br>   O(当前光标所在行的上一行插入)<br>(3)从编辑模式退出到阅读模式:Esc键<br>(4)撤销:在阅读模式下按u键<br>(5)复制粘贴:阅读模式下，光标移动到需要复制的行，yy复制，p粘贴。复制光标所在行往下2行（包含光标所在行），2y，p<br>(6)删除单个字符:阅读模式下，x键往后删一个字符，X键往前删一个字符<br>(7)删除光标位置到行尾内容，D键<br>(8)剪切整行，dd剪切光标所在行，p粘贴<br>(9)删除整行，dd剪切完了不粘贴<br>(10)删除可知的数行，数字加dd，如：2dd，删除光标所在行及其下一行<br>(11)删除未知的数行，通常加一个超大的数字如，10000dd<br>(12)临时为文件加上行号，阅读模式下，:set nu，取消行号:set nonu<br>(13)可以为vim编辑器设置永久行号，vim ~/.vimrc 写入set nu<br>(14)设置tab，vim ~/.vimrc 写入set ts=2<br>(15)跳转到行首行尾，阅读模式下，直接到行尾，G键，直接到行首，gg键<br>(16)具体跳转到某行，阅读模式下，行号加G，或者，:行号<br>(17)行选中，阅读模式下，v键，配合方向键调整<br>(18)矩形选中，阅读模式下，Ctrl + v,配合方向键调整选中<br>(19)替换某个字符，阅读模式下，调整光标到需要替换的位置，按r键，然后输入需要替换的字符<br>(20)查找,阅读模式下，/被查找的内容,所有符合查找内容的均被高亮显示，n键将光标转移至下一个匹配项，N键将光标转移至上一个匹配项<br>(21)查找替换,阅读模式下，:%s/被替换的内容/替换为的内容，注意默认只替换每一行第一个被匹配的内容，如需全文替换则%s/被替换的内容/替换为的内容/g<br>(22)保存，退出<br>:q,不保存修改而退出<br>:q!,不保存修改而强制退出<br>:w,保存不退出<br>:wq,保存退出<br>:wq!，保存强制退出<br>:x,执行，在vim中就是保存退出</p>
+<h3 id="0x05-网络配置"><a href="#0x05-网络配置" class="headerlink" title="0x05- - 网络配置"></a><b>0x05- - 网络配置<b></b></b></h3><p>(1)ifconfig或者ifconfig -a命令用来查看硬件接口信息</p>
+<p>(2)每一个网络接口的配置信息是以单独文件形式存在，存放在/etc/sysconfig/network-scripts/</p>
+<p>(3)<code>#vim ifcfg-eno16777736</code></p>
+<blockquote>
+<p>TYPE=Ethernet    网络类型<br>BOOTPROTO=dhcp    获取IP的方式 dhcp/none/static<br>NAME=eno16777736    设备别名<br>DEVICE=eno16777736    设备名称<br>UUID=2cb9c49c-e534-49a5-ab2b-3d9fb2d36a77    系统中该设备的唯一编号<br>ONBOOT=no    开机启动/随服务启动</p>
+</blockquote>
+<p>(4)手工配置网络<br><code># systemctl stop NetworkManager</code>  关闭NM工具<br><code># systemctl disable NetworkManager</code>让NM工具重启不启动<br><code>#systemctl status network</code>      检查一下提供网络服务的进程是否running<br><code># vim /etc/sysconfig/network-scripts/ifcfg-eno16777736</code></p>
+<blockquote>
+<p>TYPE=Ethernet<br>BOOTPROTO=static<br>NAME=eno16777736<br>UUID=2cb9c49c-e534-49a5-ab2b-3d9fb2d36a77<br>DEVICE=eno16777736<br>ONBOOT=yes<br>IPADDR=192.168.1.100<br>NETMASK=255.255.255.0<br>PREFIX=24<br>GATEWAY=192.168.1.1</p>
+</blockquote>
+<p><code># vim /etc/resolv.conf</code>        配置DNS<br><code># nameserver 192.168.1.1</code></p>
+<p><code># systemctl restart network</code>重新启动网络服务<br><code># ifdown eno16777736</code>关闭接口<br><code># ifup eno16777736</code>开启接口</p>
+<p>(5)通过NetworkManager工具来管理网络<br><code># systemctl enable NetworkManager</code><br><code># systemctl start NetworkManager</code><br><code># nmcli connection show</code>查看当前网络连接<br><code># nmcli connection add con-name port0 ifname eno16777736 autoconnect yes type ethernet save yes</code><br><code># nmcli connection modify port0 ipv4.method auto</code>配置IP地址的获取方式为dhcp<br><code># nmcli connection up port0</code><br><code># nmcli connection modify port0 ipv4.addresses 192.168.1.200/24 ipv4.gateway 192.168.1.1 ipv4.dns 192.168.1.1 ipv4.method manual</code> 配置IP地址的获取方式为静态IP<br><code># nmcli connection up port0</code></p>
+<p>(6)更改网卡名称:<br><code>$ vim /etc/sysconfig/network-scripts/ifcfg-****</code><br>将 NAME 值设置为 eth0<br>将 DEVICE 值设置为 eth0<br>保存退出，并重命名该文件为ifcfg-eth0<br><code># mv /etc/sysconfig/network-scripts/ifcfg-**** ifcfg-eth0</code><br>修改可预测命名规则:<br><code># vim /etc/default/grub</code><br>在GRUB_CMDLINE_LINUX 内添加内核参数”net.ifnames=0 biosdevname=0”<br>重新生成GRUB配置并更新内核参数<br><code># grub2-mkconfig -o /boot/grub2/grub.cfg</code><br>重启即可<br><code># reboot</code></p>
+<h3 id="0x06-环境变量"><a href="#0x06-环境变量" class="headerlink" title="0x06- - 环境变量"></a><b>0x06- - 环境变量<b></b></b></h3><p>1.定义<br>一般是指在操作系统中用来指定操作系统运行环境的一些参数，如系统使用哪种shell，显示色彩，使用的语言和字符集等。</p>
+<p>2.环境变量分类<br>(1).当前用户的环境变量（人的身高、体重、血压）<br>(2).当前用户使用的shell的变量（锻炼使用的跑步机可调节的速度范围和坡度范围）<br>(3).导出成用户变量的shell变量（一定时间内人跑步会使用固定的坡度和速度）</p>
+<p>3.输出所有环境变量<br>env：显示当前用户的环境变量<br>set：显示当前shell的变量，包括当前用户的变量<br>export：显示当前导出成用户变量的shell变量。<br>每个shell有自己特有的变量（set）显示的变量，和用户变量是不同的，当前用户变量和使用什么shell无关，无论使用什么shell都在，比如HOME,SHELL等这些变量，但shell自己的变量不同shell是不同的，比如BASH_VERSION，这些变量只有set才会显示，是bash特有的，export不加参数的时候，显示哪些变量被导出成了用户变量，因为一个shell自己的变量可以通过export “导出”变成一个用户变量。</p>
+<p>4.常用环境变量<br>PATH：命令查找路径        echo $PATH<br>USER：当前登录用户        echo $USER<br>HOSTNAME：系统hostname        echo $HOSTNAME<br>HISTSIZE：历史命令保留数值    echo $HISTSIZE</p>
+<p>5.存放环境变量的文件<br>(1)/etc/profile：用户登录Linux系统或使用su -命令切换到另一个用户时，该文件为用户设置环境信息,该文件被执行，并从/etc/profile.d目录的配置文件中搜集shell的设置<br>(2)/etc/profile.d：目录中存放的是一些脚本，其中包括了颜色、语言、less、vim及which等命令的一些附加设置。这些脚本文件之所以能够被自动执行，是因为在/etc/profile 中使用一个for循环语句来调用这些脚本。而这些脚本文件是用来设置一些变量和运行一些初始化过程的。<br>(3)/etc/bashrc：为每一个运行bash shell的用户执行此文件，当bash shell被打开时,该文件被读取<br>验证：<br>vim /etc/bashrc<br>echo “hello” &gt;&gt; /tmp/file.txt<br>每打开一个shell窗口，就会执行一次/etc/bashrc文件</p>
+<p>(4)~/.bash_profile：每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次，默认情况下,他设置一些环境变量,执行用户的.bashrc文件。</p>
+<p>(5)~/.bashrc：该文件存储的是专属于个人bash shell的信息，当登录时以及每次打开一个新的shell时，执行这个文件。在这个文件里可以自定义用户专属的个人信息。</p>
+<h3 id="0x07-软件包的安装"><a href="#0x07-软件包的安装" class="headerlink" title="0x07- - 软件包的安装"></a><b>0x07- - 软件包的安装<b></b></b></h3><p>因使用的是centos，这里软件包管理软件使用rpm以及yum</p>
+<p>一、rpm包<br>1.安装rpm -ivh vsftpd-3.0.2-10.el7.x86_64.rpm<br>2.查询系统中所有已安装的rpm包rpm -qa<br>3.查询某个rpm包有没有安装rpm -qa |grep vsftpd<br>4.查询某个已安装软件包包含哪些文件rpm -ql vsftpd<br>5.删除某个软件包rpm -e vsftpd<br>6.软件包升级rpm -Uvh vsftpd-3.2.2-10.el7.x86_64.rpm<br>注意点：在升级内核的时候<br>补充：内核版本查看uname -r。不同版本的内核在系统中可以共存，并且正常情况下，都可以用来启动，在做 内核升级的时候，基本上是采用rpm -ivh kernel-3.20.0-327.el7.x86_64.rpm，其原因主要是rpm -Uvh相当于安装新内核删除旧内核，而rpm -ivh是纯粹安装新内核，如此如果新内核有问题，还能够从旧内核启动</p>
+<p>二、源码包<br>1.压缩型源码包，xxx.tar.gz，xxx.tar.bz2，xxx.tar.xz<br>（1）解压: tar -x[alpha]vf xxx.tar.[alpha]z<br>gz: [alpha] = z<br>bz2：[alpha] = j<br>xz：[alpha] = J<br>压缩/解压缩考验的是CPU和硬盘的性能</p>
+<p>（2）配置安装环境<br>tar -x[alpha]vf xxx.tar.[alpha]z    解压之后在压缩包所在的目录下生成一个同名的文件夹，需要进入到该文件夹中进行配置安装环境，一般情况下该文件夹下有一个configure的脚本，执行该脚本 ./configure，常用默认安装路径（/usr/bin，/usr/sbin，/usr/local/bin，/usr/local/sbin）配置也有参数，常用的参数—prefix=/opt，表示未来将/opt目录作为安装路径，其他参数参见configure文件</p>
+<p>（3）编译（源码编译生成可执行文件）<br>make，可选参数为-j，-j表示采用多核进编译，例如make -j 8，采用8个核同时进行编译，加快速度。编译考量的是CPU性能</p>
+<p>（4）安装（将软件所需的各种文件及权限放入该放入的地方）<br>make install，考量的是磁盘性能</p>
+<p>2.rpm型源码包，命令xxx.src.rpm<br>1.有没有依赖性？大部分情况不具有依赖性<br>2.安装 rpm -ivh xxx.src.rpm，其实这里的rpm -ivh 与真正的rpm包的rpm -ivh含义可能不同，这里rpm -ivh更接近“解压”的含义<br>3.安装完成后一定会生成2个文件，一个是xxx.tar.[alpha]z，另一个是xxx.spec<br>4.利用rpmbuild工具根据xxx.spec文件对xxx.tar.[alpha]z进行编译，最终会生成xxx.rpm极其依赖包<br>5.利用rpm -ivh命令对最终生成的rpm包进行安装</p>
+<p>针对1、2这两种类型的源码包，删除是比较麻烦的</p>
+<p>三、yum<br>yum全称是Yellow Package Manager，是针对rpm包的依赖缺点，用来解决包依赖关系的工具，要使用yum需做如下事情：<br>1.要提供软件包来源。（本地（ISO镜像文件），来自于局域网/互联网上的yum源）<br>2.告知yum包管理器，软件包来源的位置。这点主要是通过配置文件编写的形式实现</p>
+<p>如下选择来自互联网的源，则：<br>1.必须能联网<br>2.上述第二点就无需设置，其原因主要是系统安装完成后，已经生成相应的配置文件，路径是/etc/yum.repos.d，该目录下有诸多以.repo结尾的文件，就是指向互联网yum源的配置文件</p>
+<p>（1）列出yum源的可用软件包：yum list available<br>（2）清除yum包管理器的缓存：yum clean all<br>（3）查询现有的yum源上是否有某款软件：yum search gcc<br>（4）安装gcc：yum install gcc [-y]，-y参数表示自动应答yum的提问，yum的方式安装软件时会自动解析软件所依赖的包，并一并装上这些依赖包<br>（5）删除：yum remove gcc [-y]，yum也会解析被卸载的包的依赖关系，在正确处理依赖关系后，yum只会删除需要卸载的软件包，而不会删除曾经安装它时那些因依赖而装上的软件包<br>（6）下载docker软件及其依赖软件：yumdownloader docker —resolve —destdir=/root/Desktop/packages<br>     制作“索引”的过程 createrepo /root/Desktop/packages<br>     编辑配置文件告知yum包管理器软件仓库的位置 vim /etc/yum.repos.d/docker.repo<br>     [docker]<br>     name=docker for Centos7<br>     baseurl=file:///root/Desktop/packages<br>     enabled=1<br>     gpgcheck=1<br>     gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7<br>（7）将ISO镜像文件作为本地yum源</p>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <!--  copyright  -->
+        <ul class="copyright">
+            <li>&copy;2018-2022 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+            <img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        <script type="text/javascript" src="/js/mouse.js"></script>
+    </footer><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>about - DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K CTFer" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
+    <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://cdn.dvkunion.cn/bg.jpg");
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/12/">2019 - 12</a></li><li><a class="archive-link" href="/archives/2019/10/">2019 - 10</a></li><li><a class="archive-link" href="/archives/2019/08/">2019 - 08</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/05/">2019 - 05</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>ItChat</h2>
+                    <p>2018-12-03</p>
+                     <p>文章共计 - 544 字 阅读需要 - 2 分钟</p>
+                </header>
+
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/006IjVYfgy1fxtpvv9wq8j30xe0is46f.jpg);" ></div>
+                    <hr>
+                    <h1 id="Itchat-使用笔记"><a href="#Itchat-使用笔记" class="headerlink" title="Itchat 使用笔记"></a>Itchat 使用笔记</h1><h3 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00- - 前言"></a><b>0x00- - 前言<b></b></b></h3><p>一直想做个自动回复性质的机械人，结合近期一直使用的Python就顺藤摸瓜的搜到了这个神奇的开源API。<br>这里是itchat-github，之后打算观察一下源码参考一下实现原理。<br><a href="https://github.com/littlecodersh/itchat" target="_blank" rel="noopener">https://github.com/littlecodersh/itchat</a><br>在放一个官方的教程:<br><a href="https://itchat.readthedocs.io/zh/latest/tutorial/tutorial0/" target="_blank" rel="noopener">https://itchat.readthedocs.io/zh/latest/tutorial/tutorial0/</a></p>
+<h3 id="0x01-安装"><a href="#0x01-安装" class="headerlink" title="0x01- - 安装"></a><b>0x01- - 安装<b></b></b></h3><p>itchat 可以直接使用pip安装:我使用的是Python3的版本。</p>
+<p><code>pip3 install itchat</code></p>
+<p>即可安装成功。</p>
+<p>安装成功后，迫不及待的贴一段来运行一下:</p>
+<pre class=" language-lang-python3"><code class="language-lang-python3">import itchat
+itchat.auto_login()
+itchat.send('Hello, filehelper', toUserName='filehelper')
+</code></pre>
+<p>运行，手机扫码登录，文件传输助手收到了我们发送的信息。</p>
+<h3 id="0x02-初级使用"><a href="#0x02-初级使用" class="headerlink" title="0x02- - 初级使用"></a><b>0x02- - 初级使用<b></b></b></h3><h5 id="导包"><a href="#导包" class="headerlink" title="导包"></a><font color="blue">导包</font><br></h5><p>第一步导包，常规操作。</p>
+<p><code>import itchat</code> </p>
+<h5 id="登录"><a href="#登录" class="headerlink" title="登录"></a><font color="blue">登录</font><br></h5><p>之后是登录:</p>
+<p><code>itchat.auto_login()</code></p>
+<p>会生成登录二维码，若不想每次都扫码登录，可以带一个参数:</p>
+<p><code>itchat.auto_login(hotReload=True)</code></p>
+<p>测试发现，该登录方式会生成一个pkl的数据文件，从而直接跳过登陆的过程。</p>
+<h5 id="收取消息消息"><a href="#收取消息消息" class="headerlink" title="收取消息消息"></a><font color="blue">收取消息消息</font><br></h5><p>itchat 在接受消息时需要根据要接受的消息类型进行注册;在获取对应的消息时会调用该函数:</p>
+<p>当要接受一个文本消息时:</p>
+<pre class=" language-lang-python3"><code class="language-lang-python3">import itchat
+
+@itchat.msg_register(itchat.content.TEXT) #这里就是注册操作.
+#通过装饰符@将下面函数注册为文本消息的函数。
+def print_content(msg):
+    print(msg['Text'])
+
+itchat.auto_login()
+itchat.run()
+</code></pre>
+<p>可以通过修改注册类型信息即可收取不同的消息内容：</p>
+<ol>
+<li>图片使用：”itchat.content.PICTURE”</li>
+<li>语音对应：”itchat.content.RECORDING”</li>
+<li>名片对应：”itchat.content.CARD”</li>
+</ol>
+<h5 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a><font color="blue">发送消息</font><br></h5><p>发送消息可以发送文本、图片、文件等等，这里用文本为例:</p>
+<p><code>itchat.send(&#39;Message Content&#39;, &#39;toUserName&#39;)</code></p>
+<p>其中第一个参数为发送的文本消息，第二个参数㘝<br>将发送与接收同步一下，可以简单地做到：在收到消息时候回复简单的话语。手写一下进行尝试：</p>
+<pre class=" language-lang-python3"><code class="language-lang-python3">import itchat
+
+@itchat.msg_register(itchat.content.TEXT)
+def print_content(msg):
+    return 'got it !'
+
+itchat.auto_login()
+itchat.run()
+</code></pre>
+<p>会发现：每一条消息都会自动的被回复”got it!”</p>
+<h3 id="0x02-中级使用"><a href="#0x02-中级使用" class="headerlink" title="0x02- - 中级使用"></a><b>0x02- - 中级使用<b></b></b></h3>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <!--  copyright  -->
+        <ul class="copyright">
+            <li>&copy;2018-2022 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+            <img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        <script type="text/javascript" src="/js/mouse.js"></script>
+    </footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+
+</html>

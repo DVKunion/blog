@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>about - DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K CTFer" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
+    <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://cdn.dvkunion.cn/bg.jpg");
+        }
+    </style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/12/">2019 - 12</a></li><li><a class="archive-link" href="/archives/2019/10/">2019 - 10</a></li><li><a class="archive-link" href="/archives/2019/08/">2019 - 08</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/05/">2019 - 05</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>Ansible</h2>
+                    <p>2018-11-12</p>
+                     <p>文章共计 - 768 字 阅读需要 - 2 分钟</p>
+                </header>
+
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(http://cdn.dvkunion.cn/blog/20190421/wCRmxXMGR95b.jpg?imageslim);" ></div>
+                    <hr>
+                    <div id="head"></div>
+
+<h1 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h1><hr>
+<div id="0x00"></div>
+
+<h3 id="0x00-Ansible-简介"><a href="#0x00-Ansible-简介" class="headerlink" title="0x00- - Ansible 简介"></a><b>0x00- - Ansible 简介<b></b></b></h3><p>Ansible 是一个基于 python 开发、ssh 协议的自动化运维的工具。集成了众多的运维工具的优点，能够在需要在众多机器上部署代码和服务时进行批量处理。Ansible 能够为我们进行一些批量、重复的工作。</p>
+<p>相比于其他过往的运维管理工具，其优势主要在于其自身属于一个“轻量级”工具，采用现有的SSH安全通讯机制，具体操作层面将运维人员从复杂的代码逻辑上解放出来，以简单易学的语法格式实现复杂的管理需求。</p>
+<p>Ansible优点：</p>
+<ul>
+<li>安装部署简单</li>
+<li>基于SSH对客户端进行管理</li>
+<li>无需运行守护进程</li>
+<li>日志集中存储</li>
+<li>简单易用，功能强大</li>
+</ul>
+<p>这里进行一个形象的比喻来帮助理解Ansible的优点：</p>
+<ul>
+<li>SSH : 框架协议——类似房子的图纸。</li>
+<li>OpenSSH：手工土瓦房——命令全靠自己手动输入，所有的一切都需要自己本身操作。</li>
+<li>XShell：农村二层小洋房——只有一个好看的外形，其本质与SSH等并无过多差异。</li>
+<li>Paramiko ：农村现代化别墅——实现可编程控制操作——但是需要自己处理逻辑关系。</li>
+<li>Fabric：城市小公寓——需要做的事情更少——但依旧存在</li>
+<li>Ansible：超级别墅——所有你需要做的都有专职的佣人存在。</li>
+<li>Ansible中的两大模块:<ul>
+<li>——-ansible秘书：CMDB—-帮助user创建Inventory。</li>
+<li>——-playbooks : 相当于一张时间表，告诉助手每天需要做些什么工作、工作的顺序等等。</li>
+</ul>
+</li>
+</ul>
+<h3 id="0x01-Ansible-结构-amp-配置"><a href="#0x01-Ansible-结构-amp-配置" class="headerlink" title="0x01- - Ansible 结构&amp;配置"></a><b>0x01- - Ansible 结构&amp;配置<b></b></b></h3><p><img src="http://cdn.dvkunion.cn/ansible/20190421/xy3VMtcKKHek.jpg?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/ansible/20190421/xy3VMtcKKHek.jpg?imageslim" srcset="/css/images/overlay.png" alt="mark"><br>Ansible 的功能实现基于内部包含的各种模块,下一节进行各个模块化的讲解。<br>Ansible 的安装十分简单，只需使用到EPEL源即可。<br><code>$ yum install ansible</code><br>安装完成后，查看是否安装成功<br><code>$ ansible --version</code></p>
+<h3 id="0x02-Ansible-运行-amp-模块"><a href="#0x02-Ansible-运行-amp-模块" class="headerlink" title="0x02- - Ansible 运行&amp;模块"></a><b>0x02- - Ansible 运行&amp;模块<b></b></b></h3><h4 id="Ansible-运行"><a href="#Ansible-运行" class="headerlink" title="Ansible 运行"></a><font color="blue">Ansible 运行</font><br></h4><p>Ansible 的运行模式有两种：Ad-Hoc 和 Playbook</p>
+<ol>
+<li><b>Ad-Hoc</b><br>ad-hoc 命令是一种可以快速输入的，无需要保存的命令。类似命令行中的命令。临时命令适用于下面类似的场景，如需要临时重启一台或几台主机，只需要ansible的一行命令即可，而不必编写一个专门的文件来完成这个工作。</li>
+</ol>
+<p>简单的来说，ad-hoc 类似于 xshell 等工具、依旧是需要管理者手动输入命令，对命令进行单独操作。常用于一些功能简单、步骤数目少的操作，对于这样的操作写一个Playbook脚本反而会显得笨拙繁琐。</p>
+<ol>
+<li><b>Playbook</b><br>Playbook是一系列任务的集合，称为“剧本”，每一项任务就是“剧本”中的一出“戏”。</li>
+</ol>
+<p>在简介中，我把Playbook 比作时间表。所谓 Playbook 就是一张写好的命令清单，详细的描述了每个任务的执行顺序， 交给Ansible各个模块去执行。</p>
+<h4 id="Ansible-模块"><a href="#Ansible-模块" class="headerlink" title="Ansible 模块"></a><font color="blue">Ansible 模块</font><br></h4><p>Ansible 中常用的模块有：</p>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <!--  copyright  -->
+        <ul class="copyright">
+            <li>&copy;2018-2022 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+            <img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        <script type="text/javascript" src="/js/mouse.js"></script>
+    </footer><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+
+</html>
