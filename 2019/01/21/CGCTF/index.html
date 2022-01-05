@@ -54,34 +54,47 @@
                 <header class="major">
                     <h2>CGCTF</h2>
                     <p>2019-01-21</p>
-                     <p>文章共计 - 880 字 阅读需要 - 3 分钟</p>
+                     <p>文章共计 - 897 字 阅读需要 - 3 分钟</p>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://s2.ax1x.com/2019/01/21/kPb1YQ.jpg);" ></div>
                     <hr>
-                    <h1 id="CGCTF"><a href="#CGCTF" class="headerlink" title="CGCTF"></a>CGCTF</h1><h3 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00- - 前言"></a><b>0x00- - 前言</b></h3><p>寒假也开始刷题了…从简单的南邮大佬开始刷起吧…</p>
-<h3 id="0x01-WEB"><a href="#0x01-WEB" class="headerlink" title="0x01- - WEB"></a><b>0x01- - WEB</b></h3><p><b> 001 签到题</b></p>
+                    <h1>CGCTF</h1>
+<h3><b>0x00- - 前言</b></h3>
+<p>寒假也开始刷题了...从简单的南邮大佬开始刷起吧...</p>
+<h3><b>0x01- - WEB</b></h3>
+<p><b> 001 签到题</b></p>
 <p>页面询问 key在哪里 打开F12 html注释里得到flag</p>
 <p><b> 002 md5 collision </b></p>
-<p>明显的弱等于和md5 0e科学计数法漏洞<br>放一个payload :s1885207154a</p>
+<p>明显的弱等于和md5 0e科学计数法漏洞<br>
+放一个payload :s1885207154a</p>
 <p><b> 003 签到2</b></p>
 <p>要求输入一个口令，却发现输入框限制比要求的少了一位，F12改maxlength即可</p>
 <p><b> 004 这题不是WEB</b></p>
 <p>找了一圈啥也没找到，最后下载那个动图扔HEX，图片最后即得Flag</p>
 <p><b> 005 层层递进 </b></p>
-<p>最喜欢的就是这道题<br>Bp爬一下这个题目，会发现四个页面，flag就隐藏在404页面的大段注释的js代码（藏头）</p>
+<p>最喜欢的就是这道题<br>
+Bp爬一下这个题目，会发现四个页面，flag就隐藏在404页面的大段注释的js代码（藏头）</p>
 <p><b> 006 AAencode</b></p>
-<p>题目名字直接告诉你了，扔AAdecode解码即可<br><a href="https://tool.zcmzcm.org/aadecode" target="_blank" rel="noopener">https://tool.zcmzcm.org/aadecode</a><br>有个问题是浏览器打开好像乱码了，需要直接下载txt打开。<br>顺带一提chrome控制台可以直接解码…</p>
+<p>题目名字直接告诉你了，扔AAdecode解码即可<br>
+<a href="https://tool.zcmzcm.org/aadecode" target="_blank" rel="noopener">https://tool.zcmzcm.org/aadecode</a><br>
+有个问题是浏览器打开好像乱码了，需要直接下载txt打开。<br>
+顺带一提chrome控制台可以直接解码...</p>
 <p><b> 007 单身20年</b></p>
 <p>Bp抓包查看302页面即可</p>
 <p><b> 010 php decode</b></p>
-<p>放出了源码，本地跑一下就行。<br>eval函数好像不起作用，换成echo就好了</p>
+<p>放出了源码，本地跑一下就行。<br>
+eval函数好像不起作用，换成echo就好了</p>
 <p><b> 011 文件包含 </b></p>
-<p>本地文件上传漏洞,点击之后明显的看到url：?file=show.php<br>构造payload直接查看index.php源码即得flag<br>payload:file=php://filter/read=convert.base64-encode/resource=./index.php<br>读出源码base64解密</p>
+<p>本地文件上传漏洞,点击之后明显的看到url：?file=show.php<br>
+构造payload直接查看index.php源码即得flag<br>
+payload:file=php://filter/read=convert.base64-encode/resource=./index.php<br>
+读出源码base64解密</p>
 <p><b>012 单身一百年也没用(感受出题人的恶意..)</b></p>
-<p>依旧抓包<br>key藏在了302页面响应头中</p>
+<p>依旧抓包<br>
+key藏在了302页面响应头中</p>
 <p><b> 013 Download~ !</b></p>
 <p>题目打不开了。。。。</p>
 <p><b> 014 Cookie </b></p>
@@ -94,25 +107,34 @@
 <p><b> 016 GBK Injection </b></p>
 <p>宽字节注入，这题还没搞懂。</p>
 <p><b> 017 /x00 </b></p>
-<p>明显的%00截断…数组也可以绕过<br>数组绕过的是strops函数，而%00是绕过了ereg函数<br>正常payload:nctf=1%00%23biubiubiu</p>
+<p>明显的%00截断...数组也可以绕过<br>
+数组绕过的是strops函数，而%00是绕过了ereg函数<br>
+正常payload:nctf=1%00%23biubiubiu</p>
 <p><b> 020 bypass again </b></p>
-<p>弱类型 == </p>
+<p>弱类型 ==</p>
 <p><b> 021 变量覆盖 </b></p>
-<p>这题也没有做出来，思考的方向错了。<br>看了别人的题解，post提交后覆盖掉$thepassword_123即可。</p>
+<p>这题也没有做出来，思考的方向错了。<br>
+看了别人的题解，post提交后覆盖掉$thepassword_123即可。</p>
 <p><b> 022 PHP是世界上最好的语言  </b></p>
-<p>也挂掉了…</p>
+<p>也挂掉了...</p>
 <p><b> 023 伪装者</b></p>
 <p>以为是改X-forwarded-for，结果没用</p>
 <p><b> 024 Header </b></p>
-<p>F12查看head…</p>
+<p>F12查看head...</p>
 <p><b> 025 上传绕过</b></p>
-<p>要求上传php但是只能上传图片格式文件<br>BP抓包改hex 使用00截断</p>
+<p>要求上传php但是只能上传图片格式文件<br>
+BP抓包改hex 使用00截断</p>
 <p><b> 026 SQL注入1</b></p>
-<p>直接查看了源码，sql查询语句：<br>$sql=”select user from ctf where (user=’”.$user.”‘) and (pw=’”.$pass.”‘)”;<br>这里犯了一个错误…没有使用)将语句封闭，导致一直报错。<br>还有个奇怪的地方</p>
+<p>直接查看了源码，sql查询语句：<br>
+$sql=&quot;select user from ctf where (user='&quot;.$user.&quot;') and (pw='&quot;.$pass.&quot;')&quot;;<br>
+这里犯了一个错误...没有使用)将语句封闭，导致一直报错。<br>
+还有个奇怪的地方</p>
 <p><b> 027 pass check </b></p>
-<p>源码给出，要求过掉strcmp函数<br>数组直接过掉</p>
+<p>源码给出，要求过掉strcmp函数<br>
+数组直接过掉</p>
 <p><b> 030 起名字真难 </b></p>
-<p>同样给出源码<br>要求一个key，key的每一个数字的值的acsii不能大于等于1小于等于9，并且要求key = ‘54975581388’</p>
+<p>同样给出源码<br>
+要求一个key，key的每一个数字的值的acsii不能大于等于1小于等于9，并且要求key = '54975581388'</p>
 <p>依旧是弱类型，==会把两个变量转换为相同的类型再进行比较</p>
 <p><b> 031 密码重置</b></p>
 <p>一开始以为是get和post的覆盖。。。直接把用户名改为admin 的base64重发就OK了</p>
@@ -122,7 +144,11 @@
 <p>打开只有Invalid password!</p>
 <p>F12查看页面源码找到提示：使用admin登录</p>
 <p><b> 034 综合题</b></p>
-<p>打开一堆fuckjs，扔console给出了一个页面<br>页面提示tips在脑子里，脑子=head<br>查看head,tips：history of bash<br>Linux下history命令会生成.bash_history文件，<br>查看发现存在一个flagbak的Zip，访问下载，解压得到flag</p>
+<p>打开一堆fuckjs，扔console给出了一个页面<br>
+页面提示tips在脑子里，脑子=head<br>
+查看head,tips：history of bash<br>
+Linux下history命令会生成.bash_history文件，<br>
+查看发现存在一个flagbak的Zip，访问下载，解压得到flag</p>
 
                 </section>
 

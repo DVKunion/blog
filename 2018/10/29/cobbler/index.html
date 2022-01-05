@@ -62,12 +62,16 @@
                     <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/4c06e311gy1fxa25qqgz9j21hc0u0b29.jpg);" ></div>
                     <hr>
                     <div id="head"></div>
-
-<h1 id="Cobbler"><a href="#Cobbler" class="headerlink" title="Cobbler"></a>Cobbler</h1><hr>
+<h1>Cobbler</h1>
+<hr>
 <div id="0x00"></div>
+<h3><b>0x00- - Cobbler 简介<b></b></b></h3>
+<p>Cobbler 是一个 Linux 服务器自动化快速部署的服务，由Python语言开发，依赖于httpd，其实现原理、过程及需要的文件与kickstart大致一样，cobbler可以看作是一个更多功能的pxe。<br>
+Cobbler 简化了kickstart手动配置dhcp等复杂的过程，对于基本系统的安装，Cobbler只需生成一个distro和一个profile即可。distro相当于一个镜像，它提供安装系统过程中所需的一切文件，如vmlinuz,initrd以及rpm包等。profile的作用是为了自动修改pxelinux.cfg目录下的default文件，每生成或修改一次profile，都会在default文件中修改或追加对应的label。<br>
+Cobbler可以使用命令行方式管理，也提供了基于Web的界面管理工具(cobbler-web)，还提供了API接口，可以方便二次开发使用。</p>
+<h3><b>0x01- - Cobbler 环境搭建<b></b></b></h3>
+<h3><b>0x02- - <b></b></b></h3>
 
-<h3 id="0x00-Cobbler-简介"><a href="#0x00-Cobbler-简介" class="headerlink" title="0x00- - Cobbler 简介"></a><b>0x00- - Cobbler 简介<b></b></b></h3><p>Cobbler 是一个 Linux 服务器自动化快速部署的服务，由Python语言开发，依赖于httpd，其实现原理、过程及需要的文件与kickstart大致一样，cobbler可以看作是一个更多功能的pxe。<br>Cobbler 简化了kickstart手动配置dhcp等复杂的过程，对于基本系统的安装，Cobbler只需生成一个distro和一个profile即可。distro相当于一个镜像，它提供安装系统过程中所需的一切文件，如vmlinuz,initrd以及rpm包等。profile的作用是为了自动修改pxelinux.cfg目录下的default文件，每生成或修改一次profile，都会在default文件中修改或追加对应的label。<br>Cobbler可以使用命令行方式管理，也提供了基于Web的界面管理工具(cobbler-web)，还提供了API接口，可以方便二次开发使用。</p>
-<h3 id="0x01-Cobbler-环境搭建"><a href="#0x01-Cobbler-环境搭建" class="headerlink" title="0x01- - Cobbler 环境搭建"></a><b>0x01- - Cobbler 环境搭建<b></b></b></h3><h3 id="0x02"><a href="#0x02" class="headerlink" title="0x02- - "></a><b>0x02- - <b></b></b></h3>
                 </section>
 
             </div>

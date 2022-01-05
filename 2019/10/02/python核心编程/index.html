@@ -54,22 +54,23 @@
                 <header class="major">
                     <h2>python核心编程</h2>
                     <p>2019-10-02</p>
-                     <p>文章共计 - 570 字 阅读需要 - 2 分钟</p>
+                     <p>文章共计 - 571 字 阅读需要 - 2 分钟</p>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(http://cdn.dvkunion.cn/231565449982_.pic_hd.jpg);" ></div>
                     <hr>
-                    <h1 id="python核心编程"><a href="#python核心编程" class="headerlink" title="python核心编程"></a>python核心编程</h1><center><small>2019-10-01</small></center>
+                    <h1>python核心编程</h1>
+<center><small>2019-10-01</small></center>
 新的月份开始，也开始准备新的目标。
-
 <center><small>华丽的分割线</small></center>
-
 <hr>
-<h3 id="0x00-正则表达式"><a href="#0x00-正则表达式" class="headerlink" title="0x00- - 正则表达式"></a><b>0x00- - 正则表达式</b></h3><p><b>1. 简介</b><br>我不是很理解作为一本编程的进阶书目，把正则表达式放在第一章的意义是什么。但是在多数场合下正则表达式又是一种非常有效的手段，在进行字符串搜索和处理能够起到奇效。由此，将正则表达式(regex)作为第一章的开端也无可厚非。<br>正则表达式是是一种高级的文本模式匹配、抽取、与/或文本形式的基础。它能够按照某种模式匹配一系列有相似特征的字符串。使字符串的操作更佳高效。</p>
+<h3><b>0x00- - 正则表达式</b></h3>
+<p><b>1. 简介</b><br>
+我不是很理解作为一本编程的进阶书目，把正则表达式放在第一章的意义是什么。但是在多数场合下正则表达式又是一种非常有效的手段，在进行字符串搜索和处理能够起到奇效。由此，将正则表达式(regex)作为第一章的开端也无可厚非。<br>
+正则表达式是是一种高级的文本模式匹配、抽取、与/或文本形式的基础。它能够按照某种模式匹配一系列有相似特征的字符串。使字符串的操作更佳高效。</p>
 <p>放一个我学习的目录地址：<a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">http://deerchao.net/tutorials/regex/regex.htm</a></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -81,32 +82,32 @@
 <tbody>
 <tr>
 <td>dvk</td>
-<td>(纯粹输入想要匹配的完整字符串)匹配字符串’dvk’</td>
+<td>(纯粹输入想要匹配的完整字符串)匹配字符串'dvk'</td>
 <td>dvk/dvk</td>
 </tr>
 <tr>
 <td>.</td>
 <td>可以匹配除了换行符以外的任意字符(除\n之外)</td>
-<td>b.b / 任意形式的如bab\bbb\bcb…</td>
+<td>b.b / 任意形式的如bab\bbb\bcb...</td>
 </tr>
 <tr>
-<td>‘^’</td>
+<td>'^'</td>
 <td>匹配字符串的开始</td>
 <td>^Dear / 开头是Dear的字符串</td>
 </tr>
 <tr>
-<td>‘$’</td>
+<td>'$'</td>
 <td>匹配字符串的结束</td>
 <td>/bin/*sh$ / 结尾是/bin/*sh的字符串</td>
 </tr>
 <tr>
 <td>*</td>
-<td>‘*‘可以0次或多次匹配</td>
+<td>'*'可以0次或多次匹配</td>
 <td>[A-Za-z0-9]* /任意长度的大写、小写、数字的字符串</td>
 </tr>
 <tr>
 <td>+</td>
-<td>‘+’可以匹配重复一次或是更多次</td>
+<td>'+'可以匹配重复一次或是更多次</td>
 <td>[a-z]+.com / 简单的.com域名匹配</td>
 </tr>
 <tr>
@@ -122,29 +123,32 @@
 <tr>
 <td>\w</td>
 <td>代表数字、字母或是下划线或汉字</td>
+<td></td>
 </tr>
 <tr>
 <td>\d</td>
 <td>表示数字;\d{2}表示\d必须连续匹配两次。</td>
+<td></td>
 </tr>
 <tr>
 <td>\s</td>
 <td>匹配任意的空白符</td>
+<td></td>
 </tr>
 <tr>
-<td>‘\’</td>
+<td>''</td>
 <td>转义字符,可以表示字符串中出现的元字符</td>
+<td></td>
 </tr>
 <tr>
-<td>‘()’</td>
+<td>'()'</td>
 <td>优先级运算</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>反义：大写\W</p>
 <p><b>1.2. 字符类:</b></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -155,10 +159,10 @@
 <tbody>
 <tr>
 <td>[]</td>
-<td>限定匹配范围。例如:[0-9]表示只能是0至9这十个数字中的一个。反义:<sup><a href="#fn_" id="reffn_"></a></sup></td>
+<td>限定匹配范围。例如:[0-9]表示只能是0至9这十个数字中的一个。反义:[^]</td>
 </tr>
 <tr>
-<td>‘\’</td>
+<td>''</td>
 <td>分支条件</td>
 </tr>
 <tr>
@@ -166,7 +170,7 @@
 <td>匹配epx并捕获epx并放到默认分组中</td>
 </tr>
 <tr>
-<td>(?’name’epx)</td>
+<td>(?'name'epx)</td>
 <td>匹配epx并捕获epx放到自己命名的分组</td>
 </tr>
 <tr>
@@ -175,10 +179,10 @@
 </tr>
 <tr>
 <td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
 
                 </section>
 
