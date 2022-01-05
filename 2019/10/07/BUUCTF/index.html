@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>Category - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -59,7 +59,7 @@
 
                 <!-- Content -->
                 <section id="content">
-                    <div class ="post_page_title_img" style="background-image: url(http://cdn.dvkunion.cn/301565450111_.pic_hd.jpg);" ></div>
+                    <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/301565450111_.pic_hd.jpg);" ></div>
                     <hr>
                     <h1>BUUCTF</h1>
 <center><small>2019-10-07</small></center>
@@ -73,7 +73,7 @@
 <p>首先打开会发现一个滑稽，然后F12大法发现了source.php，得到了源码，发现还存在一个hint.php。<br>
 hint.php告诉了我们flag所存在的文件名。</p>
 <p>然后我们把重点放到source.php身上：</p>
-<p><img src="http://cdn.dvkunion.cn//myblog/BUUCTFWX20191007-233153@2x.png" class="lazyload" data-srcset="http://cdn.dvkunion.cn//myblog/BUUCTFWX20191007-233153@2x.png" srcset="/css/images/overlay.png" alt=""></p>
+<p><img src="https://cdn.dvkunion.cn//myblog/BUUCTFWX20191007-233153@2x.png" class="lazyload" data-srcset="https://cdn.dvkunion.cn//myblog/BUUCTFWX20191007-233153@2x.png" srcset="/css/images/overlay.png" alt=""></p>
 <p>首先是一个class类，提供了一共公共的方法checkfile。要求我们输入一个file参数，这个file参数要是字符串(is_string)并且满足checkfile函数才能被include加载，也就是说我们需要构造一个满足checkfile的payload使其加载hint.php内提到的ffffllllaaaagggg文件。<br>
 分析checkfile函数：首先定义了一个白名单，将source和hint作为白名单参数。然后进行了第一次if判断：要求满足非空且为字符串。</p>
 <p>之后就是关键的部分了：分别进行了三次判断，判断我们传入的file参数是否满足白名单。</p>
