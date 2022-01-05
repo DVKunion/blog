@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>Category - DV.K</title>
+    <title>about - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -62,65 +62,47 @@
                     <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/4c06e311gy1fwbjsvozt1j215o0mm1kx.jpg);" ></div>
                     <hr>
                     <div id="head"></div>
-<h1>Python 3</h1>
-<hr>
-<h4><b><i><font color="LightSkyBlue">目录</font><i><b></b></i></i></b></h4>
-<p><a href="https://dvkunion.github.io/2018/10/17/python3-learning/" target="_blank" rel="noopener">①</a></p>
+
+<h1 id="Python-3"><a href="#Python-3" class="headerlink" title="Python 3"></a>Python 3</h1><hr>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a><b><i><font color="LightSkyBlue">目录</font><i><b></b></i></i></b></h4><p><a href="https://dvkunion.github.io/2018/10/17/python3-learning/" target="_blank" rel="noopener">①</a></p>
 <ol>
 <li><a href="#0x00">0x00--序</a></li>
-<li><a href="#0x01">0x01--环境搭建</a>
-<ol>
+<li><a href="#0x01">0x01--环境搭建</a><ol>
 <li><a href="#0x01-1">环境安装</a></li>
 <li><a href="#0x01-2">Python3安装</a></li>
 </ol>
 </li>
-<li><a href="#0x02">0x02--基本语法</a>
-<ol>
+<li><a href="#0x02">0x02--基本语法</a><ol>
 <li><a href="#0x02-1">基本规则</a></li>
 <li><a href="#0x02-2">基本数据结构</a></li>
 <li><a href="#0x02-3">基本运算符</a></li>
 </ol>
 </li>
 </ol>
-<p><a href="https://dvkunion.github.io/2018/10/19/python3-learning②/" target="_blank" rel="noopener">②<br>
-<a href="https://dvkunion.github.io/2018/10/19/python3-learning③/" target="_blank" rel="noopener">③</a></a></p>
+<p><a href="https://dvkunion.github.io/2018/10/19/python3-learning②/" target="_blank" rel="noopener">②<br><a href="https://dvkunion.github.io/2018/10/19/python3-learning③/" target="_blank" rel="noopener">③</a></a></p>
 <hr>
 <div id="0x00"></div>
-<h3><b>0x00- - 序<b></b></b></h3>
-<center><small>2018-10-17</small></center>  
-<p>运维安全的学习开始，这一部分开始学习早就有所耳闻但从未真正动手开始实际使用的一种语言- - Python<br>
-在这里所记录的主要是在 Centos-7 环境下 Python-3.7.0 的学习</p>
+
+<h3 id="0x00-序"><a href="#0x00-序" class="headerlink" title="0x00- - 序"></a><b>0x00- - 序<b></b></b></h3><center><small>2018-10-17</small></center>  
+
+<p>运维安全的学习开始，这一部分开始学习早就有所耳闻但从未真正动手开始实际使用的一种语言- - Python<br>在这里所记录的主要是在 Centos-7 环境下 Python-3.7.0 的学习</p>
 <blockquote>
-<p>&quot;人生苦短，我用Pyhton&quot;</p>
+<p>“人生苦短，我用Pyhton”</p>
 </blockquote>
 <center><small>2018/11/29</small></center>  
-<p>Python3 的系统性学习暂时告一段落，重新把课件和博客进行一遍整理，作为Python3<br>
-的基础笔记吧。<br>
-总的来说Python是一门很便捷的语言，他可以为你节省大量的时间和精力，为你省去复杂繁琐的实现过程，而给予你更多的时间去思考设计的逻辑，以及你想做的事。<br>
-虽然说 Python 十分便捷，但总觉得对于底层的概念Python有些过于省略，对于一个内置函数还是希望在未来多多了解一下他的实现过程、复杂度；对一个库能过一遍他的源码之类的操作。<br>
-(。・ω・。)总之还是撒花，庆祝第一门课程形式上的完结(。・ω・。)</p>
+
+<p>Python3 的系统性学习暂时告一段落，重新把课件和博客进行一遍整理，作为Python3<br>的基础笔记吧。<br>总的来说Python是一门很便捷的语言，他可以为你节省大量的时间和精力，为你省去复杂繁琐的实现过程，而给予你更多的时间去思考设计的逻辑，以及你想做的事。<br>虽然说 Python 十分便捷，但总觉得对于底层的概念Python有些过于省略，对于一个内置函数还是希望在未来多多了解一下他的实现过程、复杂度；对一个库能过一遍他的源码之类的操作。<br>(。・ω・。)总之还是撒花，庆祝第一门课程形式上的完结(。・ω・。)</p>
 <center><small>华丽的分割线</small></center>
+
 <hr>
 <div id="0x01"></div>
+
 <div id="0x01-1"></div>
-<h3><b>0x01- - 环境搭建<b></b></b></h3>
-<h4><font color="blue">环境安装</font><br></h4>
-<p>首先在虚拟机安装 Centos-7 的操作系统环境，记得勾选安装图形化界面的选项方便之后的一些操作。在安装的过程中会有一个GUI图形界面的选项，勾选之后安装就可以了。<br><br>
-安装好系统之后我们需要将虚拟机的网络接通，这里我们主要目的在于学习与测试python3，所以直接使用了NAT模式，将Centos的网卡配置文件内的 ONBOOT = yes。</p>
+
+<h3 id="0x01-环境搭建"><a href="#0x01-环境搭建" class="headerlink" title="0x01- - 环境搭建"></a><b>0x01- - 环境搭建<b></b></b></h3><h4 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a><font color="blue">环境安装</font><br></h4><p>首先在虚拟机安装 Centos-7 的操作系统环境，记得勾选安装图形化界面的选项方便之后的一些操作。在安装的过程中会有一个GUI图形界面的选项，勾选之后安装就可以了。<br><br>安装好系统之后我们需要将虚拟机的网络接通，这里我们主要目的在于学习与测试python3，所以直接使用了NAT模式，将Centos的网卡配置文件内的 ONBOOT = yes。</p>
 <div id="0x01-2"></div>
-<h4><font color="blue">Python3安装</font><br></h4>
-<p>进入终端，首先要在官网下载python3的安装文件。<br>
-创建一个文件夹来安置python3，并在该文件夹下:<br>
-<code>$ wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</code><br><br>
-下载结束后解压文件<br>
-<code>$ tar -xzvf Python-3.7.0.tgz</code><br><br>
-解压后进入到解压好的python目录下<br>
-<code>$ cd Python-3.7.0/</code><br><br>
-安装Python<br>
-<code>$ ./configure #编辑</code><br>
-<code>$ make</code>	<br>
-<code>$ make install</code><br><br>
-安装完成，终端输入python3 即可进入刚安装好的python3环境内。</p>
+
+<h4 id="Python3安装"><a href="#Python3安装" class="headerlink" title="Python3安装"></a><font color="blue">Python3安装</font><br></h4><p>进入终端，首先要在官网下载python3的安装文件。<br>创建一个文件夹来安置python3，并在该文件夹下:<br><code>$ wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</code><br><br>下载结束后解压文件<br><code>$ tar -xzvf Python-3.7.0.tgz</code><br><br>解压后进入到解压好的python目录下<br><code>$ cd Python-3.7.0/</code><br><br>安装Python<br><code>$ ./configure #编辑</code><br><code>$ make</code><br><code>$ make install</code><br><br>安装完成，终端输入python3 即可进入刚安装好的python3环境内。</p>
 <p><img src="https://tva2.sinaimg.cn/large/4c06e311gy1fwblvc6lk0j20in02vmx4.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/4c06e311gy1fwblvc6lk0j20in02vmx4.jpg" srcset="/css/images/overlay.png" alt=""></p>
 <blockquote>
 <p>P.S.</p>
@@ -132,27 +114,23 @@
 </ul>
 </blockquote>
 <div id="0x02"></div>
-<h3><b>0x02- - 基本语法<b></b></b></h3>
-<div id="0x02-1"></div>
-<h4><font color="blue">基本规则</font><br></h4>
-<h6><b>1.编码<b></b></b></h6>
-<ul>
+
+<h3 id="0x02-基本语法"><a href="#0x02-基本语法" class="headerlink" title="0x02- - 基本语法"></a><b>0x02- - 基本语法<b></b></b></h3><div id="0x02-1"></div>
+
+<h4 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a><font color="blue">基本规则</font><br></h4><h6 id="1-编码"><a href="#1-编码" class="headerlink" title="1.编码"></a><b>1.编码<b></b></b></h6><ul>
 <li>--Python 3 源码文件以 UTF-8 编码,字符串都是 unicode 字符串,</li>
 </ul>
-<h6><b>2.标识符<b></b></b></h6>
-<ul>
+<h6 id="2-标识符"><a href="#2-标识符" class="headerlink" title="2.标识符"></a><b>2.标识符<b></b></b></h6><ul>
 <li>--第一个字符必须是字母表中字母或下划线 _ 。</li>
 <li>--标识符的其他的部分由字母、数字和下划线组成。</li>
 <li>--标识符对大小写敏感。</li>
 </ul>
-<h6><b>3.保留字<b></b></b></h6>
-<p>Python 的标准库提供了一个 keyword 模块，可以输出当前版本的所有关键字：</p>
-<pre class=" language-language-python"><code class="language-language-python">import keyword
+<h6 id="3-保留字"><a href="#3-保留字" class="headerlink" title="3.保留字"></a><b>3.保留字<b></b></b></h6><p>Python 的标准库提供了一个 keyword 模块，可以输出当前版本的所有关键字：</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import keyword
 print(keyword_list)
 </code></pre>
-<h6><b>4.注释<b></b></b></h6>
-<p>Python 的注释一般有三种</p>
-<pre class=" language-language-python"><code class="language-language-python"># 可以用'#'来表示一行的注释
+<h6 id="4-注释"><a href="#4-注释" class="headerlink" title="4.注释"></a><b>4.注释<b></b></b></h6><p>Python 的注释一般有三种</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># 可以用'#'来表示一行的注释
 (```)
 也可以用三个单引号来注释注释块
 (```)
@@ -160,20 +138,18 @@ print(keyword_list)
 或是用三个双引号来注释注释块
 """
 </code></pre>
-<h6><b>5.缩进<b></b></b></h6>
-<p>python内的缩进十分严格。缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。</p>
-<h6><b>6.多行语句<b></b></b></h6>
-<p>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠\来实现多行语句。</p>
+<h6 id="5-缩进"><a href="#5-缩进" class="headerlink" title="5.缩进"></a><b>5.缩进<b></b></b></h6><p>python内的缩进十分严格。缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。</p>
+<h6 id="6-多行语句"><a href="#6-多行语句" class="headerlink" title="6.多行语句"></a><b>6.多行语句<b></b></b></h6><p>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠\来实现多行语句。</p>
 <div id="0x02-2"></div>
-<h4><font color="blue">基本数据结构</font><br></h4>
-<h6><b>1.数字--Num <b></b></b></h6>
-<p>--声明</p>
-<p><code>a = 5		#Python的数据不需要标注数据类型</code></p>
+
+<h4 id="基本数据结构"><a href="#基本数据结构" class="headerlink" title="基本数据结构"></a><font color="blue">基本数据结构</font><br></h4><h6 id="1-数字-Num"><a href="#1-数字-Num" class="headerlink" title="1.数字--Num "></a><b>1.数字--Num <b></b></b></h6><p>--声明</p>
+<p><code>a = 5        #Python的数据不需要标注数据类型</code></p>
 <p>--特性</p>
 <blockquote>
 <p>Num一共有四种不同的数值类型: int--整型，bool--布尔型，float--浮点型，complex--复数。</p>
 </blockquote>
-<p>--方法函数</p>
+<p>--方法函数  </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -216,22 +192,15 @@ print(keyword_list)
 </tr>
 </tbody>
 </table>
-<h6><b>2.字符串--String <b></b></b></h6>
-<p>--声明</p>
-<p><code>str1 = 'hello'</code><br>
-或<br>
-<code>str2 = &quot;life is too short&quot;</code><br>
-也可以<br>
-<code>str3 = '''so I use python'''</code></p>
+</div>
+<h6 id="2-字符串-String"><a href="#2-字符串-String" class="headerlink" title="2.字符串--String "></a><b>2.字符串--String <b></b></b></h6><p>--声明</p>
+<p><code>str1 = &#39;hello&#39;</code><br>或<br><code>str2 = &quot;life is too short&quot;</code><br>也可以<br><code>str3 = &#39;&#39;&#39;so I use python&#39;&#39;&#39;</code></p>
 <p>--特性</p>
 <blockquote>
-<p>String 不能被改变(Immutable)<br>
-String 中使用特殊字符时需要使用转义字符<br>
-String 前面加一个r/R(Raw String)使转义字符无效，即原始字符串<br>
-String 切片操作和所以可以双向 如：从左往右时，下标从0开始；从右往左时，下标从-1开始。<br>
-String 在python中代替了char的位置。即python中不存在char 类型</p>
+<p>String 不能被改变(Immutable)<br>String 中使用特殊字符时需要使用转义字符<br>String 前面加一个r/R(Raw String)使转义字符无效，即原始字符串<br>String 切片操作和所以可以双向 如：从左往右时，下标从0开始；从右往左时，下标从-1开始。<br>String 在python中代替了char的位置。即python中不存在char 类型</p>
 </blockquote>
 <p>--方法函数</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -282,15 +251,14 @@ String 在python中代替了char的位置。即python中不存在char 类型</p>
 </tr>
 </tbody>
 </table>
-<h6>3.列表--List</h6>
-<p>--声明<br>
-<code>list = []</code></p>
+</div>
+<h6 id="3-列表—List"><a href="#3-列表—List" class="headerlink" title="3.列表—List"></a>3.列表—List</h6><p>--声明<br><code>list = []</code></p>
 <p>--特性</p>
 <blockquote>
-<p>List 元素可变(Mutable)<br>
-List 切片/截取同String相同，左必右开</p>
+<p>List 元素可变(Mutable)<br>List 切片/截取同String相同，左必右开</p>
 </blockquote>
 <p>--方法函数</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -349,17 +317,14 @@ List 切片/截取同String相同，左必右开</p>
 </tr>
 </tbody>
 </table>
-<h6>4.元组--Tuple</h6>
-<p>--声明<br>
-<code>tup = ()</code></p>
+</div>
+<h6 id="4-元组—Tuple"><a href="#4-元组—Tuple" class="headerlink" title="4.元组—Tuple"></a>4.元组—Tuple</h6><p>--声明<br><code>tup = ()</code></p>
 <p>--特性</p>
 <blockquote>
-<p>Tuple 元素不可变(Immutable)<br>
-Tuple 切片/截取同String相同，左必右开<br>
-Tuple 在声明时候注意:没有元素时的声明为：tup = ()；只存在一个元素时：tup = (6,)<br>
-Tuple 因为不可变，所以sort等函数无法使用。将Tuple转化为List即可</p>
+<p>Tuple 元素不可变(Immutable)<br>Tuple 切片/截取同String相同，左必右开<br>Tuple 在声明时候注意:没有元素时的声明为：tup = ()；只存在一个元素时：tup = (6,)<br>Tuple 因为不可变，所以sort等函数无法使用。将Tuple转化为List即可</p>
 </blockquote>
 <p>--方法函数</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -382,18 +347,14 @@ Tuple 因为不可变，所以sort等函数无法使用。将Tuple转化为List�
 </tr>
 </tbody>
 </table>
-<h6>5.集合--Set</h6>
-<p>--声明<br>
-<code>set = ()</code><br>
-或者<br>
-<code>set = {var1,var2,var3....}</code></p>
+</div>
+<h6 id="5-集合—Set"><a href="#5-集合—Set" class="headerlink" title="5.集合—Set"></a>5.集合—Set</h6><p>--声明<br><code>set = ()</code><br>或者<br><code>set = {var1,var2,var3....}</code></p>
 <p>--特性</p>
 <blockquote>
-<p>Set 是一个无序的不重复元素序列<br>
-Set 元素可变(Mutable)<br>
-Set 为空集合时必须用()来声明</p>
+<p>Set 是一个无序的不重复元素序列<br>Set 元素可变(Mutable)<br>Set 为空集合时必须用()来声明</p>
 </blockquote>
 <p>--方法函数</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -420,17 +381,14 @@ Set 为空集合时必须用()来声明</p>
 </tr>
 </tbody>
 </table>
-<h6>6.字典--Dictionary</h6>
-<p>--声明<br>
-<code>dict = {}</code></p>
+</div>
+<h6 id="6-字典—Dictionary"><a href="#6-字典—Dictionary" class="headerlink" title="6.字典—Dictionary"></a>6.字典—Dictionary</h6><p>--声明<br><code>dict = {}</code></p>
 <p>--特性</p>
 <blockquote>
-<p>Dict 元素可变(Mutable)<br>
-Dict 键值必须是唯一的，值不必<br>
-Dict 值可以取任数据类型，但键必须是不可变的，如字符串，数字或元组<br>
-Dict 也可以看做是通过键：值对映射的集合</p>
+<p>Dict 元素可变(Mutable)<br>Dict 键值必须是唯一的，值不必<br>Dict 值可以取任数据类型，但键必须是不可变的，如字符串，数字或元组<br>Dict 也可以看做是通过键：值对映射的集合</p>
 </blockquote>
 <p>--方法函数</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -457,15 +415,11 @@ Dict 也可以看做是通过键：值对映射的集合</p>
 </tr>
 </tbody>
 </table>
-<h6>EOF.数据结构小结</h6>
-<p>String、List、Tuple 统称为序列。<br>
-Python内可变的数据结构有:List、Dictionary、Set<br>
-Python内不可变的数据结构有:String、Tuple、Number<br>
-除type()之外，还有一个isinstance(element,type)函数可以显示数据的类型。<br>
-其区别在于:type()不会认为子类是一种父类类型。<br>
-isinstance()会认为子类是一种父类类型。</p>
+</div>
+<h6 id="EOF-数据结构小结"><a href="#EOF-数据结构小结" class="headerlink" title="EOF.数据结构小结"></a>EOF.数据结构小结</h6><p>String、List、Tuple 统称为序列。<br>Python内可变的数据结构有:List、Dictionary、Set<br>Python内不可变的数据结构有:String、Tuple、Number<br>除type()之外，还有一个isinstance(element,type)函数可以显示数据的类型。<br>其区别在于:type()不会认为子类是一种父类类型。<br>isinstance()会认为子类是一种父类类型。</p>
 <div id="0x02-3"></div>
-<h4><font color="blue">基本运算符</font><br></h4>
+
+<h4 id="基本运算符"><a href="#基本运算符" class="headerlink" title="基本运算符"></a><font color="blue">基本运算符</font><br></h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -512,8 +466,9 @@ isinstance()会认为子类是一种父类类型。</p>
 </tr>
 </tbody>
 </table>
-<br>
-<p><a href="#head"><center><font color="Crimson">back --返回</font></center><br>
+</div>
+<p><br></p>
+<p><a href="#head"><center><font color="Crimson">back --返回</font></center>
 </a></p>
 
                 </section>

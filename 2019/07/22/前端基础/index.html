@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>Category - DV.K</title>
+    <title>about - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -61,29 +61,20 @@
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://tva2.sinaimg.cn/large/006IjVYfly1fymergznh6j31hc0u0gw1.jpg);" ></div>
                     <hr>
-                    <h1>前端基础</h1>
-<center><small>2019-07-22</small></center>
+                    <h1 id="前端基础"><a href="#前端基础" class="headerlink" title="前端基础"></a>前端基础</h1><center><small>2019-07-22</small></center>
 感觉很久没写博客了，很久没有静下心来学习了。开始从开发的角度取写一些站，和框架工具。
 把全栈的知识补一补。  
+
 <center><small>华丽的分割线</small></center>
+
 <hr>
-<h3><b>0x00- - 简介</b></h3>
-<p>说到前端，想到的无非就是三个兄弟：HTML CSS JavaScript。<br>
-所以就按照顺序把这三个兄弟都熟悉一遍，相对来讲Html和CSS会简单一些，重点在Js上多下一些功夫。</p>
-<h3><b>0x01- - HTML</b></h3>
-<p>Html又被称作超文本标记语言，是我们在构造web网页的一种基础的标准语言。浏览器会将其解析成我们所看到的网页格式。<br>
-在接触过Markdown语法之后，其实感觉HTML语言是和其十分类似的。不同的是作为标记的标签在html中是成对出现的，是一种标记标签 (markup tag)。</p>
+<h3 id="0x00-简介"><a href="#0x00-简介" class="headerlink" title="0x00- - 简介"></a><b>0x00- - 简介</b></h3><p>说到前端，想到的无非就是三个兄弟：HTML CSS JavaScript。<br>所以就按照顺序把这三个兄弟都熟悉一遍，相对来讲Html和CSS会简单一些，重点在Js上多下一些功夫。</p>
+<h3 id="0x01-HTML"><a href="#0x01-HTML" class="headerlink" title="0x01- - HTML"></a><b>0x01- - HTML</b></h3><p>Html又被称作超文本标记语言，是我们在构造web网页的一种基础的标准语言。浏览器会将其解析成我们所看到的网页格式。<br>在接触过Markdown语法之后，其实感觉HTML语言是和其十分类似的。不同的是作为标记的标签在html中是成对出现的，是一种标记标签 (markup tag)。  </p>
 <p>HTML还有一个兄弟叫做HTML5。emmm一开始也分不清这两个东西，类似于python2 和python3的感觉吧，h5的语法和声明上和html略有不同，增加了很多人性化的标签。可以看作是一个更新的版本吧。</p>
-<p><b>声明</b><br>
-<code>&lt;!DOCTYPE html&gt;</code><br>
-一般在.htm .html文件的开头，总会有这样一句。用于声明该文件为html5文件。<br>
-不同版本的html语言所用的声明有所不同。</p>
-<p><code>&lt;html&gt;	&lt;/html&gt;</code><br>
-这对标签声明了html页面的主体部分，展示html的根元素。</p>
-<p><code>&lt;head&gt; &lt;/head&gt;</code><br>
-head标签声明了html头部分，描述文档的数据内容。</p>
-<p><code>&lt;body&gt; &lt;/body&gt;</code><br>
-body标签声明了html内容的主体部分，展示所呈现给浏览器可视化的部分。</p>
+<p><b>声明</b><br><code>&lt;!DOCTYPE html&gt;</code><br>一般在.htm .html文件的开头，总会有这样一句。用于声明该文件为html5文件。<br>不同版本的html语言所用的声明有所不同。</p>
+<p><code>&lt;html&gt;    &lt;/html&gt;</code><br>这对标签声明了html页面的主体部分，展示html的根元素。</p>
+<p><code>&lt;head&gt; &lt;/head&gt;</code><br>head标签声明了html头部分，描述文档的数据内容。</p>
+<p><code>&lt;body&gt; &lt;/body&gt;</code><br>body标签声明了html内容的主体部分，展示所呈现给浏览器可视化的部分。</p>
 <p>这几部分的声明就可以构造出一个简单的标准html页面，例如我们写出一个hello world的页面：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -95,65 +86,38 @@ body标签声明了html内容的主体部分，展示所呈现给浏览器可视
         &lt;h1&gt;Hello world &lt;/h1&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<p>保存为html格式后直接用浏览器打开即可看到我们的第一个html页面。</p>
+</code></pre><p>保存为html格式后直接用浏览器打开即可看到我们的第一个html页面。</p>
 <p><b>元素</b></p>
-<p><code>&lt;title&gt; &lt;/title&gt;</code><br>
-title是页面的标题，显示在浏览器的工具栏处</p>
-<p><code>&lt;base&gt; &lt;/base&gt;</code><br>
-base标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接</p>
-<p><code>&lt;link&gt; &lt;/link&gt;</code><br>
-link标签常用于资源引用，例如css样式</p>
+<p><code>&lt;title&gt; &lt;/title&gt;</code><br>title是页面的标题，显示在浏览器的工具栏处</p>
+<p><code>&lt;base&gt; &lt;/base&gt;</code><br>base标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接</p>
+<p><code>&lt;link&gt; &lt;/link&gt;</code><br>link标签常用于资源引用，例如css样式</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;xxx.css&quot;&gt;
-</code></pre>
-<p><code>&lt;style&gt; &lt;/style&gt;</code><br>
-样式标签</p>
-<p><code>&lt;meta&gt;</code><br>
-meta标签描述了一些基本的元数据。</p>
+</code></pre><p><code>&lt;style&gt; &lt;/style&gt;</code><br>样式标签</p>
+<p><code>&lt;meta&gt;</code><br>meta标签描述了一些基本的元数据。</p>
 <pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML, CSS, XML, XHTML, JavaScript&quot;&gt;
 &lt;meta name=&quot;description&quot; content=&quot;免费 Web &amp; 编程 教程&quot;&gt;
 &lt;meta name=&quot;author&quot; content=&quot;Runoob&quot;&gt;
 &lt;meta http-equiv=&quot;refresh&quot; content=&quot;30&quot;&gt;
-</code></pre>
-<p><code>&lt;script&gt; &lt;/script&gt;</code><br>
-表示js脚本的标签</p>
-<p><code>&lt;hn&gt; &lt;/hn&gt;</code><br>
-h标签是html标题，一共有6个等级，1-6代表不同等级的标签。</p>
-<p><code>&lt;p&gt; &lt;/p&gt;</code><br>
-p标签表示这是一个段落</p>
-<p><code>&lt;a&gt; &lt;/a&gt;</code><br>
-a标签表示这是一个超链接</p>
-<p><code>&lt;img src&gt;</code><br>
-img标签表示这是一个图片</p>
-<p><code>&lt;hr&gt;</code><br>
-这个标签表示是一个水平线</p>
-<p><code>&lt;br&gt;</code><br>
-换行符标签</p>
-<p><code>&lt;b&gt; &lt;em&gt; &lt;i&gt; &lt;small&gt; &lt;strong&gt; &lt;sub&gt; &lt;sup&gt; &lt;ins&gt; &lt;del&gt;</code><br>
-文字类标签，表示加粗、着重、斜体、小号字体、加重语气、上下标、插入、删除</p>
-<p><code>&lt;code&gt; &lt;q&gt;</code><br>
-这几类不常使用的标签，表示代码、引用（非常少见）</p>
-<p><code>&lt;table&gt; &lt;th&gt;&lt;/th&gt;&lt;td&gt; &lt;tr&gt; &lt;/tr&gt; &lt;/td&gt; &lt;/table&gt;</code><br>
-表格标签</p>
-<p><code>&lt;ui&gt;&lt;li&gt;&lt;/li&gt;&lt;ui&gt;</code><br>
-列表标签 ui表示无序，ol表示有序</p>
-<p><code>&lt;div&gt;&lt;/div&gt; &lt;span&gt;&lt;/span&gt;</code><br>
-容器标签，可以将各种元素放入其中组成一个容器，拥有同样的样式和属性。<br>
-div多用于整体，span多用于文本。</p>
-<p><code>&lt;form&gt;&lt;/form&gt;</code><br>
-表单元素，用于装载用户输入内容。</p>
-<p><code>&lt;iframe&gt;&lt;/iframe&gt;</code><br>
-表示窗口框，可在一个页面上显示多个窗口。</p>
+</code></pre><p><code>&lt;script&gt; &lt;/script&gt;</code><br>表示js脚本的标签</p>
+<p><code>&lt;hn&gt; &lt;/hn&gt;</code><br>h标签是html标题，一共有6个等级，1-6代表不同等级的标签。</p>
+<p><code>&lt;p&gt; &lt;/p&gt;</code><br>p标签表示这是一个段落</p>
+<p><code>&lt;a&gt; &lt;/a&gt;</code><br>a标签表示这是一个超链接</p>
+<p><code>&lt;img src&gt;</code><br>img标签表示这是一个图片</p>
+<p><code>&lt;hr&gt;</code><br>这个标签表示是一个水平线</p>
+<p><code>&lt;br&gt;</code><br>换行符标签</p>
+<p><code>&lt;b&gt; &lt;em&gt; &lt;i&gt;  &lt;small&gt; &lt;strong&gt; &lt;sub&gt; &lt;sup&gt; &lt;ins&gt; &lt;del&gt;</code><br>文字类标签，表示加粗、着重、斜体、小号字体、加重语气、上下标、插入、删除</p>
+<p><code>&lt;code&gt; &lt;q&gt;</code><br>这几类不常使用的标签，表示代码、引用（非常少见）</p>
+<p><code>&lt;table&gt; &lt;th&gt;&lt;/th&gt;&lt;td&gt; &lt;tr&gt; &lt;/tr&gt; &lt;/td&gt; &lt;/table&gt;</code><br>表格标签</p>
+<p><code>&lt;ui&gt;&lt;li&gt;&lt;/li&gt;&lt;ui&gt;</code><br>列表标签 ui表示无序，ol表示有序</p>
+<p><code>&lt;div&gt;&lt;/div&gt; &lt;span&gt;&lt;/span&gt;</code><br>容器标签，可以将各种元素放入其中组成一个容器，拥有同样的样式和属性。<br>div多用于整体，span多用于文本。</p>
+<p><code>&lt;form&gt;&lt;/form&gt;</code><br>表单元素，用于装载用户输入内容。</p>
+<p><code>&lt;iframe&gt;&lt;/iframe&gt;</code><br>表示窗口框，可在一个页面上显示多个窗口。</p>
 <p><b>属性</b></p>
 <p>元素在其标签内可以拥有不同的属性，来进行进一步的功能或格式的美化</p>
-<p><code>&lt;a id=&gt;</code><br>
-id属性表示一个书签标记，在一个html页面中id应该为唯一的。可用于跳转和定位等。</p>
-<p><code>&lt;a href=&gt;</code><br>
-href属性表示链接的url</p>
-<p><code>&lt;a target=&gt;</code><br>
-使用target=_blank可以实现在新的窗口打开页面。</p>
-<p><code>&lt;img alr=&gt;</code><br>
-alt 属性用来为图像定义一串预备的可替换的文本。当图片无法加载的时候作为备用替换上去</p>
+<p><code>&lt;a id=&gt;</code><br>id属性表示一个书签标记，在一个html页面中id应该为唯一的。可用于跳转和定位等。</p>
+<p><code>&lt;a href=&gt;</code><br>href属性表示链接的url</p>
+<p><code>&lt;a target=&gt;</code><br>使用target=_blank可以实现在新的窗口打开页面。</p>
+<p><code>&lt;img alr=&gt;</code><br>alt 属性用来为图像定义一串预备的可替换的文本。当图片无法加载的时候作为备用替换上去</p>
 
                 </section>
 

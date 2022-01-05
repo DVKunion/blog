@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>Category - DV.K</title>
+    <title>about - DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -61,53 +61,46 @@
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/IMG_1908.JPG);" ></div>
                     <hr>
-                    <h1>Mongodb</h1>
-<center><small>2019-08-10</small></center>
-<p>Nice (๑•̀ㅂ•́)و✧ 上一篇前端文章还没写完，我又厚颜无耻的搞新东西了。<br>
-(っ<em>´Д`)っ 但是我真的真的，需要一个数据库支持，不然工具的开发性能这一块一直会卡着我。<br>
-(っ</em>´Д`)っ 三天打鱼两天晒网。</p>
+                    <h1 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a>Mongodb</h1><center><small>2019-08-10</small></center>
+
+<p>Nice (๑•̀ㅂ•́)و✧ 上一篇前端文章还没写完，我又厚颜无耻的搞新东西了。<br>(っ<em>´Д`)っ 但是我真的真的，需要一个数据库支持，不然工具的开发性能这一块一直会卡着我。<br>(っ</em>´Д`)っ 三天打鱼两天晒网。</p>
 <center><small>华丽的分割线</small></center>
+
 <hr>
-<h3><b>0x00- - 简介</b></h3>
-<p>又是日常的简介哈哈哈....(强颜欢笑╮(╯__╰)╭)要去看数据库这一块真的是因为最近在搞开发玩，所以从开发的角度遇到了一系列的问题。在之后的工作和渗透中也能起到很好的帮助。</p>
-<p>因为任何信息总归需要一个存储，当数量级上来了之后简单的写成一个文件已经不能满足增删改查在速度和性能等方面的需求，以及数据存储所需要的空间。这种时候就显现出数据库的强大了。</p>
-<p>关于数据库的选择上，我也纠结了很久。。。不用win了access和sqlserver我就直接pass掉了，oracle又不免费<del>(其实就是懒得去搞)</del>，mysql和mariadb....emmmm安装费劲然后可转移性我也不太喜欢。。。最后考虑的就是postgresql、mongodb、redis这几个了。</p>
-<p>首先 postgresql 之前搞msf时候看过几下。。。总觉得接受不了postgresql的布局逻辑。。。不能理解他的内部。py的支持上也没搞好。。。</p>
+<h3 id="0x00-简介"><a href="#0x00-简介" class="headerlink" title="0x00- - 简介"></a><b>0x00- - 简介</b></h3><p>又是日常的简介哈哈哈….(强颜欢笑╮(╯__╰)╭)要去看数据库这一块真的是因为最近在搞开发玩，所以从开发的角度遇到了一系列的问题。在之后的工作和渗透中也能起到很好的帮助。   </p>
+<p>因为任何信息总归需要一个存储，当数量级上来了之后简单的写成一个文件已经不能满足增删改查在速度和性能等方面的需求，以及数据存储所需要的空间。这种时候就显现出数据库的强大了。  </p>
+<p>关于数据库的选择上，我也纠结了很久。。。不用win了access和sqlserver我就直接pass掉了，oracle又不免费<del>(其实就是懒得去搞)</del>，mysql和mariadb….emmmm安装费劲然后可转移性我也不太喜欢。。。最后考虑的就是postgresql、mongodb、redis这几个了。  </p>
+<p>首先 postgresql 之前搞msf时候看过几下。。。总觉得接受不了postgresql的布局逻辑。。。不能理解他的内部。py的支持上也没搞好。。。 </p>
 <p>然后是redis，这个听老师讲都是用来做一些缓存之类的，存储数据的数量级非常有限，实际意义上不太作用于数据存储这一块。咱也不知道最后功能和数据要扩展到多少。。。反正先得往大了整吧。。。</p>
 <p>所以综上，就有了这篇文章的由来。</p>
-<p>然后接触了mongodb之后感觉，嗯，真香。<br>
-果然这种简单粗暴 概念不抽象且易懂的才是好数据库。(呲牙)</p>
+<p>然后接触了mongodb之后感觉，嗯，真香。<br>果然这种简单粗暴 概念不抽象且易懂的才是好数据库。(呲牙)</p>
 <p>那么mongodb是一个什么东西呢？他较其他的数据库有哪些优点和特性呢？</p>
-<p>首先mongodb是由 <b><u>C++ </u></b> 编写，照xx百科的话：<b><u>是非关系数据库当中功能最丰富，最像关系数据库的。</u></b><br>
-mongodb介于关系数据库和非关系数据库之间，支持的数据结构类似于json、bson。</p>
+<p>首先mongodb是由 <b><u>C++ </u></b> 编写，照xx百科的话：<b><u>是非关系数据库当中功能最丰富，最像关系数据库的。</u></b><br>mongodb介于关系数据库和非关系数据库之间，支持的数据结构类似于json、bson。  </p>
 <p>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。字段值可以包含其他文档，数组及文档数组。</p>
-<p>以下为概念性知识点：<del>(概念好讨厌啊复制粘贴下好了)</del></p>
-<p>关系型数据库遵循的ACID规则：A (Atomicity) 原子性、C (Consistency) 一致性、I (Isolation) 独立性、D (Durability) 持久性。</p>
-<p>分布式计算的优点：可靠性、可扩展性、资源共享、灵活性、更快的速度、更高的性能</p>
+<p>以下为概念性知识点：<del>(概念好讨厌啊复制粘贴下好了)</del>  </p>
+<p>关系型数据库遵循的ACID规则：A (Atomicity) 原子性、C (Consistency) 一致性、I (Isolation) 独立性、D (Durability) 持久性。  </p>
+<p>分布式计算的优点：可靠性、可扩展性、资源共享、灵活性、更快的速度、更高的性能  </p>
 <p>NoSQL:指的是非关系型的数据库。NoSQL有时也称作Not Only SQL的缩写，是对不同于传统的关系型数据库的数据库管理系统的统称。</p>
-<p>CAP定理 :布鲁尔定理（Brewer's theorem）, 它指出对于一个分布式计算系统来说，不可能同时满足以下三点:</p>
+<p>CAP定理 :布鲁尔定理（Brewer’s theorem）, 它指出对于一个分布式计算系统来说，不可能同时满足以下三点:  </p>
 <pre><code>一致性(Consistency) (所有节点在同一时间具有相同的数据)
 可用性(Availability) (保证每个请求不管成功或者失败都有响应)
 分隔容忍(Partition tolerance) (系统中任意信息的丢失或失败不会影响系统的继续运作)
-</code></pre>
-<p>因此将NoSQL数据库可分为：</p>
+</code></pre><p>因此将NoSQL数据库可分为：</p>
 <pre><code>CA - 单点集群，满足一致性，可用性的系统，通常在可扩展性上不太强大。
 CP - 满足一致性，分区容忍性的系统，通常性能不是特别高。
 AP - 满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。
-</code></pre>
-<p>BASE：是NoSQL数据库通常对可用性及一致性的弱要求原则:</p>
+</code></pre><p>BASE：是NoSQL数据库通常对可用性及一致性的弱要求原则:</p>
 <pre><code>Basically Availble --基本可用
 Soft-state --软状态/柔性事务。 &quot;Soft state&quot; 可以理解为&quot;无连接&quot;的, 而 &quot;Hard state&quot; 是&quot;面向连接&quot;的
 Eventual Consistency -- 最终一致性， 也是是 ACID 的最终目的。
-</code></pre>
-<h3><b>0x01- - 常用基本操作</b></h3>
-<p>安装过程跳过 此部分只记录几个重点，具体分散在每一个小结内：</p>
+</code></pre><h3 id="0x01-常用基本操作"><a href="#0x01-常用基本操作" class="headerlink" title="0x01- - 常用基本操作"></a><b>0x01- - 常用基本操作</b></h3><p>安装过程跳过 此部分只记录几个重点，具体分散在每一个小结内：  </p>
 <ul>
 <li>· mongodb默认端口号：27017</li>
 <li>· mongodb默认数据路径：/data/db/</li>
 <li>· mongodb配置文件：/etc/mongod.conf</li>
 </ul>
 <p>然后借用菜鸟 <a href="https://www.runoob.com" target="_blank" rel="noopener">https://www.runoob.com</a> 的一张表，详细的对应了关系数据库内的一些定义和mongodb内的一些名词的映射：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -154,52 +147,34 @@ Eventual Consistency -- 最终一致性， 也是是 ACID 的最终目的。
 </tr>
 </tbody>
 </table>
+</div>
 <p>之后列出一些常用语句：</p>
-<p>列出数据库: <code>&gt; show dbs</code><br>
-列出当前数据库: <code>&gt; db</code><br>
-创建/切换数据库：<code>&gt; use admin</code><br>
-默认存在的三个数据库: <code>admin config local</code><br>
-删除数据库 ：<code>&gt; db.dropDatabase()</code></p>
-<p>创建集合：<code>&gt; db.createCollection(name,options)</code>  name为集合名，options为选项。如：&amp;#123capped:true,size:10&amp;#125<br>
-查看集合：<code>&gt; show collections</code><br>
-删除集合：<code>&gt; db.(collections_name).drop()</code></p>
-<p>插入数据：<code>&gt; db.(collections_name).insert(document)</code><br>
-查找数据：<code>&gt; db.(collections_name).find()</code><br>
-更新数据：<code>&gt; db.(collections_name).update(query update multi:boolen)</code>   query 相当于where update相当于 set<br>
-只更新数据的一个值：<code>&gt; db.(collections_name).update(query $set:update multi:boolen)</code><br>
-保存：<code>&gt; db.(collections_name).save(document)</code><br>
-删除：<code>&gt; db.(collections_name).remove(query update justOne:boolen)</code></p>
-<h3><b>0x02- - 集合</b></h3>
-<p>在mongodb中，没有表的概念，所有的表都叫做集合(Collections)。这个也比较好理解，因为mongodb中的数据都是以文档(Document)的形式进行存储，文档内的数据并不是统一的，所以不能够用表格来存储，而是用集合概念来代替。</p>
-<p><b>创建</b><br>
-创建集合：<code>&gt; db.createCollection(name,options)</code>  name为集合名，options为选项。如：&amp;#123autoIndexId:true,capped:true,size:10&amp;#125</p>
-<p>在mongodb的控制台中，你也可以不创建集合直接去添加一个文档，mongodb会自动创建这个集合。<br>
-<code>&gt; db.mytest.insert(&amp;#123&quot;name&quot;:&quot;test&quot;&amp;#125)</code><br>
-<code>&gt; show collections</code><br>
-<code>mytest</code></p>
-<p><b>删除</b><br>
-删除集合：<code>&gt; db.(collections_name).drop()</code></p>
+<p>列出数据库: <code>&gt; show dbs</code><br>列出当前数据库: <code>&gt; db</code><br>创建/切换数据库：<code>&gt; use admin</code><br>默认存在的三个数据库: <code>admin config local</code><br>删除数据库 ：<code>&gt; db.dropDatabase()</code>  </p>
+<p>创建集合：<code>&gt; db.createCollection(name,options)</code>  name为集合名，options为选项。如：&amp;#123capped:true,size:10&amp;#125<br>查看集合：<code>&gt; show collections</code><br>删除集合：<code>&gt; db.(collections_name).drop()</code>  </p>
+<p>插入数据：<code>&gt; db.(collections_name).insert(document)</code><br>查找数据：<code>&gt; db.(collections_name).find()</code><br>更新数据：<code>&gt; db.(collections_name).update(query update multi:boolen)</code>   query 相当于where update相当于 set<br>只更新数据的一个值：<code>&gt; db.(collections_name).update(query $set:update multi:boolen)</code><br>保存：<code>&gt; db.(collections_name).save(document)</code><br>删除：<code>&gt; db.(collections_name).remove(query update justOne:boolen)</code>  </p>
+<h3 id="0x02-集合"><a href="#0x02-集合" class="headerlink" title="0x02- - 集合"></a><b>0x02- - 集合</b></h3><p>在mongodb中，没有表的概念，所有的表都叫做集合(Collections)。这个也比较好理解，因为mongodb中的数据都是以文档(Document)的形式进行存储，文档内的数据并不是统一的，所以不能够用表格来存储，而是用集合概念来代替。  </p>
+<p><b>创建</b><br>创建集合：<code>&gt; db.createCollection(name,options)</code>  name为集合名，options为选项。如：&amp;#123autoIndexId:true,capped:true,size:10&amp;#125 </p>
+<p>在mongodb的控制台中，你也可以不创建集合直接去添加一个文档，mongodb会自动创建这个集合。<br><code>&gt; db.mytest.insert(&amp;#123&quot;name&quot;:&quot;test&quot;&amp;#125)</code><br><code>&gt; show collections</code><br><code>mytest</code></p>
+<p><b>删除</b><br>删除集合：<code>&gt; db.(collections_name).drop()</code>   </p>
 <p><b>查看</b></p>
 <p>查看所有集合：<code>&gt; show collections</code></p>
-<p><b>Size</b><br>
-size属性可以限制这个集合的大小，一般和capped属性同时使用，达到的效果为：当这个集合存储的文档达到设置的size大小时，再向该集合插入数据时，会从最早的文档开始覆盖存储。</p>
-<p>要设置size属性，要在创建集合的时候配置options属性：</p>
-<p><code>&gt; db.createCollection('test',&amp;#123capped:true,size:10&amp;#125)</code></p>
-<h3><b>0x03- - 查询</b></h3>
-<p>论数据库的基础操作，无非就是增删改查四个方面。增删改的操作在第一部分简单的带过了一下，那么作为最常用的查询功能，查询的方法也是多种多样，所以将查询作为单独的一个模块进行记录。</p>
-<p><b>find</b><br>
-find 是最为常用的查询功能，其语法为：</p>
-<p><code>&gt; db.collection.find(query, projection)</code></p>
-<p>query是要搜索的条件，同样是以json的形式。如:&amp;#123&quot;name&quot;:&quot;test&quot;&amp;#125,则搜索集合内所有name键值为test的文档。</p>
-<p>projection意为投影，当启用该模块时，可以指定查询结果输出想要的键值。</p>
+<p><b>Size</b><br>size属性可以限制这个集合的大小，一般和capped属性同时使用，达到的效果为：当这个集合存储的文档达到设置的size大小时，再向该集合插入数据时，会从最早的文档开始覆盖存储。  </p>
+<p>要设置size属性，要在创建集合的时候配置options属性：  </p>
+<p><code>&gt; db.createCollection(&#39;test&#39;,&amp;#123capped:true,size:10&amp;#125)</code></p>
+<h3 id="0x03-查询"><a href="#0x03-查询" class="headerlink" title="0x03- - 查询"></a><b>0x03- - 查询</b></h3><p>论数据库的基础操作，无非就是增删改查四个方面。增删改的操作在第一部分简单的带过了一下，那么作为最常用的查询功能，查询的方法也是多种多样，所以将查询作为单独的一个模块进行记录。  </p>
+<p><b>find</b><br>find 是最为常用的查询功能，其语法为：</p>
+<p><code>&gt; db.collection.find(query, projection)</code>  </p>
+<p>query是要搜索的条件，同样是以json的形式。如:&amp;#123”name”:”test”&amp;#125,则搜索集合内所有name键值为test的文档。  </p>
+<p>projection意为投影，当启用该模块时，可以指定查询结果输出想要的键值。  </p>
 <p><b>pretty</b></p>
-<p>pretty方法连在查找方式的结尾，使输出结果更加美观。</p>
-<p><code>&gt; db.collection.find().pretty()</code></p>
-<p><b>findOne</b></p>
-<p>findOne方法会返回查找到的第一条结果，注意findOne的O大写。</p>
-<p><code>&gt; db.collection.findOne()</code></p>
-<p><b>比较运算符</b></p>
-<p>在mongodb的查找中，可以使用比较运算符进行条件查找，相当于mysql中的where。</p>
+<p>pretty方法连在查找方式的结尾，使输出结果更加美观。  </p>
+<p><code>&gt; db.collection.find().pretty()</code>   </p>
+<p><b>findOne</b>  </p>
+<p>findOne方法会返回查找到的第一条结果，注意findOne的O大写。  </p>
+<p><code>&gt; db.collection.findOne()</code>   </p>
+<p><b>比较运算符</b>  </p>
+<p>在mongodb的查找中，可以使用比较运算符进行条件查找，相当于mysql中的where。  </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -217,32 +192,34 @@ find 是最为常用的查询功能，其语法为：</p>
 <tr>
 <td>小于</td>
 <td>$it</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$it:18&amp;#125&amp;#125)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$it:18&amp;#125&amp;#125)</td>
 </tr>
 <tr>
 <td>小于或等于</td>
 <td>$ite</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$ite:18&amp;#125&amp;#125)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$ite:18&amp;#125&amp;#125)</td>
 </tr>
 <tr>
 <td>大于</td>
 <td>$gt</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$gt:18&amp;#125&amp;#125)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$gt:18&amp;#125&amp;#125)</td>
 </tr>
 <tr>
 <td>大于或等于</td>
 <td>$gte</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$gte:18&amp;#125&amp;#125)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$gte:18&amp;#125&amp;#125)</td>
 </tr>
 <tr>
 <td>不等于</td>
 <td>$ne</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$ne:18&amp;#125&amp;#125)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$ne:18&amp;#125&amp;#125)</td>
 </tr>
 </tbody>
 </table>
-<p><b>逻辑运算符</b></p>
-<p>同样在mongodb的查找中，可以使用逻辑运算符进行条件查找，相当于mysql中的and/or。</p>
+</div>
+<p><b>逻辑运算符</b>   </p>
+<p>同样在mongodb的查找中，可以使用逻辑运算符进行条件查找，相当于mysql中的and/or。  </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -255,17 +232,19 @@ find 是最为常用的查询功能，其语法为：</p>
 <tr>
 <td>and</td>
 <td>,</td>
-<td>db.collection.find(&amp;#123'name':'test','age':18&amp;#125)</td>
+<td>db.collection.find(&amp;#123’name’:’test’,’age’:18&amp;#125)</td>
 </tr>
 <tr>
 <td>or</td>
 <td>$or:[]</td>
-<td>db.collection.find(&amp;#123$or:[&amp;#123'age':18&amp;#125,&amp;#123'name':'test'&amp;#125]&amp;#125)</td>
+<td>db.collection.find(&amp;#123$or:[&amp;#123’age’:18&amp;#125,&amp;#123’name’:’test’&amp;#125]&amp;#125)</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p><b>范围运算符</b></p>
-<p>范围运算符可以将查询条件限制在一个范围之内。</p>
+<p>范围运算符可以将查询条件限制在一个范围之内。  </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -278,53 +257,52 @@ find 是最为常用的查询功能，其语法为：</p>
 <tr>
 <td>在范围内</td>
 <td>$in</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$in:&amp;#123[18,28]&amp;#125) (查询18岁<b>和</b>28岁)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$in:&amp;#123[18,28]&amp;#125) (查询18岁<b>和</b>28岁)</td>
 </tr>
 <tr>
 <td>不在范围内</td>
 <td>$nin</td>
-<td>db.collection.find(&amp;#123'age':&amp;#123$nin:&amp;#123[18,28]&amp;#125)</td>
+<td>db.collection.find(&amp;#123’age’:&amp;#123$nin:&amp;#123[18,28]&amp;#125)</td>
 </tr>
 </tbody>
 </table>
-<p><b>正则表达式查询</b></p>
-<p>mongodb支持使用正则表达式进行限制查询，使用// 或者 $regex来使用正则表达式：</p>
-<p><code>db.collection.find(&amp;#123'age':'/^\d/'&amp;#125)</code><br>
-<code>db.collection.find(&amp;#123'age':&amp;#123$regex:'^\d'&amp;#125&amp;#125)</code></p>
+</div>
+<p><b>正则表达式查询</b>  </p>
+<p>mongodb支持使用正则表达式进行限制查询，使用// 或者 $regex来使用正则表达式：  </p>
+<p><code>db.collection.find(&amp;#123&#39;age&#39;:&#39;/^\d/&#39;&amp;#125)</code><br><code>db.collection.find(&amp;#123&#39;age&#39;:&amp;#123$regex:&#39;^\d&#39;&amp;#125&amp;#125)</code>  </p>
 <p><b>自定义查询</b></p>
 <p>mongodb支持使用自定义函数进行查询限制，函数的语法同js语法。</p>
-<p><code>db.collection.find(&amp;#123$where:function()&amp;#123return this.age&gt;18&amp;#125)</code></p>
-<p><b>limit和skip</b></p>
+<p><code>db.collection.find(&amp;#123$where:function()&amp;#123return this.age&gt;18&amp;#125)</code>  </p>
+<p><b>limit和skip</b>  </p>
 <p>limit 方法同sql语句中的limit一样，限制输出结果的数量。如：</p>
-<p><code>db.collection.find().limit(2)</code></p>
+<p><code>db.collection.find().limit(2)</code>  </p>
 <p>表示限制两条数据输出。</p>
 <p>skip方法也一样，表示跳过n条数据进行输出。如：</p>
 <p><code>db.collection.find().skip(2)</code></p>
 <p>则表示输出第三条结果。</p>
 <p>limit和skip可以同时使用，如：</p>
-<p><code>db.collection.find().limit(2).skip(1)</code></p>
+<p><code>db.collection.find().limit(2).skip(1)</code>  </p>
 <p>表示输出第2、3条结果。</p>
-<p><b>projection-投影</b></p>
+<p><b>projection-投影</b>  </p>
 <p>这个在一开始说find方法的时候提到了，作为find方法的可选参数，投影可以配置查找结果中输出哪些需要的数据，如：</p>
-<p><code>db.collection.find(&amp;#123&amp;#125,&amp;#123_id:0,name:1&amp;#125)</code></p>
+<p><code>db.collection.find(&amp;#123&amp;#125,&amp;#123_id:0,name:1&amp;#125)</code>  </p>
 <p>这样就取消了默认的id输出，并且只输出name参数。</p>
-<p><b>sort-排序</b></p>
+<p><b>sort-排序</b> </p>
 <p>排序方法可以将查询结果的输出序列化，其语法为：</p>
-<p><code>db.collection.find().sort(&amp;#123key:1,....&amp;#125)</code></p>
+<p><code>db.collection.find().sort(&amp;#123key:1,....&amp;#125)</code>  </p>
 <p>其中key为需要排序的字段，参数1代表升序排序，-1代表降序排序。同时支持多个key进行排序，排序的循序按照key的先后进行。如：</p>
-<p><code>db.collection.find().sort(&amp;#123'name':1,'age':-1&amp;#125)</code></p>
+<p><code>db.collection.find().sort(&amp;#123&#39;name&#39;:1,&#39;age&#39;:-1&amp;#125)</code>  </p>
 <p>表示先按照名字的升序排序，当名字相同时按照age的降序排序。</p>
-<p><b>count-统计</b></p>
+<p><b>count-统计</b>  </p>
 <p>count方法可以统计查询到符合的结果个数，其语法为：</p>
-<p><code>db.collection.find().count()</code></p>
+<p><code>db.collection.find().count()</code>  </p>
 <p>也可以直接省略find：</p>
-<p><code>db.collection.count(&amp;#123&amp;#125)</code></p>
-<p><b>distinct-去重</b></p>
+<p><code>db.collection.count(&amp;#123&amp;#125)</code>  </p>
+<p><b>distinct-去重</b>  </p>
 <p>distinct方法可以对数据进行去重，其语法为:</p>
-<p>``db.collection.distinct('gender',&amp;#123'age':18&amp;#125)`</p>
+<p><code>`db.collection.distinct(&#39;gender&#39;,&amp;#123&#39;age&#39;:18&amp;#125)</code>  </p>
 <p>表示输出所有年龄等于18的数据的所有gender存在的值。</p>
-<h3><b>0x04- - 高级操作</b></h3>
-<p><b>聚合</b></p>
+<h3 id="0x04-高级操作"><a href="#0x04-高级操作" class="headerlink" title="0x04- - 高级操作"></a><b>0x04- - 高级操作</b></h3><p><b>聚合</b></p>
 
                 </section>
 
