@@ -3188,7 +3188,7 @@ body.is-touch .spotlight {
 }
 
 .wrapper.style2 {
-	background: #e44c65;
+	background: rgba(255, 255, 255, 0.25) !important;;
 }
 
 .wrapper.style2 input[type="text"]:focus,
