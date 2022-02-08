@@ -1410,6 +1410,10 @@ body.landing.is-preload:after {
 		padding-top: 5em;
 	}
 
+	.row > .size-4 {
+		font-size: 14px;
+	}
+
 }
 
 @media screen and (max-width: 980px) {
@@ -3572,6 +3576,10 @@ body.is-touch #banner {
 	color: inherit;
 }
 
+.container h1 {
+	font-size: 2.3em;
+}
+
 /* XLarge */
 
 @media screen and (max-width: 1680px) {
@@ -3580,6 +3588,10 @@ body.is-touch #banner {
 
 	body, input, select, textarea {
 		font-size: 13pt;
+	}
+
+	.container h1 {
+		font-size: 2.3em;
 	}
 
 }
@@ -3592,6 +3604,10 @@ body.is-touch #banner {
 
 	body, input, select, textarea {
 		font-size: 11.5pt;
+	}
+
+	.container h1 {
+		font-size: 2.3em;
 	}
 
 	/* Spotlight */
@@ -3643,6 +3659,10 @@ body.is-touch #banner {
 
 	body, input, select, textarea {
 		font-size: 12pt;
+	}
+
+	.container h1 {
+		font-size: 2.2em;
 	}
 
 	/* Spotlight */
@@ -3745,6 +3765,10 @@ body.is-touch #banner {
 
 	body, input, select, textarea {
 		font-size: 12pt;
+	}
+
+	h1 {
+		font-size: 2em;
 	}
 
 	h2 {
@@ -4046,6 +4070,9 @@ body.is-touch #banner {
 		font-size: 12pt;
 	}
 
+	.container h1 {
+		font-size: 1.8em;
+	}
 	/* Button */
 
 	input[type="submit"],
@@ -4093,5 +4120,4 @@ body.is-touch #banner {
 		margin: 0;
 		padding: 0;
 	}
-
 }
