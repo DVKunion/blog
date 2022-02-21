@@ -56,60 +56,40 @@
                 <header class="major">
                     <h2>CCNP</h2>
                     <p>2019-03-02</p>
-                     <p>文章共计 - 4.1k 字 阅读需要 - 16 分钟</p>
+                     <p>文章共计 - 4.1k 字 阅读需要 - 15 分钟</p>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/33109819ebc4b745546cf419c2fc1e178b82158d.jpg);" ></div>
                     <hr>
-                    <h1>CCNP</h1>
-<hr>
+                    <h1 id="CCNP"><a href="#CCNP" class="headerlink" title="CCNP"></a>CCNP</h1><hr>
 <center><small>2019-3-2</small></center>
-<p>GNS<br>
-Cisco-packet-tracer<br>
-<br></p>
+
+<p>GNS<br>Cisco-packet-tracer<br><br></p>
 <center><small>华丽的分割线</small></center>
+
 <hr>
-<h3><b>0x00- - 简介和基础</b></h3>
-<p>CCNP实际上是一个认证类的考试。CCNP全称是：Cisco Certified Network Professional——思科认证网络高级工程师。</p>
+<h3 id="0x00-简介和基础"><a href="#0x00-简介和基础" class="headerlink" title="0x00- - 简介和基础"></a><b>0x00- - 简介和基础</b></h3><p>CCNP实际上是一个认证类的考试。CCNP全称是：Cisco Certified Network Professional——思科认证网络高级工程师。</p>
 <p>工作方向：路由交换，安全，ISP服务商，数据中心DC，无线，语音。</p>
-<p><b>网络连通性的两种测试：</b><br>
-ping:(ICMP)<br>
-原理：发送Echo request、接收Echo reply</p>
-<p>traceroute:(UDP 33434/33435/33436)<br>
-原理：TTL值+ICMP错误消息。</p>
-<p><b>网络线缆：</b><br>
-1.交叉线  568A 568B<br>
-2.直通线  568B 568B</p>
+<p><b>网络连通性的两种测试：</b><br>ping:(ICMP)<br>原理：发送Echo request、接收Echo reply</p>
+<p>traceroute:(UDP 33434/33435/33436)<br>原理：TTL值+ICMP错误消息。</p>
+<p><b>网络线缆：</b><br>1.交叉线  568A 568B<br>2.直通线  568B 568B</p>
 <blockquote>
-<p>568B 橙白 橙 绿白 蓝 蓝白 绿 棕白 棕<br>
-568A 绿白 绿 橙白 蓝 蓝白 橙 棕白 棕<br>
-不同类型设备之间使用交叉线。<br>
-相同类型设备之间使用直通线。<br>
-普通网线只能在100m内通信。</p>
+<p>568B 橙白 橙 绿白 蓝 蓝白 绿 棕白 棕<br>568A 绿白 绿 橙白 蓝 蓝白 橙 棕白 棕<br>不同类型设备之间使用交叉线。<br>相同类型设备之间使用直通线。<br>普通网线只能在100m内通信。</p>
 </blockquote>
 <p>3.console线(反转线，全反线) 连接路由和交换机等设备</p>
 <p>4.串口线：早期广域网链路</p>
-<h3><b>0x01- - OSI七层模型</b></h3>
-<p><b>ISO：</b><br>
-国际标准化组织（International Organization for Standardization，ISO）简称ISO，是一个全球性的非政府组织。<br>
-<b>目的：</b><br>
-1.简化通信网络的复杂性，便于网络的学习。<br>
-2.为每一个层次定义响应的功能。下层需要为上层提供标准化服务。<br>
-3.标准化所有厂商的接头和协议。</p>
-<p><b>OSI：</b><br>
-OSI是Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型。</p>
+<h3 id="0x01-OSI七层模型"><a href="#0x01-OSI七层模型" class="headerlink" title="0x01- - OSI七层模型"></a><b>0x01- - OSI七层模型</b></h3><p><b>ISO：</b><br>国际标准化组织（International Organization for Standardization，ISO）简称ISO，是一个全球性的非政府组织。<br><b>目的：</b><br>1.简化通信网络的复杂性，便于网络的学习。<br>2.为每一个层次定义响应的功能。下层需要为上层提供标准化服务。<br>3.标准化所有厂商的接头和协议。   </p>
+<p><b>OSI：</b><br>OSI是Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型。</p>
 <p>由高到低分别为：</p>
 <ul>
 <li><b>1.应用层(Applacation)： </b>为应用程序提供网络的接口。</li>
 <li><b>2.表示层(Presentation)： </b>进行数据的编码转换、压缩，翻译数据格式。</li>
-<li><b>3.会话层(Session)： </b>区分和控制不同的会话连接。</li>
-</ul>
-<blockquote>
+<li><b>3.会话层(Session)： </b>区分和控制不同的会话连接。<blockquote>
 <p>上三层一般由软件工程师进行考虑与建设。</p>
 </blockquote>
-<ul>
+</li>
 <li><b>4.传输层(Transport)：</b>提供可靠的连接(TCP)，同时进行数据校验(CRC校验)</li>
 <li><b>5.网络层(Network)：</b> 定义逻辑地址(IP、ISIS)；提供路由的选择并进行维护；以及进行路由<font color="red">数据包</font>的转发等操作。(路由器、三层交换机)</li>
 <li><b>6.数据链路层(Data Link)：</b>定义物理地址(MAC：media access control)，通过媒介访问控制将<font color="red">数据帧</font>发送到目的主机。(以太网交换机)</li>
@@ -126,53 +106,26 @@ OSI是Open System Interconnection的缩写，意为开放式系统互联。国�
 <p><b>集线器被替代的原因：</b></p>
 <blockquote>
 <p>冲突域：如果在一个网络的两台计算机在通信时会发生冲突，则这个网络就是一个冲突域。会导致数据帧的破损。</p>
+<p>广播域：广播的范围。<br>集线器所有接口在一个冲突域。<br>交换机的一个接口就是一个冲突域。<br>交换机所有的接口都在一个广播域。<br>路由器一个接口就是一个广播域。</p>
 </blockquote>
-<blockquote>
-<p>广播域：广播的范围。<br>
-集线器所有接口在一个冲突域。<br>
-交换机的一个接口就是一个冲突域。<br>
-交换机所有的接口都在一个广播域。<br>
-路由器一个接口就是一个广播域。</p>
-</blockquote>
-<h3><b>0x02- - TCP/IP协议簇</b></h3>
-<p><b>协议：</b><br>
-网络协议的简称，网络协议是通信计算机双方必须共同遵从的一组约定。<br>
-<b>TCP/IP协议：</b><br>
-互联网协议（Internet Protocol Suite）是一个网络通信模型，以及一整个网络传输协议家族，为互联网的基础通信架构。它常被通称为TCP/IP协议族（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称TCP/IP。<br>
-一般分为五层或四层：</p>
+<h3 id="0x02-TCP-IP协议簇"><a href="#0x02-TCP-IP协议簇" class="headerlink" title="0x02- - TCP/IP协议簇"></a><b>0x02- - TCP/IP协议簇</b></h3><p><b>协议：</b><br>网络协议的简称，网络协议是通信计算机双方必须共同遵从的一组约定。<br><b>TCP/IP协议：</b><br>互联网协议（Internet Protocol Suite）是一个网络通信模型，以及一整个网络传输协议家族，为互联网的基础通信架构。它常被通称为TCP/IP协议族（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称TCP/IP。<br>一般分为五层或四层：</p>
 <ul>
 <li><b>1.应用层：</b>FTP(21)、Telnet(23)、Http(80)、Smtp(25)、DNS(53)、RIP(路由信息协议 520)、Snmp(简单网络管理协议 161)、Tftp(简单文件传输协议 69)。</li>
-<li><b>2.传输层：</b>TCP(transmission control protocol)、UDP(user datagram protocol)</li>
-</ul>
-<blockquote>
-<p>TCP是面向连接(发送数据之前建立连接，发送数据时维护连接，发送数据结束拆除连接)、可靠的用户传输协议。<br>
-TCP通过 &quot;三次握手&quot; 建立连接; &quot;四次握手&quot;拆除连接。<br>
-UDP是非面向连接，不可靠的传输协议。</p>
+<li><b>2.传输层：</b>TCP(transmission control protocol)、UDP(user datagram protocol)<blockquote>
+<p>TCP是面向连接(发送数据之前建立连接，发送数据时维护连接，发送数据结束拆除连接)、可靠的用户传输协议。<br>TCP通过 “三次握手” 建立连接; “四次握手”拆除连接。<br>UDP是非面向连接，不可靠的传输协议。</p>
 </blockquote>
-<ul>
+</li>
 <li><b>3.网络层：</b>IP(internet protocol):、ICMP：(Internet control management protocol);ARP/RARP ()地址解析协议/地址反向解析协议。</li>
 <li><b>4.数据链路层：</b>以太网协议；HDLC协议；PPP协议。</li>
-<li><b>5.物理层(4、5整合可以称为网络接口层)</b></li>
+<li><b>5.物理层(4、5整合可以称为网络接口层)</b>    </li>
 </ul>
-<p><b>TCP包头：(20 bytes)</b><br>
-Source port(16 b);<br>
-Destination port (16 b);</p>
+<p><b>TCP包头：(20 bytes)</b><br>Source port(16 b);<br>Destination port (16 b);</p>
 <blockquote>
-<p>这两部分用于区分上层应用层协议。<br>
-1-1023：知名端口。保留给知名的应用层协议<br>
-1024-65535：随机高端口。 发送方随机高端口向目的主机的特定端口发起TCP连接。</p>
+<p>这两部分用于区分上层应用层协议。<br>1-1023：知名端口。保留给知名的应用层协议<br>1024-65535：随机高端口。 发送方随机高端口向目的主机的特定端口发起TCP连接。</p>
 </blockquote>
-<p>Sequence number 序列号 (16 b);<br>
-Acknowledgement number 确认号 (16 b);<br>
-Data;</p>
-<p><b>UDP包头：(8 bytes)</b><br>
-Source port(16 b);<br>
-Destination port (16 b);<br>
-check num(16 b);<br>
-(16 b);<br>
-Data;</p>
-<p><b>IP包头：(unkown Bytes)</b><br>
-version(4 b);</p>
+<p>Sequence number 序列号 (16 b);<br>Acknowledgement number 确认号 (16 b);<br>Data;</p>
+<p><b>UDP包头：(8 bytes)</b><br>Source port(16 b);<br>Destination port (16 b);<br>check num(16 b);<br>         (16 b);<br>Data;</p>
+<p><b>IP包头：(unkown Bytes)</b><br>version(4 b);</p>
 <blockquote>
 <p>版本：ipv4 0100; ipv6 0110;</p>
 </blockquote>
@@ -190,91 +143,47 @@ version(4 b);</p>
 </blockquote>
 <p>iDentification(16 b)/Flags(3 b)/flagment offset (13 b)；</p>
 <blockquote>
-<p>标识/标记/偏移量：用来对数据包进行分片。<br>
-MTU值(最大传输单元) 最大只能传输1500 byte,所以在传输中经常对数据包进行分片。<br>
-标识：标记同一个数据包。<br>
-标记：第几个包。<br>
-偏移量：开始位置。</p>
+<p>标识/标记/偏移量：用来对数据包进行分片。<br>MTU值(最大传输单元) 最大只能传输1500 byte,所以在传输中经常对数据包进行分片。<br>标识：标记同一个数据包。<br>标记：第几个包。<br>偏移量：开始位置。</p>
 </blockquote>
 <p>Time To live(8 b);</p>
 <blockquote>
-<p>限制数据包存活时间(存活范围)，防止数据包环路<br>
-每经过一台三层设备该值减一<br>
-常见TTL：255、192、128、64。</p>
+<p>限制数据包存活时间(存活范围)，防止数据包环路<br>每经过一台三层设备该值减一<br>常见TTL：255、192、128、64。</p>
 </blockquote>
 <p>Protocl(8 b);</p>
 <blockquote>
-<p>协议号：标记上层(传输层)使用的协议。<br>
-6：TCP<br>
-17：UDP<br>
-1：ICMP<br>
-2：IGMP internet管理协议</p>
+<p>协议号：标记上层(传输层)使用的协议。<br>6：TCP<br>17：UDP<br>1：ICMP<br>2：IGMP internet管理协议</p>
 </blockquote>
 <p>Header checksun(16 b);</p>
 <blockquote>
 <p>头部校验：校验IP数据包头部的完整性。</p>
 </blockquote>
-<p>Source IP Address(32 b);<br>
-Destination IP Address(32 b);</p>
+<p>Source IP Address(32 b);<br>Destination IP Address(32 b);</p>
 <blockquote>
 <p>源IP/目的IP</p>
 </blockquote>
-<p>Options;<br>
-Data;</p>
-<p><b>ARP协议：</b><br>
-Win : arp -a<br>
-Route : show arp<br>
-arp存放时间是4个小时。</p>
+<p>Options;<br>Data;</p>
+<p><b>ARP协议：</b><br>Win : arp -a<br>Route : show arp<br>arp存放时间是4个小时。</p>
 <p><b>RARP协议：</b></p>
 <p>已经被DHCP取代：software:169.254.0.0/16</p>
-<h3><b>0x03- - IP与子网掩码</b></h3>
-<p>IP(Internet Protocol):网络之间的协议<br>
-<b>概念:</b><br>
-为计算机网络相互连接进行通信而设计的协议。个人把IP理解为在这个网络中每台主机的地址：如，xx省xx市xx街xx小区xxx<br>
-<b>组成：</b><br>
-网络号+主机位<br>
-主机位全为0代表网络号：如127.0.0.0<br>
-主机位全为1代表广播地址：如127.255.255.255<br>
-<b>分类：</b><br>
-对IP的数据进行分类，有如下：</p>
+<h3 id="0x03-IP与子网掩码"><a href="#0x03-IP与子网掩码" class="headerlink" title="0x03- - IP与子网掩码"></a><b>0x03- - IP与子网掩码</b></h3><p>IP(Internet Protocol):网络之间的协议<br><b>概念:</b><br>为计算机网络相互连接进行通信而设计的协议。个人把IP理解为在这个网络中每台主机的地址：如，xx省xx市xx街xx小区xxx<br><b>组成：</b><br>网络号+主机位<br>主机位全为0代表网络号：如127.0.0.0<br>主机位全为1代表广播地址：如127.255.255.255<br><b>分类：</b><br>对IP的数据进行分类，有如下：</p>
 <ul>
 <li>A:1.0.0.1-127.255.255.254 适用于超大型网络，可容纳 2^24-2 台主机</li>
 <li>B:128.0.0.1-191.255.255.254 适用于大型网络，可容纳 2^16-2 台主机</li>
-<li>C:192.0.0.1-223.255.255.254 适用于小型网络，可容纳 2^8-2 台主机</li>
-</ul>
-<blockquote>
+<li>C:192.0.0.1-223.255.255.254 适用于小型网络，可容纳 2^8-2 台主机<blockquote>
 <p>A、B、C三种被称作单播IP地址。两台主机想要网络互通必须IP地址为这三类</p>
 </blockquote>
-<ul>
+</li>
 <li>D:224.0.0.1-239.255.255.254 此类地址没有网络号和主机位的概念，用于组播标识组号。</li>
 <li>E:240.0.0.1-255.255.255.254 保留地址，多用于科研。</li>
 </ul>
 <p>对IP的使用进行分列，有如下：</p>
-<p>公网IP：<br>
-除私网地址以外的IP地址</p>
-<p>私网地址：<br>
-10.0.0.0-10.255.255.255<br>
-172.16.0.0-172.31.255.255<br>
-192.168.0.0-192.168.255.255</p>
-<p>私网地址优点：<br>
-提高网络安全性，节约IPv4网络空间</p>
-<p><b>子网掩码：</b><br>
-子网掩码是用来判断任意两台主机是否属于同一个子网络。<br>
-子网掩码与IP一一对应，为32bit。<br>
-子网掩码<br>
-VLSM 可变长子网掩码：<br>
-例--将10.1.1.0/24划分为两个子网，可以通过这样的方式--向主机位借位作为网络位:<br>
-10.1.1.0/25<br>
-10.1.1.128/25</p>
-<h3><b>0x04- - 路由设备与基本路由协议</b></h3>
-<p>路由器作用：可以实现不同网段之间的互联和互通。<br>
-路由：路由器收到IP数据包，去查找路由信息进行转发的过程。<br>
-路由信息：去往目的网络的一条信息，指明了去往目的网络的方向。<br>
-路由表：存放路由信息的表。<br>
-路由表存放的信息：目的地址网络号，子网掩码，下一跳地址，出接口，路由的类型，AD 管理距离，Metric 开销。</p>
+<p>公网IP：<br>除私网地址以外的IP地址</p>
+<p>私网地址：<br>10.0.0.0-10.255.255.255<br>172.16.0.0-172.31.255.255<br>192.168.0.0-192.168.255.255</p>
+<p>私网地址优点：<br>提高网络安全性，节约IPv4网络空间</p>
+<p><b>子网掩码：</b><br>子网掩码是用来判断任意两台主机是否属于同一个子网络。<br>子网掩码与IP一一对应，为32bit。<br>子网掩码<br>VLSM 可变长子网掩码：<br>例—将10.1.1.0/24划分为两个子网，可以通过这样的方式—向主机位借位作为网络位:<br>10.1.1.0/25<br>10.1.1.128/25</p>
+<h3 id="0x04-路由设备与基本路由协议"><a href="#0x04-路由设备与基本路由协议" class="headerlink" title="0x04- - 路由设备与基本路由协议"></a><b>0x04- - 路由设备与基本路由协议</b></h3><p>路由器作用：可以实现不同网段之间的互联和互通。<br>路由：路由器收到IP数据包，去查找路由信息进行转发的过程。<br>路由信息：去往目的网络的一条信息，指明了去往目的网络的方向。<br>路由表：存放路由信息的表。<br>路由表存放的信息：目的地址网络号，子网掩码，下一跳地址，出接口，路由的类型，AD 管理距离，Metric 开销。</p>
 <p>路由器依据路由表转发IP数据包，当路由表内不存在匹配的路由时，路由器就会丢弃该数据包。</p>
-<p>路由分类：<br>
-直连路由和非直连路由</p>
+<p>路由分类：<br>直连路由和非直连路由</p>
 <p>直连路由：指物理上直接连接的路由。会随着接口状态的改变而消失。</p>
 <p>非直连路由：指物理上没有直接连接的路由。非直连路由又分为 静态路由 和 动态路由两种。</p>
 <p>静态路由：人为手工在路由上进行配置路由信息的路由。</p>
@@ -284,131 +193,41 @@ VLSM 可变长子网掩码：<br>
 <p>从协议的工作范围，路由器可以分为IGP路由、EGP路由。</p>
 <p>IGP：RIP EIGRP ISIS内部网关工作协议  一个区域内内部运行的路由协议</p>
 <p>EGP：BGP OSPF外部网关工作协议  在区域系统之间运行的路由协议</p>
-<p>早期分类：<br>
-有类路由协议：RIP　IGRP (主类路由 A:X.0.0.0/8 B:Y.Y.0.0/16)</p>
+<p>早期分类：<br>有类路由协议：RIP　IGRP (主类路由 A:X.0.0.0/8 B:Y.Y.0.0/16)</p>
 <p>无类路由协议：EOGRP OSPF ISIS BGP(无类别路由,携带子网掩码)</p>
-<p>查表原则：<br>
-1.最长掩码匹配原则。<br>
-2.递归查询原则。</p>
+<p>查表原则：<br>1.最长掩码匹配原则。<br>2.递归查询原则。</p>
 <p>AD管理距离</p>
-<p>C-----0<br>
-S-----1<br>
-RIP---120<br>
-EIGRP-90/170/5<br>
-OSPF--110<br>
-ISIS--115<br>
-BGP---20/200<br>
-255---过滤</p>
+<p>C-----0<br>S-----1<br>RIP---120<br>EIGRP-90/170/5<br>OSPF--110<br>ISIS--115<br>BGP---20/200<br>255---过滤</p>
 <p>作用：从不同的路由协议学习到的相同的路由条目，比较进行管理。</p>
-<p>Metric开销：<br>
-比较同一种协议去往目的网络的开销</p>
+<p>Metric开销：<br>比较同一种协议去往目的网络的开销</p>
 <p><b>静态路由</b></p>
 <p>由管理员手工配置的路由条目</p>
 <p>配置语法：</p>
 <p><code>ip route 网络号 子网掩码 出接口/下一跳地址</code></p>
 <p>既要配置转发echo request的路由表，也要配置echo reply的路由表。</p>
-<p>如果是以太网形式，静态路由尽可能跟下一跳地址。(代理ARP):no ip proxy-arp<br>
-如果是串行链路，既可以跟下一跳，也可以跟出接口。</p>
+<p>如果是以太网形式，静态路由尽可能跟下一跳地址。(代理ARP):no ip proxy-arp<br>如果是串行链路，既可以跟下一跳，也可以跟出接口。</p>
 <p>静态路由全网联通：每一台路由都要配置与自己非直连路由的静态路由。</p>
-<p>静态路由特例：<br>
-默认路由：ip route 0.0.0.0 0.0.0.0 出接口/下一跳地址。<br>
-一般用作网络的出口。</p>
-<p>浮动静态路由：通过修改静态路由的管理实现备份。<br>
-若存在两条静态路由容易构成负载均衡。浮动静态路由可以做到另一条路由作为另一条的备份。<br>
-当其中一条路径出现问题，备份路径则生效。</p>
-<p>总结：<br>
-优点：配置简单、CPU不需要计算路由条目、稳定。<br>
-缺点：不适用于大型网络、不能适应网络拓扑的变化、消耗网络资源。</p>
-<p><b>动态路由<br>
-路由器自动形成路由表，自动适应网络拓扑变化。</b></p>
-<p>RIP:(Routing Information Protocol)<br>
-特点：<br>
-1.属于IGP，典型的DV协议(没有拓扑概念)<br>
-2.基于UDP协议，端口是520 RIP|UDP 502|IP 17<br>
-3.周期性以广播/组播的方式发送路由更新。<br>
-4.完整更新，路由表里面的路由条目。<br>
-5.算法-贝尔曼福特算法：使用跳数坐座位rip的度量值。<br>
-6.支持等价的负载均衡(去往目的由多个路径，路由metric相同)。<br>
-7.Rip有两个版本：RIPv1,RIPv2。</p>
-<p>RIPv1:<br>
-1.有类别的路由协议(不携带子网掩码)<br>
-2.广播的方式发送路由更新 广播地址:255.255.255.255<br>
-3.在主类边界自动汇总<br>
-4.不能支持VLSM(可变长子网掩码)<br>
-5.不能支持路由认证和打标<br>
-6.不能支持第三方下一跳次优路径(重分布)<br>
-7.不支持不连续子网,</p>
+<p>静态路由特例：<br>默认路由：ip route 0.0.0.0 0.0.0.0 出接口/下一跳地址。<br>一般用作网络的出口。</p>
+<p>浮动静态路由：通过修改静态路由的管理实现备份。<br>若存在两条静态路由容易构成负载均衡。浮动静态路由可以做到另一条路由作为另一条的备份。<br>当其中一条路径出现问题，备份路径则生效。</p>
+<p>总结：<br>优点：配置简单、CPU不需要计算路由条目、稳定。<br>缺点：不适用于大型网络、不能适应网络拓扑的变化、消耗网络资源。</p>
+<p><b>动态路由<br>路由器自动形成路由表，自动适应网络拓扑变化。</b></p>
+<p>RIP:(Routing Information Protocol)<br>特点：<br>1.属于IGP，典型的DV协议(没有拓扑概念)<br>2.基于UDP协议，端口是520 RIP|UDP 502|IP 17<br>3.周期性以广播/组播的方式发送路由更新。<br>4.完整更新，路由表里面的路由条目。<br>5.算法-贝尔曼福特算法：使用跳数坐座位rip的度量值。<br>6.支持等价的负载均衡(去往目的由多个路径，路由metric相同)。<br>7.Rip有两个版本：RIPv1,RIPv2。</p>
+<p>RIPv1:<br>1.有类别的路由协议(不携带子网掩码)<br>2.广播的方式发送路由更新 广播地址:255.255.255.255<br>3.在主类边界自动汇总<br>4.不能支持VLSM(可变长子网掩码)<br>5.不能支持路由认证和打标<br>6.不能支持第三方下一跳次优路径(重分布)<br>7.不支持不连续子网,</p>
 <p>RIPv2:</p>
-<p>router rip 进入到rip进程<br>
-version 1 选择版本<br>
-Network 宣告原则：按主类的方式进行宣告。<br>
-例：network 192.168.1.0 172.16.0.0<br>
-含义：被network包含的路由器上所有被激活的接口启RIP进程。</p>
+<p>router rip 进入到rip进程<br>version 1 选择版本<br>Network 宣告原则：按主类的方式进行宣告。<br>例：network 192.168.1.0 172.16.0.0<br>含义：被network包含的路由器上所有被激活的接口启RIP进程。</p>
 <p><code>show ip protocols</code></p>
 <p>接口所属的网段放进rip的数据库。</p>
 <p><code>show ip rip database</code></p>
-<p>利用辅助地址构建连续子网。<br>
-一个接口下可以配多个辅助地址。</p>
+<p>利用辅助地址构建连续子网。<br>一个接口下可以配多个辅助地址。</p>
 <p><code>ip address 地址 掩码 secondary</code></p>
 <p><code>show ip int brief</code></p>
-<p>1，路由器模式详解：<br>
-Router&gt; 用户模式，通常用来查看统计信息，但不能修改路由器的设置。<br>
-Router# 特权模式，可以查看并修改路由器的配置，通常在这里运行show命令。<br>
-Router(config)# 全局模式，在这里修改当前运行配置中的内容。<br>
-Router(config-if)# 接口模式，用来配置路由器的物理接口和环回接口。<br>
-Router(config-line)# 控制台接口模式<br>
-Router(config-subif)#  子接口模式，用来配置在路由器中创建的逻辑接口.<br>
-Router(config-router)#  路由协议接口模式，在这里配置路由协议，如RIP、OSPF、IGRP等。</p>
-<p>2，登录cisco设备必要的配置：<br>
-Router&gt;enable  //进入特权模式<br>
-Router#configure terminal   //进入全局模式<br>
-Router(config)#hostname R1    //配置路由器的主机名<br>
-R1(config)#no ip domain-lookup  //关闭动态的域名解析,作用是当我们输入错误命令的时候，路由器会认为这条命令没有错误，它只是一个域名的形式，路由器会进行解析，从而浪费宝贵的时间。<br>
-R1(config)#line console 0    //进入控制台<br>
-R1(config-line)#exec-timeout 0 0  //关闭控制台的会话超时，也可用命令no exec-timeout，当长时间不去操作路由器的时候，路由器会自动的终止与我们的对话连接，跳转到非连接状态，此时需要输入enable重新进入特权模式，对我们的操作十分的不方便。<br>
-R1(config-line)#logging synchronous //关闭日志同步，抑制控制台的提示信息，使得路由器发送的控制台屏幕的消息不会附加到命令行中。</p>
-<p>3，cisco设备的基本配置<br>
-Router(config)#hostname NGR1  //修改路由器主机名<br>
-Router#clock set 13:01:01 10 july 2007配置路由器时间：<br>
-Router#show clock   //查看路由器当前时间<br>
-Router(config)#enable password cisco //  特权模式的明文密码<br>
-Router(config)#enable secret cisco  // 特权模式的密文密码<br>
-Router(config)#service password-encryption<br>
-//将路由器中所有明文密码变为加密的形式<br>
-Router#copy running-config startup-config  保存路由器当前配置</p>
-<p>VTY口的配置<br>
-Router(config)#line vty 0 4<br>
-Router(config-line)#password [password]<br>
-Router(config-line)#login<br>
-Router(config-line)#exit</p>
-<p>配置以太网接口地址<br>
-Router#conf  t<br>
-Router(config)#interface E0/0  进入接口<br>
-Router(config-if)#ip address 192.168.1.1 255.255.255.0  //配置IP地址<br>
-Router(config-if)#no shutdown  //激活该接口</p>
-<p>配置串行接口（需要配置时钟频率）<br>
-Router#conf  t<br>
-Router(config)#interface S0<br>
-Router(config-if)#clock rate 64000 //DCE 设备配置时钟，DTE设备不用配置。<br>
-Router(config-if)#ip address 192.168.1.1 255.255.255.0   //配置IP地址<br>
-Router(config-if)#no shutdown</p>
-<p>4常用的show命令：<br>
-Router#show running-config     查看路由器运行配置文件<br>
-Router#show ip interface s0/0    查看接口协议相关信息<br>
-Router#show ip route     查看路由信息。<br>
-Router#show version      查看路由器版本<br>
-Router#show flash:        查看路由器flash<br>
-Router#show history           查看历史命令记录<br>
-Router#show arp     查看路由器ARP表<br>
-Router#show clock    查看路由器的时间设置<br>
-Router#show ip interface brief     查看接口简要信息<br>
-Router#show interfaces s0/0     查看接口物理相关信息<br>
-Router#show users     查看当前所有连接到路由器的用户<br>
-Router#show session     查看会话记录，经常在终端上使用<br>
-Router#show controllers s0/0    查看特定接口的硬件信息<br>
-Router#show ip protocols     查看全局和接口的第三层协议的特定状态<br>
-Router#show startup-config    查看下次路由器重新加载时将要使用的配置<br>
-Router#show cdp neighbors    CDP思科发现协议，查看直连的相邻设备及其详细信息。</p>
+<p>1，路由器模式详解：<br>Router&gt; 用户模式，通常用来查看统计信息，但不能修改路由器的设置。<br>Router# 特权模式，可以查看并修改路由器的配置，通常在这里运行show命令。<br>Router(config)# 全局模式，在这里修改当前运行配置中的内容。<br>Router(config-if)# 接口模式，用来配置路由器的物理接口和环回接口。<br>Router(config-line)# 控制台接口模式<br>Router(config-subif)#  子接口模式，用来配置在路由器中创建的逻辑接口.<br>Router(config-router)#  路由协议接口模式，在这里配置路由协议，如RIP、OSPF、IGRP等。</p>
+<p>2，登录cisco设备必要的配置：<br>Router&gt;enable  //进入特权模式<br>Router#configure terminal   //进入全局模式<br>Router(config)#hostname R1    //配置路由器的主机名<br>R1(config)#no ip domain-lookup  //关闭动态的域名解析,作用是当我们输入错误命令的时候，路由器会认为这条命令没有错误，它只是一个域名的形式，路由器会进行解析，从而浪费宝贵的时间。<br>R1(config)#line console 0    //进入控制台<br>R1(config-line)#exec-timeout 0 0  //关闭控制台的会话超时，也可用命令no exec-timeout，当长时间不去操作路由器的时候，路由器会自动的终止与我们的对话连接，跳转到非连接状态，此时需要输入enable重新进入特权模式，对我们的操作十分的不方便。<br>R1(config-line)#logging synchronous //关闭日志同步，抑制控制台的提示信息，使得路由器发送的控制台屏幕的消息不会附加到命令行中。</p>
+<p>3，cisco设备的基本配置<br>Router(config)#hostname NGR1  //修改路由器主机名<br>Router#clock set 13:01:01 10 july 2007配置路由器时间：<br>Router#show clock   //查看路由器当前时间<br>Router(config)#enable password cisco //  特权模式的明文密码<br>Router(config)#enable secret cisco  // 特权模式的密文密码<br>Router(config)#service password-encryption<br>//将路由器中所有明文密码变为加密的形式<br>Router#copy running-config startup-config  保存路由器当前配置</p>
+<p>VTY口的配置<br>Router(config)#line vty 0 4<br>Router(config-line)#password [password]<br>Router(config-line)#login<br>Router(config-line)#exit</p>
+<p>配置以太网接口地址<br>Router#conf  t<br>Router(config)#interface E0/0  进入接口<br>Router(config-if)#ip address 192.168.1.1 255.255.255.0  //配置IP地址<br>Router(config-if)#no shutdown  //激活该接口</p>
+<p>配置串行接口（需要配置时钟频率）<br>Router#conf  t<br>Router(config)#interface S0<br>Router(config-if)#clock rate 64000 //DCE 设备配置时钟，DTE设备不用配置。<br>Router(config-if)#ip address 192.168.1.1 255.255.255.0   //配置IP地址<br>Router(config-if)#no shutdown</p>
+<p>4常用的show命令：<br>Router#show running-config     查看路由器运行配置文件<br>Router#show ip interface s0/0    查看接口协议相关信息<br>Router#show ip route     查看路由信息。<br>Router#show version      查看路由器版本<br>Router#show flash:        查看路由器flash<br>Router#show history           查看历史命令记录<br>Router#show arp     查看路由器ARP表<br>Router#show clock    查看路由器的时间设置<br>Router#show ip interface brief     查看接口简要信息<br>Router#show interfaces s0/0     查看接口物理相关信息<br>Router#show users     查看当前所有连接到路由器的用户<br>Router#show session     查看会话记录，经常在终端上使用<br>Router#show controllers s0/0    查看特定接口的硬件信息<br>Router#show ip protocols     查看全局和接口的第三层协议的特定状态<br>Router#show startup-config    查看下次路由器重新加载时将要使用的配置<br>Router#show cdp neighbors    CDP思科发现协议，查看直连的相邻设备及其详细信息。</p>
 
                 </section>
 
