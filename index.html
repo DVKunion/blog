@@ -10,6 +10,7 @@
     <meta name="keywords" content="DV.K CTFer" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="stylesheet" href="/css/valine.css" />
     <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
     <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
     <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
@@ -60,41 +61,39 @@
                     </header>
                     <a class="image" href="/about/"><img src="https://cdn.dvkunion.cn/logo.png" class="lazyload" data-srcset="https://cdn.dvkunion.cn/logo.png" srcset="/css/images/overlay.png" alt=""/></a>
                 </div>
-                <li><a href="#about" class="button icon solo goto-next scrolly"></a></li>
+                <li><a class="goto-next scrolly" href="#about" class="button icon solo goto-next scrolly"></a></li>
             </section>
         
 
         
                <!-- About -->
     <section id="about" class="spotlight style1 bottom">
-        <span class="image fit main"><img src="https://cdn.dvkunion.cn/251565450033_.pic_hd.jpg" class="lazyload" data-srcset="https://cdn.dvkunion.cn/251565450033_.pic_hd.jpg" srcset="/css/images/overlay.png" alt="" /></span>
+        <span class="image fit main"><img src="https://cdn.dvkunion.cn/background/1484628385602.png" class="lazyload" data-srcset="https://cdn.dvkunion.cn/background/1484628385602.png" srcset="/css/images/overlay.png" alt="" /></span>
         <div class="content">
-            <div class="container" style="height: 10em">
+            <div class="container">
                 <div class="row">
                     <div class="col-4 col-12-medium">
                         <header>
-                            <h2>About Me</h2>
-                            <p>A Salt Fish Who Wants To Stand Up</p>
+                            <h3>About Me</h3>
+                            <p>a salt fish who wants to stand up</p>
                         </header>
                     </div>
                     <div class="col-4 col-12-medium">
                         <header>
-                            <li>web狗，只能看懂web</li>
-                            <li>python开发，java审计</li>
-                            <li>开发半吊子，审计也半吊子</li>
+                            <h3>KeyWords</h3>
+                            <p>web狗，只能看懂web</p>
+                            <p>python开发，java审计 开发半吊子，审计也半吊子</p>
+                            <p>不是二次元</p>
                         </header>
                     </div>
                     <div class="col-4 col-12-medium">
-                        <p>
-                            沉迷捣鼓一些乱七八糟的东西而导致精力分散
-                        </p>
-                        <p>
-                            偶尔会胡思乱想 不知道一天天做了些啥
-                        </p>
-                        <p>
-                            时不时会惊醒 不能在这样下去
-                            然后第二天忘记，周而复始
-                        </p>
+                        <header>
+                            <h3>Description</h3>
+                            <p>偶尔会胡思乱想 不知道一天天做了些啥</p>
+                            <p>沉迷捣鼓一些乱七八糟的东西而导致精力分散</p>
+                            <p>时不时会惊醒 不能在这样下去
+                                然后第二天忘记，周而复始</p>
+                        </header>
                     </div>
                 </div>
             </div>
@@ -317,21 +316,25 @@
         </ul>
         
         <ul class="copyright">
-            <Img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        
+        <script src="/js/Valine.min.js"></script>
         <script>
                 new Valine({
                         el:'#vcomment',
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
-                        placeholder: '说点什么吧',
-                        enableQQ: true,
-                        visitor: true
+                        visitor: true, // 阅读量统计
+                        master: ["f21bae5bf498b089b545f6f0a986e224"],
+                        friends: [""]
                 })
+
         </script>
+        
         <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>

@@ -48,8 +48,6 @@ img.lazyload:not(.loaded) {
 
 #main .container img {
     max-width: 100%;
-    height: auto!important;
-    width: auto!important;
 }
 
 .page_title_text{

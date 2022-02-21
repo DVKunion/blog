@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
+/*@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");*/
 
 /*
 	Landed by HTML5 UP
@@ -98,10 +98,9 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 }
 
 body, input, select, textarea {
-	color: rgba(255, 255, 255, 0.85);
-	font-family: "Roboto", Helvetica, sans-serif;
+	color: rgba(255, 255, 255, 0.60);
+	font-family: Lato, Verdana;
 	font-size: 15pt;
-	font-weight: 100;
 	line-height: 1.75em;
 }
 
@@ -110,19 +109,20 @@ a {
 	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	color: #e44c65;
+	display: block;
 	text-decoration: none;
+	position: relative;
+	color: #259d92;
 }
 
 a:hover {
 	color: #e44c65 !important;
 	border-bottom-color: transparent;
-	border-bottom: dotted 1px;
+	/*border-bottom: dotted 1px;*/
 }
 
 strong, b {
-	color: #ffffff;
-	font-weight: 300;
+	color: rgb(255, 255, 255);
 }
 
 em, i {
@@ -130,12 +130,17 @@ em, i {
 }
 
 p {
-	font-size: 16px;
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	margin-bottom: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color: #ffffff;
-	font-weight: 300;
+	/*font-weight: 300;*/
 	line-height: 1em;
 	margin: 0 0 1em 0;
 }
@@ -203,7 +208,7 @@ blockquote {
 code {
 	background: rgba(255, 255, 255, 0.075);
 	border-radius: 4px;
-	font-family: "Courier New", monospace;
+	font-family: Consolas,Monaco,"Courier New",monospace;
 	font-size: 0.9em;
 	margin: 0 0.25em;
 	padding: 0.25em 0.65em;
@@ -211,7 +216,7 @@ code {
 
 pre {
 	-webkit-overflow-scrolling: touch;
-	font-family: "Courier New", monospace;
+	font-family: Consolas,Monaco,"Courier New",monospace;
 	font-size: 0.9em;
 	margin: 0 0 2em 0;
 }
@@ -2160,7 +2165,6 @@ section.special, article.special {
 header p {
 	color: #ffffff;
 	position: relative;
-	margin: 0 0 1.5em 0;
 }
 
 header h2 + p {
@@ -2170,7 +2174,6 @@ header h2 + p {
 }
 
 header h3 + p {
-	font-size: 1.1em;
 	margin-top: -0.8em;
 	line-height: 1.75em;
 }
@@ -2583,7 +2586,6 @@ ul {
 }
 
 ul li {
-    font-size: 16px;
 	padding-left: 0.5em;
 }
 
@@ -3365,7 +3367,7 @@ body.landing .dropotron.level-0 {
 }
 
 #header {
-	/*background: rgba(39, 40, 51, 0.965);*/
+	background: rgba(0, 0, 0, 0.75);
 	box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
 	cursor: default;
 	height: 3.5em;

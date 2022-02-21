@@ -10,6 +10,7 @@
     <meta name="keywords" content="DV.K CTFer" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/extend.css" />
+    <link rel="stylesheet" href="/css/valine.css" />
     <link rel="bookmark"  type="image/x-icon"  href="https://cdn.dvkunion.cn/logo.png"/>
     <link rel="shortcut icon" href="https://cdn.dvkunion.cn/logo.png">
     <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
@@ -61,7 +62,7 @@
                     </header>
                     <a class="image" href="/about/"><img src="https://cdn.dvkunion.cn/logo.png" class="lazyload" data-srcset="https://cdn.dvkunion.cn/logo.png" srcset="/css/images/overlay.png" alt=""/></a>
                 </div>
-                <li><a href="#archive" class="button icon solo goto-next scrolly"></a></li>
+                <li><a class="goto-next scrolly" href="#archive" class="button icon solo goto-next scrolly"></a></li>
             </section>
         
 
@@ -303,21 +304,25 @@
         </ul>
         
         <ul class="copyright">
-            <Img src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.png"> <liICP>鲁ICP备2021028491号</liICP>
+                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        
+        <script src="/js/Valine.min.js"></script>
         <script>
                 new Valine({
                         el:'#vcomment',
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
-                        placeholder: '说点什么吧',
-                        enableQQ: true,
-                        visitor: true
+                        visitor: true, // 阅读量统计
+                        master: ["f21bae5bf498b089b545f6f0a986e224"],
+                        friends: [""]
                 })
+
         </script>
+        
         <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>
