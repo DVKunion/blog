@@ -77,6 +77,10 @@
     list-style-type: decimal;
 }
 
+.vtag.vmaster {
+     background: #c81965;
+}
+
 #vcomments ol,
 ul {
     display: block;
@@ -97,28 +101,6 @@ ol li {
 
 #vcomments ul ul li {
     list-style-type: circle;
-}
-
-#vcomments table, th, td {
-    padding: 12px 13px;
-    border: 1px solid #dfe2e5;
-}
-
-#vcomments table, th, td {
-    border: 0;
-}
-
-table tr:nth-child(2n), thead {
-    background-color: #fafafa;
-}
-
-#vcomments table th {
-    background-color: #f2f2f2;
-    min-width: 80px;
-}
-
-#vcomments table td {
-    min-width: 80px;
 }
 
 #vcomments h1 {
@@ -241,15 +223,6 @@ strong {
 #vcomments mark {
     background-color: #fcf8e3;
     padding: .2em;
-}
-
-#vcomments table, th, td {
-    padding: 12px 13px;
-    border: 1px solid #dfe2e5;
-}
-
-table tr:nth-child(2n), thead {
-    background-color: #fafafa;
 }
 
 #vcomments table th {

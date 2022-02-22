@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -49,39 +49,48 @@
         
 
         
-
         <!-- Main -->
+        
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
                     <h2>关于做渗透时在想些什么-白盒篇</h2>
                     <p>2022-01-25</p>
-                     <p>文章共计 - 124 字 阅读需要 - 1 分钟</p>
+                    <span id="/2022/01/25/关于做渗透时在想些什么-白盒篇/" class="leancloud_visitors" data-flag-title="关于做渗透时在想些什么-白盒篇">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 125 字 阅读需要 - 1 分钟</p>
+                    </span>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/background/1484628516665.jpg);" ></div>
                     <hr>
-                    <h1 id="关于做渗透时在想些什么-白盒篇"><a href="#关于做渗透时在想些什么-白盒篇" class="headerlink" title="关于做渗透时在想些什么-白盒篇"></a>关于做渗透时在想些什么-白盒篇</h1><h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><h3 id="1-三方组件"><a href="#1-三方组件" class="headerlink" title="1. 三方组件"></a>1. 三方组件</h3><p>以maven项目为例，检查：</p>
+                    <h1>关于做渗透时在想些什么-白盒篇</h1>
+<h2>JAVA</h2>
+<h3>1. 三方组件</h3>
+<p>以maven项目为例，检查：</p>
 <ul>
 <li>pom引入了哪些组件？</li>
 <li>mvn dependency:tree |grep 关键词/版本号 来快速检查三方包问题</li>
 <li>哪些组件可能存在漏洞？（shiro/fastjson)</li>
 <li>引入的三方组建是否在漏洞的版本内？</li>
 </ul>
-<h3 id="2-安全配置"><a href="#2-安全配置" class="headerlink" title="2. 安全配置"></a>2. 安全配置</h3><p>以spring boot为例，检查：</p>
+<h3>2. 安全配置</h3>
+<p>以spring boot为例，检查：</p>
 <ul>
 <li>框架的配置是否符合安全预期？</li>
 </ul>
-<h3 id="3-数据层（DAO"><a href="#3-数据层（DAO" class="headerlink" title="3. 数据层（DAO)"></a>3. 数据层（DAO)</h3><p>主要思考数据查询部分的</p>
+<h3>3. 数据层（DAO)</h3>
+<p>主要思考数据查询部分的</p>
 
                 </section>
 
             </div>
         </div>
-    </div>
-        <!-- Main -->
+        
+            <!-- Main -->
 
     <div id="main" class="wrapper style1">
         <div class="container">
@@ -101,6 +110,7 @@
         </div>
     </div>
 
+    </div>
     <footer id="footer">
         <!--  copyright  -->
         <ul class="copyright">
@@ -108,11 +118,12 @@
         </ul>
         
         <ul class="copyright">
-                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
                 <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
         
         <script src="/js/Valine.min.js"></script>
         <script>
@@ -121,13 +132,14 @@
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
                         visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
                         master: ["f21bae5bf498b089b545f6f0a986e224"],
-                        friends: [""]
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"]
                 })
 
         </script>
         
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>
         <script src="/js/jquery.scrollex.min.js"></script>

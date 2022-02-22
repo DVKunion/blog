@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -49,23 +49,30 @@
         
 
         
-
         <!-- Main -->
+        
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
                     <h2>HTTP状态码</h2>
                     <p>2019-01-17</p>
-                     <p>文章共计 - 3.4k 字 阅读需要 - 12 分钟</p>
+                    <span id="/2019/01/17/HTTP状态码/" class="leancloud_visitors" data-flag-title="HTTP状态码">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 3.4k 字 阅读需要 - 12 分钟</p>
+                    </span>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://s2.ax1x.com/2019/01/30/k1FGpn.jpg);" ></div>
                     <hr>
-                    <h1 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h1><h3 id="0x00-概念"><a href="#0x00-概念" class="headerlink" title="0x00- - 概念"></a><b>0x00- - 概念</b></h3><p>HTTP状态码（英语：HTTP Status Code）是用以表示网页服务器超文本传输协议响应状态的3位数字代码。这是表示使用HTTP协议（HyperText Transfer Protocol，超文本传输协议）客服端的请求做出反应的三位数字码。<br>HTTP状态根据开头的第一个数字分为5类。后面两个数字没有分类的作用。</p>
-<h3 id="0x01-1xx-信息类状态码"><a href="#0x01-1xx-信息类状态码" class="headerlink" title="0x01- - 1xx 信息类状态码"></a><b>0x01- - 1xx 信息类状态码</b></h3><p>这类状态码表示服务器已经收到了请求，需要请求者继续执行操作。</p>
-<div class="table-container">
+                    <h1>HTTP状态码</h1>
+<h3><b>0x00- - 概念</b></h3>
+<p>HTTP状态码（英语：HTTP Status Code）是用以表示网页服务器超文本传输协议响应状态的3位数字代码。这是表示使用HTTP协议（HyperText Transfer Protocol，超文本传输协议）客服端的请求做出反应的三位数字码。<br>
+HTTP状态根据开头的第一个数字分为5类。后面两个数字没有分类的作用。</p>
+<h3><b>0x01- - 1xx 信息类状态码</b></h3>
+<p>这类状态码表示服务器已经收到了请求，需要请求者继续执行操作。</p>
 <table>
 <thead>
 <tr>
@@ -92,9 +99,8 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="0x02-2xx-成功类状态码"><a href="#0x02-2xx-成功类状态码" class="headerlink" title="0x02- - 2xx 成功类状态码"></a><b>0x02- - 2xx 成功类状态码</b></h3><p>这类状态码表示服务器已经接受了请求并成功地处理了请求</p>
-<div class="table-container">
+<h3><b>0x02- - 2xx 成功类状态码</b></h3>
+<p>这类状态码表示服务器已经接受了请求并成功地处理了请求</p>
 <table>
 <thead>
 <tr>
@@ -146,10 +152,18 @@
 </tr>
 </tbody>
 </table>
-</div>
-<p>206请求头部必须包含Range头信息，并有可能含有IF-Range作为条件请求。<br>响应必须包含如下的头部域：<br>　　Content-Range 用以指示本次响应中返回的内容的范围；如果是 Content-Type 为 multipart/byteranges 的多段下载，则每一 multipart 段中都应包含 Content-Range 域用以指示本段的内容范围。假如响应中包含 Content-Length，那么它的数值必须匹配它返回的内容范围的真实字节数。<br>　　Date<br>　　ETag 和/或 Content-Location，假如同样的请求本应该返回200响应。<br>　　Expires, Cache-Control，和/或 Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。<br>　　假如本响应请求使用了 If-Range 强缓存验证，那么本次响应不应该包含其他实体头；假如本响应的请求使用了 If-Range 弱缓存验证，那么本次响应禁止包含其他实体头；这避免了缓存的实体内容和更新了的实体头信息之间的不一致。否则，本响应就应当包含所有本应该返回200响应中应当返回的所有实体头部域。<br>　　假如 ETag 或 Last-Modified 头部不能精确匹配的话，则客户端缓存应禁止将206响应返回的内容与之前任何缓存过的内容组合在一起。<br>　　任何不支持 Range 以及 Content-Range 头的缓存都禁止缓存206响应返回的内容。</p>
-<h3 id="0x03-3xx-重定向类状态码"><a href="#0x03-3xx-重定向类状态码" class="headerlink" title="0x03- - 3xx 重定向类状态码"></a><b>0x03- - 3xx 重定向类状态码</b></h3><p>这类状态码表示服务器需要进一步操作来完成请求。<br>用户浏览器才可以在没有用户介入的情况下自动提交所需要的后续请求。客户端应当自动监测无限循环重定向（例如：A-&gt;A，或者A-&gt;B-&gt;C-&gt;A），因为这会导致服务器和客户端大量不必要的资源消耗。按照 HTTP/1.0 版规范的建议，浏览器不应自动访问超过5次的重定向。</p>
-<div class="table-container">
+<p>206请求头部必须包含Range头信息，并有可能含有IF-Range作为条件请求。<br>
+响应必须包含如下的头部域：<br>
+　　Content-Range 用以指示本次响应中返回的内容的范围；如果是 Content-Type 为 multipart/byteranges 的多段下载，则每一 multipart 段中都应包含 Content-Range 域用以指示本段的内容范围。假如响应中包含 Content-Length，那么它的数值必须匹配它返回的内容范围的真实字节数。<br>
+　　Date<br>
+　　ETag 和/或 Content-Location，假如同样的请求本应该返回200响应。<br>
+　　Expires, Cache-Control，和/或 Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。<br>
+　　假如本响应请求使用了 If-Range 强缓存验证，那么本次响应不应该包含其他实体头；假如本响应的请求使用了 If-Range 弱缓存验证，那么本次响应禁止包含其他实体头；这避免了缓存的实体内容和更新了的实体头信息之间的不一致。否则，本响应就应当包含所有本应该返回200响应中应当返回的所有实体头部域。<br>
+　　假如 ETag 或 Last-Modified 头部不能精确匹配的话，则客户端缓存应禁止将206响应返回的内容与之前任何缓存过的内容组合在一起。<br>
+　　任何不支持 Range 以及 Content-Range 头的缓存都禁止缓存206响应返回的内容。</p>
+<h3><b>0x03- - 3xx 重定向类状态码</b></h3>
+<p>这类状态码表示服务器需要进一步操作来完成请求。<br>
+用户浏览器才可以在没有用户介入的情况下自动提交所需要的后续请求。客户端应当自动监测无限循环重定向（例如：A-&gt;A，或者A-&gt;B-&gt;C-&gt;A），因为这会导致服务器和客户端大量不必要的资源消耗。按照 HTTP/1.0 版规范的建议，浏览器不应自动访问超过5次的重定向。</p>
 <table>
 <thead>
 <tr>
@@ -201,10 +215,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="0x04-4xx-外部错误类状态码"><a href="#0x04-4xx-外部错误类状态码" class="headerlink" title="0x04- - 4xx 外部错误类状态码"></a><b>0x04- - 4xx 外部错误类状态码</b></h3><p>这类状态码通常指客户端发送的发生了错误，妨碍了服务器的处理、请求包含语法错误或无法完成请求。</p>
-<h3 id="0x05-5xx-内部错误类状态码"><a href="#0x05-5xx-内部错误类状态码" class="headerlink" title="0x05- - 5xx 内部错误类状态码"></a><b>0x05- - 5xx 内部错误类状态码</b></h3><p>这类状态码通常指服务器在处理请求的过程出现了错误或者有异常发生。也可能是服务器意识到无法处理这个请求。<br>5xx的状态码适用于任何响应方法。</p>
-<div class="table-container">
+<h3><b>0x04- - 4xx 外部错误类状态码</b></h3>
+<p>这类状态码通常指客户端发送的发生了错误，妨碍了服务器的处理、请求包含语法错误或无法完成请求。</p>
+<h3><b>0x05- - 5xx 内部错误类状态码</b></h3>
+<p>这类状态码通常指服务器在处理请求的过程出现了错误或者有异常发生。也可能是服务器意识到无法处理这个请求。<br>
+5xx的状态码适用于任何响应方法。</p>
 <table>
 <thead>
 <tr>
@@ -247,7 +262,7 @@
 <tr>
 <td>506</td>
 <td>Variant Also Negotiates</td>
-<td>　由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误</td>
+<td>由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误</td>
 </tr>
 <tr>
 <td>507</td>
@@ -266,44 +281,71 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="0x06-其他状态码"><a href="#0x06-其他状态码" class="headerlink" title="0x06- - 其他状态码"></a><b>0x06- - 其他状态码</b></h3><p>208 已经报告<br>一个DAV的绑定成员被前一个请求枚举，并且没有被再一次包括。</p>
-<p>226 IM Used<br>服务器已经满足了请求所要的资源，并且响应是一个或者多个实例操作应用于当前实例的结果。</p>
-<p>308 永久转移<br>这个请求和以后的请求都应该被另一个URI地址重新发送。307、308和302、301有相同的表现，但是不允许HTTP方法改变。例如，请求表单到一个永久转移的资源将会继续顺利地执行。</p>
-<p>418 我是一个茶壶<br>这个代码是在1998年作为传统的IETF April Fools‘ jokes被定义的在RFC2324，超文本咖啡罐控制协议，但是并没有被实际的HTTP服务器实现。RFC指定了这个代码应该是由茶罐返回给速溶咖啡。</p>
-<p>419 认证超时<br>并不是HTTP标注的一部分，419认证超时表示以前的有效证明已经失效了。同时也被用于401未认证的替代选择为了从其它被拒绝访问的已认证客户端中指定服务器的资源。</p>
-<p>420 方法失效<br>不是HTTP的标准，但是被Spring定义在HTTP状态类中当方法失时使用。这个状态码已经不推荐在Spring中使用。</p>
-<p>420 提高你的耐心<br>也不是HTTP标准的一部分，但是被版本1的Twitter搜索和趋势APi返回当客户端的速率被限制的时候。其它的服务提供商可能会使用429太多的请求响应码来代替。</p>
-<p>428 需要前置条件<br>原始服务器需要有条件的请求。当客户端GET一个资源的状态的时候，同时又PUT回给服务器，与此同时第三方修改状态到服务器上的时候，为了避免丢失更新的问题发生将会导致冲突。</p>
-<p>429 过多请求<br>用户已经发送了太多的请求在指定的时间里。用于限制速率。</p>
-<p>431 请求头部字段太大<br>服务器由于一个单独的请求头部字段或者是全部的字段太大而不愿意处理请求。</p>
-<p>440 登陆超时（微软）<br>一个微软的扩展，意味着你的会话已经超时。</p>
-<p>444 无响应<br>被使用在Nginx的日志中表明服务器没有返回信息给客户端并且关闭了连接（在威慑恶意软件的时候比较有用）。</p>
-<p>449 重试（微软）<br>一个微软的扩展。请求应该在执行适当的动作之后被重试。</p>
-<p>450 被Windows家长控制阻塞（微软）<br>一个微软的扩展。这个错误是当Windows家长控制打开并且阻塞指定网页的访问的时候被指定。</p>
-<p>451 由于法律原因而无效（因特网草稿）<br>被定义在因特网草稿“一个新的HTTP状态码用于法律限制的资源”。被用于当资源的访问由于法律原因被禁止的时候。例如检查制度或者是政府强制要求禁止访问。一个例子是1953年dystopian的小说Fahrenheit 451就是一个非法的资源。</p>
-<p>451 重定向（微软）<br>被用在Exchange ActiveSync中如果一个更有效的服务器能够被使用或者是服务器不能访问用户的邮箱。</p>
+<h3><b>0x06- - 其他状态码</b></h3>
+<p>208 已经报告<br>
+一个DAV的绑定成员被前一个请求枚举，并且没有被再一次包括。</p>
+<p>226 IM Used<br>
+服务器已经满足了请求所要的资源，并且响应是一个或者多个实例操作应用于当前实例的结果。</p>
+<p>308 永久转移<br>
+这个请求和以后的请求都应该被另一个URI地址重新发送。307、308和302、301有相同的表现，但是不允许HTTP方法改变。例如，请求表单到一个永久转移的资源将会继续顺利地执行。</p>
+<p>418 我是一个茶壶<br>
+这个代码是在1998年作为传统的IETF April Fools‘ jokes被定义的在RFC2324，超文本咖啡罐控制协议，但是并没有被实际的HTTP服务器实现。RFC指定了这个代码应该是由茶罐返回给速溶咖啡。</p>
+<p>419 认证超时<br>
+并不是HTTP标注的一部分，419认证超时表示以前的有效证明已经失效了。同时也被用于401未认证的替代选择为了从其它被拒绝访问的已认证客户端中指定服务器的资源。</p>
+<p>420 方法失效<br>
+不是HTTP的标准，但是被Spring定义在HTTP状态类中当方法失时使用。这个状态码已经不推荐在Spring中使用。</p>
+<p>420 提高你的耐心<br>
+也不是HTTP标准的一部分，但是被版本1的Twitter搜索和趋势APi返回当客户端的速率被限制的时候。其它的服务提供商可能会使用429太多的请求响应码来代替。</p>
+<p>428 需要前置条件<br>
+原始服务器需要有条件的请求。当客户端GET一个资源的状态的时候，同时又PUT回给服务器，与此同时第三方修改状态到服务器上的时候，为了避免丢失更新的问题发生将会导致冲突。</p>
+<p>429 过多请求<br>
+用户已经发送了太多的请求在指定的时间里。用于限制速率。</p>
+<p>431 请求头部字段太大<br>
+服务器由于一个单独的请求头部字段或者是全部的字段太大而不愿意处理请求。</p>
+<p>440 登陆超时（微软）<br>
+一个微软的扩展，意味着你的会话已经超时。</p>
+<p>444 无响应<br>
+被使用在Nginx的日志中表明服务器没有返回信息给客户端并且关闭了连接（在威慑恶意软件的时候比较有用）。</p>
+<p>449 重试（微软）<br>
+一个微软的扩展。请求应该在执行适当的动作之后被重试。</p>
+<p>450 被Windows家长控制阻塞（微软）<br>
+一个微软的扩展。这个错误是当Windows家长控制打开并且阻塞指定网页的访问的时候被指定。</p>
+<p>451 由于法律原因而无效（因特网草稿）<br>
+被定义在因特网草稿“一个新的HTTP状态码用于法律限制的资源”。被用于当资源的访问由于法律原因被禁止的时候。例如检查制度或者是政府强制要求禁止访问。一个例子是1953年dystopian的小说Fahrenheit 451就是一个非法的资源。</p>
+<p>451 重定向（微软）<br>
+被用在Exchange ActiveSync中如果一个更有效的服务器能够被使用或者是服务器不能访问用户的邮箱。</p>
 <p>客户端会假定重新执行HTTP自动发现协议去寻找更适合的服务器。</p>
-<p>494 请求头太大（Nginx）<br>Nginx内置代码和431类似，但是是被更早地引入在版本0.9.4（在2011年1月21日）。</p>
+<p>494 请求头太大（Nginx）<br>
+Nginx内置代码和431类似，但是是被更早地引入在版本0.9.4（在2011年1月21日）。</p>
 <p>495 证书错误（Nginx）</p>
 <p>Nginx内置的代码，当使用SSL客户端证书的时候错误会出现为了在日志错误中区分它和4XX和一个错误页面的重定向。。</p>
-<p>496 没有证书（Nginx）<br>Nginx内置的代码，当客户端不能提供证书在日志中分辨4XX和一个错误页面的重定向。</p>
-<p>497 HTTP到HTTPS（Nginx）<br>Nginx内置的代码，被用于原始的HTTP的请求发送给HTTPS端口去分辨4XX在日志中和一个错误页面的重定向。</p>
-<p>498 令牌超时或失效（Esri）<br>由ArcGIS for Server返回。这个代码意味着令牌的超时或者是失效。</p>
-<p>499 客户端关闭请求（Nginx）<br>被用在Nginx日志去表明一个连接已经被客户端关闭当服务器仍然正在处理它的请求，是的服务器无法返货状态码。</p>
-<p>499 需要令牌（Esri）<br>由ArcGIS for Server返回。意味着需要一个令牌（如果没有令牌被提交）。</p>
-<p>508 发现环路<br>服务器发现了一个无限的循环档处理请求的时候。</p>
-<p>511 需要网络授权<br>客户端需要授权去火的网络的访问权限。一般用于代理交互中被用来进行网络的访问控制。</p>
-<p>520 未知错误<br>这个状态码也没有被指定在任何RFC中，并且只会被一些服务器返回，例如微软的Azure和CloudFlare服务器:”520错误本质上是一个捕获全部的响应当原始服务器返回一些未知的或者一些不能被忍受或者被解释的(协议违反或者空响应)”。</p>
-<p>598 网络读取超时异常(未知)<br>这个状态码也没有在任何RFC中指定，但是被用在微软的HTTP代理中去标注一个网络读取超时在一个客户端之前的代理的后面。</p>
-<p>599 网络连接超时异常(未知)<br>这个状态码也没有在任何RFC中指定，但是被用在微软的HTTP代理中去标注一个网络连接超时在一个客户端之前的代理的后面。</p>
+<p>496 没有证书（Nginx）<br>
+Nginx内置的代码，当客户端不能提供证书在日志中分辨4XX和一个错误页面的重定向。</p>
+<p>497 HTTP到HTTPS（Nginx）<br>
+Nginx内置的代码，被用于原始的HTTP的请求发送给HTTPS端口去分辨4XX在日志中和一个错误页面的重定向。</p>
+<p>498 令牌超时或失效（Esri）<br>
+由ArcGIS for Server返回。这个代码意味着令牌的超时或者是失效。</p>
+<p>499 客户端关闭请求（Nginx）<br>
+被用在Nginx日志去表明一个连接已经被客户端关闭当服务器仍然正在处理它的请求，是的服务器无法返货状态码。</p>
+<p>499 需要令牌（Esri）<br>
+由ArcGIS for Server返回。意味着需要一个令牌（如果没有令牌被提交）。</p>
+<p>508 发现环路<br>
+服务器发现了一个无限的循环档处理请求的时候。</p>
+<p>511 需要网络授权<br>
+客户端需要授权去火的网络的访问权限。一般用于代理交互中被用来进行网络的访问控制。</p>
+<p>520 未知错误<br>
+这个状态码也没有被指定在任何RFC中，并且只会被一些服务器返回，例如微软的Azure和CloudFlare服务器:”520错误本质上是一个捕获全部的响应当原始服务器返回一些未知的或者一些不能被忍受或者被解释的(协议违反或者空响应)”。</p>
+<p>598 网络读取超时异常(未知)<br>
+这个状态码也没有在任何RFC中指定，但是被用在微软的HTTP代理中去标注一个网络读取超时在一个客户端之前的代理的后面。</p>
+<p>599 网络连接超时异常(未知)<br>
+这个状态码也没有在任何RFC中指定，但是被用在微软的HTTP代理中去标注一个网络连接超时在一个客户端之前的代理的后面。</p>
 
                 </section>
 
             </div>
         </div>
-    </div>
-        <!-- Main -->
+        
+            <!-- Main -->
 
     <div id="main" class="wrapper style1">
         <div class="container">
@@ -323,6 +365,7 @@
         </div>
     </div>
 
+    </div>
     <footer id="footer">
         <!--  copyright  -->
         <ul class="copyright">
@@ -330,11 +373,12 @@
         </ul>
         
         <ul class="copyright">
-                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
                 <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
         
         <script src="/js/Valine.min.js"></script>
         <script>
@@ -343,13 +387,14 @@
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
                         visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
                         master: ["f21bae5bf498b089b545f6f0a986e224"],
-                        friends: [""]
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"]
                 })
 
         </script>
         
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>
         <script src="/js/jquery.scrollex.min.js"></script>

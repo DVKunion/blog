@@ -32,18 +32,8 @@ img.lazyload {
 img.lazyload:not(.loaded) {
     -webkit-filter: blur(8px);
     filter: blur(8px);
-}
-
-.lazy-image-wrapper {
-    width: 90%;
-    height: 0;
-    padding-bottom: 66.67%;
-    border: 2px solid white;
-    position: relative;
-}
-.lazy-image {
-    width: 100%;
-    position: absolute;
+    width:200px;
+    height:100px
 }
 
 #main .container img {
@@ -123,7 +113,7 @@ img.lazyload:not(.loaded) {
     object-fit: cover;
     object-position:center;
     display: block;
-    filter: brightness(.85);
+    filter: brightness(.9);
 }
 
 #footer .copyright liICP {
@@ -137,9 +127,6 @@ img.lazyload:not(.loaded) {
     margin-left: 5em;
 }
 
-.archive a{
-    margin-left: 10em;
-}
 
 .spotlight .content .summary{
     font-size: 14px;

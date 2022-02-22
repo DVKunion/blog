@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -49,49 +49,117 @@
         
 
         
-
         <!-- Main -->
+        
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
                     <h2>Linux--KaLi</h2>
                     <p>2018-12-04</p>
-                     <p>文章共计 - 4.3k 字 阅读需要 - 16 分钟</p>
+                    <span id="/2018/12/04/Linux-KaLi/" class="leancloud_visitors" data-flag-title="Linux--KaLi">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 4.4k 字 阅读需要 - 16 分钟</p>
+                    </span>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/background/1484628195382.png);" ></div>
                     <hr>
-                    <h1 id="Linux-KaLi"><a href="#Linux-KaLi" class="headerlink" title="Linux--KaLi"></a>Linux--KaLi</h1><h3 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00- - 前言"></a><b>0x00- - 前言<b></b></b></h3><h5 id="小姐姐不哭，我来给你打伞鸭-´∀-♥"><a href="#小姐姐不哭，我来给你打伞鸭-´∀-♥" class="headerlink" title="小姐姐不哭，我来给你打伞鸭(*´∀`)~♥"></a>小姐姐不哭，我来给你打伞鸭(*´∀`)~♥</h5><p>咳咳,一直想要把KaLi里面的东西好好的整理一下，毕竟能省去很多复杂的操作时间。（其实就是图书馆借的书马上得换了赶紧翻两页写个笔记好了Orz…）<br>相比普通的Linux，KaLi集成了大量的渗透工具。是一个相当于什么都给你准备好的大型工具箱，能简化我们大量的安装时间。</p>
+                    <h1>Linux--KaLi</h1>
+<h3><b>0x00- - 前言<b></b></b></h3>
+<h5>小姐姐不哭，我来给你打伞鸭(*´∀`)~♥</h5>
+<p>咳咳,一直想要把KaLi里面的东西好好的整理一下，毕竟能省去很多复杂的操作时间。（其实就是图书馆借的书马上得换了赶紧翻两页写个笔记好了Orz...）<br>
+相比普通的Linux，KaLi集成了大量的渗透工具。是一个相当于什么都给你准备好的大型工具箱，能简化我们大量的安装时间。</p>
 <blockquote>
-<p>“工欲善其事，必先利其器”</p>
+<p>&quot;工欲善其事，必先利其器&quot;</p>
 </blockquote>
-<h3 id="0x01-KaLi简介-amp-安装"><a href="#0x01-KaLi简介-amp-安装" class="headerlink" title="0x01- - KaLi简介&amp;安装"></a><b>0x01- - KaLi简介&amp;安装<b></b></b></h3><p>还是从这个东西的历史开始了解。</p>
-<p>Kali Linux是基于Debian的Linux发行版， 设计用于数字取证操作系统。由Offensive Security Ltd维护和资助。最先由Offensive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linux发行版 。<br>Kali 也是一个简便的安全解决方案。Kali 并不要求你自己去维护一个 Linux 系统，或者你自己去收集软件和依赖项。你只需要专注于要审计的真实工作上，而不需要去考虑准备测试系统。</p>
+<h3><b>0x01- - KaLi简介&amp;安装<b></b></b></h3>
+<p>还是从这个东西的历史开始了解。</p>
+<p>Kali Linux是基于Debian的Linux发行版， 设计用于数字取证操作系统。由Offensive Security Ltd维护和资助。最先由Offensive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linux发行版 。<br>
+Kali 也是一个简便的安全解决方案。Kali 并不要求你自己去维护一个 Linux 系统，或者你自己去收集软件和依赖项。你只需要专注于要审计的真实工作上，而不需要去考虑准备测试系统。</p>
 <p>至于安装，我这里选择在虚拟机内搭建一个kali环境作为测试。</p>
-<p>安装方法与普通的Linux系统并无区别，这里不再赘述。在<b><i><a href="http://www.kali.org/" target="_blank" rel="noopener">官网</a></i></b>下载镜像扔进虚拟机即可。<br>还是加一个注释吧：-i386 是 32位系统的镜像包，amd64 是 64位系统的安装包</p>
+<p>安装方法与普通的Linux系统并无区别，这里不再赘述。在<b><i><a href="http://www.kali.org/" target="_blank" rel="noopener">官网</a></i></b>下载镜像扔进虚拟机即可。<br>
+还是加一个注释吧：-i386 是 32位系统的镜像包，amd64 是 64位系统的安装包</p>
 <p>KaLi 也可以安装到U盘/SD卡，甚至是ARM设备中。</p>
-<h3 id="0x02-KaLi前期准备"><a href="#0x02-KaLi前期准备" class="headerlink" title="0x02- - KaLi前期准备"></a><b>0x02- - KaLi前期准备<b></b></b></h3><h4 id="软件包的安装"><a href="#软件包的安装" class="headerlink" title="软件包的安装"></a><font color="blue">软件包的安装</font><br></h4><p>安装完成后，总需要微微的配置一下个人设置，让这台终端有一些你的记号，才会有一种归属感。<br>Kali是基于Debian开发的系统，所以在软件源和安装上，Kali使用的是和Debian一样的APT软件包管理工具和dpkg软件包管理器。<br>apt 命令也不过多赘述，参考Linux—CentOS 或是 Linux—Ubuntu。这里列出几个常用的命令仅供参考：<br><code># apt-get install /package name/</code> 安装<br><code># apt-get update</code> 更新软件源和软件库<br><code># apt-get upgrade</code> 升级kali软件<br><code># apt-get dist-upgrade</code> kali版本升级<br><code># apt-get remove /package name/</code> 卸载<br><code># apt-get autoremove</code> 自动移除不需要的软件包。<br><code># apt-get purge /package name/</code>完全移除（包括依赖软件包）<br><code># apt-get clean [all]</code> 清理下载的软件包<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxurhy1rahj30kk0dwwjb.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxurhy1rahj30kk0dwwjb.jpg" srcset="/css/images/overlay.png" alt=""><br>dpkg 使用方法同 rpm 一样，只不过dpkg 是针对.deb的软件包。在Kali内，是不支持rpm(red hat package)的。<br>dpgk的部分常用参数也列在此处供参考：<br><code>dpkg -i</code>安装<br><code>dpkg -r</code>卸载<br><code>dpkg -P</code>完全移除<br><code>dpkg -l</code>显示软件状态<br><code>dpkg -p</code> 详细信息<br>还有一种使用 tar 安装的方式，和其他系统下 tar 的安装无差异。</p>
-<p>有时系统提供的官方库没有我们需要的软件，与要自己手动更换软件源：<br><code>vim /etc/apt/sources.list</code><br>将源添加在文件的尾部:<br>deb<a href="http://http.us.debian.org/debianstable" target="_blank" rel="noopener">http://http.us.debian.org/debianstable</a> main contrib non-free</p>
+<h3><b>0x02- - KaLi前期准备<b></b></b></h3>
+<h4><font color="blue">软件包的安装</font><br></h4>
+<p>安装完成后，总需要微微的配置一下个人设置，让这台终端有一些你的记号，才会有一种归属感。<br>
+Kali是基于Debian开发的系统，所以在软件源和安装上，Kali使用的是和Debian一样的APT软件包管理工具和dpkg软件包管理器。<br>
+apt 命令也不过多赘述，参考Linux--CentOS 或是 Linux--Ubuntu。这里列出几个常用的命令仅供参考：<br>
+<code># apt-get install /package name/</code> 安装<br>
+<code># apt-get update</code> 更新软件源和软件库<br>
+<code># apt-get upgrade</code> 升级kali软件<br>
+<code># apt-get dist-upgrade</code> kali版本升级<br>
+<code># apt-get remove /package name/</code> 卸载<br>
+<code># apt-get autoremove</code> 自动移除不需要的软件包。<br>
+<code># apt-get purge /package name/</code>完全移除（包括依赖软件包）<br>
+<code># apt-get clean [all]</code> 清理下载的软件包<br>
+<img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxurhy1rahj30kk0dwwjb.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxurhy1rahj30kk0dwwjb.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+dpkg 使用方法同 rpm 一样，只不过dpkg 是针对.deb的软件包。在Kali内，是不支持rpm(red hat package)的。<br>
+dpgk的部分常用参数也列在此处供参考：<br>
+<code>dpkg -i</code>安装<br>
+<code>dpkg -r</code>卸载<br>
+<code>dpkg -P</code>完全移除<br>
+<code>dpkg -l</code>显示软件状态<br>
+<code>dpkg -p</code> 详细信息<br>
+还有一种使用 tar 安装的方式，和其他系统下 tar 的安装无差异。</p>
+<p>有时系统提供的官方库没有我们需要的软件，与要自己手动更换软件源：<br>
+<code>vim /etc/apt/sources.list</code><br>
+将源添加在文件的尾部:<br>
+debhttp://http.us.debian.org/debianstable main contrib non-free</p>
 <p>保存后apt-get update 更新即可。</p>
-<h4 id="KaLi网络-amp-基本服务"><a href="#KaLi网络-amp-基本服务" class="headerlink" title="KaLi网络&amp;基本服务"></a><font color="blue">KaLi网络&amp;基本服务</font><br></h4><h5 id="网络"><a href="#网络" class="headerlink" title="网络"></a><b>网络</b></h5><p>Kali的网络配置也和Debian基本相同，配置文件位于 /etc/network/interfaces。其DNS文件位于 /etc/resolv.conf<br>虚拟机内我们为了方便基本操作使用DHCP分配一个IP即可。（后续还是使用静态较好…这东西的动静太大了）</p>
-<p>学习一个大佬的小习惯：插网线前断掉网卡,避免多余的通信。<br>在GUI界面直接配置Network Connections可以起到同样的作用。</p>
-<h5 id="服务"><a href="#服务" class="headerlink" title="服务"></a><b>服务</b></h5><p>kali自带一个简易的apache web服务。<br>同样我们可以通过GUI界面和命令行界面启动。<br>GUI的启动方法…自己在开始菜单里面找一找吧…因该有的…（书上是这么的写的…ಠ_ಠ）<br>命令行操作:<br><code># /etc/init.d/apache2 start</code> 启动<br><code># /ect/init.d/apache2 stop</code> 停止<br><code># /ect/init.d/apache2 restart</code> 重启<br>配置文件位置：<br><code># /etc/apache2/apache2.conf</code><br>出现错误时查日志修改配置文件。<br>成功启动后访问kali的ip可以看到熟悉的页面<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxusyf6ebej30zq0haq4p.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxusyf6ebej30zq0haq4p.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p>同时kali提供SSH服务。<br>命令行操作:<br><code># /etc/init.d/ssh start</code> 启动<br><code># /ect/init.d/ssh stop</code> 停止<br><code># /ect/init.d/ssh restart</code> 重启</p>
-<p>一般为了方便我们还要搭建以下FTP服务。<br>可以安装的FTP服务很多，例如VSFTP、Pure-FTPd等</p>
-<h3 id="0x03-靶机环境搭建"><a href="#0x03-靶机环境搭建" class="headerlink" title="0x03- - 靶机环境搭建"></a><b>0x03- - 靶机环境搭建<b></b></b></h3><p>武器准备的差不多了，我们需要找两个“受害者”了。<br>心中铭记社会主义核心价值观的我，怎么可能会攻击别人的主机呢？（网络安全法了解一下）就自己造两个“稻草人”来作为“受害者”。Σ(*ﾟдﾟﾉ)ﾉ</p>
-<p>win下当然就是VM跑起来挂着就好了。<br>Linux下可以使用docker模拟多台靶机。</p>
-<p>安装的系统可以使用Rapid7 / Metasploitable2<br>/SamuraiWTF/BWA<br><b><i><a href="http://sourceforge.net" target="_blank" rel="noopener"><br>Metasploitable2 官网</a></i></b></p>
-<p>下载完成后直接扔虚拟机。<br>登录:用户、密码都是msfadmin。<br>访问其IP如下图：<br><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxuzee0cakj30if0dlglj.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxuzee0cakj30if0dlglj.jpg" srcset="/css/images/overlay.png" alt=""><br>Metasploitable 还包含：</p>
+<h4><font color="blue">KaLi网络&amp;基本服务</font><br></h4>
+<h5><b>网络</b></h5>
+<p>Kali的网络配置也和Debian基本相同，配置文件位于 /etc/network/interfaces。其DNS文件位于 /etc/resolv.conf<br>
+虚拟机内我们为了方便基本操作使用DHCP分配一个IP即可。（后续还是使用静态较好...这东西的动静太大了）</p>
+<p>学习一个大佬的小习惯：插网线前断掉网卡,避免多余的通信。<br>
+在GUI界面直接配置Network Connections可以起到同样的作用。</p>
+<h5><b>服务</b></h5>
+<p>kali自带一个简易的apache web服务。<br>
+同样我们可以通过GUI界面和命令行界面启动。<br>
+GUI的启动方法...自己在开始菜单里面找一找吧...因该有的...（书上是这么的写的...ಠ_ಠ）<br>
+命令行操作:<br>
+<code># /etc/init.d/apache2 start</code> 启动<br>
+<code># /ect/init.d/apache2 stop</code> 停止<br>
+<code># /ect/init.d/apache2 restart</code> 重启<br>
+配置文件位置：<br>
+<code># /etc/apache2/apache2.conf</code><br>
+出现错误时查日志修改配置文件。<br>
+成功启动后访问kali的ip可以看到熟悉的页面<br>
+<img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxusyf6ebej30zq0haq4p.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxusyf6ebej30zq0haq4p.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>同时kali提供SSH服务。<br>
+命令行操作:<br>
+<code># /etc/init.d/ssh start</code> 启动<br>
+<code># /ect/init.d/ssh stop</code> 停止<br>
+<code># /ect/init.d/ssh restart</code> 重启</p>
+<p>一般为了方便我们还要搭建以下FTP服务。<br>
+可以安装的FTP服务很多，例如VSFTP、Pure-FTPd等</p>
+<h3><b>0x03- - 靶机环境搭建<b></b></b></h3>
+<p>武器准备的差不多了，我们需要找两个“受害者”了。<br>
+心中铭记社会主义核心价值观的我，怎么可能会攻击别人的主机呢？（网络安全法了解一下）就自己造两个“稻草人”来作为“受害者”。Σ(*ﾟдﾟﾉ)ﾉ</p>
+<p>win下当然就是VM跑起来挂着就好了。<br>
+Linux下可以使用docker模拟多台靶机。</p>
+<p>安装的系统可以使用Rapid7 / Metasploitable2<br>
+/SamuraiWTF/BWA<br>
+<b><i><a href="http://sourceforge.net" target="_blank" rel="noopener"><br>
+Metasploitable2 官网</a></i></b></p>
+<p>下载完成后直接扔虚拟机。<br>
+登录:用户、密码都是msfadmin。<br>
+访问其IP如下图：<br>
+<img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxuzee0cakj30if0dlglj.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxuzee0cakj30if0dlglj.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+Metasploitable 还包含：</p>
 <ol>
 <li>1.phpMyAdmin：一个基于php的数据库图形化管理界面</li>
-<li>2.Mutillidate：Metasploitable内置的可能已经过期，可以访问最新参考资源：<a href="http://sourceforge.net/projects/mutillidate" target="_blank" rel="noopener">http://sourceforge.net/projects/mutillidate</a>;<br><a href="http://www.youtube.com/user/webpwnized" target="_blank" rel="noopener">http://www.youtube.com/user/webpwnized</a></li>
+<li>2.Mutillidate：Metasploitable内置的可能已经过期，可以访问最新参考资源：<a href="http://sourceforge.net/projects/mutillidate;" target="_blank" rel="noopener">http://sourceforge.net/projects/mutillidate;</a><br>
+<a href="http://www.youtube.com/user/webpwnized" target="_blank" rel="noopener">http://www.youtube.com/user/webpwnized</a></li>
 <li>3.WebDAV：这是一个HTTP协议栈的扩展。更多信息：<a href="http://www.webdav.com" target="_blank" rel="noopener">http://www.webdav.com</a></li>
 <li>4.DVWA：这个就不多说了，参见另一篇通关文章：</li>
 <li>5.Twiki：一款企业及的web2.0应用程序的Wiki和Web前端协作。</li>
 </ol>
-<p>训练库MCIR(Maglcal Code Injection Rainbow)<br>MCIR包含以下几个模块：</p>
+<p>训练库MCIR(Maglcal Code Injection Rainbow)<br>
+MCIR包含以下几个模块：</p>
 <ol>
 <li>1.SQLol</li>
 <li>2.XMlmao</li>
@@ -100,21 +168,28 @@
 <li>5.CryptOMG</li>
 </ol>
 <p><b>More：</b><a href="http://github.com/SpiderLabs/MCIR" target="_blank" rel="noopener">http://github.com/SpiderLabs/MCIR</a></p>
-<p>可以在 matoploitable2 下安装MCIR<br>下载MCIR源码:</p>
+<p>可以在 matoploitable2 下安装MCIR<br>
+下载MCIR源码:</p>
 <p><code>wget https://codeload.github.com/SpiderLabs/MCIR/zip/master</code></p>
-<p>我没有成功，由于什么ssl错误…直接去他的github上把源码包撸下来扔到虚拟机里，效果一样的。<br>扔进去之后解压：</p>
+<p>我没有成功，由于什么ssl错误...直接去他的github上把源码包撸下来扔到虚拟机里，效果一样的。<br>
+扔进去之后解压：</p>
 <p><code>unzip master</code></p>
 <p>把解压后的文件夹拷贝到apache目录下</p>
-<p><code>sudo mv MCIR-master /var/www/mcir</code><br>之后还要修改一下mcir的主界面，创建一个入口</p>
-<p><code>cd /var/www</code><br><code>sudo vim index.php</code></p>
+<p><code>sudo mv MCIR-master /var/www/mcir</code><br>
+之后还要修改一下mcir的主界面，创建一个入口</p>
+<p><code>cd /var/www</code><br>
+<code>sudo vim index.php</code></p>
 <p>将mcir的连接写入web列表中</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1cijp5wj30mt0dpdfq.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1cijp5wj30mt0dpdfq.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1cijp5wj30mt0dpdfq.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1cijp5wj30mt0dpdfq.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p>之后访问IP如下:</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv16m9vn8j30po0e4mx4.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv16m9vn8j30po0e4mx4.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv16m9vn8j30po0e4mx4.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv16m9vn8j30po0e4mx4.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p>点击我们创建的入口连接：</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1bsy9m6j30pe0dw74j.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1bsy9m6j30pe0dw74j.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1bsy9m6j30pe0dw74j.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxv1bsy9m6j30pe0dw74j.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p>到此，靶机的安装先告一段落。</p>
-<h3 id="0x04-渗透测试流程"><a href="#0x04-渗透测试流程" class="headerlink" title="0x04- - 渗透测试流程"></a><b>0x04- - 渗透测试流程<b></b></b></h3><p>在这一部分，想规范化一下渗透测试的五个标准流程。<br>该框架为渗透测试人员提供了一个较为完备的渗透体系，同时也用于为渗透测试活动形成更高等级的计划。<br>一个比较通用的定义为：一个渗透测试的生命周期分为五个阶段：</p>
+<h3><b>0x04- - 渗透测试流程<b></b></b></h3>
+<p>在这一部分，想规范化一下渗透测试的五个标准流程。<br>
+该框架为渗透测试人员提供了一个较为完备的渗透体系，同时也用于为渗透测试活动形成更高等级的计划。<br>
+一个比较通用的定义为：一个渗透测试的生命周期分为五个阶段：</p>
 <ol>
 <li><b>1.侦查</b></li>
 <li><b>2.扫描</b></li>
@@ -123,10 +198,12 @@
 <li><b>5.报告</b></li>
 </ol>
 <p>因为这篇博客主角为KaLi,所以在此仅记录KaLi下的这五部分的工具。</p>
-<h4 id="1-侦查"><a href="#1-侦查" class="headerlink" title="1.侦查"></a><font color="blue">1.侦查</font><br></h4><blockquote>
+<h4><font color="blue">1.侦查</font><br></h4>
+<blockquote>
 <p>知己知彼，百战不殆</p>
 </blockquote>
-<p>什么是侦查？所有有关渗透学习的资料的第一章必定都是侦查。个人认为，就是利用一切可以搜集到与目标有关或者间接有关的信息的方法，进行信息搜集。例如我们所熟悉的：Google、百度。<br>本阶段的目标是找出关于组织机构尽可能多的信息。</p>
+<p>什么是侦查？所有有关渗透学习的资料的第一章必定都是侦查。个人认为，就是利用一切可以搜集到与目标有关或者间接有关的信息的方法，进行信息搜集。例如我们所熟悉的：Google、百度。<br>
+本阶段的目标是找出关于组织机构尽可能多的信息。</p>
 <ul>
 <li>· 组织架构，组织结构图，部门架构图等</li>
 <li>· 组织基础设施：IP地址和网络拓扑</li>
@@ -135,15 +212,30 @@
 <li>· 地理位置：组织设施的地理位置</li>
 </ul>
 <p>首先从目标网站开始：自身的门户网站往往包含了大量的高价值信息；其次招聘信息的页面也往往能够透露出目标所使用的技术；每一个站点都要进行webmail的连接，并进行评估。</p>
-<h5 id="wget-工具"><a href="#wget-工具" class="headerlink" title="wget 工具"></a>wget 工具</h5><p>我们可以通过wget工具对网站进行下载离线镜像。<br>wget只能获取所有的html页面，而不能获取PHP教本页面。<br>具体参数参考手册。</p>
-<h5 id="Google-amp-Google-Hacking"><a href="#Google-amp-Google-Hacking" class="headerlink" title="Google &amp;Google Hacking"></a>Google &amp;Google Hacking</h5><p>Google 的高级搜索页：<a href="http://www.google.com/advanced_search" target="_blank" rel="noopener">http://www.google.com/advanced_search</a><br>Google Hacking 数据库(GHDB)：<a href="http://www.hackerforcharity.org/ghdb" target="_blank" rel="noopener">http://www.hackerforcharity.org/ghdb</a><br><a href="http://www.offensive-security.com/community-projects/google-hacking-database/" target="_blank" rel="noopener">http://www.offensive-security.com/community-projects/google-hacking-database/</a><br>阅读《Google Hacking for Penetration Testers》。</p>
+<h5>wget 工具</h5>
+<p>我们可以通过wget工具对网站进行下载离线镜像。<br>
+wget只能获取所有的html页面，而不能获取PHP教本页面。<br>
+具体参数参考手册。</p>
+<h5>Google &amp;Google Hacking</h5>
+<p>Google 的高级搜索页：<a href="http://www.google.com/advanced_search" target="_blank" rel="noopener">http://www.google.com/advanced_search</a><br>
+Google Hacking 数据库(GHDB)：<a href="http://www.hackerforcharity.org/ghdb" target="_blank" rel="noopener">http://www.hackerforcharity.org/ghdb</a><br>
+<a href="http://www.offensive-security.com/community-projects/google-hacking-database/" target="_blank" rel="noopener">http://www.offensive-security.com/community-projects/google-hacking-database/</a><br>
+阅读《Google Hacking for Penetration Testers》。</p>
 <p>P.S:有时间关注一下LinkedIn</p>
-<h5 id="DNS-DNS攻击"><a href="#DNS-DNS攻击" class="headerlink" title="DNS/DNS攻击"></a>DNS/DNS攻击</h5><h5 id="查询域名服务器-nslookup"><a href="#查询域名服务器-nslookup" class="headerlink" title="查询域名服务器/-/-nslookup"></a>查询域名服务器/-/-nslookup</h5><p>nslookup 工具可以用于域名服务器查询。<br>在kali终端直接输入nslookup，即可进入该工具命令模式。<br>输入一个域名，即可向本地域名服务器查询这个域名的权威应答和非权威应答服务器。<br>nslookup 通过分配给本机的域名服务器进行查询。可用server参数进行查看：</p>
-<p><code>nslookup</code><br><code>&gt; server</code></p>
-<p>nslookup还可以限定查询服务器类型：<br><code>&gt; set type = MX</code> 特定查询邮件服务器<br><code>&gt; google.com</code>  查询的域名<br>本地域名服务器配置文件即DNS解析文件。</p>
+<h5>DNS/DNS攻击</h5>
+<h5>查询域名服务器/-/-nslookup</h5>
+<p>nslookup 工具可以用于域名服务器查询。<br>
+在kali终端直接输入nslookup，即可进入该工具命令模式。<br>
+输入一个域名，即可向本地域名服务器查询这个域名的权威应答和非权威应答服务器。<br>
+nslookup 通过分配给本机的域名服务器进行查询。可用server参数进行查看：</p>
+<p><code>nslookup</code><br>
+<code>&gt; server</code></p>
+<p>nslookup还可以限定查询服务器类型：<br>
+<code>&gt; set type = MX</code> 特定查询邮件服务器<br>
+<code>&gt; google.com</code>  查询的域名<br>
+本地域名服务器配置文件即DNS解析文件。</p>
 <p>/etc/resovle.conf</p>
 <p>nslook常见主要记录类型：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -185,57 +277,116 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h5 id="区域传输"><a href="#区域传输" class="headerlink" title="区域传输"></a>区域传输</h5><p>区域传输可以在短时间内获取更多的信息。<br>区域传输是完全镜像一台服务器的所有信息，在配置不当的服务器上不但授权更新客户端的区域传输，还准许传输请求。<br>我们使用 Domain Internet Gopher (DIG) 程序进行区域传输：<br><code>dig @ [nameserver][domain] axfr</code><br>一般域名服务器会拒绝这个请求，当域名服务器配置不当时，完整的域名服务器记录将会被传输到本地Kali，域名应该是最小域名。axfr参数表示dig应请求一个区域传输操作。</p>
-<h4 id="2-扫描"><a href="#2-扫描" class="headerlink" title="2.扫描"></a><font color="blue">2.扫描</font><br></h4><p>我们再打个形象的比喻：这个比喻是在《黑客秘籍—渗透测试指南》一书中，全书将渗透测试比喻做一场足球赛：如果说侦查是在赛前对对手的球队有哪些球员等信息进行搜集，那么扫描就是正式比赛开始的哨声。</p>
+<h5>区域传输</h5>
+<p>区域传输可以在短时间内获取更多的信息。<br>
+区域传输是完全镜像一台服务器的所有信息，在配置不当的服务器上不但授权更新客户端的区域传输，还准许传输请求。<br>
+我们使用 Domain Internet Gopher (DIG) 程序进行区域传输：<br>
+<code>dig @ [nameserver][domain] axfr</code><br>
+一般域名服务器会拒绝这个请求，当域名服务器配置不当时，完整的域名服务器记录将会被传输到本地Kali，域名应该是最小域名。axfr参数表示dig应请求一个区域传输操作。</p>
+<h4><font color="blue">2.扫描</font><br></h4>
+<p>我们再打个形象的比喻：这个比喻是在《黑客秘籍--渗透测试指南》一书中，全书将渗透测试比喻做一场足球赛：如果说侦查是在赛前对对手的球队有哪些球员等信息进行搜集，那么扫描就是正式比赛开始的哨声。</p>
 <p>扫描的主要目的是确定连接组织网络中的计算机和其他设备的指定信息。在本阶段中，目标就是找到所有的主机终端、确认操作系统以及开启的服务、甚至发现较为明显的漏洞。</p>
 <p>常见的扫描工具：Nmap、Hping、Nessus。</p>
-<p>进行这一部分之前，需要对网络的几个基础知识有一定的了解：网络流量、端口、防火墙、IP协议、TCP协议、UDP协议，ICMP等。<br>参考CSDN上的部分博文吧。</p>
-<p><font color="red">新增加一个命令：tracert(for Win)/traceroute(for Linux)。</font><br>关于这个东西的理解还不是很深刻，后续在计网里补一下。</p>
-<h5 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h5><p>简单的使用过这个工具，现在详细的学习一下这个工具的功能。</p>
-<p>最初接触 Nmap 是用于端口扫描。真正仔细的学习时候发现Nmap好强大啊。<br>Nmap不仅可以确认目标网络上的计算机存活状态，大多数情况还能拿到主机的操作系统、监听的端口、服务、甚至用户证书。<br>Nmap的命令非常灵活。用一个普通的命令为例：<br><code># nmap -sS-T2 192.168.1.1 -oN</code></p>
+<p>进行这一部分之前，需要对网络的几个基础知识有一定的了解：网络流量、端口、防火墙、IP协议、TCP协议、UDP协议，ICMP等。<br>
+参考CSDN上的部分博文吧。</p>
+<p><font color="red">新增加一个命令：tracert(for Win)/traceroute(for Linux)。</font><br>
+关于这个东西的理解还不是很深刻，后续在计网里补一下。</p>
+<h5>Nmap</h5>
+<p>简单的使用过这个工具，现在详细的学习一下这个工具的功能。</p>
+<p>最初接触 Nmap 是用于端口扫描。真正仔细的学习时候发现Nmap好强大啊。<br>
+Nmap不仅可以确认目标网络上的计算机存活状态，大多数情况还能拿到主机的操作系统、监听的端口、服务、甚至用户证书。<br>
+Nmap的命令非常灵活。用一个普通的命令为例：<br>
+<code># nmap -sS-T2 192.168.1.1 -oN</code></p>
 <blockquote>
-<p>-sS 表示以隐蔽的方式扫描<br>-T2 是计时选项，他告诉引擎需要产生多大的流量，以及产生的时间。直接的影响了扫描速度<br>ip 这个就不用说了，目标地址<br>-oN 是输出选项，他告诉程序把扫描结果输出到哪里</p>
+<p>-sS 表示以隐蔽的方式扫描<br>
+-T2 是计时选项，他告诉引擎需要产生多大的流量，以及产生的时间。直接的影响了扫描速度<br>
+ip 这个就不用说了，目标地址<br>
+-oN 是输出选项，他告诉程序把扫描结果输出到哪里</p>
 </blockquote>
-<p>简单的，我们在kali下用nmap试探一下搭建好的靶机—Metaploitable</p>
+<p>简单的，我们在kali下用nmap试探一下搭建好的靶机--Metaploitable</p>
 <p><code># nmap 192.168.230.137</code></p>
 <p>在不设置参数的时候，Nmap会对目标进行一次隐蔽扫描，T3模版，并输出到控制台。</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8utnyblj30uu0k9wob.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8utnyblj30uu0k9wob.jpg" srcset="/css/images/overlay.png" alt=""></p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8utnyblj30uu0k9wob.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8utnyblj30uu0k9wob.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p>下面分别介绍三个参数的更多命令：</p>
-<p><b>-sS</b><br>发起一次隐蔽扫描，这也是nmap的默认扫描方式。为什么能做到隐秘扫描呢？隐秘扫描时nmap会向目标服务器发送一次TCP的SYN请求，之后服务器对应的回复SYN/ACK后，扫描引擎不会再去确认它。这样就无法构成三次的过程，也就是无法形成TCP通道，大多数系统都会在这之后的一段时间内自动关闭该链接,从而达到隐秘扫描的目的。</p>
-<p><b>-sT</b><br>发起一次TCP连接扫描。这会建立起一个完整的TCP连接，同时也会获取到更多的信息。</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8vuooanj30pz0g0gsd.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8vuooanj30pz0g0gsd.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p><b>-sU</b><br>发起一次UDP扫描。UDP扫描会期望收到已经关闭端口的系统应答，而发送到开放的UDP端口的数据包不会被响应。<br>这个扫描方式的速度非常缓慢。</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9ucsye8j30jn07j40z.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9ucsye8j30jn07j40z.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p><b>-sA</b><br>发起一次ACK扫描，可以用于TCP端口是否被过滤的检测。这种扫描会对会主机发起一个标记为ACK的通信。这种扫描有时候可以绕过防火墙（伪装成内网的TCP请求）。</p>
-<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9v4kcgzj30gd040gmu.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9v4kcgzj30gd040gmu.jpg" srcset="/css/images/overlay.png" alt=""></p>
-<p><b>-sP</b><br>通过ICMP ping来获取网络中存活主机。</p>
-<p><b>-Pn/-PU</b><br>不采取ICMP,对开放的Udp端口进行存活确认。</p>
-<p><b>-sn</b><br>仅探测存活主机</p>
-<p><b>-p</b><br>选定要扫描的端口号范围。</p>
-<p><b>-O/-A</b><br>识别操系统<br><b>timing模版</b><br>nmap的模版一共有5级：T0-T5,从低到高隐秘性与准确性降低，速度加快。<br>nmap有三个时间参数：scan_delay、max_scan_delay、max_parallelism。</p>
+<p><b>-sS</b><br>
+发起一次隐蔽扫描，这也是nmap的默认扫描方式。为什么能做到隐秘扫描呢？隐秘扫描时nmap会向目标服务器发送一次TCP的SYN请求，之后服务器对应的回复SYN/ACK后，扫描引擎不会再去确认它。这样就无法构成三次的过程，也就是无法形成TCP通道，大多数系统都会在这之后的一段时间内自动关闭该链接,从而达到隐秘扫描的目的。</p>
+<p><b>-sT</b><br>
+发起一次TCP连接扫描。这会建立起一个完整的TCP连接，同时也会获取到更多的信息。</p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8vuooanj30pz0g0gsd.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy8vuooanj30pz0g0gsd.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p><b>-sU</b><br>
+发起一次UDP扫描。UDP扫描会期望收到已经关闭端口的系统应答，而发送到开放的UDP端口的数据包不会被响应。<br>
+这个扫描方式的速度非常缓慢。</p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9ucsye8j30jn07j40z.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9ucsye8j30jn07j40z.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p><b>-sA</b><br>
+发起一次ACK扫描，可以用于TCP端口是否被过滤的检测。这种扫描会对会主机发起一个标记为ACK的通信。这种扫描有时候可以绕过防火墙（伪装成内网的TCP请求）。</p>
+<p><img src="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9v4kcgzj30gd040gmu.jpg" class="lazyload" data-srcset="https://tva2.sinaimg.cn/large/006IjVYfgy1fxy9v4kcgzj30gd040gmu.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p><b>-sP</b><br>
+通过ICMP ping来获取网络中存活主机。</p>
+<p><b>-Pn/-PU</b><br>
+不采取ICMP,对开放的Udp端口进行存活确认。</p>
+<p><b>-sn</b><br>
+仅探测存活主机</p>
+<p><b>-p</b><br>
+选定要扫描的端口号范围。</p>
+<p><b>-O/-A</b><br>
+识别操系统<br>
+<b>timing模版</b><br>
+nmap的模版一共有5级：T0-T5,从低到高隐秘性与准确性降低，速度加快。<br>
+nmap有三个时间参数：scan_delay、max_scan_delay、max_parallelism。</p>
 <p>scan_delay设置了两次探测之间的最小时间差，max_scan_delay根据目标和网络设置调整扫描器允许的扫描器延时的最大值，max_parallelism设置告诉扫描器是串行探测还是并行探测。</p>
-<p><b>-T0 Paranoid</b><br>这个模版被用于慢速的网络连接。或者必须最小化发现风险的环境。<br>扫描类型为串行，扫描时间间隔最少是五分钟，max_scan_delay会被忽略。<br>这个选项智慧早急需隐蔽或是时间充裕下选择。</p>
-<p><b>-T1 Sneaky</b><br>这个模版是基于T0的一些优化。他的速度会比T0块，同时保持了慢速扫描固有的隐蔽性。<br>扫描类型依旧为串行，scan_delay值为15s。</p>
-<p><b>-T2 Polite</b><br>扫描速度继续加快，依旧使用串行方式，scan_delay值为400ms,max_scan_delay为1分钟。</p>
-<p><b>-T3 Normal</b><br>这个模版是nmap默认扫描方式的模版，当我们不设置timing参数时会默认使用这个模版的设置。<br>从T3开始扫描方式切换为并行，scan_delay为0s，max_scan_delay为1s。</p>
-<p><b>-T4 Aggressive</b><br>速度继续增加，scan_delay为0s，max_scan_delay为10ms。在一些响应探针的时间间隔最小为1s的操作系统上很容易出错。</p>
-<p><b>-T5 Insane</b><br>最快的内置模版，并行扫描 + scan_delay为0秒 + max_scan_delay = 5ms。<br>最快可达22s扫描完成，但对于某些主机的操作系统和设置，这个参数可能会导致错误。</p>
-<p><b>IP参数</b><br>对于nmap，IP参数可以是一个固定的地址，或是地址段。<br>地址段支持CIDR寻址方式。<br>同样也可以用一个文件来导入目标地址。</p>
+<p><b>-T0 Paranoid</b><br>
+这个模版被用于慢速的网络连接。或者必须最小化发现风险的环境。<br>
+扫描类型为串行，扫描时间间隔最少是五分钟，max_scan_delay会被忽略。<br>
+这个选项智慧早急需隐蔽或是时间充裕下选择。</p>
+<p><b>-T1 Sneaky</b><br>
+这个模版是基于T0的一些优化。他的速度会比T0块，同时保持了慢速扫描固有的隐蔽性。<br>
+扫描类型依旧为串行，scan_delay值为15s。</p>
+<p><b>-T2 Polite</b><br>
+扫描速度继续加快，依旧使用串行方式，scan_delay值为400ms,max_scan_delay为1分钟。</p>
+<p><b>-T3 Normal</b><br>
+这个模版是nmap默认扫描方式的模版，当我们不设置timing参数时会默认使用这个模版的设置。<br>
+从T3开始扫描方式切换为并行，scan_delay为0s，max_scan_delay为1s。</p>
+<p><b>-T4 Aggressive</b><br>
+速度继续增加，scan_delay为0s，max_scan_delay为10ms。在一些响应探针的时间间隔最小为1s的操作系统上很容易出错。</p>
+<p><b>-T5 Insane</b><br>
+最快的内置模版，并行扫描 + scan_delay为0秒 + max_scan_delay = 5ms。<br>
+最快可达22s扫描完成，但对于某些主机的操作系统和设置，这个参数可能会导致错误。</p>
+<p><b>IP参数</b><br>
+对于nmap，IP参数可以是一个固定的地址，或是地址段。<br>
+地址段支持CIDR寻址方式。<br>
+同样也可以用一个文件来导入目标地址。</p>
 <p><code># nmap -iL targets.txt</code></p>
-<p><b>-oN 普通输出</b><br>普通输出，创建一个文本文档并写入。</p>
-<p><b>-oX XML输出</b><br>输出格式为XML的文档。</p>
-<p><b>-oG GREPable输出</b><br>适用于GREP工具的文档形式输出。</p>
+<p><b>-oN 普通输出</b><br>
+普通输出，创建一个文本文档并写入。</p>
+<p><b>-oX XML输出</b><br>
+输出格式为XML的文档。</p>
+<p><b>-oG GREPable输出</b><br>
+适用于GREP工具的文档形式输出。</p>
 <p><b>-oS 脚本式输出</b></p>
-<p><b> —script 脚本引擎</b><br>nmap同时也支持使用脚本引擎进行扫描。<br>更多信息：<a href="http://nmap.org/nsedoc/" target="_blank" rel="noopener">http://nmap.org/nsedoc/</a></p>
-<h5 id="Hping3"><a href="#Hping3" class="headerlink" title="Hping3"></a>Hping3</h5><p>这是一个可以手动制作数据包并发送到网络的应用程序。<br>更多参数在 -h 选项中可以看到</p>
-<h5 id="Nessus"><a href="#Nessus" class="headerlink" title="Nessus"></a>Nessus</h5><p>这是一个漏洞扫描的应用程序,Kali内未内置，需要自行安装一下。<br>从 <a href="http://www.nessus.org/download下载" target="_blank" rel="noopener">http://www.nessus.org/download下载</a> Nessus<br>完成后dpkg安装即可。</p>
-<p>启动Nessus：<br><code># /etc/init.d/nessusd start</code><br>启动成功后，打开本地浏览器：<a href="http://localhost:8834/进入设置页面。" target="_blank" rel="noopener">http://localhost:8834/进入设置页面。</a></p>
+<p><b> --script 脚本引擎</b><br>
+nmap同时也支持使用脚本引擎进行扫描。<br>
+更多信息：<a href="http://nmap.org/nsedoc/" target="_blank" rel="noopener">http://nmap.org/nsedoc/</a></p>
+<h5>Hping3</h5>
+<p>这是一个可以手动制作数据包并发送到网络的应用程序。<br>
+更多参数在 -h 选项中可以看到</p>
+<h5>Nessus</h5>
+<p>这是一个漏洞扫描的应用程序,Kali内未内置，需要自行安装一下。<br>
+从 <a href="http://www.nessus.org/download%E4%B8%8B%E8%BD%BD" target="_blank" rel="noopener">http://www.nessus.org/download下载</a> Nessus<br>
+完成后dpkg安装即可。</p>
+<p>启动Nessus：<br>
+<code># /etc/init.d/nessusd start</code><br>
+启动成功后，打开本地浏览器：<a href="http://localhost:8834/%E8%BF%9B%E5%85%A5%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E3%80%82" target="_blank" rel="noopener">http://localhost:8834/进入设置页面。</a></p>
 <p>可以去官网注册一个免费版的帐号，好像需要科学上网。</p>
 <p>验证完成会开始下载。之后进行初始化的设置。</p>
 <p>设置好登录帐号和密码，即可进入控制台。</p>
 <p>关于Nessus的使用，可以列为一篇新的文章了。这里不再过多的描述了。</p>
-<h4 id="3-渗透"><a href="#3-渗透" class="headerlink" title="3.渗透"></a><font color="blue">3.渗透</font><br></h4><p>首先要对几个名词性概念进行了解：<br>漏洞：存在于信息系统、系统安全规程、内部控制和实现中，并可能被外部威胁源所利用的弱点。<br>漏洞是由错误产生的，这个错误可以存在于多个地方。<br>渗透就是要利用各种漏洞进行越权访问信息或者造成拒绝服务（DOS）。<br>攻击向量：我的理解是攻击的主要思路，也就是攻击的大方向。<br>攻击类型：每种不同的大方向下会存在各种各样的小类型,也就是具体的攻击手段。</p>
+<h4><font color="blue">3.渗透</font><br></h4>
+<p>首先要对几个名词性概念进行了解：<br>
+漏洞：存在于信息系统、系统安全规程、内部控制和实现中，并可能被外部威胁源所利用的弱点。<br>
+漏洞是由错误产生的，这个错误可以存在于多个地方。<br>
+渗透就是要利用各种漏洞进行越权访问信息或者造成拒绝服务（DOS）。<br>
+攻击向量：我的理解是攻击的主要思路，也就是攻击的大方向。<br>
+攻击类型：每种不同的大方向下会存在各种各样的小类型,也就是具体的攻击手段。</p>
 <table>
     <tr>
         <td>攻击向量</td> 
@@ -294,15 +445,15 @@
         <td>情报搜索</td>  
     </tr>
 </table>
-
-<p>Kali在渗透这一步主要使用 Metasploit ，单独在另一个文章内陈述。<br>这里只介绍部分Web渗透的工具。</p>
+<p>Kali在渗透这一步主要使用 Metasploit ，单独在另一个文章内陈述。<br>
+这里只介绍部分Web渗透的工具。</p>
 
                 </section>
 
             </div>
         </div>
-    </div>
-        <!-- Main -->
+        
+            <!-- Main -->
 
     <div id="main" class="wrapper style1">
         <div class="container">
@@ -322,6 +473,7 @@
         </div>
     </div>
 
+    </div>
     <footer id="footer">
         <!--  copyright  -->
         <ul class="copyright">
@@ -329,11 +481,12 @@
         </ul>
         
         <ul class="copyright">
-                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
                 <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
         
         <script src="/js/Valine.min.js"></script>
         <script>
@@ -342,13 +495,14 @@
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
                         visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
                         master: ["f21bae5bf498b089b545f6f0a986e224"],
-                        friends: [""]
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"]
                 })
 
         </script>
         
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>
         <script src="/js/jquery.scrollex.min.js"></script>

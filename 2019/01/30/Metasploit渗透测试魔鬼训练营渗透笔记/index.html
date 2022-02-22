@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -49,39 +49,59 @@
         
 
         
-
         <!-- Main -->
+        
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
                     <h2>Metasploit渗透测试魔鬼训练营笔记</h2>
                     <p>2019-01-30</p>
-                     <p>文章共计 - 6.9k 字 阅读需要 - 25 分钟</p>
+                    <span id="/2019/01/30/Metasploit渗透测试魔鬼训练营渗透笔记/" class="leancloud_visitors" data-flag-title="Metasploit渗透测试魔鬼训练营笔记">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 6.9k 字 阅读需要 - 26 分钟</p>
+                    </span>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://cdn.dvkunion.cn/background/1484628385602.png);" ></div>
                     <hr>
-                    <h1 id="Metasploit渗透测试魔鬼训练营渗透笔记"><a href="#Metasploit渗透测试魔鬼训练营渗透笔记" class="headerlink" title="Metasploit渗透测试魔鬼训练营渗透笔记"></a>Metasploit渗透测试魔鬼训练营渗透笔记</h1><hr>
-<center><small>2019-1-30</small></center>
-
-<p>日常写点什么<br>寒假开始一周多，想把这本搞了快半年的书彻底的读完。<br>写一个小总结似的笔记，把书里的课后习题和镜像练习实验都一遍。<br>也附带的写一下遇到的坑点和心得吧。<br>调整了一下结构，把每一章的小结都放到了开始部分，希望以后复习时候可以一口气回答出这些问题。<br><br></p>
-<center><small>2019-2-13</small></center>
-
-<p>读到中间部分感觉这本书还是有点年代感了，有些工具已经不再支持甚至不能够使用了，然而强迫症又想把所有的都做完…很难受。<br>后面部分可能会过的快一点…<br><br></p>
-<center><small>华丽的分割线</small></center>
-
+                    <h1>Metasploit渗透测试魔鬼训练营渗透笔记</h1>
 <hr>
-<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a><b>第一章</b></h3><p>在这一章主要是介绍 Metasploit 以及渗透测试的基本流程和名词定义。</p>
+<center><small>2019-1-30</small></center>
+<p>日常写点什么<br>
+寒假开始一周多，想把这本搞了快半年的书彻底的读完。<br>
+写一个小总结似的笔记，把书里的课后习题和镜像练习实验都一遍。<br>
+也附带的写一下遇到的坑点和心得吧。<br>
+调整了一下结构，把每一章的小结都放到了开始部分，希望以后复习时候可以一口气回答出这些问题。<br>
+<br></p>
+<center><small>2019-2-13</small></center>
+<p>读到中间部分感觉这本书还是有点年代感了，有些工具已经不再支持甚至不能够使用了，然而强迫症又想把所有的都做完...很难受。<br>
+后面部分可能会过的快一点...<br>
+<br></p>
+<center><small>华丽的分割线</small></center>
+<hr>
+<h3><b>第一章</b></h3>
+<p>在这一章主要是介绍 Metasploit 以及渗透测试的基本流程和名词定义。</p>
 <p><b>第一章小结：</b></p>
 <blockquote>
-<p>1.什么是渗透测试?<br>2.渗透测试标准?<br>3.渗透测试流程?<br>4.渗透测试核心?<br>5.Metasploit是什么?<br>6.Metasploit发展史?<br>7.Metasploit主要6模块?<br>8.Metasploit安装和启动?</p>
+<p>1.什么是渗透测试?<br>
+2.渗透测试标准?<br>
+3.渗透测试流程?<br>
+4.渗透测试核心?<br>
+5.Metasploit是什么?<br>
+6.Metasploit发展史?<br>
+7.Metasploit主要6模块?<br>
+8.Metasploit安装和启动?</p>
 </blockquote>
-<p><b>什么是渗透测试?</b><br><b>渗透测试(Penetration Testing)</b>是一种模拟恶意攻击者的技术方法，对安全系统进行测试攻击，取得访问控制权，并发现安全隐患的一种安全测试与评估方法。这些渗透测试者一般称为渗透工程师。</p>
-<p>渗透测试一般分为两种，即<b>黑盒测试</b>和<b>白盒测试</b><br>黑盒测试：设计一个对客户一无所知的渗透攻击<br>白盒测试：拥有客户组织所有知识情况下的渗透测试<br>灰盒测试：将以上两种测试方法结合的渗透测试</p>
+<p><b>什么是渗透测试?</b><br>
+<b>渗透测试(Penetration Testing)</b>是一种模拟恶意攻击者的技术方法，对安全系统进行测试攻击，取得访问控制权，并发现安全隐患的一种安全测试与评估方法。这些渗透测试者一般称为渗透工程师。</p>
+<p>渗透测试一般分为两种，即<b>黑盒测试</b>和<b>白盒测试</b><br>
+黑盒测试：设计一个对客户一无所知的渗透攻击<br>
+白盒测试：拥有客户组织所有知识情况下的渗透测试<br>
+灰盒测试：将以上两种测试方法结合的渗透测试</p>
 <p><b>安全业界的开源测试手段：</b></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -113,9 +133,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<p><b>渗透测试过程环节：</b>    </p>
-<div class="table-container">
+<p><b>渗透测试过程环节：</b></p>
 <table>
 <thead>
 <tr>
@@ -170,22 +188,35 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p>渗透阶段一般包含7个阶段，由主要核心的5部渗透和开头的服务交互再加上最后的报告。</p>
 </blockquote>
 <p><b>安全漏洞生命周期：</b></p>
 <blockquote>
-<p>A BUG’s Life</p>
+<p>A BUG's Life</p>
 </blockquote>
-<p>渗透测试的目的：找出系统中存在的安全漏洞，并实施渗透攻击。<br>安全系统漏洞(Vulnerability)：指信息系统中存在的缺陷或不适当的配置。<br>渗透代码(Exploit)：利用安全漏洞来造成入侵或是破坏效果的程序。<br>安全漏洞的生命周期：<br>1&gt; 安全漏洞研究与挖掘:包括代码审计，逆向工程，Fuzz测试。<br>2&gt; 渗透代码开发与测试:开发验证概念性的代码(POC)，来进行漏洞的验证<br>3&gt; 安全漏洞和渗透代码在封闭团队中流传<br>4&gt; 安全漏洞和渗透代码开始扩散<br>5&gt; 恶意程序出现并传播<br>6&gt; 渗透代码/恶意程序大规模传播并危害互联网<br>7&gt; 渗透攻击代码/攻击工具/恶意程序消亡</p>
-<p>在上述2-5的流程中出现的漏洞一般被称为“0day”<br>恶意程序传播后称作“1day”</p>
+<p>渗透测试的目的：找出系统中存在的安全漏洞，并实施渗透攻击。<br>
+安全系统漏洞(Vulnerability)：指信息系统中存在的缺陷或不适当的配置。<br>
+渗透代码(Exploit)：利用安全漏洞来造成入侵或是破坏效果的程序。<br>
+安全漏洞的生命周期：<br>
+1&gt; 安全漏洞研究与挖掘:包括代码审计，逆向工程，Fuzz测试。<br>
+2&gt; 渗透代码开发与测试:开发验证概念性的代码(POC)，来进行漏洞的验证<br>
+3&gt; 安全漏洞和渗透代码在封闭团队中流传<br>
+4&gt; 安全漏洞和渗透代码开始扩散<br>
+5&gt; 恶意程序出现并传播<br>
+6&gt; 渗透代码/恶意程序大规模传播并危害互联网<br>
+7&gt; 渗透攻击代码/攻击工具/恶意程序消亡</p>
+<p>在上述2-5的流程中出现的漏洞一般被称为“0day”<br>
+恶意程序传播后称作“1day”</p>
 <blockquote>
-<p>要记得什么是0day等…不然根本同不懂大佬门在说什么</p>
+<p>要记得什么是0day等...不然根本同不懂大佬门在说什么</p>
 </blockquote>
-<p><b>漏洞披露方式：</b><br>1&gt; 完全公开披露<br>2&gt; 负责人的公开披露<br>3&gt; 进入底下经济产业链<br>4&gt; 小范围利用直至被动披露</p>
+<p><b>漏洞披露方式：</b>	<br>
+1&gt; 完全公开披露<br>
+2&gt; 负责人的公开披露<br>
+3&gt; 进入底下经济产业链<br>
+4&gt; 小范围利用直至被动披露</p>
 <p><b>漏洞资源库：</b></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -196,47 +227,57 @@
 <tbody>
 <tr>
 <td>cnnvd</td>
-<td>www.cnnvd.org.cn</td>
+<td><a href="http://www.cnnvd.org.cn" target="_blank" rel="noopener">www.cnnvd.org.cn</a></td>
 </tr>
 <tr>
 <td>乌云漏洞库</td>
-<td>www.wooyun.org</td>
+<td><a href="http://www.wooyun.org" target="_blank" rel="noopener">www.wooyun.org</a></td>
 </tr>
 <tr>
 <td>metasploit</td>
-<td>www.metasploit.com/modules</td>
+<td><a href="http://www.metasploit.com/modules" target="_blank" rel="noopener">www.metasploit.com/modules</a></td>
 </tr>
 <tr>
 <td>Exploit-db</td>
-<td>www.exploit-db.com</td>
+<td><a href="http://www.exploit-db.com" target="_blank" rel="noopener">www.exploit-db.com</a></td>
 </tr>
 <tr>
 <td>PacketStorm</td>
-<td>packetstormsecurity.org</td>
+<td><a href="http://packetstormsecurity.org" target="_blank" rel="noopener">packetstormsecurity.org</a></td>
 </tr>
 <tr>
 <td>SecurityFocus</td>
-<td>www.securityfocus.com/bi</td>
+<td><a href="http://www.securityfocus.com/bi" target="_blank" rel="noopener">www.securityfocus.com/bi</a></td>
 </tr>
 <tr>
 <td>SecurityReason</td>
-<td>securityreson.com/exploit_alert/</td>
+<td><a href="http://securityreson.com/exploit_alert/" target="_blank" rel="noopener">securityreson.com/exploit_alert/</a></td>
 </tr>
 <tr>
 <td>SecurityVulns</td>
-<td>securityvylns.com/exploits/</td>
+<td><a href="http://securityvylns.com/exploits/" target="_blank" rel="noopener">securityvylns.com/exploits/</a></td>
 </tr>
 <tr>
 <td>1337days</td>
-<td>1337day.com</td>
+<td><a href="http://1337day.com" target="_blank" rel="noopener">1337day.com</a></td>
 </tr>
 </tbody>
 </table>
-</div>
 <p><b>Metasploit 历史简介：</b></p>
-<p>初级阶段：HD Moore 在 2003 年成立<br>2003年10月，发布了第一个基于Perl的Metaslpoit版本V1.0，仅有11个渗透攻击模块。<br>2004年4月，发布了MetaslpoitV2.0，此时已经包含18个渗透攻击模块和27个攻击载荷模块。<br>2004年8月，在BlackHat大会上发布了MetaslpoitV2.2，进入了飞速发展的时代。<br>2007年5月，进行了长达18个月的代码移植，发布了MetaslpoitV3.0版本，支持177个渗透模块，104个攻击模块以及30个辅助模块。<br>2009年，MetaslpoitV3.3已经发展到796个模块，41.9万行代码。<br>2009年，Metaslpoit被Rapid7收购，之后推出express以及pro版本。<br>2011年8月,MetaslpoitV4.0发布，引入了后渗透模块。</p>
-<p><b>Metasploit框架：</b><br>Metasploit主要由五部分组成。</p>
-<p>1&gt; 基础文件库:位于源码根目录下libraries目录下，有三个部分：rex、framework-core、framework-base。<br>rex：框架的基础组件，如：网络包装套接字、日志系统、PostgreSQL支持等<br>framework-core：负责与上层的模块插件的交互接口<br>framework-base：扩展framework-core，用于调用自身模块和集成模块</p>
+<p>初级阶段：HD Moore 在 2003 年成立<br>
+2003年10月，发布了第一个基于Perl的Metaslpoit版本V1.0，仅有11个渗透攻击模块。<br>
+2004年4月，发布了MetaslpoitV2.0，此时已经包含18个渗透攻击模块和27个攻击载荷模块。<br>
+2004年8月，在BlackHat大会上发布了MetaslpoitV2.2，进入了飞速发展的时代。<br>
+2007年5月，进行了长达18个月的代码移植，发布了MetaslpoitV3.0版本，支持177个渗透模块，104个攻击模块以及30个辅助模块。<br>
+2009年，MetaslpoitV3.3已经发展到796个模块，41.9万行代码。<br>
+2009年，Metaslpoit被Rapid7收购，之后推出express以及pro版本。<br>
+2011年8月,MetaslpoitV4.0发布，引入了后渗透模块。</p>
+<p><b>Metasploit框架：</b><br>
+Metasploit主要由五部分组成。</p>
+<p>1&gt; 基础文件库:位于源码根目录下libraries目录下，有三个部分：rex、framework-core、framework-base。<br>
+rex：框架的基础组件，如：网络包装套接字、日志系统、PostgreSQL支持等<br>
+framework-core：负责与上层的模块插件的交互接口<br>
+framework-base：扩展framework-core，用于调用自身模块和集成模块</p>
 <blockquote>
 <p>我做测试时候使用的是kali自带的metasploit，并没有发现这三个部分的文件，其主目录位于/usr/share/metasploit-frame下。</p>
 </blockquote>
@@ -244,19 +285,33 @@
 <blockquote>
 <p>模块部分是Metasploit的核心，这六部分模块不在这里做介绍，在后面每部分的使用的时候进行详细的表述。</p>
 </blockquote>
-<p>3&gt; 插件：Metasploit支持外部插件来扩展功能，如Nessus、OpenVas漏洞扫描器插件。<br>4&gt; 接口：Metasploit提供多种外部用户接口，如控制台：msfconsole、命令行：msfcli、图形化界面：msfgui等。</p>
+<p>3&gt; 插件：Metasploit支持外部插件来扩展功能，如Nessus、OpenVas漏洞扫描器插件。<br>
+4&gt; 接口：Metasploit提供多种外部用户接口，如控制台：msfconsole、命令行：msfcli、图形化界面：msfgui等。</p>
 <blockquote>
-<p>做本章作业的时候发现，msfcli不能使用。bash不存在这个命令。查了一下结果发现msfcli早就已经废弃了…用msfconsole取代。有点坑…<br>贴上原文链接：<a href="https://blog.rapid7.com/2015/07/10/msfcli-is-no-longer-available-in-metasploit/" target="_blank" rel="noopener">https://blog.rapid7.com/2015/07/10/msfcli-is-no-longer-available-in-metasploit/</a></p>
+<p>做本章作业的时候发现，msfcli不能使用。bash不存在这个命令。查了一下结果发现msfcli早就已经废弃了...用msfconsole取代。有点坑...<br>
+贴上原文链接：<a href="https://blog.rapid7.com/2015/07/10/msfcli-is-no-longer-available-in-metasploit/" target="_blank" rel="noopener">https://blog.rapid7.com/2015/07/10/msfcli-is-no-longer-available-in-metasploit/</a></p>
 </blockquote>
 <p>5&gt; 功能程序：除了上述的四部分，Metasploit还提供一系列可执行程序，可以封装攻击荷载、多种类型的解码等。</p>
-<p><b>第一章作业</b><br>1&gt; <font color="Brown">通过搜索引擎、安全信息漏洞库搜索Samba服务usermap_script安全漏洞的相关信息。绘出生命周期图，标注重要时间点。</font></p>
+<p><b>第一章作业</b><br>
+1&gt; <font color="Brown">通过搜索引擎、安全信息漏洞库搜索Samba服务usermap_script安全漏洞的相关信息。绘出生命周期图，标注重要时间点。</font></p>
 <blockquote>
-<p>度娘一下，这个漏洞应该是一个非常老旧的漏洞了…我jio着。<br>结果，哇，全是大佬们整理好的…orz…<br>揣摩一遍，还是进到CNNVD来自己看一遍吧…不然这个作业抄上了一点意义都没有了…</p>
-<p>漏洞名称：Samba用户名映射脚本命令执行<br>漏洞编号：CVE-2007-2447(居然是07年的，这么近…啊也不近了，都2019了…)<br>存在版本：Samba 3.0.0 - Samba 3.0.25rc3<br>简单描述：MS-RPC功能允许远程攻击者在启用“用户名映射脚本”smb.conf选项时，通过涉及SamrChangePassword函数的shell元字符执行任意命令，并允许远程认证用户通过shell元字符执行命令<br><a href="https://imgchr.com/i/k1uVpD" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1uVpD.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1uVpD.md.png" srcset="/css/images/overlay.png" alt="k1uVpD.md.png"></a></p>
+<p>度娘一下，这个漏洞应该是一个非常老旧的漏洞了...我jio着。<br>
+结果，哇，全是大佬们整理好的...orz...<br>
+揣摩一遍，还是进到CNNVD来自己看一遍吧...不然这个作业抄上了一点意义都没有了...</p>
+</blockquote>
+<blockquote>
+<p>漏洞名称：Samba用户名映射脚本命令执行<br>
+漏洞编号：CVE-2007-2447(居然是07年的，这么近...啊也不近了，都2019了...)<br>
+存在版本：Samba 3.0.0 - Samba 3.0.25rc3<br>
+简单描述：MS-RPC功能允许远程攻击者在启用“用户名映射脚本”smb.conf选项时，通过涉及SamrChangePassword函数的shell元字符执行任意命令，并允许远程认证用户通过shell元字符执行命令<br>
+<a href="https://imgchr.com/i/k1uVpD" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1uVpD.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1uVpD.md.png" srcset="/css/images/overlay.gif" alt="k1uVpD.md.png"></a></p>
 </blockquote>
 <p>2&gt; <font color="Brown">更新Metasploit，找出攻击模块具体位置，查看一下针对不同系统的攻击模块数量。</font></p>
 <blockquote>
-<p>我所使用的Metaspoit版本为：metasploit v5.0.1-dev<br>总模块数量：aux：1046；exp:1851；post:321；payloads:541:encoders：44；nops:10<br>渗透攻击模块的位置位于：/usr/share/metasploit-framework/modules/<br>进入到exploits，可以发现几个明显的由操作系统命名的文件夹，Shell统计一下：</p>
+<p>我所使用的Metaspoit版本为：metasploit v5.0.1-dev<br>
+总模块数量：aux：1046；exp:1851；post:321；payloads:541:encoders：44；nops:10<br>
+渗透攻击模块的位置位于：/usr/share/metasploit-framework/modules/<br>
+进入到exploits，可以发现几个明显的由操作系统命名的文件夹，Shell统计一下：</p>
 </blockquote>
 <p><code># ls -lR | grep &quot;^d&quot; | wc -l</code></p>
 <blockquote>
@@ -264,26 +319,51 @@
 </blockquote>
 <p>3&gt; <font color="Brown">分别在Win和Linux下安装Metaspoit，运行并获取Linux靶机usermap_script漏洞渗透攻击，尝试植入VNC图形化远程控制工具的攻击荷载，成功获得Linux靶机上的远程控制桌面。</font></p>
 <blockquote>
-<p>我的win下一直都没有装Metasploit…因为…懒癌…<br>就使用kali下的做一下简单的尝试吧。kali-ip:10.10.10.128<br>靶机为Metasploitable2-ip:10.10.10.254<br>虚拟机内的连接为NAT模式。<br>首先进入msfconsole，使用samba_script模块</p>
+<p>我的win下一直都没有装Metasploit...因为...懒癌...<br>
+就使用kali下的做一下简单的尝试吧。kali-ip:10.10.10.128<br>
+靶机为Metasploitable2-ip:10.10.10.254<br>
+虚拟机内的连接为NAT模式。<br>
+首先进入msfconsole，使用samba_script模块</p>
+</blockquote>
+<blockquote>
 <p><code>msf5 &gt; use multi/samba/usermap_script</code></p>
+</blockquote>
+<blockquote>
 <p>使用show payloads查看攻击载荷，选定bind_netcat</p>
+</blockquote>
+<blockquote>
 <p><code>msf5 exploit(multi/samba/usermap_script) &gt; set payload cmd/unix/bind_netcat</code></p>
-<p>使用show options 查看需要设置的参数<br>将IP设置为靶机</p>
+</blockquote>
+<blockquote>
+<p>使用show options 查看需要设置的参数<br>
+将IP设置为靶机</p>
+</blockquote>
+<blockquote>
 <p><code>msf5 exploit(multi/samba/usermap_script) &gt; set RHOSTS 10.10.10.254</code></p>
+</blockquote>
+<blockquote>
 <p>exploit!</p>
-<p>可以看到msf反馈已经成功，等待输出bash命令<br><a href="https://imgchr.com/i/k1KjsJ" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1KjsJ.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1KjsJ.md.png" srcset="/css/images/overlay.png" alt="k1KjsJ.md.png"></a></p>
+</blockquote>
+<blockquote>
+<p>可以看到msf反馈已经成功，等待输出bash命令<br>
+<a href="https://imgchr.com/i/k1KjsJ" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1KjsJ.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1KjsJ.md.png" srcset="/css/images/overlay.gif" alt="k1KjsJ.md.png"></a></p>
 </blockquote>
 <p>4&gt; <font color="Brown">使用msfcli命令行接口写一个SHELL脚本，实现用户只需要输入目标Linux靶机IP就可以使用usermap_script漏洞渗透攻击模块获取远程靶机的shell访问。</font></p>
 <blockquote>
-<p>上面说了msfcli已经被弃用，尝试用上文博客的方法写一个脚本<br>shell的写法还不是很熟练…代码只是简单粗暴的实现了所需功能…运行下过如下<br><a href="https://imgchr.com/i/k1M8yQ" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1M8yQ.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1M8yQ.md.png" srcset="/css/images/overlay.png" alt="k1M8yQ.md.png"></a><br>贴上代码<br><a href="https://imgchr.com/i/k1MGLj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1MGLj.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1MGLj.md.png" srcset="/css/images/overlay.png" alt="k1MGLj.md.png"></a></p>
+<p>上面说了msfcli已经被弃用，尝试用上文博客的方法写一个脚本<br>
+shell的写法还不是很熟练...代码只是简单粗暴的实现了所需功能...运行下过如下<br>
+<a href="https://imgchr.com/i/k1M8yQ" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1M8yQ.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1M8yQ.md.png" srcset="/css/images/overlay.gif" alt="k1M8yQ.md.png"></a><br>
+贴上代码<br>
+<a href="https://imgchr.com/i/k1MGLj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/31/k1MGLj.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/01/31/k1MGLj.md.png" srcset="/css/images/overlay.gif" alt="k1MGLj.md.png"></a></p>
 </blockquote>
-<h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a><b>第二章</b></h3><p>这一章主要搭建后面实现所需要的的网络拓扑环境</p>
+<h3><b>第二章</b></h3>
+<p>这一章主要搭建后面实现所需要的的网络拓扑环境</p>
 <p><b>第二章小结：</b></p>
 <blockquote>
-<p>1.虚拟机内NAT和网桥的区别?<br>2.怎么配置IP?</p>
+<p>1.虚拟机内NAT和网桥的区别?<br>
+2.怎么配置IP?</p>
 </blockquote>
 <p>这本书需要的镜像总共为5个，统一安装在vm内。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -301,7 +381,7 @@
 <td>Linux攻击机</td>
 <td>初始攻击点主机</td>
 <td>Ubuntu</td>
-<td>attacker.dvssc.com</td>
+<td><a href="http://attacker.dvssc.com" target="_blank" rel="noopener">attacker.dvssc.com</a></td>
 <td>10.10.10.128</td>
 </tr>
 <tr>
@@ -309,7 +389,7 @@
 <td>Web服务靶机</td>
 <td>门户网站服务器</td>
 <td>Ubuntu</td>
-<td>www.dvssc.com</td>
+<td><a href="http://www.dvssc.com" target="_blank" rel="noopener">www.dvssc.com</a></td>
 <td>10.10.10.129</td>
 </tr>
 <tr>
@@ -317,7 +397,7 @@
 <td>Windows靶机</td>
 <td>后台服务器</td>
 <td>Win2K3 En</td>
-<td>service.dvssc.com</td>
+<td><a href="http://service.dvssc.com" target="_blank" rel="noopener">service.dvssc.com</a></td>
 <td>10.10.10.130</td>
 </tr>
 <tr>
@@ -325,7 +405,7 @@
 <td>Linux 靶机</td>
 <td>网关服务器</td>
 <td>Ubuntu 8.04</td>
-<td>gate.dvssc.com</td>
+<td><a href="http://gate.dvssc.com" target="_blank" rel="noopener">gate.dvssc.com</a></td>
 <td>10.10.10.254(外)/192.168.10.254(内)</td>
 </tr>
 <tr>
@@ -333,70 +413,135 @@
 <td>Windows 靶机</td>
 <td>内网客户端主机</td>
 <td>WinXP En</td>
-<td>intranet1.dvssc.com</td>
+<td><a href="http://intranet1.dvssc.com" target="_blank" rel="noopener">intranet1.dvssc.com</a></td>
 <td>192.168.10.128</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>各个镜像的配置和虚拟机的设置书上已经写得非常详细了，设置好VMnet1和VMnet8两张网卡的网段，再修改每一台主机的IP地址、Host模拟:修改靶机Host将域名和IP相对应。最终检测每一台虚拟机的互相连通性即可。</p>
 <p>网关机192.168.10.254要打开路由转发功能net.ipv4.ip_forward,同时防火墙iptables的设置要正确。</p>
-<p><b>第二章作业</b><br>1&gt; <font color="Brown"> 搭建本章环境，测试连通性</font></p>
+<p><b>第二章作业</b><br>
+1&gt; <font color="Brown"> 搭建本章环境，测试连通性</font></p>
 <blockquote>
-<p>这个环境的搭建算是对基础的一个考验，如果网络基础非常好的话修改配置应该会应心得手，很快完成第二章的内容；其次也是对排错能力的一个考验，在实验过程中，由于我的攻击主机使用的kali，在配置网络时候没有注意到CIRD子网掩码二进制的不相同导致网络一直不相同等等问题。<br>总而言之，在这一章主要为后面的实验搭建好良好的环境：工欲善其事，必先利其器。</p>
+<p>这个环境的搭建算是对基础的一个考验，如果网络基础非常好的话修改配置应该会应心得手，很快完成第二章的内容；其次也是对排错能力的一个考验，在实验过程中，由于我的攻击主机使用的kali，在配置网络时候没有注意到CIRD子网掩码二进制的不相同导致网络一直不相同等等问题。<br>
+总而言之，在这一章主要为后面的实验搭建好良好的环境：工欲善其事，必先利其器。</p>
 </blockquote>
 <p>2&gt; <font color="Brown"> Vmware虚拟机的构建 </font></p>
 <blockquote>
 <p>这个目前还没有办法做到，等遇到了合适的渗透镜像时候会不断的加进来</p>
 </blockquote>
-<h3 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a><b>第三章</b></h3><p>在第三章主要讲了渗透测试的第一个步骤：信息搜集。</p>
+<h3><b>第三章</b></h3>
+<p>在第三章主要讲了渗透测试的第一个步骤：信息搜集。</p>
 <p><b>第三章小结：</b></p>
 <blockquote>
-<p>1.什么是外围信息收集?<br>2.什么是网络扫描?<br>3.常见的网络扫描有哪些?<br>4.Metasploit有哪些模块适用于信息侦查中?<br>5.Metasploit如何共享信息侦查的数据/成果?</p>
+<p>1.什么是外围信息收集?<br>
+2.什么是网络扫描?<br>
+3.常见的网络扫描有哪些?<br>
+4.Metasploit有哪些模块适用于信息侦查中?<br>
+5.Metasploit如何共享信息侦查的数据/成果?</p>
 </blockquote>
-<p>侦查：<br>目标：渗透测试目标的范围，发现渗透目标的安全漏洞与脆弱点，为后续的渗透攻击提供基础。<br>侦查包含：外围信息搜集/公开渠道信息搜集、网络扫描等。</p>
-<h4 id="3-1-外围信息收集"><a href="#3-1-外围信息收集" class="headerlink" title="3.1 外围信息收集"></a><font color="blue">3.1 外围信息收集</font><br></h4><p><b>通过DNS和IP的侦查挖掘</b></p>
-<p>1&gt; whois域名注册查询<br>      msf内置：whois命令<br>      站长之家：<a href="http://whois.chinaz.com" target="_blank" rel="noopener">http://whois.chinaz.com</a><br>2&gt; nslookup/dig 域名查询<br>   nslookup:set type=A[MX(Mail Exchange)]<br>             ls -d xxxxx.com<br>   dig @<dns服务器> &lt;域名&gt;<br>3&gt; IP2Location地址查询:www.maxmind.com<br>4&gt; netcraft信息查询：searchdns.netcraft.com<br>   http:toolbar.netcraft.com/site_report?url=<a href="http://www.testfire.net" target="_blank" rel="noopener">http://www.testfire.net</a><br>5&gt; IP2反查域名 <a href="http://site.ip138.com/" target="_blank" rel="noopener">http://site.ip138.com/</a><br>              站长工具 <a href="http://www.7c.com/" target="_blank" rel="noopener">http://www.7c.com/</a></dns服务器></p>
+<p>侦查：<br>
+目标：渗透测试目标的范围，发现渗透目标的安全漏洞与脆弱点，为后续的渗透攻击提供基础。<br>
+侦查包含：外围信息搜集/公开渠道信息搜集、网络扫描等。</p>
+<h4><font color="blue">3.1 外围信息收集</font><br></h4>
+<p><b>通过DNS和IP的侦查挖掘</b></p>
+<p>1&gt; whois域名注册查询<br>
+msf内置：whois命令<br>
+站长之家：<a href="http://whois.chinaz.com" target="_blank" rel="noopener">http://whois.chinaz.com</a><br>
+2&gt; nslookup/dig 域名查询<br>
+nslookup:set type=A[MX(Mail Exchange)]<br>
+	 		ls -d <a href="http://xxxxx.com" target="_blank" rel="noopener">xxxxx.com</a><br>
+dig @&lt;dns服务器&gt; &lt;域名&gt;<br>
+3&gt; IP2Location地址查询:www.maxmind.com<br>
+4&gt; netcraft信息查询：<a href="http://searchdns.netcraft.com" target="_blank" rel="noopener">searchdns.netcraft.com</a><br>
+http:toolbar.netcraft.com/site_report?url=http://www.testfire.net<br>
+5&gt; IP2反查域名 <a href="http://site.ip138.com/" target="_blank" rel="noopener">http://site.ip138.com/</a><br>
+			  站长工具 <a href="http://www.7c.com/" target="_blank" rel="noopener">http://www.7c.com/</a></p>
 <blockquote>
-<p>由于这本书出版的年代已经有些久远，所提供的一些工具网址不能够很好地进行运作。能达到同一目的的工具有很多，所以主要是需要了解每一个查询所能获取到哪些有用的信息。<br>whois查询：通过43端口建立tcp连接向服务器进行传送查询请求。这个功能可以查到域名下的DNS服务器、域名备案联系人、联系人邮箱、注册商地址、域名有效时间、注册时间、域名状态等等。同样通过whois反查，可以通过这一个域名所查处的邮箱、联系人、电话等等查到注册该域名的所有者所拥有的其他域名。<br>nslookup&amp;dig：这两个工具在使用的时候没有感觉出多么强大…因为我只看到了对于域名的IP解析…那直接ping一下不就好了么…orz….仔细查了一下，这两个工具更多的适用于dns服务器的查询与测试的…<br>IP2Location：这个就很显而易见了，拿到了域名IP通过IP定位一下服务器所在位置。<br>netcraft：用于子域名查询，在当前的二级域名上可以查询到多少个子域名。<br>IP2Domain：用于查询一台服务器上有多少个虚拟主机，即一个IP上绑定了多少个域名的解析。</p>
+<p>由于这本书出版的年代已经有些久远，所提供的一些工具网址不能够很好地进行运作。能达到同一目的的工具有很多，所以主要是需要了解每一个查询所能获取到哪些有用的信息。<br>
+whois查询：通过43端口建立tcp连接向服务器进行传送查询请求。这个功能可以查到域名下的DNS服务器、域名备案联系人、联系人邮箱、注册商地址、域名有效时间、注册时间、域名状态等等。同样通过whois反查，可以通过这一个域名所查处的邮箱、联系人、电话等等查到注册该域名的所有者所拥有的其他域名。<br>
+nslookup&amp;dig：这两个工具在使用的时候没有感觉出多么强大...因为我只看到了对于域名的IP解析...那直接ping一下不就好了么...orz....仔细查了一下，这两个工具更多的适用于dns服务器的查询与测试的...<br>
+IP2Location：这个就很显而易见了，拿到了域名IP通过IP定位一下服务器所在位置。<br>
+netcraft：用于子域名查询，在当前的二级域名上可以查询到多少个子域名。<br>
+IP2Domain：用于查询一台服务器上有多少个虚拟主机，即一个IP上绑定了多少个域名的解析。</p>
 </blockquote>
 <p><b>通过搜索引擎的信息搜集</b></p>
-<p>1&gt; GoogleHacking技术<br>自动化工具：SiteDigger/Search Diggity<br>SiteDigger:<a href="http://www.mcafee.com/us/downloads/free-tools/sitedigger.aspx" target="_blank" rel="noopener">http://www.mcafee.com/us/downloads/free-tools/sitedigger.aspx</a><br>Search Diggity:<a href="http://www.stachliu.com" target="_blank" rel="noopener">http://www.stachliu.com</a></p>
+<p>1&gt; GoogleHacking技术<br>
+自动化工具：SiteDigger/Search Diggity<br>
+SiteDigger:<a href="http://www.mcafee.com/us/downloads/free-tools/sitedigger.aspx" target="_blank" rel="noopener">http://www.mcafee.com/us/downloads/free-tools/sitedigger.aspx</a><br>
+Search Diggity:<a href="http://www.stachliu.com" target="_blank" rel="noopener">http://www.stachliu.com</a></p>
 <blockquote>
-<p>这两个自动化的工具原书的网址全凉了…去搜集一下这两个东西。<br>SiteDigger：安装完了…英文…应该是输入域名然后选择数据库？之后就进行搜索…<br>Search Diggity：原网址变更<a href="http://www.bishopfox.com/resources/tools/google-hacking-diggity/attack-tools/" target="_blank" rel="noopener">http://www.bishopfox.com/resources/tools/google-hacking-diggity/attack-tools/</a> 。 帮助手册都是英文…瞬间就不想看了。<br>还是放上GHDB吧:<a href="https://www.exploit-db.com/google-hacking-database" target="_blank" rel="noopener">https://www.exploit-db.com/google-hacking-database</a></p>
+<p>这两个自动化的工具原书的网址全凉了...去搜集一下这两个东西。<br>
+SiteDigger：安装完了...英文...应该是输入域名然后选择数据库？之后就进行搜索...<br>
+Search Diggity：原网址变更http://www.bishopfox.com/resources/tools/google-hacking-diggity/attack-tools/ 。 帮助手册都是英文...瞬间就不想看了。<br>
+还是放上GHDB吧:<a href="https://www.exploit-db.com/google-hacking-database" target="_blank" rel="noopener">https://www.exploit-db.com/google-hacking-database</a></p>
 </blockquote>
-<p>2&gt; 测试网站目录结构<br>google:parent directory site:<br>搜索inc配置文件/bak备份文件/txt或sql数据文件<br>Metasploit:brute_dirs/dir_listing/dir_scanner暴力</p>
-<p><code>use auxiliary/scanner/http/dir_scanner</code><br><code>set THREAD 50</code><br><code>set RHOST xxxxxxxx.com</code><br><code>exploit</code></p>
+<p>2&gt; 测试网站目录结构<br>
+google:parent directory site:<br>
+搜索inc配置文件/bak备份文件/txt或sql数据文件<br>
+Metasploit:brute_dirs/dir_listing/dir_scanner暴力</p>
+<p><code>use auxiliary/scanner/http/dir_scanner</code><br>
+<code>set THREAD 50</code><br>
+<code>set RHOST xxxxxxxx.com</code><br>
+<code>exploit</code></p>
 <blockquote>
-<p>对于google黑语法我在百度稍微的试了一下，总感觉度娘还是拦截掉了一些东西。没有Google用起来的感觉舒服。<br>对于Metasploit,简单的测试一下：应改和御剑这类工具是一样的，用字典来不断发送请求并对返回的状态码进行统计。只是不知道这个字典和御剑比起来那个更强一点。</p>
+<p>对于google黑语法我在百度稍微的试了一下，总感觉度娘还是拦截掉了一些东西。没有Google用起来的感觉舒服。<br>
+对于Metasploit,简单的测试一下：应改和御剑这类工具是一样的，用字典来不断发送请求并对返回的状态码进行统计。只是不知道这个字典和御剑比起来那个更强一点。</p>
 </blockquote>
-<p>3&gt; 检索特定类型文件<br>google:site:xxxx.com file type:xls</p>
+<p>3&gt; 检索特定类型文件<br>
+google:site:xxxx.com file type:xls</p>
 <p>4&gt; 搜索网站中的email地址:</p>
 <p>Metasploit:search_email_collector模块</p>
-<p><code>use auxiliary/gather/search_email_collector</code><br><code>set DOMAIN xxxxxxxx.com</code><br><code>run</code></p>
-<p>5&gt; 搜索sql注入的页面<br>google:site:xxxx.com inurl:login</p>
-<p>纯真数据库:<a href="http://www.cz88.net/" target="_blank" rel="noopener">http://www.cz88.net/</a><br>traceroute</p>
-<h4 id="3-2-主机探测、端口扫描"><a href="#3-2-主机探测、端口扫描" class="headerlink" title="3.2 主机探测、端口扫描"></a><font color="blue">3.2 主机探测、端口扫描</font><br></h4><p><b>主机探测：</b></p>
-<p>对网段活跃主机的探测:<br>1.ping </p>
-<p>2.Metasploit 模块<br>modules/auaxiliary/scanner/discovery:arp_sweep、ipv6_multicast、ipv6_neighbor、ipv6_neighbor_route_advertisement、udp_probe、udp_sweep<br>arp_sweep:arp确认网段中活跃主机<br>udp_sweep:udp确认网段中活跃主机并发现服务</p>
-<p>3.Nmap<br>metasploit集成了nmap模块,使用方法不再赘述。</p>
+<p><code>use auxiliary/gather/search_email_collector</code><br>
+<code>set DOMAIN xxxxxxxx.com</code><br>
+<code>run</code></p>
+<p>5&gt; 搜索sql注入的页面<br>
+google:site:xxxx.com inurl:login</p>
+<p>纯真数据库:<a href="http://www.cz88.net/" target="_blank" rel="noopener">http://www.cz88.net/</a><br>
+traceroute</p>
+<h4><font color="blue">3.2 主机探测、端口扫描</font><br></h4>
+<p><b>主机探测：</b></p>
+<p>对网段活跃主机的探测:<br>
+1.ping</p>
+<p>2.Metasploit 模块<br>
+modules/auaxiliary/scanner/discovery:arp_sweep、ipv6_multicast、ipv6_neighbor、ipv6_neighbor_route_advertisement、udp_probe、udp_sweep<br>
+arp_sweep:arp确认网段中活跃主机<br>
+udp_sweep:udp确认网段中活跃主机并发现服务</p>
+<p>3.Nmap<br>
+metasploit集成了nmap模块,使用方法不再赘述。</p>
 <p><b>端口扫描：</b></p>
-<p>在Metasploit中：serach postscan可以发现端口扫描工具<br>auxiliary/scanner/portscan/sys、ack、ftpbounce、tcp、xmas</p>
+<p>在Metasploit中：serach postscan可以发现端口扫描工具<br>
+auxiliary/scanner/portscan/sys、ack、ftpbounce、tcp、xmas</p>
 <p><b>服务扫描：</b></p>
-<p>metasploit：_version/_login<br>e.g. ：http_version查找网络中web服务器。</p>
+<p>metasploit：_version/_login<br>
+e.g. ：http_version查找网络中web服务器。</p>
 <p>也存在着例外：mssql_ping 检测 SQL-server服务(1433)</p>
 <p>常见检测：telnet_version、ssh_version、tnslsnr_version(1521，oracle数据库)、open_proxy(开放代理检测)</p>
-<h4 id="3-3-口令猜测、嗅探"><a href="#3-3-口令猜测、嗅探" class="headerlink" title="3.3 口令猜测、嗅探"></a><font color="blue">3.3 口令猜测、嗅探</font><br></h4><p><b>常用嗅探模块：</b></p>
+<h4><font color="blue">3.3 口令猜测、嗅探</font><br></h4>
+<p><b>常用嗅探模块：</b></p>
 <p>ssh_login、psnuffle</p>
 <p>ssh_login：auxiliary/scanner/ssh/ssh_login</p>
 <p>psnuffle：auxiliary/sniffer/psnuffle</p>
-<h4 id="3-4-漏洞扫描"><a href="#3-4-漏洞扫描" class="headerlink" title="3.4 漏洞扫描"></a><font color="blue">3.4 漏洞扫描</font><br></h4><p>自动化扫描器：nessus、OpenVAS<br>针对性扫描器：nmap<br>这一小结的三个工具放到专门的工具博文下详细记录</p>
+<h4><font color="blue">3.4 漏洞扫描</font><br></h4>
+<p>自动化扫描器：nessus、OpenVAS<br>
+针对性扫描器：nmap<br>
+这一小结的三个工具放到专门的工具博文下详细记录</p>
 <p><b>OpenVAS</b></p>
-<p>1).配置：<br>1&gt;生成运行所需要的证书文件<br><code># openvas-mkcert -q</code><br><code># openvas-mkcert-client -q</code><br>2&gt; 升级NVT库<br><code># openvas-nvt-sync</code><br>3&gt;初始化<br><code># openvassd</code><br><code># openvasmd --migrate</code><br><code># openvasmd --rebuild</code></p>
+<p>1).配置：<br>
+1&gt;生成运行所需要的证书文件<br>
+<code># openvas-mkcert -q</code><br>
+<code># openvas-mkcert-client -q</code><br>
+2&gt; 升级NVT库<br>
+<code># openvas-nvt-sync</code><br>
+3&gt;初始化<br>
+<code># openvassd</code><br>
+<code># openvasmd --migrate</code><br>
+<code># openvasmd --rebuild</code></p>
 <p><b>Nessus</b></p>
 <p><b>nmap</b></p>
 <p>nmap集成了很多的漏洞扫描脚本，在Kali内的目录为：</p>
-<h4 id="3-5-信息整理与共享"><a href="#3-5-信息整理与共享" class="headerlink" title="3.5 信息整理与共享"></a><font color="blue">3.5 信息整理与共享</font><br></h4><p>作为这一章结尾，信息整理与共享的确值得这个重量。良好的习惯和方法能够做到事半功倍的效果。</p>
+<h4><font color="blue">3.5 信息整理与共享</font><br></h4>
+<p>作为这一章结尾，信息整理与共享的确值得这个重量。良好的习惯和方法能够做到事半功倍的效果。</p>
 <p>Metasploit支持使用数据库的形式导出与导入信息搜集的内容。db_nmap可以直接将nmap的扫描结果存储到数据库中；db_import支持数种格式的扫描结果的导入。</p>
 <p>Metasploit数据库功能需要PostgreSQL的支持，Kali已经内置。</p>
 <p>首先需要启动数据库</p>
@@ -416,67 +561,126 @@
 <p>一切正常后，我们就可以使用 db_nmap 等封装命令直接将扫描结果储存在数据库中。</p>
 <p>同样也可以将nmap扫描输出的文件使用 db_import 进行查看</p>
 <blockquote>
-<p>笔记：db_import 还可以识别 Acunetix、Amap、Appscan、Burp Session、Microsoft Baseline Security Analyzer 、 Nessus 、 NetSparker、NeXpose 、OpenVAS report、Retina等。<br>基本不认识几个。。。等这个结束以后慢慢补上然后进行测试。</p>
+<p>笔记：db_import 还可以识别 Acunetix、Amap、Appscan、Burp Session、Microsoft Baseline Security Analyzer 、 Nessus 、 NetSparker、NeXpose 、OpenVAS report、Retina等。<br>
+基本不认识几个。。。等这个结束以后慢慢补上然后进行测试。</p>
 </blockquote>
-<p>小组共享数据有两种方式，一是通过连接同一个数据库，二是使用MSF RPC数据库。<br>第一种方法需要配置 postgresql 的配置，使其允许远程的数据库连接请求。<br>第二种需要小组其中的一台机器使用 mfsrpcd 命令进行创建，其他小组成员通过GUI进行连接。</p>
+<p>小组共享数据有两种方式，一是通过连接同一个数据库，二是使用MSF RPC数据库。<br>
+第一种方法需要配置 postgresql 的配置，使其允许远程的数据库连接请求。<br>
+第二种需要小组其中的一台机器使用 mfsrpcd 命令进行创建，其他小组成员通过GUI进行连接。</p>
 <blockquote>
 <p>此处在未来工作后再进行详细补充</p>
 </blockquote>
-<p><b>第三章作业</b><br>1&gt; <font color="Brown"> 对一个你感兴趣的个人网站进行DNS、IP与位置的信息查询，找出网络运营者的联系方式，宿主服务器与所在位置等信息。撰写一份简单的调查报告</font></p>
-<p>2&gt; <font color="Brown"> 利用搜索引擎或相关工具对 testfire.net www.dvssc.com 网站进行更加细致的搜索与侦查，发现更多敏感信息泄露与web安全漏洞 </font></p>
+<p><b>第三章作业</b><br>
+1&gt; <font color="Brown"> 对一个你感兴趣的个人网站进行DNS、IP与位置的信息查询，找出网络运营者的联系方式，宿主服务器与所在位置等信息。撰写一份简单的调查报告</font></p>
+<p>2&gt; <font color="Brown"> 利用搜索引擎或相关工具对 <a href="http://testfire.net" target="_blank" rel="noopener">testfire.net</a> <a href="http://www.dvssc.com" target="_blank" rel="noopener">www.dvssc.com</a> 网站进行更加细致的搜索与侦查，发现更多敏感信息泄露与web安全漏洞 </font></p>
 <p>3&gt; <font color="Brown"> 端口扫描练习：补全表3-1 </font></p>
 <p>4&gt; <font color="Brown"> 漏洞扫描练习：补全表3-3 </font></p>
 <p>5&gt; <font color="Brown"> 数据共享练习：将3、4的扫描结果存储在数据库内 </font></p>
-<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a><b>第四章</b></h3><p>从第四章开始，进入到渗透步骤的攻击阶段，</p>
-<p>第四章主要讲解web方面的攻击。<br>个人感觉第四章是看的最云里雾里的一章…一是所讲工具有些已经不能使用，并且工具的使用讲的较为粗略；二是结构上有点不太适应…感觉没有前几章读起来逻辑性更好一些，实战部分只挑了DVWA的四个样例；webshell代码解析倒是很详细，但是看不懂啊orz…</p>
+<h3><b>第四章</b></h3>
+<p>从第四章开始，进入到渗透步骤的攻击阶段，</p>
+<p>第四章主要讲解web方面的攻击。<br>
+个人感觉第四章是看的最云里雾里的一章...一是所讲工具有些已经不能使用，并且工具的使用讲的较为粗略；二是结构上有点不太适应...感觉没有前几章读起来逻辑性更好一些，实战部分只挑了DVWA的四个样例；webshell代码解析倒是很详细，但是看不懂啊orz...</p>
 <p><b>第四章小结：</b></p>
 <blockquote>
-<p>1.web安全引起重视的原因?<br>2.OWASP 是什么组织?其每年发布的top 10 都有哪些?<br>3.提升:web开源工具了解?<br>4.提升:kali内web安全工具了解?<br>5.通过dvwa/owasp top10 ，对各种web漏洞的原理了解，尝试编写自己的攻击模块?</p>
+<p>1.web安全引起重视的原因?<br>
+2.OWASP 是什么组织?其每年发布的top 10 都有哪些?<br>
+3.提升:web开源工具了解?<br>
+4.提升:kali内web安全工具了解?<br>
+5.通过dvwa/owasp top10 ，对各种web漏洞的原理了解，尝试编写自己的攻击模块?</p>
 </blockquote>
-<p><b>DMZ区：</b><br>DMZ（Demilitarized Zone）即俗称的隔离区或非军事区，与军事区和信任区相对应，作用是把WEB，e-mail，等允许外部访问的服务器单独接在该区端口，使整个需要保护的内部网络接在信任区端口后，不允许任何访问，实现内外网分离，达到用户需求。</p>
-<p><b>web攻击迅速发展的7大理由：</b><br>1.广泛性：web应用存在于广大网络中。<br>2.技术门槛低：Lamp、IIS+ASP、.NET等。<br>3.防火墙策略可绕<br>4.安全机制不够成熟：HTTP发展处于滞后阶段。<br>5.隐蔽性：难以取证。<br>6.变化性：由于业务和服务增加或修改，可能会因为调用不当导致出现验证漏洞。<br>7.利益性：web攻击的利益丰厚</p>
-<p><b>OWASP TOP10:</b><br>1.SQL注入：手注、盲注<br>2.跨站脚本：XSS(Cross-Site Scripting) 分为存储型XSS、反射型XSS、DOM型XSS。<br>3.跨站伪造请求：CSRF(Cross-Site Request Forgery) 是XSS的一种衍生。<br>4.会话认证管理缺陷：BASM(Broken Authenitication and Session Managament) Cookie缺陷。<br>5.安全配置错误：常用服务设置错误。<br>6.不安全的密码存储：例如明文密码，算法key未处理或保护不当。<br>7.不安全的参考对象：读取任意文件或资料。<br>8.限制URL失败：如描述，限制失败。<br>9.缺乏传输层保护：网络传输过程中被监听。缺乏SSL/TLS等保护机制。<br>10.未验证的重定向和跳转</p>
+<p><b>DMZ区：</b><br>
+DMZ（Demilitarized Zone）即俗称的隔离区或非军事区，与军事区和信任区相对应，作用是把WEB，e-mail，等允许外部访问的服务器单独接在该区端口，使整个需要保护的内部网络接在信任区端口后，不允许任何访问，实现内外网分离，达到用户需求。</p>
+<p><b>web攻击迅速发展的7大理由：</b><br>
+1.广泛性：web应用存在于广大网络中。<br>
+2.技术门槛低：Lamp、IIS+ASP、.NET等。<br>
+3.防火墙策略可绕<br>
+4.安全机制不够成熟：HTTP发展处于滞后阶段。<br>
+5.隐蔽性：难以取证。<br>
+6.变化性：由于业务和服务增加或修改，可能会因为调用不当导致出现验证漏洞。<br>
+7.利益性：web攻击的利益丰厚</p>
+<p><b>OWASP TOP10:</b><br>
+1.SQL注入：手注、盲注<br>
+2.跨站脚本：XSS(Cross-Site Scripting) 分为存储型XSS、反射型XSS、DOM型XSS。<br>
+3.跨站伪造请求：CSRF(Cross-Site Request Forgery) 是XSS的一种衍生。<br>
+4.会话认证管理缺陷：BASM(Broken Authenitication and Session Managament) Cookie缺陷。<br>
+5.安全配置错误：常用服务设置错误。<br>
+6.不安全的密码存储：例如明文密码，算法key未处理或保护不当。<br>
+7.不安全的参考对象：读取任意文件或资料。<br>
+8.限制URL失败：如描述，限制失败。<br>
+9.缺乏传输层保护：网络传输过程中被监听。缺乏SSL/TLS等保护机制。<br>
+10.未验证的重定向和跳转</p>
 <p><b>web扫描工具：</b></p>
-<p>Metasploit:辅助模块：auxiliary；渗透模块：exploit。<br>第三方：W3AF、SQLmap、wXf、XSSF、BeEF<br>开源扫描器：W3AF、Arachni、Grabber、Wapiti(sql)、Zed Attack Proxy、Skipfish、Sandcat Free Edithin(xss)、Paros、burpsuite、WATOBO(FUZZ)。</p>
-<p><b>W3AF：</b><br>W3AF(Web Application Attack and Audit Framework)是一个综合性的扫描器。其主要分为核心模块和插件模块。<br>核心模块用于进程调度和插件使用；插件分为八类：发现、审计、搜索、攻击、输出、修改、入侵、破解。<br>W3AF也包含两种工作模式：命令行、GUI<br>同样这里不对工具进行过多赘述。详见W3AF工具讲解。</p>
+<p>Metasploit:辅助模块：auxiliary；渗透模块：exploit。<br>
+第三方：W3AF、SQLmap、wXf、XSSF、BeEF<br>
+开源扫描器：W3AF、Arachni、Grabber、Wapiti(sql)、Zed Attack Proxy、Skipfish、Sandcat Free Edithin(xss)、Paros、burpsuite、WATOBO(FUZZ)。</p>
+<p><b>W3AF：</b><br>
+W3AF(Web Application Attack and Audit Framework)是一个综合性的扫描器。其主要分为核心模块和插件模块。<br>
+核心模块用于进程调度和插件使用；插件分为八类：发现、审计、搜索、攻击、输出、修改、入侵、破解。<br>
+W3AF也包含两种工作模式：命令行、GUI<br>
+同样这里不对工具进行过多赘述。详见W3AF工具讲解。</p>
 <blockquote>
-<p>这个工具的安装搞了我一天的时间…为了这玩意还重装了一下虚拟机…这本书对这个工具的使用不是很多，希望在后面学习使用时物有所值吧…</p>
+<p>这个工具的安装搞了我一天的时间...为了这玩意还重装了一下虚拟机...这本书对这个工具的使用不是很多，希望在后面学习使用时物有所值吧...</p>
 </blockquote>
-<p><b>SQLmap：</b><br>SQLmap是一款基于Python2的命令行自动注入工具。Kali自带，这里提一下在Metasploit内使用SQLmap</p>
-<p><code>msf -&gt; use auxiliary/scanner/http/sqlmap</code><br><code>msf (sqlmap) -&gt; show options</code></p>
-<p><b>其他：</b><br>对于书中所讲解的其他几个工具：如wXf(费了好大的力气找到的资源…)、xssf(这个更坑，据说已经停止更新和维护了，对metasploit兼容性越来越差)…由于略微的有一点年代感，在本章练习dvwa和owasp top10 中会学习近些时间比较新的或者更加实用的工具来进行代替。</p>
-<p><b>第四章作业</b><br>1&gt; <font color="Brown">查找www.testfire.net 中存在的sql注入,应用sqlmap等工具或是手动注入</font></p>
-<p>2&gt; <font color="Brown">添加xssf模块，完成一次存储型跨站”钓鱼”</font></p>
+<p><b>SQLmap：</b><br>
+SQLmap是一款基于Python2的命令行自动注入工具。Kali自带，这里提一下在Metasploit内使用SQLmap</p>
+<p><code>msf -&gt; use auxiliary/scanner/http/sqlmap</code><br>
+<code>msf (sqlmap) -&gt; show options</code></p>
+<p><b>其他：</b><br>
+对于书中所讲解的其他几个工具：如wXf(费了好大的力气找到的资源...)、xssf(这个更坑，据说已经停止更新和维护了，对metasploit兼容性越来越差)...由于略微的有一点年代感，在本章练习dvwa和owasp top10 中会学习近些时间比较新的或者更加实用的工具来进行代替。</p>
+<p><b>第四章作业</b><br>
+1&gt; <font color="Brown"><a href="http://xn--www-855fm2v.testfire.net" target="_blank" rel="noopener">查找www.testfire.net</a> 中存在的sql注入,应用sqlmap等工具或是手动注入</font></p>
+<p>2&gt; <font color="Brown">添加xssf模块，完成一次存储型跨站&quot;钓鱼&quot;</font></p>
 <p>3&gt; <font color="Brown">通过wXf扫描wordpress和joomla两个模块进行RFI攻击</font></p>
 <p>4&gt; <font color="Brown">从exploit-db上找一个wordpress漏洞搭建一个漏洞环境，通过metasploit进行攻击</font></p>
 <p>5&gt; <font color="Brown">在DVWA中实践并理解安全配置及漏洞原理</font></p>
 <p>6&gt; <font color="Brown">尝试使用sqlmap进行shell注入</font></p>
 <p>7&gt; <font color="Brown">尝试向metasploit中加入网上的web渗透模块并搭建测试环境进行测试</font></p>
-<h3 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a><b>第五章</b></h3><p>第五章讲述网络服务的渗透攻击，重点在于对所给实例的漏洞的分析过程的学习，这里和第六章先放一下，涉及了很多的汇编和二进制问题。<br>其主要介绍漏洞有：MS08-067、CVE-2009-1979、OSVDB-59110、</p>
+<h3><b>第五章</b></h3>
+<p>第五章讲述网络服务的渗透攻击，重点在于对所给实例的漏洞的分析过程的学习，这里和第六章先放一下，涉及了很多的汇编和二进制问题。<br>
+其主要介绍漏洞有：MS08-067、CVE-2009-1979、OSVDB-59110、</p>
 <p>开始依旧是扫盲。</p>
-<p><b>内存攻击：</b><br>攻击者利用软件安全漏洞构造恶意输入导致软件处理数据产生非预期错误，将数据写入特定的敏感位置从而劫持软件控制流量，执行外部代码。</p>
-<p><b>缓冲区溢出漏洞：</b><br>缓冲区溢出（buffer overflow），是针对程序设计缺陷，向程序输入缓冲区写入使之溢出的内容（通常是超过缓冲区能保存的最大数据量的数据），从而破坏程序运行、趁著中断之际并获取程序乃至系统的控制权。<br>根据溢出内存位置不同，缓冲区溢出分为栈溢出和堆溢出。</p>
-<p><b>栈溢出：</b><br>栈溢出指当写入数据超过内存分配给栈的缓冲区空间。会导致覆盖缓冲区附近的变量从而改变程序流程和结果；或是覆盖保存的函数地址修改为指定的地址；还有可能覆盖掉某个指针或者程序异常处理结构。<br>覆盖返回地址的利用方式是在函数进行调用时覆盖掉函数返回指针所指向的地址，从而达到调用shellcode的目的；<br>覆盖异常处理的利用方式</p>
-<h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a><b>第六章</b></h3><p>第六章讲述的是客户端的渗透攻击。包含了常用的客户端软件如：浏览器、office、Adobe等。<br>主要的漏洞有：MS11-050、MS10-087。</p>
+<p><b>内存攻击：</b><br>
+攻击者利用软件安全漏洞构造恶意输入导致软件处理数据产生非预期错误，将数据写入特定的敏感位置从而劫持软件控制流量，执行外部代码。</p>
+<p><b>缓冲区溢出漏洞：</b><br>
+缓冲区溢出（buffer overflow），是针对程序设计缺陷，向程序输入缓冲区写入使之溢出的内容（通常是超过缓冲区能保存的最大数据量的数据），从而破坏程序运行、趁著中断之际并获取程序乃至系统的控制权。<br>
+根据溢出内存位置不同，缓冲区溢出分为栈溢出和堆溢出。</p>
+<p><b>栈溢出：</b><br>
+栈溢出指当写入数据超过内存分配给栈的缓冲区空间。会导致覆盖缓冲区附近的变量从而改变程序流程和结果；或是覆盖保存的函数地址修改为指定的地址；还有可能覆盖掉某个指针或者程序异常处理结构。<br>
+覆盖返回地址的利用方式是在函数进行调用时覆盖掉函数返回指针所指向的地址，从而达到调用shellcode的目的；<br>
+覆盖异常处理的利用方式</p>
+<h3><b>第六章</b></h3>
+<p>第六章讲述的是客户端的渗透攻击。包含了常用的客户端软件如：浏览器、office、Adobe等。<br>
+主要的漏洞有：MS11-050、MS10-087。</p>
 <p>同第五章，这一部分在开始学习逆向之后补齐。</p>
-<h3 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a><b>第七章</b></h3><p>第七章讲社工，这一部分还是蛮有意思的。<br>说到社工，就不得不提凯文.米特尼克…和《欺骗的艺术》(虽然到现在我还没有看过，近期补上)。还有一本人性的弱点。</p>
+<h3><b>第七章</b></h3>
+<p>第七章讲社工，这一部分还是蛮有意思的。<br>
+说到社工，就不得不提凯文.米特尼克...和《欺骗的艺术》(虽然到现在我还没有看过，近期补上)。还有一本人性的弱点。</p>
 <p>讲道理社工是一门博大精深的学问，个人觉得可以通过一些逻辑小游戏或者海龟汤故事之类的锻炼叙述一个故事或情景模拟。</p>
 <p>从原理上来说，社会工程学（Social Engineering），是一种通过人际交流的方式获得信息的非技术渗透手段。他利用对象的心理弱点、人类的本能反应和好奇心等心理特征，进行欺骗、冒充、引诱等多种手段达成目的。</p>
 <p>社工最重要的还是在进行之前的信息搜集。你能取得越多的信息，对于你获取信任的可能性就越大。</p>
 <p>书中描述了一个社会工程学的环节框架：</p>
-<p>1.信息搜集<br>2.诱导<br>3.托词<br>4.心理影响</p>
+<p>1.信息搜集<br>
+2.诱导<br>
+3.托词<br>
+4.心理影响</p>
 <p>在PC端对社工能够起到帮助的有：网络电话、木马、钓鱼网站的伪造、U盘攻击等等。</p>
 <p><b>网络电话</b></p>
-<p><b>木马</b><br>msfpayload</p>
-<p><b>钓鱼</b><br>set工具</p>
-<p><b>U盘攻击</b><br>autorun.inf<br>UItraISO<br>Hacksaw<br>Switchblade</p>
+<p><b>木马</b><br>
+msfpayload</p>
+<p><b>钓鱼</b><br>
+set工具</p>
+<p><b>U盘攻击</b><br>
+autorun.inf<br>
+UItraISO<br>
+Hacksaw<br>
+Switchblade</p>
 
                 </section>
 
             </div>
         </div>
-    </div>
-        <!-- Main -->
+        
+            <!-- Main -->
 
     <div id="main" class="wrapper style1">
         <div class="container">
@@ -496,6 +700,7 @@
         </div>
     </div>
 
+    </div>
     <footer id="footer">
         <!--  copyright  -->
         <ul class="copyright">
@@ -503,11 +708,12 @@
         </ul>
         
         <ul class="copyright">
-                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
                 <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
         
         <script src="/js/Valine.min.js"></script>
         <script>
@@ -516,13 +722,14 @@
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
                         visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
                         master: ["f21bae5bf498b089b545f6f0a986e224"],
-                        friends: [""]
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"]
                 })
 
         </script>
         
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>
         <script src="/js/jquery.scrollex.min.js"></script>

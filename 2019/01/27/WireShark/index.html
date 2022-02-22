@@ -4,7 +4,7 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
     
-    <title>about - DV.K</title>
+    <title>DV.K</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="keywords" content="DV.K CTFer" />
@@ -49,43 +49,60 @@
         
 
         
-
         <!-- Main -->
+        
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
                     <h2>WireShark</h2>
                     <p>2019-01-27</p>
-                     <p>文章共计 - 638 字 阅读需要 - 2 分钟</p>
+                    <span id="/2019/01/27/WireShark/" class="leancloud_visitors" data-flag-title="WireShark">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 641 字 阅读需要 - 2 分钟</p>
+                    </span>
                 </header>
 
                 <!-- Content -->
                 <section id="content">
                     <div class ="post_page_title_img" style="background-image: url(https://s2.ax1x.com/2019/01/30/k1kUgI.png);" ></div>
                     <hr>
-                    <h1 id="WireShark"><a href="#WireShark" class="headerlink" title="WireShark"></a>WireShark</h1><h3 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00- - 前言"></a><b>0x00- - 前言<b></b></b></h3><p>从头开始，巩固基础。<br>开始痛苦的补地基之旅。</p>
-<h3 id="0x01-WireShark简介"><a href="#0x01-WireShark简介" class="headerlink" title="0x01- - WireShark简介"></a><b>0x01- - WireShark简介<b></b></b></h3><p>常规，了解wireshark是什么。</p>
-<p>参考官网介绍（卡的一批，挂梯子会好一点），”Wireshark network protocol analyzer”—网络协议分析器，其功能是撷取网络封包，并尽可能显示出最为详细的网络封包资料。是由前Ethereal团队开发的开源项目。Wireshark使用WinPCAP作为接口，直接与网卡进行数据报文交换。</p>
+                    <h1>WireShark</h1>
+<h3><b>0x00- - 前言<b></b></b></h3>
+<p>从头开始，巩固基础。<br>
+开始痛苦的补地基之旅。</p>
+<h3><b>0x01- - WireShark简介<b></b></b></h3>
+<p>常规，了解wireshark是什么。</p>
+<p>参考官网介绍（卡的一批，挂梯子会好一点），&quot;Wireshark network protocol analyzer&quot;--网络协议分析器，其功能是撷取网络封包，并尽可能显示出最为详细的网络封包资料。是由前Ethereal团队开发的开源项目。Wireshark使用WinPCAP作为接口，直接与网卡进行数据报文交换。</p>
 <p>WireShark的抓包一般包含三种：本机、集线器、交换机。</p>
-<p>本机环境的抓包是最常用也是较简单的一种方式：wireshark作为本机和网卡之间的代理，在网络交换时抓取数据并呈交给网卡或主机。<br>集线器环境：根据集线器的UDP特性直接可以接收到其他网络主机发送的消息。<br>交换机环境：</p>
+<p>本机环境的抓包是最常用也是较简单的一种方式：wireshark作为本机和网卡之间的代理，在网络交换时抓取数据并呈交给网卡或主机。<br>
+集线器环境：根据集线器的UDP特性直接可以接收到其他网络主机发送的消息。<br>
+交换机环境：</p>
 <ul>
-<li>1.让交换机设置SPAN—端口镜像，进行流量的转发和引流。</li>
+<li>1.让交换机设置SPAN--端口镜像，进行流量的转发和引流。</li>
 <li>2.ARP欺骗:没有交换机权限，使用 Cain&amp;Abel ARP攻击软件对局域网进行欺骗回复来获得流量。</li>
 <li>3.mac泛供:爆交换机的路由表。</li>
 </ul>
-<p>一开始对于这个工具，其实我是拒绝的。<br>毕竟burp来抓包改包方便的多。<br>就是我的burp没安证书稍微有一丢丢麻烦orz。。。</p>
-<p>简单的对比了一下这两个工具（据说还有一个比较常用的Fiddler，没有接触过，等用熟悉了以后尝试一下<br>）总而言之，Burp更倾向于简单的http/https请求包的分析，使用的是Java语言，其爆破和爬虫等附加功能也很强大，更倾向于是一个多功能集合体武器。</p>
-<p>相对而言的WireShark，更多的倾向于网络传输中每一帧，每一个动作，他都会记录下来。WireShark不仅仅可以捕获http/https协议的数据包，TCP/UDP等常见的协议数据包都能够捕获。更倾向于一台记录仪，把你每一个细微的动作都记录下来。<br>在Wireshark官网上有一句：Sniff free or die。所以Wireshark其实更多的是一个Sniff—嗅探工具，而不是一个抓包工具。</p>
+<p>一开始对于这个工具，其实我是拒绝的。<br>
+毕竟burp来抓包改包方便的多。<br>
+就是我的burp没安证书稍微有一丢丢麻烦orz。。。</p>
+<p>简单的对比了一下这两个工具（据说还有一个比较常用的Fiddler，没有接触过，等用熟悉了以后尝试一下<br>
+）总而言之，Burp更倾向于简单的http/https请求包的分析，使用的是Java语言，其爆破和爬虫等附加功能也很强大，更倾向于是一个多功能集合体武器。</p>
+<p>相对而言的WireShark，更多的倾向于网络传输中每一帧，每一个动作，他都会记录下来。WireShark不仅仅可以捕获http/https协议的数据包，TCP/UDP等常见的协议数据包都能够捕获。更倾向于一台记录仪，把你每一个细微的动作都记录下来。<br>
+在Wireshark官网上有一句：Sniff free or die。所以Wireshark其实更多的是一个Sniff--嗅探工具，而不是一个抓包工具。</p>
 <p>WireShark多用于内网渗透和流量分析。</p>
-<p>WireShark官网：<a href="https://www.wireshark.org/" target="_blank" rel="noopener">https://www.wireshark.org/</a><br>WireShark官方Wiki:<a href="https://wiki.wireshark.org/" target="_blank" rel="noopener">https://wiki.wireshark.org/</a></p>
-<h3 id="0x02-WireShark基础"><a href="#0x02-WireShark基础" class="headerlink" title="0x02- - WireShark基础"></a><b>0x02- - WireShark基础<b></b></b></h3><p>首先是安装：Kali2.0内自带wireshark，同样也可以到官网下载对应版本安装即可。<br>记得勾选好插件，并安装抓包驱动。</p>
+<p>WireShark官网：<a href="https://www.wireshark.org/" target="_blank" rel="noopener">https://www.wireshark.org/</a><br>
+WireShark官方Wiki:<a href="https://wiki.wireshark.org/" target="_blank" rel="noopener">https://wiki.wireshark.org/</a></p>
+<h3><b>0x02- - WireShark基础<b></b></b></h3>
+<p>首先是安装：Kali2.0内自带wireshark，同样也可以到官网下载对应版本安装即可。<br>
+记得勾选好插件，并安装抓包驱动。</p>
 
                 </section>
 
             </div>
         </div>
-    </div>
-        <!-- Main -->
+        
+            <!-- Main -->
 
     <div id="main" class="wrapper style1">
         <div class="container">
@@ -105,6 +122,7 @@
         </div>
     </div>
 
+    </div>
     <footer id="footer">
         <!--  copyright  -->
         <ul class="copyright">
@@ -112,11 +130,12 @@
         </ul>
         
         <ul class="copyright">
-                <li style="height: 17px;width: 17px; background-image: url(https://image.3001.net/images/20210606/16229429757102.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" ></li>
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
                 <liICP>鲁ICP备2021028491号</liICP>
         </ul>
         
         <!--  script  -->
+        <script src="/js/jquery.min.js"></script>
         
         <script src="/js/Valine.min.js"></script>
         <script>
@@ -125,13 +144,14 @@
                         appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
                         appKey: 'WgBXad9R6JRSoxTMohDelbFs',
                         visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
                         master: ["f21bae5bf498b089b545f6f0a986e224"],
-                        friends: [""]
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"]
                 })
 
         </script>
         
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/jquery.scrolly.min.js"></script>
         <script src="/js/jquery.dropotron.min.js"></script>
         <script src="/js/jquery.scrollex.min.js"></script>

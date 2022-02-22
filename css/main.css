@@ -105,13 +105,7 @@ body, input, select, textarea {
 }
 
 a {
-	-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	display: block;
 	text-decoration: none;
-	position: relative;
 	color: #259d92;
 }
 
@@ -2163,7 +2157,7 @@ section.special, article.special {
 }
 
 header p {
-	color: #ffffff;
+	color: rgba(255, 255, 255, 0.75);
 	position: relative;
 }
 
@@ -2530,7 +2524,6 @@ input[type="radio"] + label:before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-image: url("images/overlay.png");
 	width: 100%;
 	height: 100%;
 	z-index: 1;
@@ -2597,7 +2590,6 @@ ul.alt {
 ul.alt li {
 	border-top: solid 1px rgba(255, 255, 255, 0.3);
 	border-bottom: solid 1px rgba(255, 255, 255, 0.3);
-	margin: 0 20em 0 20em;
 	padding: 0.5em 0 0 0;
 }
 
@@ -3587,6 +3579,15 @@ body.is-touch #banner {
 @media screen and (max-width: 1680px) {
 
 	/* Basic */
+	ul.alt a{
+		margin-left: 15%;
+		float:left;
+		overflow:hidden;
+		width:20em;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		text-align: justify;
+	}
 
 	body, input, select, textarea {
 		font-size: 13pt;
@@ -3760,6 +3761,17 @@ body.is-touch #banner {
 @media screen and (max-width: 736px) {
 
 	/* Basic */
+	ul.alt a{
+		margin-left: 15%;
+		float:left;
+		overflow:hidden;
+		width:10em;
+		text-align: justify;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		text-align: justify;
+	}
+
 
 	html, body {
 		overflow-x: hidden;
