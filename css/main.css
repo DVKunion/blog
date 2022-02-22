@@ -3054,7 +3054,6 @@ input[type="button"]:disabled,
 }
 
 .spotlight:before {
-	background-image: url("images/overlay.png");
 	content: '';
 	display: block;
 	height: 100%;
@@ -3455,10 +3454,10 @@ body.landing #header {
 }
 
 #banner:after {
-	background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75)), url("images/overlay.png");;
-	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75)), url("images/overlay.png");;
-	background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75)), url("images/overlay.png");;
-	background-image: linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75)), url("images/overlay.png");;
+	background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75));
+	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75));
+	background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75));
+	background-image: linear-gradient(top, rgba(23, 24, 32, 0.5), rgba(23, 24, 32, 0.75));
 	content: '';
 	display: block;
 	height: 100%;
@@ -3547,7 +3546,7 @@ body.is-touch #banner {
 	color: rgba(255, 255, 255, 0.5);
 	font-size: 0.8em;
 	line-height: 1em;
-	margin: 2em 0 0 0;
+	margin: 1em 0 0 0;
 	padding: 0;
 	text-align: center;
 }
