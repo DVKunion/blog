@@ -1,8 +1,8 @@
 ---
 title: Linux--CentOS
-date: 2018-10-20 15：49
+date: 2018-10-20 15:49:33
 tags:
-    - 
+    - 操作系统
     - Linux
 categories: Operation
 thumbnail: /img/942bf6c451da81cb7e4194c25f66d016082431da.jpg
