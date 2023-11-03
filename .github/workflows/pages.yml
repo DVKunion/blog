@@ -21,6 +21,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: use lfs
+        run: git lfs pull
       - name: build
         # 安装 Node 之后就可以执行构建脚本
         run: |
