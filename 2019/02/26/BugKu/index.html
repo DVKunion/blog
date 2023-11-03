@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>BugKu | DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="TnnDJaWjq71nvLK8WYmDKSGkcgFEIXQy4y3eLKJROMA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K Security Cloud Docker K8s" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    
+    <link rel="bookmark"  type="image/x-icon"  href="/img/logo.png"/>
+    <link rel="shortcut icon" href="/img/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("/img/bg.jpg");
+        }
+    </style>
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="DV.K" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="https://github.com/DVKunion/">Github</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2023/11/">2023 - 11</a></li><li><a class="archive-link" href="/archives/2023/06/">2023 - 06</a></li><li><a class="archive-link" href="/archives/2023/05/">2023 - 05</a></li><li><a class="archive-link" href="/archives/2023/02/">2023 - 02</a></li><li><a class="archive-link" href="/archives/2022/03/">2022 - 03</a></li><li><a class="archive-link" href="/archives/2022/01/">2022 - 01</a></li><li><a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/comments/">留言板</a></li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+        <!-- Main -->
+        
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>BugKu</h2>
+                    <p>2019-02-26</p>
+                    <span id="/2019/02/26/BugKu/" class="leancloud_visitors" data-flag-title="BugKu">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 3.9k 字 阅读需要 - 14 分钟</p>
+                    </span>
+                </header>
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(/img/1484628381608.jpg);" ></div>
+                    <hr>
+                    <h1>BugKu</h1>
+<h3 id="b-0x00-前言-b"><b>0x00- - 前言</b></h3>
+<p>久仰BugKu大名，这里记一下Bugku的题目。</p>
+<h3 id="b-0x01-Web-b"><b>0x01- - Web</b></h3>
+<p><b>01-web2</b></p>
+<p>打开是加速的滑稽js....<br>
+F12得到key,一样的签到题套路</p>
+<p><b>02-计算器</b></p>
+<p>打开是一个验证码一样的计算图片，但是一般的结果都是两位数以上而输入框只能输入1位。<br>
+右键审查元素直接修改html属性即可。</p>
+<p><b>03-web基础$_GET</b></p>
+<p>打开是一段源码。<br>
+要求GET方法获得一个what变量的值为flag。<br>
+url添加?what=flag即可。</p>
+<p><b>04-web基础$_POST</b></p>
+<p>同上题目，方法变为了POST。<br>
+上hackbar直接可以拿到flag。</p>
+<p><b>05-矛盾</b></p>
+<p>又是一段php。<br>
+GET得到num,要求num是非数字(!is_numeric)但是只有num==1才能够输出flag。<br>
+这里num==1是弱类型，所以我们只要输入一个带有字母且开头为1的字符串即可。</p>
+<p><b>06-web3</b></p>
+<p>打开疯狂js弹窗。<br>
+两种方式:第一禁用浏览器js,F12即可看到flag的注释。<br>
+第二直接view-source，看到注释掉的html编码的flag。</p>
+<p><b>07-域名解析</b></p>
+<p>按照题目提示修改host文件(Linux:/etc/hosts Win:C:\windows\system32\drivers\etc)即可。<br>
+大佬说BP改一下host也可以实现。</p>
+<p><b>08-你必须让他停下</b></p>
+<p>打开题目1s一次自动刷新。<br>
+同样禁用js手动刷出flag即可。<br>
+BP抓包后手动GO几次也能获得。</p>
+<p><b>09-本地包含</b></p>
+<p>打开只有一个123,按照题目提示是一个LIF。<br>
+直接盲猜flag.php即可。。。</p>
+<blockquote>
+<p>p.s:看了一下别人的wp发现原题好像不是这样的，，，给了一个源码...<br>
+include &quot;flag.php&quot;;<br>
+$a = @$_REQUEST['hello'];<br>
+eval( &quot;var_dump($a);&quot;);<br>
+show_source(__FILE__);</p>
+</blockquote>
+<p><b>10-变量1</b></p>
+<p>这题没做出来，缺少了对php 可变变量的知识。<br>
+题目是一段源码，提示flag在一个变量中，要求GET一个arg值，arg是一个可变变量。<br>
+让arg=GLOBALS输出全局变量即可。</p>
+<p><b>11-web5</b></p>
+<p>打开有一个输入框，提示JSfuck，F12查看源码发现隐藏的jsfuck。<br>
+这里有一个坑点，F12看到的是省略后的代码，无法运行。<br>
+使用view-source查看源码，得到源码扔console台即可。</p>
+<p><b>12-头等舱</b></p>
+<p>。。。看到带有头、head的东西，直接F12条件反射network。<br>
+看请求包即可得到flag。</p>
+<p><b>13-网站被黑</b></p>
+<p>这题也搞了很久。。。题目提示是一个很没水平的东西???<br>
+做的时候因为打开后就没啥提示，没有啥思路。<br>
+扔扫描器扫去把，直接扫到了一个后台。<br>
+要输入密码。<br>
+没提示我上哪弄密码去。。。<br>
+继续扔工具爆破去吧。<br>
+得到密码拿到flag...</p>
+<blockquote>
+<p>的确很坑。</p>
+</blockquote>
+<p><b>14-管理员系统</b></p>
+<p>打开发现是一个登录窗口，F12发现一个base64注释。解出来是test123。<br>
+尝试admin登陆，结果有IP限制。<br>
+改xff即可得到flag。</p>
+<p><b>15-web4</b></p>
+<p>打开提示看看源码，F12启动。<br>
+看到一串js，都是%扔url解一下。<br>
+得到的是一个js函数。<br>
+有一个坑点，注意p1和p2的拼接部分插入了一段，所以密码应该是p1的结尾+插入部分+p2开头。</p>
+<p><b>16-flag在index里</b></p>
+<p>打开是一个触发连接。由题目提示flag在index里面，应该是让我们去查看index.php的内容。<br>
+点击click之后发现跳转的url是明显的符合LFI漏洞的形式。我们尝试去查看index.php但是没有显示出来。<br>
+尝试使用php://filter封装成base64进行查看。</p>
+<p><code>?file=php://filter/read=convert.base64-encode/resource=index.php</code></p>
+<p>直接base64解码得到flag。<br>
+这里一开始用的是php://input。查看到源码之后发现被过滤掉了input和../以及tp、data等关键词。</p>
+<p><b>17-输入密码查看flag</b></p>
+<p>打开提示是一个5位数字的密码。直接bp爆破。</p>
+<p><b>18-点击100万次</b></p>
+<p>这题做了一次又忘了...<br>
+有关js的题目也是没有条件反射。<br>
+点开是一个饼干...要你点击100万次就会得出flag。<br>
+F12 可以看到饼干计数的js代码。<br>
+js在计数的时候如果计数到了100万就会发出post请求。我们直接伪造这个请求即可。<br>
+得到flag。</p>
+<p><b>19-备份是个好习惯</b></p>
+<p>提示有备份。扫描扫出index.php.bak。<br>
+查看源码，要求得到key1和key2不相同但md5相同。md5判断处为弱类型，0e绕过。<br>
+有一个坑点，这里他使用str_replace把key替换成了空字符串。因此需要使用url编码进行绕过。</p>
+<p><b>20-成绩单</b></p>
+<p>打开发现一个输入框，输入id查询成绩。<br>
+fuzz发现存在sql注入漏洞。<br>
+走流程注入：<br>
+<code>1' order by 4 #</code>检测表单长度<br>
+<code>-1' union select 1,2,3,4 #</code>查看元素位置<br>
+<code>-1' union select 1,database(),user(),version() #</code>获取主要信息<br>
+<code>-1' union select 1,(select group_concat(table_name) from information_schema.tables where table_schema=database()),user(),version() #</code>得到表名<br>
+<code>-1' union select 1,(select * from fl4g),user(),version() #</code>直接查询表名得到flag。</p>
+<blockquote>
+<p>回数据库继续熟悉那张特殊的表</p>
+</blockquote>
+<p><b>21-秋名山老司机</b></p>
+<p>打开提示要求在2s内计算一个长串的表达式。<br>
+python写个eval脚本即可。<br>
+动手写一下吧...不然一直眼高手低。<br>
+。。。这么个东西也写了15多分钟。。。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url=<span class="string">&#x27;http://123.206.87.240:8002/qiumingshan/index.php&#x27;</span></span><br><span class="line"></span><br><span class="line">s = requests.Session()</span><br><span class="line">r = s.get(url)</span><br><span class="line">express=r.text</span><br><span class="line">express=express[<span class="number">159</span>:]</span><br><span class="line">rexp=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> express:</span><br><span class="line">	<span class="keyword">if</span> i == <span class="string">&#x27;=&#x27;</span>:</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		rexp=rexp+i</span><br><span class="line"><span class="built_in">print</span>(rexp)</span><br><span class="line">ans=<span class="built_in">eval</span>(rexp)</span><br><span class="line">r=s.post(url,data=&#123;<span class="string">&#x27;value&#x27;</span>:ans&#125;)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<p><b>22-速度要快</b></p>
+<p>打开页面，抓包发现回复内容内包含flag字段，并且源码带有注释掉的提示:要求post一个margin的值。<br>
+对flag解码两次base64可以得到后面的几个数字，应该就是margin。<br>
+但是算出来了之后???要求我快点?<br>
+行吧...这个页面刷新一次就会更新一次那个flag的值...<br>
+正好趁着热乎...把上面的py代码在熟练一次吧。<br>
+注意requests必须使用session请求保持会话连接。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">url=<span class="string">&#x27;http://123.206.87.240:8002/web6/index.php&#x27;</span></span><br><span class="line"></span><br><span class="line">s = requests.Session()</span><br><span class="line">r = s.get(url)</span><br><span class="line">exp=r.headers[<span class="string">&#x27;flag&#x27;</span>]</span><br><span class="line">exp=exp[<span class="number">44</span>:]</span><br><span class="line">exp=base64.b64decode(exp)</span><br><span class="line">exp=base64.b64decode(exp)</span><br><span class="line">exp=exp.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">r=s.post(url,data=&#123;<span class="string">&#x27;margin&#x27;</span>:exp&#125;)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>ok,我的字符串操作是真的烂...</p>
+</blockquote>
+<p><b>23-cookies欺骗</b></p>
+<p>打开发现url参数filename存在一个base64的加密。解码为key.txt。是一串不</p>
+<p><b>24-never give up</b></p>
+<p>打开看到url参数以为是注入题目...结果没有反馈sql又不会了...<br>
+日常F12，得到提示。1p.html转向Bugku的论坛。<br>
+抓包看一下，发现是一个304 modified。<br>
+删去转304的请求语句If-Modified得到页面的源码，是一段js的代码。<br>
+里面有一个很长的变量word。并且在 outword()函数中进行了url解码。<br>
+手动url解码，得到另一段代码，是实现跳转的js以及注释掉的base64。<br>
+手动base64解码，又得到了一段php代码....<br>
+做到这里就想起来怎么做的了。。。这里很坑。<br>
+看到了一个flag的txt文档，试着访问一下就直接能够得到flag...<br>
+如果按照实际来做php审计的话，需要绕过下面几个函数：<br>
+stripos(字符串a，字符串b) 函数查找字符串b在字符串a中第一次出现的位置（不区分大小写）。</p>
+<p>file_get_contents 将整个文件读入一个字符串</p>
+<p>strlen() 函数返回字符串的长度</p>
+<p>!$_GET[‘id’]并且id==0：令id=%00或者令id=.字符串都可以绕过</p>
+<p>substr() 函数返回字符串的一部分。 substr(string,start,length) ，length参数可选。如  substr($b,0,1)  就是在参数b里面 ，从0开始返回1个长度的字符串</p>
+<p>eregi(&quot;111&quot;.substr($b,0,1),&quot;1114&quot;)    就是判断&quot;1114&quot;这个字符串里面是否有符合&quot;111&quot;.substr($b,0,1)这个规则的</p>
+<p>这里被坑住了。一直在考虑如何寻找一个编码方式能让substr不识别但是eregi识别出来...<br>
+这里绕过eregi的方式是用%00截断，使得判断eregi(&quot;111&quot;,&quot;1114&quot;)成立。</p>
+<p>payload:hello.php?id=0e123&amp;a=php://input&amp;b=%0023456</p>
+<p><b>25-welcome to bugku</b></p>
+<p>一个经典的题目<br>
+打开提示我不是bugku的会员....<br>
+F12得到注释部分的源码提示。<br>
+按照源码要求一步一步的走吧...<br>
+第一个变量txt:考察php://input封装。<br>
+第二个变量file：考察php://filter封装，根据提示查看hint.php源码。<br>
+hint内存在一个flag的Class。<br>
+我们再查看index.php的源码...发现file直接被过滤了...所以我们不能直接读到flag.php<br>
+但是在后面有一个对password的序列化，结合hint内的class的内容，我们可以构造php反序列化payload。<br>
+<code>O:4:&quot;Flag&quot;:1:&#123;s:4:&quot;file&quot;,s:8:&quot;flag.php&quot;;&#125;</code><br>
+作为hint.php的参数进行传输。即可得到Flag</p>
+<p>最后放一个payload:<br>
+<code>index.php?txt=php://input&amp;file=hint.php&amp;password=O:4:&quot;Flag&quot;:1:&#123;s:4:&quot;file&quot;,s:8:&quot;flag.php&quot;;&#125;</code></p>
+<p><b>26-过狗一句话</b></p>
+<p>这题已经被日掉了。。。不能做了<br>
+靠着广大网友的wp大概看一下题目。应该是给的一句话木马。传入参数s即可进行命令执行，寻找flag文件即可。</p>
+<p><b>27-字符?正则?</b></p>
+<p><b>28-前女友</b></p>
+<p>...我不知道为什么这题我做了很久...还是后台更新过了...<br>
+就很不明白为什么一开始眼瞎的看不到F12源码中的一个提示txt连接。。。<br>
+查看txt得到提示代码...一个弱类型md5比较，加一个数组绕过strcmp函数。。。<br>
+...为什么第一次做的时候啥都没看到?</p>
+<p><b>29-login1</b><br>
+提示sql约束攻击...<br>
+终于在寒假之后对常见的一些sql攻击有了一定的了解...回过来把这题做掉了。<br>
+按照提示我们使用Sq约束攻击，首先注册一个用户名为 amdin'# 的用户，设置密码后返回登录，在登陆时候使用admin的用户名和注册时候使用的密码。<br>
+登陆成功即可拿到flag。</p>
+<p><b>30-你从哪里来</b></p>
+<p>打开链接得到提示：我们是从Google来的吗？<br>
+修改referer得到Flag。<br>
+坑点：google用的是https协议...</p>
+<p><b>31-md5 collision</b></p>
+<p>这题bugku的意思应该是直接连接到南邮的题目。。。所以少了题目描述。。。<br>
+去查南邮的题目会发现给了你源码...只要输入等于他给的md5的值的a即可。。。<br>
+行吧...</p>
+<p><b>32-程序员本地网站</b><br>
+要求从本地访问，修改x-forwarded-for即可。</p>
+<p><b>33-各种绕过</b><br>
+php审计。<br>
+1.首先url编码id=margin<br>
+2.数组绕过uname和passwd的sha1加密</p>
+<p><b>34-web8</b><br>
+依旧是php审计。<br>
+只要get的ac值和fn-php://input封装传输的值相同即可。</p>
+<p><b>35-细心</b></p>
+<p>题目提示变成admin。<br>
+但是打开看到的是一个404页面...<br>
+一开始以为是服务器炸了。<br>
+抓包看一下，没啥收获。<br>
+没办法，扫去吧。<br>
+扫到了一个robots.txt，得到提示：resusl.php<br>
+然后发现了下一步的提示：x参数要和password相同。。。<br>
+以为是什么骚操作绕过。。。结果直接盲猜x=admin即可。。。</p>
+<p><b>36-求getshell</b><br>
+按照要求，需要上传一张image的php。<br>
+一开始以为是上传一句话菜刀...结果回显会默认把上传的文件转变成随机编码的jpg文件...<br>
+跟着大佬做...bp抓包之后将Content-Type: Multipart/form-data;像这样改成大写...这样可以过waf。<br>
+然后使用如下的后缀名php2, php3, php4, php5, phps, pht, phtm, phtml（php的别名）...并且将文件的Content-Type修改为image/jpg的格式。<br>
+即可得到flag。</p>
+<p><b>37-INSERT INTO注入</b></p>
+<p>题目给了源码。源码可以看到两个地方。<br>
+1:ip的传入值和函数getip()有关，这个函数会将数据包中的HTTP_X_FORWARDED_FOR赋值给ip<br>
+2:sql执行语句：insert into client_ip (ip) values ('$ip')</p>
+<p><b>38-这是一个神奇的登陆框</b></p>
+<p>熟悉了Sqlmap以后直接这题就跑出来了...工具真香。<br>
+Post提交的参数中admin_name参数存在注入。<br>
+直接爆表爆库跑出flag即可...</p>
+<p><b>39-多次</b></p>
+<p><b>40-PHP_encrypt_1</b></p>
+<h3 id="b-0x02-Misc-b"><b>0x02- - Misc</b></h3>
+<p><b>01-签到题</b></p>
+<p>关注公众号即可</p>
+<p><b>02-这是一张单纯的图片</b></p>
+<p>给了张图片。隐写流程走一遍<br>
+hex打开发现结尾的html编码的Flag</p>
+<p><b>03-隐写</b></p>
+<p>CRC校验出现错误，调节高度位，得到flag</p>
+<p><b>04-telnet</b></p>
+<p>流量分析题，再根据题目提示，联想到Telnet是明文传输。<br>
+寻找telnet的登录密码。<br>
+懒得仔细看了...流量也很干净，直接追踪流看到了明文传输的密码得到flag。</p>
+<p><b>05-眼见非实(ISCCCTF)</b></p>
+<p>一个没有后缀名的文件,file查看文件类型也是zip<br>
+添加后缀名之后发现该压缩文件内有一个无法打开的docx文件<br>
+hex查文件头发现其实还是一个zip文件(office文档皆压缩)，再次修改文件后缀名...结果什么都没发现。<br>
+整理思路(查看wp)...<br>
+思路是对的，，，眼神不好使。。。flag在document里。。。</p>
+<p><b> 06-啊哒</b></p>
+<p>(终于遇到一个走流程的题了...)<br>
+压缩文件，解压出一个jpg。<br>
+binwalk 发现压缩包<br>
+foremost 提取压缩包<br>
+zip 打开压缩包发现flag.txt有密码<br>
+zip伪加密 尝试失败<br>
+crc爆破 22位爆破难度过高<br>
+整理思路(继续查看wp)...<br>
+行吧，还得去看图片的详细信息...得到一串奇怪的字符串<br>
+bp转一下ascii hex 得到解密密码。<br>
+拿到flag...</p>
+<p><b>07-又一张图片，还单纯吗</b></p>
+<p>(这次的确是一个走流程的题目了...)<br>
+jpg图片，直接formost即可得到flag...</p>
+<p><b>08-猜</b></p>
+<p>图片是一个缺了半张脸的女人，要求的flag是这个女人的名字的全拼写。<br>
+社工题，搜吧。<br>
+很容易搜到了相关连接。</p>
+<p><b>09-宽带信息泄露</b></p>
+<p>这个根据上一次安恒赛的一道题学习到的一个可以查看宽带备份文件密码的工具。<br>
+上工具读出来文件，找用户名即可。<br>
+文件仔细读一读救出来了。</p>
+<p><b>10-隐写2</b></p>
+<p>这次我记住了，这么嚣张的图片先从最简单的地方开始查起<br>
+文件属性直接看到hint:网络安全工作室在哪?<br>
+不知道，继续走流程<br>
+binwalk :发现zip<br>
+foremost :得到zip<br>
+然后得到 ：flag.rar和又一个提示文件。<br>
+提示文件说了三个人物和hint:斗地主。<br>
+...没猜出来(看了大佬的想法...键盘上的kqj分别对应键盘上的871...)<br>
+得到第三章图片,hex找到了flag。<br>
+提交出现问题，发下内部是base64加密，扔bp编码一下，得到真正的flag。</p>
+<p><b>11-多种方法解决</b></p>
+<p>提示我们去找二维码。<br>
+HEX发现提示：图片格式的base64加密的二维码<br>
+保存扫描一下得到flag。</p>
+<p><b>12-闪的好快</b></p>
+<p>一个闪烁的gif二维码，使用gif切割工具，<br>
+18张图片...一个图一个字母...<br>
+慢慢扫吧。</p>
+<p><b>13-come_game</b></p>
+<p><b>14-白哥的鸽子</b></p>
+<p>一个jpg文件，先看一下图片是啥<br>
+是一只鸽子。。。</p>
+<p><b>15-Linux</b></p>
+<p>提示都是Linux了，先扔file看一下。<br>
+linux etx3文件，./无法执行。<br>
+尝试cat 一下直接拿到了flag。</p>
+<p><b>16-隐写3</b></p>
+<p><b>就五层你能解开嘛</b><br>
+提示很到位，一共五关。<br>
+第一关:crc32碰撞。.py脚本跑一下。得到解压密码:进入到了第二层。<br>
+第二关：维吉尼亚密码。</p>
+<h3 id="b-0x03-Misc-b"><b>0x03- - Misc</b></h3>
+
+                </section>
+            </div>
+        </div>
+        
+            <!-- Main -->
+    <link rel="stylesheet" href="/css/valine.css" />
+    <div class="container">
+        <h3 class="board">☡ 留言板 ☡</h3>
+        <div id="vcomment">
+        </div>
+    </div>
+    <style>
+        #vcomment{
+            padding: 1pc;
+        }
+    </style>
+    </div>
+    <footer id="footer">
+        
+        <!--  copyright  -->
+        <ul class="copyright">
+                <li>总字数: <i>64.2k</i></li>
+                <li>访问总量: <span id="/" class="leancloud_visitors" data-flag-title="">
+                        <i class="leancloud-visitors-count">0</i>
+                </span></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy;2018-2023 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
+                <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        
+        <!--  script  -->
+        <script src="/js/Valine.min.js"></script>
+        <script>
+                new Valine({
+                        el:'#vcomment',
+                        appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
+                        appKey: 'WgBXad9R6JRSoxTMohDelbFs',
+                        visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
+                        master: ["f21bae5bf498b089b545f6f0a986e224"],
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"],
+                        // 设置Bilibili表情包地址
+                        emojiCDN: '//i0.hdslb.com/bfs/emote/',
+                        // 表情title和图片映射
+                        emojiMaps: {"2020":"dc709fac0d361370bcf0d36d32adb97df7c95824.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","2233娘_大笑":"16b8794be990cefa6caeba4d901b934a227ee3b8.png","2233娘_疑问":"0b41f509351958dbb63d472fec0132d1bd03bd14.png","2233娘_吃惊":"d1628c43d35b1530c0504a643ff80b6189fa0a43.png","2233娘_汗":"247cd9df8cdf84b18368c21e3b2dd374e84c0927.png","2233娘_大哭":"476a2a60f6e337b8c0697a592e0aa82781f6b33b.png","2233娘_困惑":"714eeb4eae0d0933b4ff08b7df788b1982f6b940.png","2233娘_耶":"d7178e258a0efc969b65ccc2b1322fb235f5dff4.png","2233娘_怒":"f31953119c51b9748016440ac0b632f779929b37.png","2233娘_卖萌":"ea893aa25355de95ab4f03c2dad3f0c58d0c159e.png","2233娘_委屈":"d9d0bf9d358af8d5761093ec66d4e3f60d963a63.png","2233娘_郁闷":"485203fe7100f2c8fc40b2800a18fe20b35f2f1a.png","2233娘_第一":"3754ee6e5985bd0bd7dfb668981f2a8733398ebd.png","2233娘_喝水":"695bf5429472049b52c1e0de586f8a2511195a23.png","2233娘_吐魂":"e999af499edf38a91ca68b1a9d2f97042c1d6734.png","2233娘_无言":"fdb5870f32cfaf7949e0f88a13f6feba4a48b719.png","热词系列_增加":"142409b595982b8210b2958f3d340f3b47942645.png","热词系列_泪目":"bba3703ab90b7d16fe9dbcb85ed949db687f8331.png","热词系列_保护":"55f8f6445ca7c3170cdfc5b16036abf639ce9b57.png","热词系列_害怕":"d77e2de26da143249f0c0ad7a608c27152c985bf.png","热词系列_爱了爱了":"2a165b555ba20391316366c664ed7891883dc5aa.png","热词系列_问号":"c1d1e76c12180adc8558f47006fe0e7ded4154bb.png","热词系列_吹爆":"b528220f9c37256ed6a37f05bf118e44b08b81e5.png","热词系列_三连":"21f15fe11b7a84d2f2121c16dec50a4e4556f865.png","热词系列_可以":"e08543c71202b36c590094417fcfbb80c3506cd8.png","热词系列_打卡":"a9cf77c78e1b9b40aa3ed4862402fba008ee2f51.png","热词系列_妙啊":"0e98299d7decf5eaffad854977946075c3e91cb8.png","热词系列_这次一定":"a01ca28923daa7cc896c42f27deb4914e20dd572.png","热词系列_AWSL":"c37f88cf799f9badf9d84b7671dc3dd98c0fc0c2.png","热词系列_递话筒":"98e6950e39fbb4dd1c576042063ca632074070ba.png","热词系列_你细品":"535e00658e7e47966f154d3a167fa2365ebc4321.png","热词系列_咕咕":"d8065c2e7ce48c929317a94553499a46fecc262a.png","热词系列_标准结局":"3de98174b510cf7dc5fd1bd08c5d881065e79137.png","热词系列_危":"5cc6c3357c4df544dd8de9d5c5c0cec97c7c9a56.png","热词系列_张三":"255a938f39cea625032b6650036b31aa26c50a3c.png","热词系列_害":"cbe798a194612958537c5282fcca7c3bcd2aa15c.png","热词系列_我裂开了":"29bd57ec4e8952880fea6c9e47aee924e91f10c4.png","热词系列_有内味了":"7ca61680a905b5b6e2e335c630e725b648b03b4d.png","热词系列_猛男必看":"c97064450528a0e45c7e7c365a15fbb13fd61d8c.png","热词系列_奥力给":"c9b8683827ec6c00fea5327c9bec14f581cef2aa.png","热词系列_我哭了":"9e0b3877d649aaf6538fbdd3f937e240a9d808e4.png","热词系列_高产":"9db817cba4a7f4a42398f3b2ec7c0a8e0c247c42.png","热词系列_我酸了":"a8cbf3f6b8cd9377eeb15b9172f3cd683b2e4650.png","热词系列_真香":"e68497c775feaac1c3b1a6cd63a50cfb11b767c4.png","热词系列_我全都要":"d424d1ad8d14c1c9b8367842bc68c658b9229bc1.png","热词系列_神仙UP":"a49e0d0db1e7d35a0f7411be13208951ab448f03.png","热词系列_你币有了":"84820c2b147a8ca02f3c4006b63f76c6313cbfa0.png","热词系列_不愧是你":"9ff2e356797c57ee3b1675ade0883d2d2247be9b.png","热词系列_锤":"35668cc12ae25b9545420e4a85bf21a0bfc03e5d.png","热词系列_秀":"50782fbf5d9b7f48f9467b5c53932981e321eedc.png","热词系列_爷关更":"faad40c56447f1f8abcb4045c17ce159d113d1fd.png","热词系列_有生之年":"f41fdafe2d0fbb8e8bc1598d2cf37e355560103a.png","热词系列_镇站之宝":"24e7a6a6e6383c987215fb905e3ee070aca259b5.png","热词系列_我太男了":"a523f3e4c63e4db1232365765d0ec452f83be97e.png","热词系列_完结撒花":"ea9db62ff5bca8e069cd70c4233353a802835422.png","热词系列_大师球":"f30089248dd137c568edabcb07cf67e0f6e98cf3.png","热词系列_知识盲区":"ccc94600b321a28116081e49ecedaa4ee8728312.png","热词系列_“狼火”":"33ccd3617bfa89e9d1498b13b7542b63f163e5de.png","加油武汉":"eb966aaa5b690d3f9308a9f936f5b5a72a7f956b.png","口罩":"3ad2f66b151496d2a5fb0a8ea75f32265d778dd3.png","鸡腿":"c7860392815d345fa69c4f00ef18d67dccfbd574.png","微笑":"685612eadc33f6bc233776c6241813385844f182.png","笑":"81edf17314cea3b48674312b4364df44d5c01f17.png","呲牙":"b5a5898491944a4268360f2e7a84623149672eb6.png","OK":"4683fd9ffc925fa6423110979d7dcac5eda297f4.png","星星眼":"63c9d1a31c0da745b61cdb35e0ecb28635675db2.png","哦呼":"362bded07ea5434886271d23fa25f5d85d8af06c.png","嫌弃":"de4c0783aaa60ec03de0a2b90858927bfad7154b.png","喜欢":"8a10a4d73a89f665feff3d46ca56e83dc68f9eb8.png","酸了":"92b1c8cbceea3ae0e8e32253ea414783e8ba7806.png","大哭":"2caafee2e5db4db72104650d87810cc2c123fc86.png","害羞":"9d2ec4e1fbd6cb1b4d12d2bbbdd124ccb83ddfda.png","无语":"44667b7d9349957e903b1b62cb91fb9b13720f04.png","疑惑":"b7840db4b1f9f4726b7cb23c0972720c1698d661.png","调皮":"8290b7308325e3179d2154327c85640af1528617.png","喜极而泣":"485a7e0c01c2d70707daae53bee4a9e2e31ef1ed.png","奸笑":"bb84906573472f0a84cebad1e9000eb6164a6f5a.png","偷笑":"6c49d226e76c42cd8002abc47b3112bc5a92f66a.png","大笑":"ca94ad1c7e6dac895eb5b33b7836b634c614d1c0.png","阴险":"ba8d5f8e7d136d59aab52c40fd3b8a43419eb03c.png","捂脸":"6921bb43f0c634870b92f4a8ad41dada94a5296d.png","囧":"12e41d357a9807cc80ef1e1ed258127fcc791424.png","呆":"33ad6000d9f9f168a0976bc60937786f239e5d8c.png","抠鼻":"cb89184c97e3f6d50acfd7961c313ce50360d70f.png","惊喜":"0afecaf3a3499479af946f29749e1a6c285b6f65.png","惊讶":"f8e9a59cad52ae1a19622805696a35f0a0d853f3.png","笑哭":"c3043ba94babf824dea03ce500d0e73763bf4f40.png","妙啊":"b4cb77159d58614a9b787b91b1cd22a81f383535.png","doge":"bba7c12aa51fed0199c241465560dfc2714c593e.png","滑稽":"d15121545a99ac46774f1f4465b895fe2d1411c3.png","吃瓜":"4191ce3c44c2b3df8fd97c33f85d3ab15f4f3c84.png","打call":"431432c43da3ee5aab5b0e4f8931953e649e9975.png","点赞":"1a67265993913f4c35d15a6028a30724e83e7d35.png","鼓掌":"895d1fc616b4b6c830cf96012880818c0e1de00d.png","尴尬":"cb321684ed5ce6eacdc2699092ab8fe7679e4fda.png","冷":"cb0ebbd0668640f07ebfc0e03f7a18a8cd00b4ed.png","灵魂出窍":"43d3db7d97343c01b47e22cfabeca84b4251f35a.png","委屈":"d2f26cbdd6c96960320af03f5514c5b524990840.png","傲娇":"010540d0f61220a0db4922e4a679a1d8eca94f4e.png","疼":"905fd9a99ec316e353b9bd4ecd49a5f0a301eabf.png","吓":"9c10c5ebc7bef27ec641b8a1877674e0c65fea5d.png","生病":"0f25ce04ae1d7baf98650986454c634f6612cb76.png","吐":"06946bfe71ac48a6078a0b662181bb5cad09decc.png","嘘声":"e64af664d20716e090f10411496998095f62f844.png","捂眼":"c5c6d6982e1e53e478daae554b239f2b227b172b.png","思考":"cfa9b7e89e4bfe04bbcd34ccb1b0df37f4fa905c.png","再见":"fc510306bae26c9aec7e287cdf201ded27b065b9.png","翻白眼":"eba54707c7168925b18f6f8b1f48d532fe08c2b1.png","哈欠":"888d877729cbec444ddbd1cf4c9af155a7a06086.png","奋斗":"bb2060c15dba7d3fd731c35079d1617f1afe3376.png","墨镜":"3a03aebfc06339d86a68c2d893303b46f4b85771.png","撇嘴":"531863568e5668c5ac181d395508a0eeb1f0cda4.png","难过":"a651db36701610aa70a781fa98c07c9789b11543.png","抓狂":"4c87afff88c22439c45b79e9d2035d21d5622eba.png","生气":"3195714219c4b582a4fb02033dd1519913d0246d.png","干杯":"8da12d5f55a2c7e9778dcc05b40571979fe208e6.png","爱心":"ed04066ea7124106d17ffcaf75600700e5442f5c.png","锦鲤":"643d6c19c8164ffd89e3e9cdf093cf5d773d979c.png","胜利":"b49fa9f4b1e7c3477918153b82c60b114d87347c.png","加油":"c7aaeacb21e107292d3bb053e5abde4a4459ed30.png","保佑":"fafe8d3de0dc139ebe995491d2dac458a865fb30.png","抱拳":"89516218158dbea18ab78e8873060bf95d33bbbe.png","响指":"1b5c53cf14336903e1d2ae3527ca380a1256a077.png","支持":"3c210366a5585706c09d4c686a9d942b39feeb50.png","拥抱":"41780a4254750cdaaccb20735730a36044e98ef3.png","怪我咯":"07cc6077f7f7d75b8d2c722dd9d9828a9fb9e46d.png","跪了":"f2b3aee7e521de7799d4e3aa379b01be032698ac.png","黑洞":"e90ec4c799010f25391179118ccd9f66b3b279ba.png","老鼠":"8e6fb491eb1bb0d5862e7ec8ccf9a3da12b6c155.png","福到了":"5de5373d354c373cf1617b6b836f3a8d53c5a655.png"}
+                })
+
+        </script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        
+        <script type="text/javascript" src="/js/mouse.js"></script>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+
+</html>
