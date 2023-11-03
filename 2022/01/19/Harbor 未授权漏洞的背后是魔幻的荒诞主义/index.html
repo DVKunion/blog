@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>Harbor 未授权漏洞的背后是魔幻的荒诞主义 | DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="TnnDJaWjq71nvLK8WYmDKSGkcgFEIXQy4y3eLKJROMA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K Security Cloud Docker K8s" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    
+    <link rel="bookmark"  type="image/x-icon"  href="/img/logo.png"/>
+    <link rel="shortcut icon" href="/img/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("/img/bg.jpg?image/2/w/1080");
+        }
+    </style>
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="DV.K" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="https://github.com/DVKunion/">Github</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2023/05/">2023 - 05</a></li><li><a class="archive-link" href="/archives/2023/02/">2023 - 02</a></li><li><a class="archive-link" href="/archives/2022/03/">2022 - 03</a></li><li><a class="archive-link" href="/archives/2022/01/">2022 - 01</a></li><li><a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/comments/">留言板</a></li>
+                    <li><a href="/gallery/">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+        <!-- Main -->
+        
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>Harbor 未授权漏洞的背后是魔幻的荒诞主义</h2>
+                    <p>2022-01-19</p>
+                    <span id="/2022/01/19/Harbor 未授权漏洞的背后是魔幻的荒诞主义/" class="leancloud_visitors" data-flag-title="Harbor 未授权漏洞的背后是魔幻的荒诞主义">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 4.2k 字 阅读需要 - 14 分钟</p>
+                    </span>
+                </header>
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(/img/661699005439_.pic.jpg);" ></div>
+                    <hr>
+                    <h1>Harbor 未授权漏洞的背后是魔幻的荒诞主义</h1>
+<h2 id="前言">前言</h2>
+<p>怎么说呢，心里五味杂陈，面对在大年前横空而来的 <code>CVE-2022-46463</code>，以及一通测试复现后，面对着电脑屏幕久久说不出话来，于是便有了这篇文章。突然感觉安全已经进入到了一个魔幻的荒诞主义：我们还有什么可信的东西？</p>
+<p>大家可以当作一篇小说看看吧。</p>
+<h2 id="事情经过">事情经过</h2>
+<p>事情要从我的一个安全朋友说起。</p>
+<h3 id="起因">起因</h3>
+<p>1.16日，天高气爽，想着还有两天就要放假回家过年的心，根本无法集中在工作中，于是在摸鱼冲浪的时候，突然发现了一篇紧急通告，</p>
+<blockquote>
+<p>CVE-2022-46463 漏洞预警</p>
+</blockquote>
+<p>很快啊，赶紧点进去一看，发现是一个名为<code>harbor</code>的未授权漏洞，<strong>私有</strong> 和 <strong>公开</strong> 仓库镜像可以被未授权获取，可能导致敏感信息泄漏。</p>
+<p>一打眼看到的漏洞评级 <code>严重</code> 吓了一激灵，并且显示<code>POC</code>已经在野利用了？还两天过年了，要是这么严重的问题，还怎么安心回家过这个团圆？</p>
+<p>由此，开启了一段魔幻的 &quot;漏洞&quot; 修复过程。</p>
+<h3 id="追踪">追踪</h3>
+<p>根据互联网的信息，发现各平台预警，除<code>CVE</code>外，所有链接均指向了一个 <code>github</code> 仓库，</p>
+<blockquote>
+<p><a href="https://github.com/lanqingaa/123">https://github.com/lanqingaa/123</a></p>
+</blockquote>
+<p>在这个<code>github</code>仓库里，标记的很清楚的复现步骤啊：通过登录页面的搜索接口，可以搜索到显示为 <code>私有</code> 项目的仓库。</p>
+<p>这还是挺吓人的，利用方式简单、影响严重，可能会导致公司几千个私有镜像被他人获取，后果不堪设想。</p>
+<p>按照cve给出的影响范围：</p>
+<blockquote>
+<p>1.x &lt;= Harbor &lt;= 2.5.3</p>
+</blockquote>
+<p>很不幸，自家的harbor正好在范围内，看来年前又要找运维大哥去帮忙修复了。</p>
+<h3 id="坎坷的复现">坎坷的复现</h3>
+<p>去找运维大哥帮忙，作为安全人员，肯定先要自己搞明白了再去摇人，于是就拿着公司的harbor尝试了一下，发现好像有点不对劲： 不论我怎么搜索，从 <code>a-z</code>都只能显示<strong>公开</strong>仓库的数据，并无漏洞所描述的 <strong>私有</strong>仓库数据。</p>
+<p>会不会是复现的步骤有问题？又重新读了一遍整体的逻辑，会不会是我们公司的仓库就没有 <strong>私有</strong> 属性的呢？</p>
+<p>赶紧去和运维大哥确认了一下，发现的确存在 <strong>私有</strong> 镜像，可为什么这个漏洞却搜不到呢？</p>
+<p>怀着窘迫的心在<code>harbor</code> 官方仓库不断寻找，发现，好像官方也没对这个漏洞进行相关 <code>fix</code>的提交记录哎，那预警里面的 <code>请升级到最新版本</code> 是如何得出的呢？</p>
+<p>一定是自己功夫还不够深，一定是自己的姿势还不太对，此时的菜鸡的安全人员还没有意识到问题的严重性和魔幻性，依旧还在自身寻找问题。</p>
+<h3 id="反转">反转</h3>
+<p>1.17日，复现一天无果的安全人员，气急败坏只能继续摸鱼，然后发现了另一篇通告：</p>
+<blockquote>
+<p>关于Habor CVE-2022-46463的说明</p>
+</blockquote>
+<p>文章大概就是经过测试，所有版本都没有搜索到私有仓库；同时还分析了<code>search</code> api 的认证逻辑。官方手册指出 公开仓库 能够被搜索到，属于产品特性。这个CVE甚至称不上是漏洞。</p>
+<p>事情开始变得魔幻起来了。</p>
+<h3 id="未完待续">未完待续</h3>
+<p>从事情开始出现反转后，便开始出现了各路声音：有人为这个漏洞就不该出现CVE的；有认为Harbor设计不合理的，就因该算Harbor的漏洞；有认为Harbor应该修改默认选项来避免出现滥用的不安全配置的，等等等等。</p>
+<p>截止至发文今日，搜索该CVE编号，依旧能够发现大量的&quot;安全公告&quot;,无一例外都是相同的漏洞描述，相同的影响范围，相同的修复建议。</p>
+<p>我们仍未知道那天所看见的cve的名字。</p>
+<h2 id="来关注漏洞">来关注漏洞</h2>
+<p>故事讲完了，我们来实际关注下漏洞。</p>
+<p>根据 <code>https://github.com/lanqingaa/123</code> 所描述的<code>poc</code>, <code>harbor</code> v1 v2版本均存在该问题，但是自己观察会发现，该作者在v1的截图中的确搜到了显示为 <code>private</code> 的仓库：<br>
+<img src="/img/16740212582611.jpg" class="lazyload" data-srcset="/img/16740212582611.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>但是在 v2 的版本中，他给出的结果却是 <code>public</code> 仓库。<br>
+<img src="/img/16740213120010.jpg" class="lazyload" data-srcset="/img/16740213120010.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>再回看漏洞描述：</p>
+<blockquote>
+<p>Harbor 中存在访问控制错误问题，允许攻击者无需身份验证即可访问公共和私有镜像存储库的所有信息，并拉取镜像。</p>
+</blockquote>
+<h3 id="理清逻辑">理清逻辑</h3>
+<p>首先要明确一下几个点：</p>
+<ul>
+<li>第一，私有化仓库到底能不能像漏洞所描述的那样，被搜索发现？</li>
+<li>第二，仅能访问到公开仓库，是否还能被称之为漏洞？</li>
+</ul>
+<p>如果第一点成立，那么 <code>CVE-2022-46463</code> 无疑是一个高危漏洞，未认证户通过该漏洞可以获取到了认证用户的权限，明显的越权问题。</p>
+<p>如果第一点不成立，也就是该接口只能获取到公开仓库的情景下，问题自然而然的来到了第二点：如果仅能够访问到公开仓库的信息，是否还存在风险呢？</p>
+<p>在讨论第二点的同时，我们还需要预先讨论一个问题：</p>
+<ul>
+<li>公开仓库的概念到底是面向所有认证用户还是所有用户？</li>
+</ul>
+<p>带着这几个问题，我们亲自去复现一波这个魔幻的 <code>CVE-2022-46463</code></p>
+<h3 id="复现">复现</h3>
+<h4 id="v2">v2</h4>
+<p>因为目前harbor的release多数为v2, 就先使用v2的版本进行了复现：</p>
+<p>首先我们用权限账户登陆，可以看到仓库存在 private/public两种项目。<br>
+<img src="/img/16740218044242.jpg" class="lazyload" data-srcset="/img/16740218044242.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>其中，私有的library内存在如下镜像。</p>
+<p><img src="/img/16740218419115.jpg" class="lazyload" data-srcset="/img/16740218419115.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>我们退出账户，尝试去搜索：<br>
+<img src="/img/16740218684380.jpg" class="lazyload" data-srcset="/img/16740218684380.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>毫无结果，再尝试搜索一下公开镜像：<br>
+<img src="/img/16740218947330.jpg" class="lazyload" data-srcset="/img/16740218947330.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+确实获取到了列表信息。<br>
+<img src="/img/16740219359533.jpg" class="lazyload" data-srcset="/img/16740219359533.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>总结: v2仅能够搜索到公开镜像。</p>
+<h4 id="v1">v1</h4>
+<p>在测试无果的情况下，想到：会不会是v1和v2的版本存在差异呢？</p>
+<p>于是我们来尝试，使用和<code>https://github.com/lanqingaa/123</code> 作者完全一致版本的v1进行尝试：<br>
+<img src="/img/16740185412406.jpg" class="lazyload" data-srcset="/img/16740185412406.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<p>与v2相同，我们先创建私有的仓库，然后上传测试镜像：</p>
+<p><img src="/img/16740220897858.jpg" class="lazyload" data-srcset="/img/16740220897858.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+<img src="/img/16740221142173.jpg" class="lazyload" data-srcset="/img/16740221142173.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+然后退出登录，尝试搜索私有仓库：<br>
+<img src="/img/16740185766211.jpg" class="lazyload" data-srcset="/img/16740185766211.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+无果，再尝试搜索下公开的 <code>library</code> 仓库<br>
+<img src="/img/16740221399539.jpg" class="lazyload" data-srcset="/img/16740221399539.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+？？？ 的确出现了私有仓库，但是仔细看？是在管理面板内为<code>public</code>权限的<code>library</code><br>
+<img src="/img/16740221754902.jpg" class="lazyload" data-srcset="/img/16740221754902.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+为了更有效的说明这个事情，我们再创建个公开仓库：<br>
+<img src="/img/16740222082857.jpg" class="lazyload" data-srcset="/img/16740222082857.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+然后退出登录，再次搜索：<br>
+<img src="/img/16740222537273.jpg" class="lazyload" data-srcset="/img/16740222537273.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+结果两个公开仓库都被搜索出来了，而且还标注着<code>private</code></p>
+<p>.......看到这里的各位，应该能猜测这是一个什么问题了。</p>
+<h2 id="个人观点">个人观点</h2>
+<p>经过复现，我想大家也知道这个 <code>CVE-2022-46463</code> 到底是个如何的漏洞了：通过该接口，能够搜索到所有的公开仓库。</p>
+<p>对于第一点，已经没有讨论的必要了，问题来到第二点：仅能搜索到公开仓库，到底还是不是一个漏洞。</p>
+<p>在判断是否是个漏洞之前，需要先达成两点共识：</p>
+<ul>
+<li>public 镜像，到底是面对所有用户，还是所有的认证用户。</li>
+<li>到底什么才叫做漏洞</li>
+</ul>
+<p>个人认为，harbor很明显的认为 public 镜像是针对所有用户。可以从官方的手册上搜索到public 的概念，也可以类比 dockerhub 私有镜像和公开镜像的概念。因此我个人认为，public 的定义并无任何问题。</p>
+<p>而至于：什么是漏洞，我想引介《我的安全世界观》中的观点：</p>
+<blockquote>
+<p>程序的目的是为了实现业务功能<br>
+程序的实现可能额外实现了些其他的功能<br>
+这些其他的功能影响到安全，就可以被称漏洞。<br>
+其中，影响安全才是定义的关键。</p>
+</blockquote>
+<p>来看这个api的设计，harbor的定位就是想要搜索到所有的 public 镜像，程序完美的实现了目的，且没有搜索到额外的private镜像。 程序没有做超出业务功能的事情；同时在官方的手册里，清晰明了的定义着什么是<code>public</code>权限。</p>
+<p>除此外，我们再来看影响：搜索到公开仓库，会对企业带来什么样的影响，有怎样的安全隐患。</p>
+<p>在该漏洞所描述中，公开仓库可能会“导致信息泄露”，获取到镜像信息。</p>
+<p>我们知道，镜像其实就是一个打包好的分层的文件系统。那么对于获取到这个文件系统的人来说，他可以获取到这个镜像内部的任何信息。</p>
+<p>如果说是由于harbor 的原因导致的这部分信息泄漏，那么即使是公开的镜像，harbor 也应该为这个事情负责。而事实是，任何获取到这个文件系统的人，都能够获取到harbor 所展示出的这部分信息。 这样来讲，harbor只是个搬运工而已，仅仅展示了一些任何人都能够读到的数据而已。导致信息泄露的，应该是归属于 <strong>“镜像安全”</strong> 的范畴。</p>
+<p>因此，我们应该把漏洞中所描述的“敏感信息泄漏”，视作是镜像安全问题，而并非harbor 应用本身。漏洞的原因是在于镜像夹杂了不应该被打包进去的数据。该问题并不关心你是用的是harbor 仓库还是portus 仓库，还是dockerhub 仓库，他就是这个镜像本身携带的问题。</p>
+<p>唯一能被视为漏洞影响点的，就是在于，用户如果想获取有哪些镜像的这个信息，原本只能够通过猜测或已知的镜像名称，通过pull 的方式获取到镜像本身。在未知镜像名的条件下是比较困难批量获取到更多信息的，只能尝试暴力猜解。而公开仓库搜索提供了这样一个便利的入口来展示当前能获取的镜像列表，对攻击者提供了帮助。</p>
+<p>这样，问题又回到了第二个点。public 仓库面向所有用户而非认证用户，是否存在问题。</p>
+<p>当业务功能存在部分风险时，那么应该告知并警惕用户使用的方式，正确使用该功能。我们来看下harbor是如何做的：<br>
+<img src="/img/16740177839330.jpg" class="lazyload" data-srcset="/img/16740177839330.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+<img src="/img/16740178868992.jpg" class="lazyload" data-srcset="/img/16740178868992.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+在项目创建页面，harbor清楚的描述着 什么叫做public仓库，告知了： &quot;无需login即可docker pull&quot;。同时，公开仓库还是一个非默认选项，默认创建的仓库都是私有的。我实在想不出还有什么别的方式能够来&quot;帮助&quot; 用户 建设意识上的安全问题。</p>
+<p>就好比 php exec函数，你不能说exec可能会执行恶意命令，就直接说php存在漏洞，而直接不允许了业务使用该函数。exec本身并不是漏洞，但当你使用的方式不正确时，的确会造成一定的安全风险。这个比喻模型同样可以适用于 <code>CVE-2022-46463</code>。</p>
+<h2 id="综合评估">综合评估</h2>
+<p>最终，我们为这个&quot;漏洞&quot;（如果非要说是的话，毕竟有了CVE编号）做一个客观的评估。</p>
+<h3 id="漏洞描述">漏洞描述</h3>
+<p>Harbor api search 允许未认证的用户搜索仓库内存在的 公开仓库，若将私有业务镜像放置于公开仓库，可能存在信息泄漏风险。</p>
+<h3 id="漏洞级别">漏洞级别</h3>
+<p>中危偏低，无需紧急修复，但仍需引起注意，排查仓库权限设置是否正确。</p>
+<h3 id="漏洞修复建议">漏洞修复建议</h3>
+<p>官方最新版本仍存在上述特性，升级修复属于无稽之谈。</p>
+<h4 id="对于无public需求的用户">对于无public需求的用户</h4>
+<p>直接全部设置为私有项目即可。</p>
+<h4 id="对于仍需public功能但又担心风险的用户">对于仍需public功能但又担心风险的用户</h4>
+<p>可以手动创建一个全局用户，然后将这个用户添加到所有项目中，最后将所有项目设置为私有。</p>
+<p>这么做可能会导致，原本可以直接获取到的镜像信息，现在都需要使用该账户进行认证后获取，可能会对您的自动化业务(如 CI/CD) 产生影响。</p>
+<p>除此之外，您也可以考虑从根源解决问题。该漏洞最大的安全隐患在于 敏感信息的泄漏。而这些风险来自于没有进行过安全检查的公开镜像。因此，可以使用云安全工具进行检测，如：使用 <a href="https://rivers.chaitin.cn/app/veinmind">Veinmind-SaaS</a> 版本对harbor仓库进行扫描，支持云探针扫描方式，无需部署探针，实现快速一键式解决公开镜像的安全问题：<br>
+<img src="/img/16740240275239.jpg" class="lazyload" data-srcset="/img/16740240275239.jpg" srcset="/css/images/overlay.gif" alt=""><br>
+也可以选择轻量级的 <a href="https://github.com/chaitin/veinmind-tools">Veinmind-Tools</a> 对您重点关注的镜像，一一进行人工排查，保证您的镜像安全。<br>
+<img src="/img/20220415144819.gif" class="lazyload" data-srcset="/img/20220415144819.gif" srcset="/css/images/overlay.gif" alt=""></p>
+<p>除此以外，对于仍认为 <code>public</code> 仓库应该在登陆后才能够被访问的用户，可以选择非harbor的同级别产品如<a href="http://port.us.org/documentation.html">portus</a>，所有的仓库必须在登陆后才有权限访问，即使是public仓库。</p>
+<h2 id="最后">最后</h2>
+<p>整个CVE 从最初的大家都无法复现却存在编号的漏洞，到有人站出来说根本不应该称之为漏洞，再到认为Harbor的设计不合理，没有做到所谓的“尽可能的安全设置作为默认设置”，到最后的呼吁不要仅关注漏洞本身，而是要更关注客户的安全，为客户负责的角度。 这个&quot;漏洞&quot;属实在2022年的年终 荒诞而又魔幻的 结束了这荒诞而又魔幻一年。</p>
+<p>从安全的角度来想，我不理解为什么这样的一个&quot;漏洞&quot;，如此简单粗暴的过程，无官方的fix记录，仅有一堆雷同式的公告，却鲜有不同的声音。</p>
+<p>从产品的角度上来想，我觉得这类的安全问题，并不是一个产品上能够 cover 的事情，而是用户意识上的安全。类比弱口令，如果我们真的认为，默认复杂的密码就可以解决弱口令的问题，而没有关注用户自身意识的安全建设，那么对于安全意识较差的用户来讲，他甚至可能会觉得默认密码过于复杂而吐槽产品，然后自行将密码修改为了弱口令。为什么一个开源的产品，明确写的特性，明确写的功能提示，还需要为用户的安全意识建设买单？</p>
+<p>手机很好用，但你总担心手机屏幕的屏保图片会被别人偷窥到你的隐私，你很担心，因为你把有银行卡密码的图片作为了屏保，说这个手机要是屏幕保护不会被偷窥就好了，手机做的还是不够好啊。</p>
+<p>有没有一种可能，当大家都意识到屏幕保护就是要给别人看的时候，就不会把隐私的图片，设置为屏幕保护了？我们作为专业人员要做的，是告诉用户，用密码做屏幕保护，这么做不安全，提高用户的意识，而不是和用户一起诟病手机这产品为什么不去做一个只有我自己能看到屏幕保护的功能，去对线开源社区去争执一个特性到底是否是漏洞。</p>
+<p>见贤思齐焉，见不贤而内自省也。不论这个CVE最终会如何收尾，不论这个事情会走向何种结局，对于使用了harbor的用户，看到了这个CVE, 都应该思考一下，对于public的理解是否正确，自家使用的harbor会不会同样存在安全隐患；是否需要考虑镜像安全的检测来加强防护。</p>
+<p>最后也希望，大家能对开源社区多一些包容，多站在互相的角度进行思考，多把精力集中到一些有价值的事情上去。安全和产品，从来不应是对立面，也永远不会是对立面。</p>
+<h4 id="参考链接">参考链接</h4>
+<blockquote>
+<p>0.Veinmind-SaaS : <a href="https://rivers.chaitin.cn/app/veinmind">https://rivers.chaitin.cn/app/veinmind</a><br>
+1.Veinmind-Tools : <a href="https://github.com/chaitin/veinmind-tools">https://github.com/chaitin/veinmind-tools</a><br>
+2.portus : <a href="http://port.us.org/documentation.html">http://port.us.org/documentation.html</a></p>
+</blockquote>
+
+                </section>
+            </div>
+        </div>
+        
+            <!-- Main -->
+    <link rel="stylesheet" href="/css/valine.css" />
+    <div class="container">
+        <h3 class="board">☡ 留言板 ☡</h3>
+        <div id="vcomment">
+        </div>
+    </div>
+    <style>
+        #vcomment{
+            padding: 1pc;
+        }
+    </style>
+    </div>
+    <footer id="footer">
+        
+        <!--  copyright  -->
+        <ul class="copyright">
+                <li>总字数: <i>33.2k</i></li>
+                <li>访问总量: <span id="/" class="leancloud_visitors" data-flag-title="">
+                        <i class="leancloud-visitors-count">0</i>
+                </span></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy;2018-2023 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
+                <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        
+        <!--  script  -->
+        <script src="/js/Valine.min.js"></script>
+        <script>
+                new Valine({
+                        el:'#vcomment',
+                        appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
+                        appKey: 'WgBXad9R6JRSoxTMohDelbFs',
+                        visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
+                        master: ["f21bae5bf498b089b545f6f0a986e224"],
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"],
+                        // 设置Bilibili表情包地址
+                        emojiCDN: '//i0.hdslb.com/bfs/emote/',
+                        // 表情title和图片映射
+                        emojiMaps: {"2020":"dc709fac0d361370bcf0d36d32adb97df7c95824.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","2233娘_大笑":"16b8794be990cefa6caeba4d901b934a227ee3b8.png","2233娘_疑问":"0b41f509351958dbb63d472fec0132d1bd03bd14.png","2233娘_吃惊":"d1628c43d35b1530c0504a643ff80b6189fa0a43.png","2233娘_汗":"247cd9df8cdf84b18368c21e3b2dd374e84c0927.png","2233娘_大哭":"476a2a60f6e337b8c0697a592e0aa82781f6b33b.png","2233娘_困惑":"714eeb4eae0d0933b4ff08b7df788b1982f6b940.png","2233娘_耶":"d7178e258a0efc969b65ccc2b1322fb235f5dff4.png","2233娘_怒":"f31953119c51b9748016440ac0b632f779929b37.png","2233娘_卖萌":"ea893aa25355de95ab4f03c2dad3f0c58d0c159e.png","2233娘_委屈":"d9d0bf9d358af8d5761093ec66d4e3f60d963a63.png","2233娘_郁闷":"485203fe7100f2c8fc40b2800a18fe20b35f2f1a.png","2233娘_第一":"3754ee6e5985bd0bd7dfb668981f2a8733398ebd.png","2233娘_喝水":"695bf5429472049b52c1e0de586f8a2511195a23.png","2233娘_吐魂":"e999af499edf38a91ca68b1a9d2f97042c1d6734.png","2233娘_无言":"fdb5870f32cfaf7949e0f88a13f6feba4a48b719.png","热词系列_增加":"142409b595982b8210b2958f3d340f3b47942645.png","热词系列_泪目":"bba3703ab90b7d16fe9dbcb85ed949db687f8331.png","热词系列_保护":"55f8f6445ca7c3170cdfc5b16036abf639ce9b57.png","热词系列_害怕":"d77e2de26da143249f0c0ad7a608c27152c985bf.png","热词系列_爱了爱了":"2a165b555ba20391316366c664ed7891883dc5aa.png","热词系列_问号":"c1d1e76c12180adc8558f47006fe0e7ded4154bb.png","热词系列_吹爆":"b528220f9c37256ed6a37f05bf118e44b08b81e5.png","热词系列_三连":"21f15fe11b7a84d2f2121c16dec50a4e4556f865.png","热词系列_可以":"e08543c71202b36c590094417fcfbb80c3506cd8.png","热词系列_打卡":"a9cf77c78e1b9b40aa3ed4862402fba008ee2f51.png","热词系列_妙啊":"0e98299d7decf5eaffad854977946075c3e91cb8.png","热词系列_这次一定":"a01ca28923daa7cc896c42f27deb4914e20dd572.png","热词系列_AWSL":"c37f88cf799f9badf9d84b7671dc3dd98c0fc0c2.png","热词系列_递话筒":"98e6950e39fbb4dd1c576042063ca632074070ba.png","热词系列_你细品":"535e00658e7e47966f154d3a167fa2365ebc4321.png","热词系列_咕咕":"d8065c2e7ce48c929317a94553499a46fecc262a.png","热词系列_标准结局":"3de98174b510cf7dc5fd1bd08c5d881065e79137.png","热词系列_危":"5cc6c3357c4df544dd8de9d5c5c0cec97c7c9a56.png","热词系列_张三":"255a938f39cea625032b6650036b31aa26c50a3c.png","热词系列_害":"cbe798a194612958537c5282fcca7c3bcd2aa15c.png","热词系列_我裂开了":"29bd57ec4e8952880fea6c9e47aee924e91f10c4.png","热词系列_有内味了":"7ca61680a905b5b6e2e335c630e725b648b03b4d.png","热词系列_猛男必看":"c97064450528a0e45c7e7c365a15fbb13fd61d8c.png","热词系列_奥力给":"c9b8683827ec6c00fea5327c9bec14f581cef2aa.png","热词系列_我哭了":"9e0b3877d649aaf6538fbdd3f937e240a9d808e4.png","热词系列_高产":"9db817cba4a7f4a42398f3b2ec7c0a8e0c247c42.png","热词系列_我酸了":"a8cbf3f6b8cd9377eeb15b9172f3cd683b2e4650.png","热词系列_真香":"e68497c775feaac1c3b1a6cd63a50cfb11b767c4.png","热词系列_我全都要":"d424d1ad8d14c1c9b8367842bc68c658b9229bc1.png","热词系列_神仙UP":"a49e0d0db1e7d35a0f7411be13208951ab448f03.png","热词系列_你币有了":"84820c2b147a8ca02f3c4006b63f76c6313cbfa0.png","热词系列_不愧是你":"9ff2e356797c57ee3b1675ade0883d2d2247be9b.png","热词系列_锤":"35668cc12ae25b9545420e4a85bf21a0bfc03e5d.png","热词系列_秀":"50782fbf5d9b7f48f9467b5c53932981e321eedc.png","热词系列_爷关更":"faad40c56447f1f8abcb4045c17ce159d113d1fd.png","热词系列_有生之年":"f41fdafe2d0fbb8e8bc1598d2cf37e355560103a.png","热词系列_镇站之宝":"24e7a6a6e6383c987215fb905e3ee070aca259b5.png","热词系列_我太男了":"a523f3e4c63e4db1232365765d0ec452f83be97e.png","热词系列_完结撒花":"ea9db62ff5bca8e069cd70c4233353a802835422.png","热词系列_大师球":"f30089248dd137c568edabcb07cf67e0f6e98cf3.png","热词系列_知识盲区":"ccc94600b321a28116081e49ecedaa4ee8728312.png","热词系列_“狼火”":"33ccd3617bfa89e9d1498b13b7542b63f163e5de.png","加油武汉":"eb966aaa5b690d3f9308a9f936f5b5a72a7f956b.png","口罩":"3ad2f66b151496d2a5fb0a8ea75f32265d778dd3.png","鸡腿":"c7860392815d345fa69c4f00ef18d67dccfbd574.png","微笑":"685612eadc33f6bc233776c6241813385844f182.png","笑":"81edf17314cea3b48674312b4364df44d5c01f17.png","呲牙":"b5a5898491944a4268360f2e7a84623149672eb6.png","OK":"4683fd9ffc925fa6423110979d7dcac5eda297f4.png","星星眼":"63c9d1a31c0da745b61cdb35e0ecb28635675db2.png","哦呼":"362bded07ea5434886271d23fa25f5d85d8af06c.png","嫌弃":"de4c0783aaa60ec03de0a2b90858927bfad7154b.png","喜欢":"8a10a4d73a89f665feff3d46ca56e83dc68f9eb8.png","酸了":"92b1c8cbceea3ae0e8e32253ea414783e8ba7806.png","大哭":"2caafee2e5db4db72104650d87810cc2c123fc86.png","害羞":"9d2ec4e1fbd6cb1b4d12d2bbbdd124ccb83ddfda.png","无语":"44667b7d9349957e903b1b62cb91fb9b13720f04.png","疑惑":"b7840db4b1f9f4726b7cb23c0972720c1698d661.png","调皮":"8290b7308325e3179d2154327c85640af1528617.png","喜极而泣":"485a7e0c01c2d70707daae53bee4a9e2e31ef1ed.png","奸笑":"bb84906573472f0a84cebad1e9000eb6164a6f5a.png","偷笑":"6c49d226e76c42cd8002abc47b3112bc5a92f66a.png","大笑":"ca94ad1c7e6dac895eb5b33b7836b634c614d1c0.png","阴险":"ba8d5f8e7d136d59aab52c40fd3b8a43419eb03c.png","捂脸":"6921bb43f0c634870b92f4a8ad41dada94a5296d.png","囧":"12e41d357a9807cc80ef1e1ed258127fcc791424.png","呆":"33ad6000d9f9f168a0976bc60937786f239e5d8c.png","抠鼻":"cb89184c97e3f6d50acfd7961c313ce50360d70f.png","惊喜":"0afecaf3a3499479af946f29749e1a6c285b6f65.png","惊讶":"f8e9a59cad52ae1a19622805696a35f0a0d853f3.png","笑哭":"c3043ba94babf824dea03ce500d0e73763bf4f40.png","妙啊":"b4cb77159d58614a9b787b91b1cd22a81f383535.png","doge":"bba7c12aa51fed0199c241465560dfc2714c593e.png","滑稽":"d15121545a99ac46774f1f4465b895fe2d1411c3.png","吃瓜":"4191ce3c44c2b3df8fd97c33f85d3ab15f4f3c84.png","打call":"431432c43da3ee5aab5b0e4f8931953e649e9975.png","点赞":"1a67265993913f4c35d15a6028a30724e83e7d35.png","鼓掌":"895d1fc616b4b6c830cf96012880818c0e1de00d.png","尴尬":"cb321684ed5ce6eacdc2699092ab8fe7679e4fda.png","冷":"cb0ebbd0668640f07ebfc0e03f7a18a8cd00b4ed.png","灵魂出窍":"43d3db7d97343c01b47e22cfabeca84b4251f35a.png","委屈":"d2f26cbdd6c96960320af03f5514c5b524990840.png","傲娇":"010540d0f61220a0db4922e4a679a1d8eca94f4e.png","疼":"905fd9a99ec316e353b9bd4ecd49a5f0a301eabf.png","吓":"9c10c5ebc7bef27ec641b8a1877674e0c65fea5d.png","生病":"0f25ce04ae1d7baf98650986454c634f6612cb76.png","吐":"06946bfe71ac48a6078a0b662181bb5cad09decc.png","嘘声":"e64af664d20716e090f10411496998095f62f844.png","捂眼":"c5c6d6982e1e53e478daae554b239f2b227b172b.png","思考":"cfa9b7e89e4bfe04bbcd34ccb1b0df37f4fa905c.png","再见":"fc510306bae26c9aec7e287cdf201ded27b065b9.png","翻白眼":"eba54707c7168925b18f6f8b1f48d532fe08c2b1.png","哈欠":"888d877729cbec444ddbd1cf4c9af155a7a06086.png","奋斗":"bb2060c15dba7d3fd731c35079d1617f1afe3376.png","墨镜":"3a03aebfc06339d86a68c2d893303b46f4b85771.png","撇嘴":"531863568e5668c5ac181d395508a0eeb1f0cda4.png","难过":"a651db36701610aa70a781fa98c07c9789b11543.png","抓狂":"4c87afff88c22439c45b79e9d2035d21d5622eba.png","生气":"3195714219c4b582a4fb02033dd1519913d0246d.png","干杯":"8da12d5f55a2c7e9778dcc05b40571979fe208e6.png","爱心":"ed04066ea7124106d17ffcaf75600700e5442f5c.png","锦鲤":"643d6c19c8164ffd89e3e9cdf093cf5d773d979c.png","胜利":"b49fa9f4b1e7c3477918153b82c60b114d87347c.png","加油":"c7aaeacb21e107292d3bb053e5abde4a4459ed30.png","保佑":"fafe8d3de0dc139ebe995491d2dac458a865fb30.png","抱拳":"89516218158dbea18ab78e8873060bf95d33bbbe.png","响指":"1b5c53cf14336903e1d2ae3527ca380a1256a077.png","支持":"3c210366a5585706c09d4c686a9d942b39feeb50.png","拥抱":"41780a4254750cdaaccb20735730a36044e98ef3.png","怪我咯":"07cc6077f7f7d75b8d2c722dd9d9828a9fb9e46d.png","跪了":"f2b3aee7e521de7799d4e3aa379b01be032698ac.png","黑洞":"e90ec4c799010f25391179118ccd9f66b3b279ba.png","老鼠":"8e6fb491eb1bb0d5862e7ec8ccf9a3da12b6c155.png","福到了":"5de5373d354c373cf1617b6b836f3a8d53c5a655.png"}
+                })
+
+        </script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        
+        <script type="text/javascript" src="/js/mouse.js"></script>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+
+</html>
