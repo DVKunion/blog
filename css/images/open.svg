@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b472e44df242801058c5b098af3bf1f38c9c1680a961bb70e5a41d74a51e938
-size 415
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" zoomAndPan="disable">
+	<style>
+		line {
+			stroke: #fff;
+			stroke-width: 1.5px;
+		}
+	</style>
+	<line x1="20" y1="20" x2="44" y2="20.025" />
+	<line x1="20" y1="28" x2="44" y2="28.025" />
+	<line x1="20" y1="36" x2="44" y2="36.025" />
+	<line x1="20" y1="44" x2="44" y2="44.025" />
+</svg>
