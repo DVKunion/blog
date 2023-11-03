@@ -1,0 +1,30 @@
+<body class="is-preload">
+    <div id="page-wrapper">
+        <%- partial('_partial/banner') %>
+        <!-- Main -->
+        <% if (page.title !== "Comments") {%>
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2><%= page.title %></h2>
+                    <p><%- date(page.date, "YYYY-MM-DD") %></p>
+                    <span id="/<%= page.path %>" class="leancloud_visitors" data-flag-title="<%= page.title %>">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                        <% if(theme.wordcount.enable) { %> <p>文章共计 - <%= wordcount(page.content) %> 字 阅读需要 - <%= min2read(page.content) %> 分钟</p><% } %>
+                    </span>
+                </header>
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(<%= page.thumbnail %>);" ></div>
+                    <hr>
+                    <%- page.content %>
+                </section>
+            </div>
+        </div>
+        <% } %>
+        <%- partial('_partial/comment') %>
+    </div>
+    <%- partial('_partial/footer') %>
+
+</body>

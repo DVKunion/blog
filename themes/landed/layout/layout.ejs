@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+
+<%- partial('_partial/header') %>
+
+<% if(page.layout === 'post' && page.title == "Comments" ) { %>
+    <%- partial('_widget/page-comments') %>
+<% } else if(page.layout === 'gallery') { %>
+    <%- partial('_widget/page-gallery') %>
+<% } else { %>
+    <%- body %>
+<% } %>
+
+</html>

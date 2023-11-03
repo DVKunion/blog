@@ -1,0 +1,50 @@
+<!-- Archive -->
+<body class="is-preload landing">
+    <% if(page.year || page.month || page.tag) {
+        page_data = page.posts;
+    }else{
+        page_data = site.posts.sort('date', -1);
+    }
+    var years = [];
+    var months = [];
+    %>
+    <div id="page-wrapper">
+        <%- partial('_partial/banner', {page_item: page, is_index:false}, {cache: true}) %>
+        <section id="archive" class="wrapper style1 special fade-up">
+            <div class="container" style="width: 70%">
+                <header class="major">
+                    <h2>归档</h2>
+                </header>
+                <section>
+                    <div class="row">
+                        <div class="col-12 col-12-xsmall">
+                        <% page_data.each(function (post, index) { %>
+                            <% if(years.indexOf(date(post.date, "YYYY")) == -1) { years.push(date(post.date, "YYYY")); months[years.indexOf(date(post.date, "YYYY"))]=[date(post.date, "MM")]%>
+                            <h3><%- date(post.date, "YYYY") %></h3>
+                            <h4><%- date(post.date, "MM") %> 月</h4> <ul class="alt">
+                            <% } else {
+                                if(months[years.indexOf(date(post.date, "YYYY"))]){
+                                    var m = months[years.indexOf(date(post.date, "YYYY"))];
+                                    if(m.indexOf(date(post.date, "MM")) == -1){ m.push(date(post.date, "MM")) %>
+                            <h4><%- date(post.date, "MM") %> 月</h4><ul class="alt">
+                            <%      }
+                                }else{
+                                    var m = [date(post.date, "MM")]
+                                }
+                                months[years.indexOf(date(post.date, "YYYY"))] = m;
+                            %>
+                            <% } %>
+                                    <li><a href="<%- url_for(post.path) %>"><%- post.title %></a><i><%- date(post.date, "YYYY-MM-DD") %></i></li>
+                            <%if(page_data.data[index+1] && (years.indexOf(date(page_data.data[index+1].date, "YYYY")) == -1 || (months[years.indexOf(date(page_data.data[index+1].date, "YYYY"))] && months[years.indexOf(date(page_data.data[index+1].date, "YYYY"))].indexOf(date(page_data.data[index+1].date, "MM")) == -1))) { %>
+                                </ul>
+                            <% } %>
+                        <% }) %>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+    <%- partial('_partial/footer') %>
+</body>

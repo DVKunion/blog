@@ -1,0 +1,38 @@
+<head>
+    <!-- Title -->
+    <%
+    var title = page.title;
+
+    if (is_archive()){
+        title = __('archive_a');
+
+        if (is_month()){
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()){
+            title += ': ' + page.year;
+        }
+    } else if (is_category()){
+        title = __('category') + ': ' + page.category;
+    } else if (is_tag()){
+        title = __('tag') + ': ' + page.tag;
+    }
+    %>
+    <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="TnnDJaWjq71nvLK8WYmDKSGkcgFEIXQy4y3eLKJROMA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="<%- theme.site.keywords %>" />
+    <link rel="stylesheet" href="<%- config.root %>css/main.css" />
+    <link rel="stylesheet" href="<%- config.root %>css/extend.css" />
+    <% if( page.layout === 'gallery') { %>
+        <link rel="stylesheet" href="<%- config.root %>css/mic_gallery.css" />
+    <% } %>
+    <link rel="bookmark"  type="image/x-icon"  href="<%- theme.site.favicon %>"/>
+    <link rel="shortcut icon" href="<%- theme.site.favicon %>">
+    <noscript><link rel="stylesheet" href="<%- config.root %>css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("<%- theme.background.pic%><% if (theme.imageView.enbale) { %>?image/2/w/<%-theme.imageView.width_large %><%}%>");
+        }
+    </style>
+</head>

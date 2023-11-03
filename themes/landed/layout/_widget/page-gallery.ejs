@@ -1,0 +1,35 @@
+<body class="is-loading-0 is-loading-1 is-loading-2">
+	<!-- Main -->
+	<div id="gallery_main">
+
+		<div id="gallery_main">
+
+			<!-- Header -->
+			<header id="gallery_header">
+				<h1><%- config.title %></h1>
+				<i><%-theme.Gallery.description %>    author :</i> <a href="<%- config.root%>" style="border-bottom: none;"><%- config.author%></a>
+				<ul class="gallery_icons">
+					<li><a href="https://github.com/DVKunion" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:dvkunion@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</header>
+
+			<!-- Thumbnail -->
+			<section id="gallery_thumbnails">
+			<% if (site.data.gallery) { %>
+				<% for (var i in site.data.gallery) { %>
+						<article>
+							<a class="thumbnail" href="<%= site.data.gallery[i].full_link %>" data-position="left center">
+								<img src="<%= site.data.gallery[i].full_link %><% if (theme.imageView.enbale) { %>?image/2/w/<%-theme.imageView.width_ %><%}%>" alt="" /></a>
+							<h2><%= i %></h2>
+							<p><%= site.data.gallery[i].descr %></p>
+						</article>
+					<% } %>
+				<% } %>
+
+			</section>
+
+		<!-- Footer -->
+		<%- partial('_partial/footer') %>
+	</div>
+</body>

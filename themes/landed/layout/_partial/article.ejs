@@ -1,0 +1,74 @@
+<!--  最新文章  -->
+<% if ((page.current === 1) && is_home()) { %>
+    <% site.posts.sort('date', -1).limit(1).each(function (post, index) { %>
+            <section id="index<%= index %>" class="spotlight style<%= index %> <%= index%2 === 0 ? "left" : "right" %>">
+                <span class="image fit main bottom"><img src="<%- post.thumbnail %><% if (theme.imageView.enbale) { %>?image/2/w/<%-theme.imageView.width_large %><%}%>" alt="" /></span>
+                <div class="content">
+                    <h1>🕙 最新文章</h1>
+                    <header>
+                        <h2><%= post.title %></h2>
+                        <p><%- date(post.date, "YYYY-MM-DD") %> <div class="summary"><% if(theme.wordcount.enable) { %> <li>文章共计 - <%= wordcount(post.content) %> 字</li><li>阅读需要 - <%= min2read(post.content) %> 分钟</li><% } %>
+                                <%- list_categories(post.categories, {
+                                    show_count: false,
+                                    class: 'post_category',
+                                    style: 'none'
+                                }) %><br><p>
+                    </header>
+                    <%
+                        var description = "";
+                        if(post.description) description = post.description;
+                        else if(post.excerpt) {
+                            if (post.excerpt.indexOf("<!-- split -->") != -1){
+                                description = post.excerpt.split("<!-- split -->")[1];
+                            }
+                            else{
+                                description = post.excerpt;
+                            }
+                        }
+                        if(description.length > 300){
+                            description = description.substr(0,300) + ".....";
+                        }
+                    %>
+                    <%- description  %>
+                    <ul class="actions small">
+                        <li><a href="<%- url_for(post.path) %>" class="button small">Read More...</a></li>
+                    </ul>
+                </div>
+                <a href="#article" class="goto-next scrolly" style="left: <%= index%2 === 0 ? "15%" : "85%" %>">Next</a>
+            </section>
+    <% }) %>
+<% } %>
+        <section id="article" class="wrapper style1 special fade-up">
+            <div class="container">
+                <header class="major">
+                    <h2>文章列表</h2>
+                </header>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <% if(page.posts &&  page.posts.length > 0) { %>
+                            <% page.posts.each(function (post) { %>
+                                <div class="col-4 col-4-xlarge col-6-large col-12-medium col-12-small col-12-xsmall">
+                                    <a href="<%- url_for(post.path) %>">
+                                        <span class="image fit">
+                                            <div class="page_title">
+                                                <img src="<%= post.thumbnail %><% if (theme.imageView.enbale) { %>?image/2/w/<%-theme.imageView.width_mid %><%}%>">
+                                                <div class="page_title_text">
+                                                    <h2 class="size-4"><%= post.title %></h2>
+                                                    <h6><%- date(post.date, "YYYY-MM-DD") %></h6>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </a>
+                                </div>
+                            <% }) %>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <%- paginator({
+                        prev_text: "pre",
+                        next_text: "nex"
+                    }) %>
+                </div>
+            </div>
+        </section>

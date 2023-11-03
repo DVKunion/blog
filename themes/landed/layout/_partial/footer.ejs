@@ -1,0 +1,54 @@
+<footer id="footer">
+        <% if( page.layout !== 'gallery') { %>
+        <!--  copyright  -->
+        <ul class="copyright">
+                <li>总字数: <i><%- totalcount(site) %></i></li>
+                <li>访问总量: <span id="/<%= site.path %>" class="leancloud_visitors" data-flag-title="<%= site.title %>">
+                        <i class="leancloud-visitors-count">0</i>
+                </span></li>
+        </ul>
+        <ul class="copyright">
+            <%- theme.site.copyright %>
+        </ul>
+        <% if(theme.site.ICP) { %>
+        <ul class="copyright">
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png">
+                <liICP><%- theme.site.ICP %></liICP>
+        </ul>
+        <% } %>
+        <% } %>
+        <!--  script  -->
+        <script src="<%- config.root %>js/Valine.min.js"></script>
+        <script>
+                new Valine({
+                        el:'#vcomment',
+                        appId: '<%- theme.valine.appId %>',
+                        appKey: '<%- theme.valine.appKey %>',
+                        visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
+                        master: ["f21bae5bf498b089b545f6f0a986e224"],
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"],
+                        // 设置Bilibili表情包地址
+                        emojiCDN: '//i0.hdslb.com/bfs/emote/',
+                        // 表情title和图片映射
+                        emojiMaps: <%- JSON.stringify(site.data.valine) %>
+                })
+
+        </script>
+        <script src="<%- config.root %>js/jquery.min.js"></script>
+        <script src="<%- config.root %>js/jquery.scrolly.min.js"></script>
+        <script src="<%- config.root %>js/jquery.dropotron.min.js"></script>
+        <script src="<%- config.root %>js/jquery.scrollex.min.js"></script>
+        <script src="<%- config.root %>js/browser.min.js"></script>
+        <script src="<%- config.root %>js/breakpoints.min.js"></script>
+        <script src="<%- config.root %>js/util.js"></script>
+        <script src="<%- config.root %>js/main.js"></script>
+        <script src="<%- config.root %>js/lazyload.js"></script>
+        <% if( page.layout === 'gallery') { %>
+                <script src="<%- config.root %>js/gallery_skel.min.js"></script>
+                <!--[if lte IE 8]><script src="<%- config.root %>js/ie/respond.min.js"></script><![endif]-->
+                <script src="<%- config.root %>js/mic_gallery.js"></script>
+        <% } %>
+        <script type="text/javascript" src="<%- config.root %>js/mouse.js"></script>
+</footer>

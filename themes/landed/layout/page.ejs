@@ -1,0 +1,7 @@
+<% if (page.layout === 'tag' || page.layout === 'tags') { %>
+    <%- partial('_widget/page-tag') %>
+<% } else if (page.layout === 'category' || page.layout === 'categories') { %>
+    <%- partial('_widget/page-category') %>
+<% } else { %>
+    <%- partial('_partial/article') %>
+<% } %>

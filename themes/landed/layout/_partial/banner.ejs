@@ -1,0 +1,50 @@
+        <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="<%- config.root %>"><%- theme.site.name %></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="<%- config.root %>">主页</a></li>
+                    <li><a href="https://github.com/DVKunion/">Github</a></li>
+                    <li><a href="<%- url_for('/archives/')%>">文章</a>
+                        <ul>
+                            <li><a href="<%- url_for('/archives/')%>">归档</a><ul>
+                                    <%- list_archives({
+                                        show_count: false,
+                                        amount: 5,
+                                        format: "YYYY - MM",
+                                        style: 'none',
+                                        separator: '</li><li>'
+                                    }) %>
+                                </ul></li>
+                            <li><a href="<%- url_for('/tags/')%>">标签</a></li>
+                            <li><a href="<%- url_for('/categories/')%>">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<%- url_for('/comments/')%>">留言板</a></li>
+                    <li><a href="<%- url_for('/gallery/')%>">图库</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        <% if(!is_post() && page.layout !== 'comments' && page.layout !== 'gallery' && page.title !== "Comments")  { %>
+            <section id="banner">
+                <div class="content">
+                    <a class="image scrolly" href="#about"><img src="<%- theme.site.favicon %>" alt=""/></a>
+                    <header>
+                        <h2><%- theme.site.name %></h2>
+                        <p><%- theme.site.slogan %></p>
+                        <img class="slogan" src=<%- theme.site.slogan_img %> />
+                        <ul class="icons">
+                            <li><a href="https://github.com/DVKunion" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                            <li><a href="mailto:dvkunion@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+                        </ul>
+                    </header>
+                </div>
+                <li><a class="goto-next scrolly" href="<%- (page.current === 1) && is_home() ? "#about" : page.archive ? "#archive" : "#article" %>" class="button icon solo goto-next scrolly"></a></li>
+            </section>
+        <% } %>
+
+        <% if((page.current === 1) && is_home()) { %>
+           <%- partial('_partial/about', {}, {cache: true}) %>
+        <% } %>

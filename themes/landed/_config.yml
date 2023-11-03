@@ -1,0 +1,40 @@
+# site config
+site:
+  name: DV.K
+  favicon: "/img/logo.png"
+  keywords: "DV.K Security Cloud Docker K8s"
+  slogan: "a salt fish who wants to standup."
+  slogan_img: "/img/slogan.svg"
+  rss: /atom.xml
+  copyright: "<li>&copy;2018-2023 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>"
+  ICP: "鲁ICP备2021028491号"
+
+background:
+  dynamic: true
+  pic: "/img/bg.jpg"
+
+about:
+  pic: "/img/1484628385602.png"
+
+wordcount:
+  enable: true
+
+Gallery:
+  description: ""
+
+valine:
+  on: true
+  appId: "jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz"
+  appKey: "WgBXad9R6JRSoxTMohDelbFs"
+  notify: true
+  verify: true
+  placeholder: Please leave your footprints
+  avatar: ''
+  avatar_cdn: https://gravatar.loli.net/avatar/ # avatar CDN address, default gravatar.loli.net
+  pageSize: 10 # comments of one page
+
+imageView:
+  enbale: true
+  width_large: 1080
+  width_mid: 900
+  width_small: 200
