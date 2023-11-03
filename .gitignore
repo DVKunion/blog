@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+media/
+draft/
+db.json
+public/
+.DS_Store
