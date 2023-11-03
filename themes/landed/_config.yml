@@ -34,7 +34,7 @@ valine:
   pageSize: 10 # comments of one page
 
 imageView:
-  enbale: true
+  enbale: false
   width_large: 1080
   width_mid: 900
   width_small: 200
