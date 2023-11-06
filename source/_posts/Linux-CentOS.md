@@ -11,7 +11,7 @@ thumbnail: /img/942bf6c451da81cb7e4194c25f66d016082431da.jpg
 
 # Linux\-\-CentOS7.0
 
-<i>2018-12-20</i>
+<center><small>2018-12-20</small></center>
 趁着这一阶段系统性的把 Linux 的操作记录一下。
 结合着 《鸟哥私房菜》 以及学习的知识进行一个系统性的总结。
 关于 Linux，我目前的感受是----
@@ -21,7 +21,7 @@ thumbnail: /img/942bf6c451da81cb7e4194c25f66d016082431da.jpg
 + 习惯了以后：Linux 真香，来一口老弟，来一口。
 总的来说Linux的管理和操作还是较清晰化和便捷的，至少对于我这种强迫症感觉文件的存放和分类都好清爽啊orz...
 
-<i>2018-12-20</i>
+<center><small>2018-12-20</small></center>
 
 贴一个有趣的讲解：  
 [有趣的命令](http://mp.weixin.qq.com/s?__biz=MzA4ODIwMDUyNw==&mid=2652994636&idx=2&sn=1f3b66c94de485c35b717c2295a196d5&chksm=8bf8186cbc8f917a241b0724dffb618547326cda89199d7a4b8cd14326f987b5189ba9335139&mpshare=1&scene=24&srcid=#rd)  
@@ -647,9 +647,8 @@ yum全称是Yellow Package Manager，是针对rpm包的依赖缺点，用来解�
      gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 （7）将ISO镜像文件作为本地yum源
 
-
-
-
-
-
+### 参考链接
+> 0.有趣的命令: http://mp.weixin.qq.com/s?__biz=MzA4ODIwMDUyNw==&mid=2652994636&idx=2&sn=1f3b66c94de485c35b717c2295a196d5&chksm=8bf8186cbc8f917a241b0724dffb618547326cda89199d7a4b8cd14326f987b5189ba9335139&mpshare=1&scene=24&srcid=#rd
+> 1.漫画讲解Linux内核: http://mp.weixin.qq.com/s?__biz=MzA4ODIwMDUyNw==&mid=2652994485&idx=1&sn=7999fb43eca8f3c1eadb1a02475aa4b5&chksm=8bf81f95bc8f96831c00e6d780c06c104b8316fd8696d7134222850dc5ba1d2380d558e33774&mpshare=1&scene=24&srcid=#rd"
+> 2.man: http://man.linuxde.net/
 
