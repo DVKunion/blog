@@ -36,15 +36,19 @@
                     <li><a href="/archives/">文章</a>
                         <ul>
                             <li><a href="/archives/">归档</a><ul>
-                                    <a class="archive-link" href="/archives/2023/06/">2023 - 06</a></li><li><a class="archive-link" href="/archives/2023/05/">2023 - 05</a></li><li><a class="archive-link" href="/archives/2023/02/">2023 - 02</a></li><li><a class="archive-link" href="/archives/2022/03/">2022 - 03</a></li><li><a class="archive-link" href="/archives/2022/01/">2022 - 01</a></li><li><a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                    <a class="archive-link" href="/archives/2023/06/">2023 - 06</a></li><li><a class="archive-link" href="/archives/2023/05/">2023 - 05</a></li><li><a class="archive-link" href="/archives/2023/02/">2023 - 02</a></li><li><a class="archive-link" href="/archives/2022/03/">2022 - 03</a></li><li><a class="archive-link" href="/archives/2022/01/">2022 - 01</a></li><li><a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
                                 </ul></li>
                             <li><a href="/tags/">标签</a></li>
                             <li><a href="/categories/">分类</a></li>
                         </ul>
                     </li>
-                    <li><a href="/comments/">留言板</a></li>
                     <li><a href="/gallery/">图库</a></li>
+                    <li><a href="/comments/">留言板</a></li>
+                    <li><a href="#" id="link">微信公众号</a></li>
                 </ul>
+                <div id="message" style="display: none;float: right;">
+                    <img src="/img/qrcode_for_gh_0bac66228b56_258.jpg" class="lazyload" data-srcset="/img/qrcode_for_gh_0bac66228b56_258.jpg" srcset="/css/images/overlay.gif" alt="微信公众号" />
+                </div>
             </nav>
         </header>
 
@@ -78,7 +82,7 @@
 <p>在构建一些小型cms和自己的一些项目时，突然发现构建好的数据库内源码比实际的源码少了一大半，导致很多规则分析的flow直接断掉了，什么规则扫描结果都没有。</p>
 <h3 id="原因">原因</h3>
 <p>构建好的数据库文件夹下，源码是存放在src.zip下的。通过vscode的插件，将数据库添加后也可以看到构建加载后的源码。通过对比源码，发现丢失的java文件都存在lombok注解（@Data/@Sl4j)。<br>
-<img src="img/16479334970645.jpg" class="lazyload" data-srcset="img/16479334970645.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<img src="/img/16479334970645.jpg" class="lazyload" data-srcset="/img/16479334970645.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p>这里的原因就是由于项目使用了lombok。根据官方<a href="https://github.com/github/codeql/issues/8363">Github Issue</a>可得知，lombok 代码在编译期间使用注释处理器转换为正确的 Java 代码。这会干扰 CodeQL 分析器，该分析器会在源代码转换为有效的 Java 代码之前“查看”源代码，从而导致它跳过此类文件。</p>
 <h3 id="解决方案">解决方案</h3>
 <p>按照官方的思路，解决方式就是将所有文件还原为不使用lombok的方式。还原的方案主要有两种：</p>
@@ -114,10 +118,10 @@
 <p>这种方法只提供xml文件的扩展，如果需要扩展其他类型文件，还需要自己手动增加。(因为 --language 参数不同）</p>
 <p><strong>windows:</strong><br>
 在codeql-cli/java/tools/pre-finalize.cmd插入<code>--include &quot;**/resources/**/*.xml&quot; ^ </code><br>
-<img src="img/16479343916145.jpg" class="lazyload" data-srcset="img/16479343916145.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<img src="/img/16479343916145.jpg" class="lazyload" data-srcset="/img/16479343916145.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p><strong>linux:</strong><br>
 在codeql-cli/java/tools/pre-finalize.sh插入<code>--include &quot;**/resources/**/*.xml&quot;</code><br>
-<img src="img/16479342964394.jpg" class="lazyload" data-srcset="img/16479342964394.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<img src="/img/16479342964394.jpg" class="lazyload" data-srcset="/img/16479342964394.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p><strong>加入properties扩展：</strong><br>
 linux为例：<br>
 在codeql-cli/java/tools/pre-finalize.sh的结尾找到：<code>if [ &quot;$&#123;LGTM_INDEX_PROPERTIES_FILES:-false&#125;&quot; == &quot;true&quot; ]</code><br>
@@ -192,7 +196,7 @@ linux为例：<br>
         
         <!--  copyright  -->
         <ul class="copyright">
-                <li>总字数: <i>64.3k</i></li>
+                <li>总字数: <i>67.8k</i></li>
                 <li>访问总量: <span id="/" class="leancloud_visitors" data-flag-title="">
                         <i class="leancloud-visitors-count">0</i>
                 </span></li>
