@@ -1,10 +1,10 @@
 ---
 title: Docker
 date: 2019-06-10 20:57:11
-tags: 
+tags:
     - 云原生
-	- 容器
-	- 环境搭建
+    - 容器
+    - 环境搭建
 categories: Tools
 thumbnail: /img/1484628405614.jpg
 

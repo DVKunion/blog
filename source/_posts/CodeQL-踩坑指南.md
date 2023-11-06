@@ -19,7 +19,7 @@ thumbnail: /img/1484628225604.jpg
 
 ### 原因
 构建好的数据库文件夹下，源码是存放在src.zip下的。通过vscode的插件，将数据库添加后也可以看到构建加载后的源码。通过对比源码，发现丢失的java文件都存在lombok注解（@Data/@Sl4j)。  
-![](img/16479334970645.jpg)
+![](/img/16479334970645.jpg)
 
 这里的原因就是由于项目使用了lombok。根据官方[Github Issue](https://github.com/github/codeql/issues/8363)可得知，lombok 代码在编译期间使用注释处理器转换为正确的 Java 代码。这会干扰 CodeQL 分析器，该分析器会在源代码转换为有效的 Java 代码之前“查看”源代码，从而导致它跳过此类文件。
 
@@ -230,11 +230,11 @@ codeql database finalize <YourDBPath>
 
 **windows:**
 在codeql-cli/java/tools/pre-finalize.cmd插入`--include "**/resources/**/*.xml" ^ `
-![](img/16479343916145.jpg)
+![](/img/16479343916145.jpg)
 
 **linux:**
 在codeql-cli/java/tools/pre-finalize.sh插入`--include "**/resources/**/*.xml"`
-![](img/16479342964394.jpg)
+![](/img/16479342964394.jpg)
 
 **加入properties扩展：**
 linux为例：

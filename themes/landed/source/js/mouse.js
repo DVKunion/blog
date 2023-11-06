@@ -28,3 +28,24 @@ $("body").click(function (e) {
             $i.remove();
         });
 });
+
+let isMessageVisible = false;
+let timeoutId;
+// 获取<a>标签和消息元素
+const link = document.getElementById("link");
+const message = document.getElementById("message");
+
+// 添加鼠标悬停事件监听器
+link.addEventListener("mouseover", function() {
+    if (!isMessageVisible) {
+        message.style.display = "block";
+        isMessageVisible = true;
+    }
+});
+
+// 添加鼠标离开事件监听器（可选，如果希望鼠标离开时隐藏消息）
+link.addEventListener("mouseout", function() {
+    // 使用延迟来隐藏消息
+    message.style.display = "none";
+    isMessageVisible = false;
+});
