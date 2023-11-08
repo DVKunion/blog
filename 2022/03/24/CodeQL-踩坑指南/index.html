@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/extend.css" />
     
-    <link rel="bookmark"  type="image/x-icon"  href="/img/logo.png"/>
-    <link rel="shortcut icon" href="/img/logo.png">
+    <link rel="bookmark"  type="image/x-icon"  href="https://blog.dvkunion.cn/img/logo.png"/>
+    <link rel="shortcut icon" href="https://blog.dvkunion.cn/img/logo.png">
     <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
     <style>
         #banner {
-            background-image: url("/img/bg.jpg");
+            background-image: url("https://blog.dvkunion.cn/img/bg.jpg");
         }
     </style>
 <meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="DV.K" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
@@ -47,7 +47,7 @@
                     <li><a href="#" id="link">微信公众号</a></li>
                 </ul>
                 <div id="message" style="display: none;float: right;">
-                    <img src="/img/qrcode_for_gh_0bac66228b56_258.jpg" class="lazyload" data-srcset="/img/qrcode_for_gh_0bac66228b56_258.jpg" srcset="/css/images/overlay.gif" alt="微信公众号" />
+                    <img src="https://blog.dvkunion.cn/img/qrcode_for_gh_0bac66228b56_258.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/qrcode_for_gh_0bac66228b56_258.jpg" srcset="/css/images/overlay.gif" alt="微信公众号" />
                 </div>
             </nav>
         </header>
@@ -71,7 +71,7 @@
                 </header>
                 <!-- Content -->
                 <section id="content">
-                    <div class ="post_page_title_img" style="background-image: url(/img/1484628225604.jpg);" ></div>
+                    <div class ="post_page_title_img" style="background-image: url(https://blog.dvkunion.cn/img/1484628225604.jpg);" ></div>
                     <hr>
                     <h1>CodeQL 踩坑指南 - Java</h1>
 <!-- split -->
@@ -82,7 +82,7 @@
 <p>在构建一些小型cms和自己的一些项目时，突然发现构建好的数据库内源码比实际的源码少了一大半，导致很多规则分析的flow直接断掉了，什么规则扫描结果都没有。</p>
 <h3 id="原因">原因</h3>
 <p>构建好的数据库文件夹下，源码是存放在src.zip下的。通过vscode的插件，将数据库添加后也可以看到构建加载后的源码。通过对比源码，发现丢失的java文件都存在lombok注解（@Data/@Sl4j)。<br>
-<img src="/img/16479334970645.jpg" class="lazyload" data-srcset="/img/16479334970645.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<img src="https://blog.dvkunion.cn/img/16479334970645.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/16479334970645.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p>这里的原因就是由于项目使用了lombok。根据官方<a href="https://github.com/github/codeql/issues/8363">Github Issue</a>可得知，lombok 代码在编译期间使用注释处理器转换为正确的 Java 代码。这会干扰 CodeQL 分析器，该分析器会在源代码转换为有效的 Java 代码之前“查看”源代码，从而导致它跳过此类文件。</p>
 <h3 id="解决方案">解决方案</h3>
 <p>按照官方的思路，解决方式就是将所有文件还原为不使用lombok的方式。还原的方案主要有两种：</p>
@@ -118,10 +118,10 @@
 <p>这种方法只提供xml文件的扩展，如果需要扩展其他类型文件，还需要自己手动增加。(因为 --language 参数不同）</p>
 <p><strong>windows:</strong><br>
 在codeql-cli/java/tools/pre-finalize.cmd插入<code>--include &quot;**/resources/**/*.xml&quot; ^ </code><br>
-<img src="/img/16479343916145.jpg" class="lazyload" data-srcset="/img/16479343916145.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<img src="https://blog.dvkunion.cn/img/16479343916145.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/16479343916145.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p><strong>linux:</strong><br>
 在codeql-cli/java/tools/pre-finalize.sh插入<code>--include &quot;**/resources/**/*.xml&quot;</code><br>
-<img src="/img/16479342964394.jpg" class="lazyload" data-srcset="/img/16479342964394.jpg" srcset="/css/images/overlay.gif" alt=""></p>
+<img src="https://blog.dvkunion.cn/img/16479342964394.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/16479342964394.jpg" srcset="/css/images/overlay.gif" alt=""></p>
 <p><strong>加入properties扩展：</strong><br>
 linux为例：<br>
 在codeql-cli/java/tools/pre-finalize.sh的结尾找到：<code>if [ &quot;$&#123;LGTM_INDEX_PROPERTIES_FILES:-false&#125;&quot; == &quot;true&quot; ]</code><br>
@@ -167,12 +167,12 @@ linux为例：<br>
 <p>暂时想到的就这些，还有一些从网络上学到的一些小东西就不丢人现眼了...如果有错误或其他的一些小tips，恳求各位师傅指点一二🙇。</p>
 <h4 id="参考链接">参考链接</h4>
 <blockquote>
-<p>0.Github Issue : <a href="https://github.com/github/codeql/issues/8363">https://github.com/github/codeql/issues/8363</a><br>
-1.Github Issue : <a href="https://github.com/github/codeql/issues/4984#:~:text=Unfortunately%20Lombok%20does%20not%20work%20with%20the%20CodeQL,the%20source%20files%20before%20running%20CodeQL%20as%20follows%3A">https://github.com/github/codeql/issues/4984#:~:text=Unfortunately Lombok does not work with the CodeQL,the source files before running CodeQL as follows%3A</a><br>
-2.MyBatisMapperXmlSqlInjection.ql : <a href="https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-089/MyBatisMapperXmlSqlInjection.ql">https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-089/MyBatisMapperXmlSqlInjection.ql</a><br>
-3.楼兰师傅的文章 : <a href="https://mp.weixin.qq.com/s/egjA2xFm_ziGHjJ7IxOCbg">https://mp.weixin.qq.com/s/egjA2xFm_ziGHjJ7IxOCbg</a><br>
-4.mvnd : <a href="https://github.com/apache/maven-mvnd">https://github.com/apache/maven-mvnd</a><br>
-5.python-codeql库 : <a href="https://github.com/AlexAltea/codeql-python">https://github.com/AlexAltea/codeql-python</a></p>
+<p>1.Github Issue : <a href="https://github.com/github/codeql/issues/8363">https://github.com/github/codeql/issues/8363</a><br>
+2.Github Issue : <a href="https://github.com/github/codeql/issues/4984#:~:text=Unfortunately%20Lombok%20does%20not%20work%20with%20the%20CodeQL,the%20source%20files%20before%20running%20CodeQL%20as%20follows%3A">https://github.com/github/codeql/issues/4984#:~:text=Unfortunately Lombok does not work with the CodeQL,the source files before running CodeQL as follows%3A</a><br>
+3.MyBatisMapperXmlSqlInjection.ql : <a href="https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-089/MyBatisMapperXmlSqlInjection.ql">https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-089/MyBatisMapperXmlSqlInjection.ql</a><br>
+4.楼兰师傅的文章 : <a href="https://mp.weixin.qq.com/s/egjA2xFm_ziGHjJ7IxOCbg">https://mp.weixin.qq.com/s/egjA2xFm_ziGHjJ7IxOCbg</a><br>
+7.mvnd : <a href="https://github.com/apache/maven-mvnd">https://github.com/apache/maven-mvnd</a><br>
+8.python-codeql库 : <a href="https://github.com/AlexAltea/codeql-python">https://github.com/AlexAltea/codeql-python</a></p>
 </blockquote>
 
                 </section>
