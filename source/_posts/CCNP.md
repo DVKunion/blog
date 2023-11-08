@@ -5,7 +5,7 @@ tags:
     - 计算机网络
     - 思科认证
 categories: Reading
-thumbnail: /img/33109819ebc4b745546cf419c2fc1e178b82158d.jpg
+thumbnail: https://blog.dvkunion.cn/img/33109819ebc4b745546cf419c2fc1e178b82158d.jpg
 
 ---
 

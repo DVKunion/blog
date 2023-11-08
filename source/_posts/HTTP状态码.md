@@ -5,7 +5,7 @@ tags:
 	- WEB
 	- 常用编码
 categories: Crypto
-thumbnail: /img/k1FGpn.jpg
+thumbnail: https://blog.dvkunion.cn/img/k1FGpn.jpg
 
 ---
 

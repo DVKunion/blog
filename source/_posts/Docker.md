@@ -6,7 +6,7 @@ tags:
     - 容器
     - 环境搭建
 categories: Tools
-thumbnail: /img/1484628405614.jpg
+thumbnail: https://blog.dvkunion.cn/img/1484628405614.jpg
 
 ---
 
@@ -24,7 +24,7 @@ thumbnail: /img/1484628405614.jpg
 
 <center><small>2019-6-10</small></center>
 搞来了一张图，用于考察自己的学习结果以及复习时候可以使用的思维导图
-<img src='/img/Docker27.png'>
+<img src='https://blog.dvkunion.cn/img/Docker27.png'>
 
 <center><small>华丽的分割线</small></center>
 

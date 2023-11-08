@@ -5,7 +5,7 @@ tags:
     - 脚本
     - Python3
 categories: Language
-thumbnail: /img/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg
+thumbnail: https://blog.dvkunion.cn/img/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg
 
 ---
 <div id="head"></div>
@@ -80,7 +80,7 @@ Python3 的系统性学习暂时告一段落，重新把课件和博客进行一
 `$ make install`<br>
 安装完成，终端输入python3 即可进入刚安装好的python3环境内。
 
-![](/img/4c06e311gy1fwblvc6lk0j20in02vmx4.jpg)
+![](https://blog.dvkunion.cn/img/4c06e311gy1fwblvc6lk0j20in02vmx4.jpg)
 
 > P.S.
 >* 1\. 编译的过程是需要GCC\G++的C语言环境支持，如果是一台新配置 Centos 需要先配置GCC环境。( ゜- ゜)つロ

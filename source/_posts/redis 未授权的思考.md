@@ -5,7 +5,7 @@ tags:
     - 漏洞跟踪
     - 开发工具
 categories: Bugs
-thumbnail: /img/1484628369607.png
+thumbnail: https://blog.dvkunion.cn/img/1484628369607.png
 
 ---
 

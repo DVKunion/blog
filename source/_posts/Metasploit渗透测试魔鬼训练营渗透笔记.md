@@ -6,7 +6,7 @@ tags:
 - 笔记
 - 渗透测试
 categories: Reading
-thumbnail: /img/1484628385603.png
+thumbnail: https://blog.dvkunion.cn/img/1484628385603.png
 ---
 
 # Metasploit渗透测试魔鬼训练营渗透笔记
@@ -157,7 +157,7 @@ framework-base：扩展framework-core，用于调用自身模块和集成模块
 >漏洞编号：CVE-2007-2447(居然是07年的，这么近...啊也不近了，都2019了...)
 >存在版本：Samba 3.0.0 - Samba 3.0.25rc3
 >简单描述：MS-RPC功能允许远程攻击者在启用“用户名映射脚本”smb.conf选项时，通过涉及SamrChangePassword函数的shell元字符执行任意命令，并允许远程认证用户通过shell元字符执行命令
->[![k1uVpD.md.png](/img/k1uVpD.md.png)](/img/k1uVpD.md.png)
+>[![k1uVpD.md.png](https://blog.dvkunion.cn/img/k1uVpD.md.png)](https://blog.dvkunion.cn/img/k1uVpD.md.png)
 
 2> <font color = "Brown">更新Metasploit，找出攻击模块具体位置，查看一下针对不同系统的攻击模块数量。</font>
 >我所使用的Metaspoit版本为：metasploit v5.0.1-dev
@@ -191,14 +191,14 @@ framework-base：扩展framework-core，用于调用自身模块和集成模块
 >exploit!
 
 >可以看到msf反馈已经成功，等待输出bash命令
->[![k1KjsJ.md.png](/img/k1KjsJ.md.png)](/img/k1KjsJ)
+>[![k1KjsJ.md.png](https://blog.dvkunion.cn/img/k1KjsJ.md.png)](https://blog.dvkunion.cn/img/k1KjsJ)
 
 4> <font color = "Brown">使用msfcli命令行接口写一个SHELL脚本，实现用户只需要输入目标Linux靶机IP就可以使用usermap_script漏洞渗透攻击模块获取远程靶机的shell访问。</font>
 >上面说了msfcli已经被弃用，尝试用上文博客的方法写一个脚本
 >shell的写法还不是很熟练...代码只是简单粗暴的实现了所需功能...运行下过如下
->[![k1M8yQ.md.png](/img/k1M8yQ.md.png)](/img/k1M8yQ)
+>[![k1M8yQ.md.png](https://blog.dvkunion.cn/img/k1M8yQ.md.png)](https://blog.dvkunion.cn/img/k1M8yQ)
 >贴上代码
->[![k1MGLj.md.png](/img/k1MGLj.md.png)](/img/k1MGLj.md.png)
+>[![k1MGLj.md.png](https://blog.dvkunion.cn/img/k1MGLj.md.png)](https://blog.dvkunion.cn/img/k1MGLj.md.png)
 
 
 ## <b>第二章</b>

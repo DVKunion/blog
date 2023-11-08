@@ -5,7 +5,7 @@ tags:
 	- 运维
 	- 管理工具
 categories: Tools
-thumbnail: /img/161233-1528618353a6ad.jpg
+thumbnail: https://blog.dvkunion.cn/img/161233-1528618353a6ad.jpg
 
 ---
 <div id="head"></div>
@@ -40,7 +40,7 @@ Zabbix 的缺点：
 -
 	
 ### <b>0x01\- \- Zabbix 结构概述<b>
-![](/img/4c06e311gy1fwztd037h7j20hm0daq48.jpg)
+![](https://blog.dvkunion.cn/img/4c06e311gy1fwztd037h7j20hm0daq48.jpg)
 
 Zabbix由几个主要的软件组件构成，这些组件的功能如下：
 
@@ -56,7 +56,7 @@ Zabbix由几个主要的软件组件构成，这些组件的功能如下：
 
 <b>数据流</b>——实现监控告警等功能时，控制数据流动的模块。
 
-![](/img/4c06e311gy1fwztrh5d6dj20ux0j6n3t.jpg)
+![](https://blog.dvkunion.cn/img/4c06e311gy1fwztrh5d6dj20ux0j6n3t.jpg)
 
 ### <b>0x02\- \- Zabbix 环境搭建<b>
 #### <font color = "blue">Zabbix 需求</font><br>
@@ -131,7 +131,7 @@ PostgreSQL：8.1及以上
 `$ systemctl start httpd`
 + (3)访问:
 IP/zabbix
-![](/img/4c06e311gy1fwzv5h8lvpj20qg0fqab7.jpg)
+![](https://blog.dvkunion.cn/img/4c06e311gy1fwzv5h8lvpj20qg0fqab7.jpg)
 web界面初始化配置保存在/etc/zabbix/web/zabbix.conf.php
 web登录界面 admin/zabbix
 

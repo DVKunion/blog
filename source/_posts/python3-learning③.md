@@ -5,7 +5,7 @@ tags:
 	- 脚本
 	- Python3
 categories: Language
-thumbnail: /img/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg
+thumbnail: https://blog.dvkunion.cn/img/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg
 ---
 <div id="head"></div>
 

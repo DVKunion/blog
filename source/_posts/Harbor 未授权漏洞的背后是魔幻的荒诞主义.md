@@ -5,7 +5,7 @@ tags:
     - 云安全
     - 漏洞跟踪
 categories: Bugs
-thumbnail: /img/661699005439_.pic.jpg
+thumbnail: https://blog.dvkunion.cn/img/661699005439_.pic.jpg
 ---
 
 # Harbor 未授权漏洞的背后是魔幻的荒诞主义
@@ -79,10 +79,10 @@ thumbnail: /img/661699005439_.pic.jpg
 故事讲完了，我们来实际关注下漏洞。
 
 根据 `https://github.com/lanqingaa/123` 所描述的`poc`, `harbor` v1 v2版本均存在该问题，但是自己观察会发现，该作者在v1的截图中的确搜到了显示为 `private` 的仓库：
-![](/img/16740212582611.jpg)
+![](https://blog.dvkunion.cn/img/16740212582611.jpg)
 
 但是在 v2 的版本中，他给出的结果却是 `public` 仓库。
-![](/img/16740213120010.jpg)
+![](https://blog.dvkunion.cn/img/16740213120010.jpg)
 
 再回看漏洞描述：
 
@@ -111,19 +111,19 @@ thumbnail: /img/661699005439_.pic.jpg
 因为目前harbor的release多数为v2, 就先使用v2的版本进行了复现：
 
 首先我们用权限账户登陆，可以看到仓库存在 private/public两种项目。
-![](/img/16740218044242.jpg)
+![](https://blog.dvkunion.cn/img/16740218044242.jpg)
 
 其中，私有的library内存在如下镜像。
 
-![](/img/16740218419115.jpg)
+![](https://blog.dvkunion.cn/img/16740218419115.jpg)
 
 我们退出账户，尝试去搜索：
-![](/img/16740218684380.jpg)
+![](https://blog.dvkunion.cn/img/16740218684380.jpg)
 
 毫无结果，再尝试搜索一下公开镜像：
-![](/img/16740218947330.jpg)
+![](https://blog.dvkunion.cn/img/16740218947330.jpg)
 确实获取到了列表信息。
-![](/img/16740219359533.jpg)
+![](https://blog.dvkunion.cn/img/16740219359533.jpg)
 
 总结: v2仅能够搜索到公开镜像。
 
@@ -131,22 +131,22 @@ thumbnail: /img/661699005439_.pic.jpg
 在测试无果的情况下，想到：会不会是v1和v2的版本存在差异呢？
 
 于是我们来尝试，使用和`https://github.com/lanqingaa/123` 作者完全一致版本的v1进行尝试：
-![](/img/16740185412406.jpg)
+![](https://blog.dvkunion.cn/img/16740185412406.jpg)
 
 与v2相同，我们先创建私有的仓库，然后上传测试镜像：
 
-![](/img/16740220897858.jpg)
-![](/img/16740221142173.jpg)
+![](https://blog.dvkunion.cn/img/16740220897858.jpg)
+![](https://blog.dvkunion.cn/img/16740221142173.jpg)
 然后退出登录，尝试搜索私有仓库：
-![](/img/16740185766211.jpg)
+![](https://blog.dvkunion.cn/img/16740185766211.jpg)
 无果，再尝试搜索下公开的 `library` 仓库
-![](/img/16740221399539.jpg)
+![](https://blog.dvkunion.cn/img/16740221399539.jpg)
 ？？？ 的确出现了私有仓库，但是仔细看？是在管理面板内为`public`权限的`library`
-![](/img/16740221754902.jpg)
+![](https://blog.dvkunion.cn/img/16740221754902.jpg)
 为了更有效的说明这个事情，我们再创建个公开仓库：
-![](/img/16740222082857.jpg)
+![](https://blog.dvkunion.cn/img/16740222082857.jpg)
 然后退出登录，再次搜索：
-![](/img/16740222537273.jpg)
+![](https://blog.dvkunion.cn/img/16740222537273.jpg)
 结果两个公开仓库都被搜索出来了，而且还标注着`private`
 
 .......看到这里的各位，应该能猜测这是一个什么问题了。
@@ -189,8 +189,8 @@ thumbnail: /img/661699005439_.pic.jpg
 这样，问题又回到了第二个点。public 仓库面向所有用户而非认证用户，是否存在问题。
 
 当业务功能存在部分风险时，那么应该告知并警惕用户使用的方式，正确使用该功能。我们来看下harbor是如何做的：
-![](/img/16740177839330.jpg)
-![](/img/16740178868992.jpg)
+![](https://blog.dvkunion.cn/img/16740177839330.jpg)
+![](https://blog.dvkunion.cn/img/16740178868992.jpg)
 在项目创建页面，harbor清楚的描述着 什么叫做public仓库，告知了： "无需login即可docker pull"。同时，公开仓库还是一个非默认选项，默认创建的仓库都是私有的。我实在想不出还有什么别的方式能够来"帮助" 用户 建设意识上的安全问题。
 
 就好比 php exec函数，你不能说exec可能会执行恶意命令，就直接说php存在漏洞，而直接不允许了业务使用该函数。exec本身并不是漏洞，但当你使用的方式不正确时，的确会造成一定的安全风险。这个比喻模型同样可以适用于 `CVE-2022-46463`。
@@ -220,9 +220,9 @@ Harbor api search 允许未认证的用户搜索仓库内存在的 公开仓库�
 这么做可能会导致，原本可以直接获取到的镜像信息，现在都需要使用该账户进行认证后获取，可能会对您的自动化业务(如 CI/CD) 产生影响。
 
 除此之外，您也可以考虑从根源解决问题。该漏洞最大的安全隐患在于 敏感信息的泄漏。而这些风险来自于没有进行过安全检查的公开镜像。因此，可以使用云安全工具进行检测，如：使用 [Veinmind-SaaS](https://rivers.chaitin.cn/app/veinmind) 版本对harbor仓库进行扫描，支持云探针扫描方式，无需部署探针，实现快速一键式解决公开镜像的安全问题：
-![](/img/16740240275239.jpg)
+![](https://blog.dvkunion.cn/img/16740240275239.jpg)
 也可以选择轻量级的 [Veinmind-Tools](https://github.com/chaitin/veinmind-tools) 对您重点关注的镜像，一一进行人工排查，保证您的镜像安全。
-![](/img/20220415144819.gif)
+![](https://blog.dvkunion.cn/img/20220415144819.gif)
 
 除此以外，对于仍认为 `public` 仓库应该在登陆后才能够被访问的用户，可以选择非harbor的同级别产品如[portus](http://port.us.org/documentation.html)，所有的仓库必须在登陆后才有权限访问，即使是public仓库。
 

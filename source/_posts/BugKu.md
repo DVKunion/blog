@@ -5,7 +5,7 @@ tags:
 	- CTF
 	- WP
 categories: CTF
-thumbnail: /img/1484628381608.jpg
+thumbnail: https://blog.dvkunion.cn/img/1484628381608.jpg
 
 ---
 

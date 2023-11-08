@@ -5,7 +5,7 @@ tags:
     - 操作系统
     - Linux
 categories: Operation
-thumbnail: /img/942bf6c451da81cb7e4194c25f66d016082431da.jpg
+thumbnail: https://blog.dvkunion.cn/img/942bf6c451da81cb7e4194c25f66d016082431da.jpg
 
 ---
 
@@ -92,7 +92,7 @@ Linux是开源的Unix系统，可免费使用和传播。
 |上下方向键|历史命令|
 
 熟悉了几个操作之后，我们打开终端：
-![](/img/006IjVYfgy1fydbmxztwnj30kg0bhwgb.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fydbmxztwnj30kg0bhwgb.jpg)
 (1)最外围的方括号是固定的
 (2)dvk表示当前登录操作系统的用户名
 (3)@符号，固定格式
@@ -199,7 +199,7 @@ id + username
 <b>用户信息文件</b>
 /etc/passwd 和 /etc/shadow
 
-![](/img/006IjVYfgy1fydczrvejfj30hg092td5.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fydczrvejfj30hg092td5.jpg)
 
 其格式：$id$salt$encrypted
 
@@ -230,10 +230,10 @@ su -username
 <b>文件权限</b>
 ls -l (等于ll)
 
-![](/img/006IjVYfgy1fydd7un284j30tk0fgwkj.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fydd7un284j30tk0fgwkj.jpg)
 前部分显示的即为文件权限：
 
-![](/img/006IjVYfgy1fydd964r0rj30l40caju3.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fydd964r0rj30l40caju3.jpg)
 
 d:目录类型的文件
 -:普通文件

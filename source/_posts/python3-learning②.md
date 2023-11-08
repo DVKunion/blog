@@ -5,7 +5,7 @@ tags:
 	- 脚本
 	- Python3
 categories: Language
-thumbnail: /img/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg
+thumbnail: https://blog.dvkunion.cn/img/e9e727f431adcbeffa3f3c09a1af2edda3cc9f7f.jpg
 ---
 <div id="head"></div>
 
@@ -356,7 +356,7 @@ plt.plot(squares)   #plot()绘图函数
 plt.show()   #show()打开matplotlib查看器并显示所绘图形
 ```
 运行输出如下：
-![](/img/006IjVYfgy1fxp1uzaoh9j30hs0dcdg0.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1uzaoh9j30hs0dcdg0.jpg)
 
 我们对输出的图片加一些修饰：
 ```python
@@ -370,7 +370,7 @@ plt.tick_params(axis='both',labelsize=14) #配置参数刻度线样式。
 plt.show()
 ```
 输出变为以下形式:
-![](/img/006IjVYfgy1fxp1wdy1ukj30hs0dct96.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1wdy1ukj30hs0dct96.jpg)
 plot方式画出的图默认是将各个点的值连接到一起，如果想要单独画出各个点，可以使用scatter的打印方式。
 ```python
 import matplotlib.pyplot as plt
@@ -384,7 +384,7 @@ plt.tick_params(axis='both',labelsize=14)
 plt.show()
 ```
 输出结果如下:
-![](/img/006IjVYfgy1fxp1hskwz3j30hs0dct8y.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1hskwz3j30hs0dct8y.jpg)
 把采样点加多，即可画出y=x\*x的函数图像:
 ```python
 import matplotlib.pyplot as plt
@@ -397,7 +397,7 @@ plt.axis([0,60,0,3600])
 plt.show()
 ```
 输出如下:
-![](/img/006IjVYfgy1fxp1liowyxj30hs0dcweo.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1liowyxj30hs0dcweo.jpg)
 
 也可以改变他的颜色：
 >颜色表可以参考着单一色
@@ -417,10 +417,10 @@ plt.axis([0,60,0,3600])
 plt.show()
 ```
 输出结果如下：
-![](/img/006IjVYfgy1fxp1tah2slj30hs0dcgly.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1tah2slj30hs0dcgly.jpg)
 这里放出常用的颜色表:
-![](/img/006IjVYfgy1fxp1the74jj30hu0dadjv.jpg)
-![](/img/006IjVYfgy1fxp1tplnlfj30hs0ddju2.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1the74jj30hu0dadjv.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxp1tplnlfj30hs0ddju2.jpg)
 图片编辑完毕，记得保存一下:
 `plt.savefig('test.png',bbox_inches='tight') #自动保存图表，并将图表周边的空白区域裁减掉
 `

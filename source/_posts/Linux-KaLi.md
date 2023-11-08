@@ -5,7 +5,7 @@ tags:
     - 操作系统
     - Linux
 categories: Operation
-thumbnail: /img/1484628195382.png
+thumbnail: https://blog.dvkunion.cn/img/1484628195382.png
 
 ---
 
@@ -43,7 +43,7 @@ apt 命令也不过多赘述，参考Linux--CentOS 或是 Linux--Ubuntu。这里
 `# apt-get autoremove` 自动移除不需要的软件包。
 `# apt-get purge /package name/`完全移除（包括依赖软件包）
 `# apt-get clean [all]` 清理下载的软件包
-![](/img/006IjVYfgy1fxurhy1rahj30kk0dwwjb.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxurhy1rahj30kk0dwwjb.jpg)
 dpkg 使用方法同 rpm 一样，只不过dpkg 是针对.deb的软件包。在Kali内，是不支持rpm(red hat package)的。
 dpgk的部分常用参数也列在此处供参考：
 `dpkg -i `安装
@@ -80,7 +80,7 @@ GUI的启动方法...自己在开始菜单里面找一找吧...因该有的...�
 `# /etc/apache2/apache2.conf`
 出现错误时查日志修改配置文件。
 成功启动后访问kali的ip可以看到熟悉的页面
-![](/img/006IjVYfgy1fxusyf6ebej30zq0haq4p.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxusyf6ebej30zq0haq4p.jpg)
 
 同时kali提供SSH服务。
 命令行操作:
@@ -107,7 +107,7 @@ Linux下可以使用docker模拟多台靶机。
 下载完成后直接扔虚拟机。
 登录:用户、密码都是msfadmin。
 访问其IP如下图：
-![](/img/006IjVYfgy1fxuzee0cakj30if0dlglj.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxuzee0cakj30if0dlglj.jpg)
 Metasploitable 还包含：
 1. 1.phpMyAdmin：一个基于php的数据库图形化管理界面
 2. 2.Mutillidate：Metasploitable内置的可能已经过期，可以访问[最新参考资源](http://sourceforge.net/projects/mutillidate)
@@ -146,15 +146,15 @@ MCIR包含以下几个模块：
 
 将mcir的连接写入web列表中
 
-![](/img/006IjVYfgy1fxv1cijp5wj30mt0dpdfq.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxv1cijp5wj30mt0dpdfq.jpg)
 
 之后访问IP如下:
 
-![](/img/006IjVYfgy1fxv16m9vn8j30po0e4mx4.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxv16m9vn8j30po0e4mx4.jpg)
 
 点击我们创建的入口连接：
 
-![](/img/006IjVYfgy1fxv1bsy9m6j30pe0dw74j.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxv1bsy9m6j30pe0dw74j.jpg)
 
 到此，靶机的安装先告一段落。
 
@@ -264,7 +264,7 @@ Nmap的命令非常灵活。用一个普通的命令为例：
 
 在不设置参数的时候，Nmap会对目标进行一次隐蔽扫描，T3模版，并输出到控制台。
 
-![](/img/006IjVYfgy1fxy8utnyblj30uu0k9wob.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxy8utnyblj30uu0k9wob.jpg)
 
 下面分别介绍三个参数的更多命令：
 
@@ -274,18 +274,18 @@ Nmap的命令非常灵活。用一个普通的命令为例：
 <b>-sT</b>
 发起一次TCP连接扫描。这会建立起一个完整的TCP连接，同时也会获取到更多的信息。
 
-![](/img/006IjVYfgy1fxy8vuooanj30pz0g0gsd.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxy8vuooanj30pz0g0gsd.jpg)
 
 <b>-sU</b>
 发起一次UDP扫描。UDP扫描会期望收到已经关闭端口的系统应答，而发送到开放的UDP端口的数据包不会被响应。
 这个扫描方式的速度非常缓慢。
 
-![](/img/006IjVYfgy1fxy9ucsye8j30jn07j40z.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxy9ucsye8j30jn07j40z.jpg)
 
 <b>-sA</b>
 发起一次ACK扫描，可以用于TCP端口是否被过滤的检测。这种扫描会对会主机发起一个标记为ACK的通信。这种扫描有时候可以绕过防火墙（伪装成内网的TCP请求）。
 
-![](/img/006IjVYfgy1fxy9v4kcgzj30gd040gmu.jpg)
+![](https://blog.dvkunion.cn/img/006IjVYfgy1fxy9v4kcgzj30gd040gmu.jpg)
 
 <b>-sP</b>
 通过ICMP ping来获取网络中存活主机。

@@ -1,20 +1,20 @@
 # site config
 site:
   name: DV.K
-  favicon: "/img/logo.png"
+  favicon: "https://blog.dvkunion.cn/img/logo.png"
   keywords: "DV.K Security Cloud Docker K8s"
   slogan: "a salt fish who wants to standup."
-  slogan_img: "/img/slogan.svg"
+  slogan_img: "https://blog.dvkunion.cn/img/slogan.svg"
   rss: /atom.xml
   copyright: "<li>&copy;2018-2023 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>"
   ICP: "鲁ICP备2021028491号"
 
 background:
   dynamic: true
-  pic: "/img/bg.jpg"
+  pic: "https://blog.dvkunion.cn/img/bg.jpg"
 
 about:
-  pic: "/img/1484628385602.png"
+  pic: "https://blog.dvkunion.cn/img/1484628385602.png"
 
 wordcount:
   enable: true
