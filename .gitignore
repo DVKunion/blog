@@ -5,3 +5,4 @@ draft/
 db.json
 public/
 .DS_Store
+.deploy_git/
