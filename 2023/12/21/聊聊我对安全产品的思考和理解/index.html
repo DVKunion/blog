@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Title -->
+    
+    <title>聊聊我对安全产品的思考和理解 | DV.K</title>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="TnnDJaWjq71nvLK8WYmDKSGkcgFEIXQy4y3eLKJROMA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="DV.K Security Cloud Docker K8s" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/extend.css" />
+    
+    <link rel="bookmark"  type="image/x-icon"  href="https://blog.dvkunion.cn/img/logo.png"/>
+    <link rel="shortcut icon" href="https://blog.dvkunion.cn/img/logo.png">
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+    <style>
+        #banner {
+            background-image: url("https://blog.dvkunion.cn/img/bg.jpg");
+        }
+    </style>
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/atom.xml" title="DV.K" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+    <body class="is-preload">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page-wrapper">
+                <!-- Nav -->
+        <header id="header">
+            <h1 id="logo"><a href="/">DV.K</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">主页</a></li>
+                    <li><a href="https://github.com/DVKunion/">Github</a></li>
+                    <li><a href="/archives/">文章</a>
+                        <ul>
+                            <li><a href="/archives/">归档</a><ul>
+                                    <a class="archive-link" href="/archives/2023/12/">2023 - 12</a></li><li><a class="archive-link" href="/archives/2023/11/">2023 - 11</a></li><li><a class="archive-link" href="/archives/2023/06/">2023 - 06</a></li><li><a class="archive-link" href="/archives/2023/05/">2023 - 05</a></li><li><a class="archive-link" href="/archives/2023/02/">2023 - 02</a></li><li><a class="archive-link" href="/archives/2022/03/">2022 - 03</a></li><li><a class="archive-link" href="/archives/2022/01/">2022 - 01</a></li><li><a class="archive-link" href="/archives/2020/06/">2020 - 06</a></li><li><a class="archive-link" href="/archives/2019/07/">2019 - 07</a></li><li><a class="archive-link" href="/archives/2019/06/">2019 - 06</a></li><li><a class="archive-link" href="/archives/2019/03/">2019 - 03</a></li><li><a class="archive-link" href="/archives/2019/02/">2019 - 02</a></li><li><a class="archive-link" href="/archives/2019/01/">2019 - 01</a></li><li><a class="archive-link" href="/archives/2018/12/">2018 - 12</a></li><li><a class="archive-link" href="/archives/2018/11/">2018 - 11</a></li><li><a class="archive-link" href="/archives/2018/10/">2018 - 10</a>
+                                </ul></li>
+                            <li><a href="/tags/">标签</a></li>
+                            <li><a href="/categories/">分类</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/gallery/">图库</a></li>
+                    <li><a href="/comments/">留言板</a></li>
+                    <li><a href="#" id="link">微信公众号</a></li>
+                </ul>
+                <div id="message" style="display: none;float: right;">
+                    <img src="https://blog.dvkunion.cn/img/qrcode_for_gh_0bac66228b56_258.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/qrcode_for_gh_0bac66228b56_258.jpg" srcset="/css/images/overlay.gif" alt="微信公众号" />
+                </div>
+            </nav>
+        </header>
+
+        <!-- Banner -->
+        
+
+        
+        <!-- Main -->
+        
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>聊聊我对安全产品的思考和理解</h2>
+                    <p>2023-12-21</p>
+                    <span id="/2023/12/21/聊聊我对安全产品的思考和理解/" class="leancloud_visitors" data-flag-title="聊聊我对安全产品的思考和理解">
+                        <em class="post-meta-item-text">阅读量 - </em>
+                        <i class="leancloud-visitors-count"></i>
+                         <p>文章共计 - 5.5k 字 阅读需要 - 18 分钟</p>
+                    </span>
+                </header>
+                <!-- Content -->
+                <section id="content">
+                    <div class ="post_page_title_img" style="background-image: url(https://blog.dvkunion.cn/img/741703154454_.pic_hd.jpg);" ></div>
+                    <hr>
+                    <h1>聊聊我对安全产品的思考和理解</h1>
+<p>聊起这个话题是因为作为安全从业人员，对这样一个问题的思考：</p>
+<!-- split -->
+<blockquote>
+<p>假如你作为一家公司的安全负责人，该如何进行安全建设？</p>
+</blockquote>
+<span id="more"></span>
+<p>咋一看很像CSO级别考虑的问题，我们抛掉这个问题的宏观部分(毕竟还达不到这个级别T^T), 从实际落地与施行上考虑，作为安全人员，如何给一家想要提升安全级别的公司提出合理可靠的建议与建设方案呢？</p>
+<h2 id="聊聊需求">聊聊需求</h2>
+<img src="https://blog.dvkunion.cn/img/861703154474_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/861703154474_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<p>昨天读完了赵武老师的<a href="https://mp.weixin.qq.com/s/Er6J3tJ4L6QyyT2wFBWtdA">《网安创业的核心竞争力是成本控制》</a>，里面提到了对国内安全市场的看法，特别的指出了了监管、金融、互联网等行业对安全需求与其他行业的不同。</p>
+<blockquote>
+<p>现在有两类客户是不同的，一类是监管用户，一类是金融互联网这样的企业。第一类好理解，网络安全问题跟地缘安全一样，最终都是国家买单，所以上层领导们总是急的，看到问题多，也想要解决，但是这么多环节，层层下达，效率总差强人意，同时下面捂被子的情况也是丝毫不见改善，越是这样越急，越急也就对技术要求不一样，一下就拉高了起来。另外金融和互联网离钱太近，网络安全问题几乎都会直接对应金钱的损失，所以有没有监管，都是自驱地选择更好或者更创新的方案。这些情况，安全公司自然都感受到了，不约而同地都往这些地方靠拢，除此之外，出海也无外乎这两种类型的客户。</p>
+</blockquote>
+<p>既然要进行安全建设，那么第一个要思考的问题就是：为什么要进行安全建设？</p>
+<p>其实也可以理解为：我的需求到底是什么？</p>
+<h3 id="I-硬性需求-法律">I.硬性需求: 法律</h3>
+<img src="https://blog.dvkunion.cn/img/821703154472_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/821703154472_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<p>想起来刚入行时的一个困惑，就是为什么企业明明被攻击了、被偷窃了数据，反而要遭到监管的处罚呢？当时的前辈给做了一个很形象的比喻：</p>
+<blockquote>
+<p>一家博物馆，开了一场珍贵的展出，展出了各位收藏家的珍品，但是由于没做任何安全防护、没有请任何安保措施，导致场厅内的展品都被偷了，此时警察应不应该处罚博物馆的负责人呢？</p>
+</blockquote>
+<p>同样的类比，在中心化的互联网架构中，各个服务商就是博物馆，而我们作为用户，各种个人信息就是我们的“珍品”，交到了服务商手中，服务商有责任和义务维护好其安全。</p>
+<p>由此，国家变出台了《中华人民共和国网络安全法》、《信息系统安全等级保护基本要求》（GB/T 22239-2008）、《网络安全等级保护管理办法》 等法律法规，来要求企业和服务商进行安全防护。</p>
+<p>但引用罗翔老师的一句话：</p>
+<blockquote>
+<p>“法律是对人最低的道德要求，如果一个人标榜自己遵纪守法，这个人完全有可能是人渣”</p>
+</blockquote>
+<p>等保只是法律所规定的最低标准，如果所有企业都仅以此为最终目标，那国内的安全就没有任何希望了。这里就更不要提连等保都不满足的一些场景还存在。</p>
+<p>这里我说等保只是最低标准的意义，并不是实际指等保内的防护内容比较基本，实际上等级保护中的很多要求完全满足一些防护的最佳实践；但是大家懂得都懂，真实落地时候具体是怎样的、实际业务各种各样奇怪的网络需求导致真实的配置并不能完全按照等级保护所描述的那样配置；再加上计算机技术飞速迭代导致法律中所规定的一些服务技术栈已废弃不在使用、新技术的规范又没有及时加入等等因素，由此等保确实只能作为安全建设要求中的&quot;最低标准&quot;。</p>
+<p>除了国家的等级保护，国际上还有很多其他的安全标准如：ISO-27001、ISO-27701等等，这类合规类证书的要求驱动了安全整体的基本建设；除此之外，这类认证也能快速的给用户在选择时提供一份安心的保证。</p>
+<p>回到正题，这是安全的第一个需求：想要业务合法合规的运行，要满足国家等级保护法规。应之而生的安全服务有：等保检测、各类合规工具等等，来协助企业完成和通过等保检查。</p>
+<h3 id="II-显性需求-损失">II.显性需求: 损失</h3>
+<img src="https://blog.dvkunion.cn/img/841703154473_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/841703154473_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<p>现在我们的企业已经拿到了各类安全认证，安全的建设就完成了吗？</p>
+<p>业务刚刚上线，收到了运维的告警：服务不可用了，我们遭到了DDOS攻击。过一会又发现其中的几台核心机器，赫然出现了勒索信的字样：我们被勒索了。</p>
+<p>由于仅仅做了等级保护中要求的部分，业务除此之外都属于“裸奔”的状态，很快遭到了各类攻击。其中能在感受上最直接、最明显的就为DDOS、勒索等直接的攻击了。</p>
+<p>这类问题我把它称作显性需求，不想办法解决总有一天可能会爆炸，也是企业最容易理解、最愿意花钱买单的场景：毕竟是直接感受得到的问题，不处理服务无法使用、业务开展不下去的情形。</p>
+<p>换句话说，真实的给企业带来了损失，能真让企业感受到了疼痛的问题，我都认为是属于这类需求；不论是一个短信认证接口被用于了短信炸弹导致服务账单超出了几百倍、还是机器上弱口令导致的勒索事件，这些想要解决的问题，都属于显性需求。</p>
+<p>这类需求解释成本低，用户接受度高，毕竟真正涉及到了钱包，想必是能够接受和愿意付费的；和买了新车肯定也要买一份保险一样。</p>
+<h3 id="III-隐性需求-规范">III. 隐性需求: 规范</h3>
+<img src="https://blog.dvkunion.cn/img/881703154475_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/881703154475_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<p>把显性需求比做得了病需要赶紧吃药的话，隐性需求则更像是一味中药：见效慢，但是是从病根子治起。</p>
+<p>大家都知道中药好，但是在实际操作中，对待安全问题的态度往往还是和我们吃西药的态度一样：一个弱口令问题，改掉就好了，下次再出现再改；一个硬编码的密钥，禁用掉重新生成一个就好了，完全不考虑如何通过建设安全的规范和制度，让这类问题直接不会出现。</p>
+<p>这确实是很困难的，大家也都知道多运动多健身就能少得病，但是真实做下来有多少能坚持下来的呢？</p>
+<p>对应这类需求，比如SDLC、业务上线前的安全检测服务等等，我认为都属于这类，包括一些</p>
+<p>没有他完全不耽误我挣钱，就是不知道什么时候会因为这点小毛病而生一场大病。</p>
+<h3 id="IV-其他">IV. 其他</h3>
+<img src="https://blog.dvkunion.cn/img/801703154467_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/801703154467_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<p>为什么还有其他这一类呢？因为既然有了需求，自然而然就会有人来取满足这些需求；有了人，自然而然的就有生成了新的需求。</p>
+<p>我把这类需求分化到其他的类别来，比如各类安全工具：burp、cs、yakit等等，服务于安全行业的人的一些工具和企业，也算做是安全行业的需求之一。</p>
+<h2 id="安全的产品">安全的产品</h2>
+<img src="https://blog.dvkunion.cn/img/871703154474_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/871703154474_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<p>聊完了我认为的安全需求的划分，我们再来看看现在市面存在的安全解决方案和安全产品。继续我们上面的场景，按照给企业进行安全建设的思路来对这些安全产品进行划分。</p>
+<h3 id="业务安全-应用安全">业务安全/应用安全</h3>
+<p><strong>WAF</strong>: WAF可能是最常见的安全设备之一了，他的全程叫做：Web Application Firewall（网络应用防火墙），主要是防御web方向的攻击的(owasp top 10), 但随着业务的发展，对waf的期望和要求也越来越高，要求waf能够防护bot机器人流量、一定的抗ddos功能等等。</p>
+<p><strong>RASP</strong>: RASP (Runtime Application Self-Protection)运行时应用程序自我保护，是一种应用程序安全技术和解决方案。RASP 技术旨在在应用程序运行时动态保护应用程序免受各种安全威胁和攻击, 不同于WAF, RASP 与应用程序代码紧密集成。它运行在应用程序的运行时环境中，能够实时监视和保护应用程序；而WAF更多的是针对已知的攻击进行拦截。</p>
+<p><strong>风控类</strong>: 统一把各类风控产品作为了业务安全的一部分，包括但不限于内容审查、各类资质认证服务、黑灰产威胁等等，不再一一列举。</p>
+<p><strong>网站监测</strong>: 这类产品主要应对与一些静态和官网，这类网站更新节奏慢、可访问性需求高，因此需要一款产品来对其进行监控，及时发现不可用的情况以及防止被挂黑页等等。</p>
+<p><strong>DevSecOps</strong>: 软件开发生命周期（SDLC）是开发团队用来设计和构建高质量软件的高性价比、节省时间的过程。SDLC 的目标是通过前瞻性的规划将项目风险降到最低，从而使软件不论是在在生产过程中，还是长远而言都能满足客户的期望。此方法概述了将软件开发过程划分为可以分配、完成和度量的任务的一系列步骤。今天，大多数团队都认识到安全性是软件开发生命周期中不可分割的一部分。（from aws)</p>
+<blockquote>
+<p>我的理解，DevSecOps实际上解决的是整个开发流程的规范问题，包括代码质量、review机制、安全测试等等，当流程规范了，自然而然的可以从源头上减少安全问题的产生(理想上)。<br>
+目前市面上应对 DevSecOps 的产品有：<br>
+SAST: 静态应用程序安全测试，也就是我们常说的白盒扫描，通过静态分析研发代码，编写检测规则，对代码级别的安全问题进行审查。<br>
+DAST: 动态应用程序安全测试, 也称为黑盒测试。针对的是业务API接口信息，常见的漏扫就属于此类。<br>
+IAST: 交互式应用程序安全测试，也叫灰盒测试，结合了黑盒与白盒的优势，通过扫描与验证，能够更加准确进行告警。</p>
+</blockquote>
+<p><strong>SRC</strong>: 这个就不做多解释了。</p>
+<h2 id="网络安全-基础安全-主机安全">网络安全/基础安全/主机安全</h2>
+<p><strong>VPN</strong>: 解决员工异地连接内部网络的问题</p>
+<p><strong>Firewall 防火墙</strong>: 传统网络流量监控和控制设备，以阻止未经授权的访问和恶意流量进入网络。</p>
+<p><strong>IPS</strong>: IPS (入侵防护系统) 是一种网络安全设备，用于检测和阻止网络上的恶意流量和攻击。它可以分析流经网络的数据包，并根据已知的攻击模式进行拦截或报警。</p>
+<p><strong>IDS</strong>: IDS（入侵检测系统）也是一种网络安全设备，用于检测网络中的恶意活动和攻击。与IPS不同，IDS 通常只报警，而不主动阻止流量。它监视网络流量以寻找异常行为。</p>
+<p><strong>堡垒机</strong>: 堡垒机（Bastion Host）是一种用于增强网络安全性的特殊计算机系统或设备。其主要目的是控制和管理对内部网络的远程访问，以确保只有经过授权的用户才能进入敏感网络区域。以下是堡垒机的主要特点和功能：</p>
+<p><strong>HIDS</strong>: HIDS（主机入侵检测系统）是一种安装在单个主机或服务器上的入侵检测系统，用于监视该主机的活动，以检测是否有恶意活动或入侵尝试。它关注主机级别的安全。</p>
+<p><strong>EDR/XDR</strong>: EDR（终端 是一种安全解决方案，专注于监视和保护终端设备（如计算机和移动设备）。它用于检测和响应终端设备上的恶意活动和威胁。</p>
+<p><strong>终端杀毒/终端控制</strong>: 指常见的办公电脑安装的杀毒软件，目标在于解决办公机器的运行安全</p>
+<p><strong>蜜罐</strong>: 蜜罐（Honeypot）是一种安全技术，用于诱使恶意攻击者、黑客或病毒入侵者攻击虚拟或模拟的目标，从而帮助组织监视、检测和学习有关威胁行为的信息。蜜罐实际上是一种陷阱，旨在吸引潜在的攻击者，以便分析他们的攻击技巧、策略和意图。以下是蜜罐的主要特点和功能：</p>
+<p><strong>零信任</strong>: 零信任安全（Zero Trust Security）是一种新型的安全策略，它不信任任何内部或外部用户或设备，并要求对所有访问进行身份验证和授权。</p>
+<h3 id="安全运营">安全运营</h3>
+<p><strong>SIEM</strong>: SIEM 是一种综合性安全解决方案，用于集中收集、分析和管理来自各种安全源的信息和事件，以检测和响应威胁。</p>
+<p><strong>SOC</strong>: SOC (Security Operations Center) 安全运营中心是一个组织内部或外部的安全团队，专门负责监视、检测、分析和响应信息安全事件和威胁。SOC 的主要目标是保护组织的信息技术环境，确保系统和数据的安全性、完整性和可用性。</p>
+<h3 id="数据安全">数据安全</h3>
+<p><strong>DLP</strong>: DLP 是一种安全技术，旨在监视和防止敏感数据泄漏或不当使用。它可以检测和阻止数据在内部或外部传输时的风险。</p>
+<h3 id="SaaS、安全服务、情报产物、其他等">SaaS、安全服务、情报产物、其他等</h3>
+<p>这个模块也不做细拆分了，主要涵盖了一些人力的安全服务、渗透测试、安全培训、威胁情报等等等等，</p>
+<p>还有一些更贴合行业分类的安全产品，如区块链安全中的合约审计、工控安全等等，与行业强贴合，了解的不是很多，因此在此处略过。</p>
+<h2 id="最终">最终</h2>
+<p>再回到最开始的问题，现在我们作为安全负责人，面对这么多的安全种类和产品，该如何进行选择才能实现我们的需求呢？</p>
+<p>这又成为了一个头疼的问题，简单的按照层次来执行这样的策略：先解决显性问题，然后再解决隐性问题来实现持续的问题，好像市面的产品并没有哪一款可以按照这种模式来实现：上了waf能防勒索嘛？上了流量监控能抗ddos嘛？做了devsecops是不是就没漏洞了？</p>
+<p>都需要我针对每一个小问题去进行大动干戈的设备部署、业务改造等等，最终可能解决的只是需求中的一小部分，而代价却往往是不菲的：昂贵的设备、高额的改造成本，最终落地的可能仅仅是不一定存在的安全攻击。</p>
+<p>这可能也符合安全的背景：安全就是离散的、在不同领域每个点下需要不断深入才能达到效果的。安全厂商知道这一点</p>
+<p>更何况，安全也是不断在对抗和迭代的与时俱进的赛道，今天的产品能否防御的住明天出现的新型攻击，都是一个未知数；最为用户，于此我要付出高额的代价，可能最终大家都会算清楚这笔账来。</p>
+<p>因此我在思考，我想要一种怎样的安全产品？</p>
+<p><strong>更精准、更细致、更专业、更简单的防护</strong></p>
+<p>这一点其实最开始是在waf身上体现出的：拦截机器人请求、抗ddos这些需求到底是不是应该丢给waf的工作？</p>
+<p>当然为了产品能卖出去，各家的做法都是，一股脑的塞进去，做就完了。</p>
+<p>我个人认为，waf就应该起到一个拦截 or not 的角色，其他任何功能都应该独立组合，waf提供规范化的语言来让其他决策引擎调用，从而实现防护。</p>
+<p>说白了，各类安全产品并没有形成一个完美的合作生态，能各个组件之间自然而然的就形成了联动：流量监测监控的异常 -&gt; 决策引擎识别研判 -&gt; waf自动封禁的场景永远成为了一个幻想乡，就算是同一家厂商的设备，都恨不得自己的产品一口气做完所有的事情：异常+研判+封禁。这就导致了在每个方面都无法做到最精致，而显得不够专业；同时给使用者也带来的很大的学习成本和使用困扰。</p>
+<p>于安全人员而言，这样的划分也能够让其专精于自己研究的领域，而不会导致一个专精于如何实现快速拦截的工程师去考虑和研究如何设置内置策略而导致的精力分散。</p>
+<p><strong>更便宜的花费</strong></p>
+<p>如何制定商业模式，才能让安全从一个“奢侈”的行业印象转变为“人人都用得起的必备的”概念，可能是一个值得思考的问题。一旦我为了防御而花费的精力以及成本大于了我遭受攻击的损失，那裸奔永远都会是人的第一选择，除了部分资金雄厚以及不做不行的行业。</p>
+<p>就好比让我父母去做体检，老人家总觉得去医院就要花上大笔大笔的钱，最终可能啥都没有检查出来，浪费钱；但如果体检一次的花费能够让更多的人接受，或是让更多的人认可这个价值，</p>
+<p>至于如何平衡这个成本，可能是这个问题的最难点吧。</p>
+<p><strong>更能够直接的贴合需求</strong></p>
+<p>这个可能是我个人的一个幻想吧，但是经历过自己实际防御和对抗一些攻击的场景时，确实是一个深切的体会。</p>
+<p>比如我的blog天天被一些脚本小子拿着扫描器扫，一个纯静态的页面根本不可能存在的问题，但是却占用了我的带宽和流量；我要为此上一整套的waf来防护吗？当然不，其实挂cdn+静态缓存就可以简单的解决我的需求。</p>
+<p>诸如此类的场景，实际上用户的量级和事件的严重程度并没有达到天崩地裂的地步，安全的厂家却像医院一样做了一通拍片做了一堆检查后，最后开了一堆昂贵的药(waf)，还得吃上三个疗程，其实最后就是个小感冒而已。</p>
+<p>当然这和我之前说的，简单的方案很可能是治标不治本的临时措施，很容易再次出现相同的问题；这可能也是安全难做切矛盾的所在吧。作为用户，我确实希望更简单有效直接的方法实现；而作为安全人员，完整的安全建设才是一个比较健康稳妥且长远的方案。</p>
+<p><strong>去安全产品化</strong></p>
+<p>既然已经提出了一堆不切实际的想法，不如再大胆一些，“去安全产品化”！</p>
+<p>也有很多人已经提出过这个观点，安全实际上和医生一样是需要根据病情来对症下药的，不同的公司和企业技术栈和整体架构都有所不同，统一化的设备产品很可能最终导致的就是驴唇不对马嘴；用户也不知道该如何使用，发挥出这个产品的最大功能；因此，安全必定是“神医”策略：不需要众多的护士，只需要关键的一位神医一针见效即可。</p>
+<p>所以，安全产品应该是做一些更小的问题：这类问题才是大家可能平时都会遇到的，像头疼脑热之类的，随手买包感冒灵解决的问题；被ssh暴力扫描了，我运行一个脚本改个端口好了，不需要夸张的搞一整套的入侵检测 + 数据大屏作展示；当然，如果有更好的脚本（更有效的药）来平替，比如敲门机制解决这个问题，当然是更好的。这样把整体的中心转移到不断琢磨如何设计机制和对抗当中。</p>
+<hr>
+<p>最后给出我对这个问题的回答：如何进行安全建设？</p>
+<p>我的想法是，有病治病，没病就赶紧该吃吃该喝喝～</p>
+<p>可能这就是我为啥做不了CSO的原因吧......(T^T)</p>
+<img src="https://blog.dvkunion.cn/img/891703154475_.pic.jpg" class="lazyload" data-srcset="https://blog.dvkunion.cn/img/891703154475_.pic.jpg" srcset="/css/images/overlay.gif" style="width: 40%" />
+<h4 id="参考链接">参考链接</h4>
+<blockquote>
+<p>0.《网安创业的核心竞争力是成本控制》 : <a href="https://mp.weixin.qq.com/s/Er6J3tJ4L6QyyT2wFBWtdA">https://mp.weixin.qq.com/s/Er6J3tJ4L6QyyT2wFBWtdA</a></p>
+</blockquote>
+
+                </section>
+            </div>
+        </div>
+        
+            <!-- Main -->
+    <link rel="stylesheet" href="/css/valine.css" />
+    <div class="container">
+        <h3 class="board">☡ 留言板 ☡</h3>
+        <div id="vcomment">
+        </div>
+    </div>
+    <style>
+        #vcomment{
+            padding: 1pc;
+        }
+    </style>
+    </div>
+    <footer id="footer">
+        
+        <!--  copyright  -->
+        <ul class="copyright">
+                <li>总字数: <i>77.1k</i></li>
+                <li>访问总量: <span id="/" class="leancloud_visitors" data-flag-title="">
+                        <i class="leancloud-visitors-count">0</i>
+                </span></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy;2018-2023 DVK</li><li>Powered by Hexo</li><li>Design: DVK</li>
+        </ul>
+        
+        <ul class="copyright">
+                <img style="height: 17px;width: 17px;" src="https://image.3001.net/images/20210606/16229429757102.png" class="lazyload" data-srcset="https://image.3001.net/images/20210606/16229429757102.png" srcset="/css/images/overlay.gif">
+                <liICP>鲁ICP备2021028491号</liICP>
+        </ul>
+        
+        
+        <!--  script  -->
+        <script src="/js/Valine.min.js"></script>
+        <script>
+                new Valine({
+                        el:'#vcomment',
+                        appId: 'jEB3oMGUgUvE5Qc3pSwDO1Pg-gzGzoHsz',
+                        appKey: 'WgBXad9R6JRSoxTMohDelbFs',
+                        visitor: true, // 阅读量统计
+                        recordIP: true,
+                        tagMeta: ["Master", "Friends", "Anonymous"],
+                        master: ["f21bae5bf498b089b545f6f0a986e224"],
+                        friends: ["124ee6157335edb1a9b8c9d635ccbb27"],
+                        // 设置Bilibili表情包地址
+                        emojiCDN: '//i0.hdslb.com/bfs/emote/',
+                        // 表情title和图片映射
+                        emojiMaps: {"2020":"dc709fac0d361370bcf0d36d32adb97df7c95824.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","2233娘_大笑":"16b8794be990cefa6caeba4d901b934a227ee3b8.png","2233娘_疑问":"0b41f509351958dbb63d472fec0132d1bd03bd14.png","2233娘_吃惊":"d1628c43d35b1530c0504a643ff80b6189fa0a43.png","2233娘_汗":"247cd9df8cdf84b18368c21e3b2dd374e84c0927.png","2233娘_大哭":"476a2a60f6e337b8c0697a592e0aa82781f6b33b.png","2233娘_困惑":"714eeb4eae0d0933b4ff08b7df788b1982f6b940.png","2233娘_耶":"d7178e258a0efc969b65ccc2b1322fb235f5dff4.png","2233娘_怒":"f31953119c51b9748016440ac0b632f779929b37.png","2233娘_卖萌":"ea893aa25355de95ab4f03c2dad3f0c58d0c159e.png","2233娘_委屈":"d9d0bf9d358af8d5761093ec66d4e3f60d963a63.png","2233娘_郁闷":"485203fe7100f2c8fc40b2800a18fe20b35f2f1a.png","2233娘_第一":"3754ee6e5985bd0bd7dfb668981f2a8733398ebd.png","2233娘_喝水":"695bf5429472049b52c1e0de586f8a2511195a23.png","2233娘_吐魂":"e999af499edf38a91ca68b1a9d2f97042c1d6734.png","2233娘_无言":"fdb5870f32cfaf7949e0f88a13f6feba4a48b719.png","热词系列_增加":"142409b595982b8210b2958f3d340f3b47942645.png","热词系列_泪目":"bba3703ab90b7d16fe9dbcb85ed949db687f8331.png","热词系列_保护":"55f8f6445ca7c3170cdfc5b16036abf639ce9b57.png","热词系列_害怕":"d77e2de26da143249f0c0ad7a608c27152c985bf.png","热词系列_爱了爱了":"2a165b555ba20391316366c664ed7891883dc5aa.png","热词系列_问号":"c1d1e76c12180adc8558f47006fe0e7ded4154bb.png","热词系列_吹爆":"b528220f9c37256ed6a37f05bf118e44b08b81e5.png","热词系列_三连":"21f15fe11b7a84d2f2121c16dec50a4e4556f865.png","热词系列_可以":"e08543c71202b36c590094417fcfbb80c3506cd8.png","热词系列_打卡":"a9cf77c78e1b9b40aa3ed4862402fba008ee2f51.png","热词系列_妙啊":"0e98299d7decf5eaffad854977946075c3e91cb8.png","热词系列_这次一定":"a01ca28923daa7cc896c42f27deb4914e20dd572.png","热词系列_AWSL":"c37f88cf799f9badf9d84b7671dc3dd98c0fc0c2.png","热词系列_递话筒":"98e6950e39fbb4dd1c576042063ca632074070ba.png","热词系列_你细品":"535e00658e7e47966f154d3a167fa2365ebc4321.png","热词系列_咕咕":"d8065c2e7ce48c929317a94553499a46fecc262a.png","热词系列_标准结局":"3de98174b510cf7dc5fd1bd08c5d881065e79137.png","热词系列_危":"5cc6c3357c4df544dd8de9d5c5c0cec97c7c9a56.png","热词系列_张三":"255a938f39cea625032b6650036b31aa26c50a3c.png","热词系列_害":"cbe798a194612958537c5282fcca7c3bcd2aa15c.png","热词系列_我裂开了":"29bd57ec4e8952880fea6c9e47aee924e91f10c4.png","热词系列_有内味了":"7ca61680a905b5b6e2e335c630e725b648b03b4d.png","热词系列_猛男必看":"c97064450528a0e45c7e7c365a15fbb13fd61d8c.png","热词系列_奥力给":"c9b8683827ec6c00fea5327c9bec14f581cef2aa.png","热词系列_我哭了":"9e0b3877d649aaf6538fbdd3f937e240a9d808e4.png","热词系列_高产":"9db817cba4a7f4a42398f3b2ec7c0a8e0c247c42.png","热词系列_我酸了":"a8cbf3f6b8cd9377eeb15b9172f3cd683b2e4650.png","热词系列_真香":"e68497c775feaac1c3b1a6cd63a50cfb11b767c4.png","热词系列_我全都要":"d424d1ad8d14c1c9b8367842bc68c658b9229bc1.png","热词系列_神仙UP":"a49e0d0db1e7d35a0f7411be13208951ab448f03.png","热词系列_你币有了":"84820c2b147a8ca02f3c4006b63f76c6313cbfa0.png","热词系列_不愧是你":"9ff2e356797c57ee3b1675ade0883d2d2247be9b.png","热词系列_锤":"35668cc12ae25b9545420e4a85bf21a0bfc03e5d.png","热词系列_秀":"50782fbf5d9b7f48f9467b5c53932981e321eedc.png","热词系列_爷关更":"faad40c56447f1f8abcb4045c17ce159d113d1fd.png","热词系列_有生之年":"f41fdafe2d0fbb8e8bc1598d2cf37e355560103a.png","热词系列_镇站之宝":"24e7a6a6e6383c987215fb905e3ee070aca259b5.png","热词系列_我太男了":"a523f3e4c63e4db1232365765d0ec452f83be97e.png","热词系列_完结撒花":"ea9db62ff5bca8e069cd70c4233353a802835422.png","热词系列_大师球":"f30089248dd137c568edabcb07cf67e0f6e98cf3.png","热词系列_知识盲区":"ccc94600b321a28116081e49ecedaa4ee8728312.png","热词系列_“狼火”":"33ccd3617bfa89e9d1498b13b7542b63f163e5de.png","加油武汉":"eb966aaa5b690d3f9308a9f936f5b5a72a7f956b.png","口罩":"3ad2f66b151496d2a5fb0a8ea75f32265d778dd3.png","鸡腿":"c7860392815d345fa69c4f00ef18d67dccfbd574.png","微笑":"685612eadc33f6bc233776c6241813385844f182.png","笑":"81edf17314cea3b48674312b4364df44d5c01f17.png","呲牙":"b5a5898491944a4268360f2e7a84623149672eb6.png","OK":"4683fd9ffc925fa6423110979d7dcac5eda297f4.png","星星眼":"63c9d1a31c0da745b61cdb35e0ecb28635675db2.png","哦呼":"362bded07ea5434886271d23fa25f5d85d8af06c.png","嫌弃":"de4c0783aaa60ec03de0a2b90858927bfad7154b.png","喜欢":"8a10a4d73a89f665feff3d46ca56e83dc68f9eb8.png","酸了":"92b1c8cbceea3ae0e8e32253ea414783e8ba7806.png","大哭":"2caafee2e5db4db72104650d87810cc2c123fc86.png","害羞":"9d2ec4e1fbd6cb1b4d12d2bbbdd124ccb83ddfda.png","无语":"44667b7d9349957e903b1b62cb91fb9b13720f04.png","疑惑":"b7840db4b1f9f4726b7cb23c0972720c1698d661.png","调皮":"8290b7308325e3179d2154327c85640af1528617.png","喜极而泣":"485a7e0c01c2d70707daae53bee4a9e2e31ef1ed.png","奸笑":"bb84906573472f0a84cebad1e9000eb6164a6f5a.png","偷笑":"6c49d226e76c42cd8002abc47b3112bc5a92f66a.png","大笑":"ca94ad1c7e6dac895eb5b33b7836b634c614d1c0.png","阴险":"ba8d5f8e7d136d59aab52c40fd3b8a43419eb03c.png","捂脸":"6921bb43f0c634870b92f4a8ad41dada94a5296d.png","囧":"12e41d357a9807cc80ef1e1ed258127fcc791424.png","呆":"33ad6000d9f9f168a0976bc60937786f239e5d8c.png","抠鼻":"cb89184c97e3f6d50acfd7961c313ce50360d70f.png","惊喜":"0afecaf3a3499479af946f29749e1a6c285b6f65.png","惊讶":"f8e9a59cad52ae1a19622805696a35f0a0d853f3.png","笑哭":"c3043ba94babf824dea03ce500d0e73763bf4f40.png","妙啊":"b4cb77159d58614a9b787b91b1cd22a81f383535.png","doge":"bba7c12aa51fed0199c241465560dfc2714c593e.png","滑稽":"d15121545a99ac46774f1f4465b895fe2d1411c3.png","吃瓜":"4191ce3c44c2b3df8fd97c33f85d3ab15f4f3c84.png","打call":"431432c43da3ee5aab5b0e4f8931953e649e9975.png","点赞":"1a67265993913f4c35d15a6028a30724e83e7d35.png","鼓掌":"895d1fc616b4b6c830cf96012880818c0e1de00d.png","尴尬":"cb321684ed5ce6eacdc2699092ab8fe7679e4fda.png","冷":"cb0ebbd0668640f07ebfc0e03f7a18a8cd00b4ed.png","灵魂出窍":"43d3db7d97343c01b47e22cfabeca84b4251f35a.png","委屈":"d2f26cbdd6c96960320af03f5514c5b524990840.png","傲娇":"010540d0f61220a0db4922e4a679a1d8eca94f4e.png","疼":"905fd9a99ec316e353b9bd4ecd49a5f0a301eabf.png","吓":"9c10c5ebc7bef27ec641b8a1877674e0c65fea5d.png","生病":"0f25ce04ae1d7baf98650986454c634f6612cb76.png","吐":"06946bfe71ac48a6078a0b662181bb5cad09decc.png","嘘声":"e64af664d20716e090f10411496998095f62f844.png","捂眼":"c5c6d6982e1e53e478daae554b239f2b227b172b.png","思考":"cfa9b7e89e4bfe04bbcd34ccb1b0df37f4fa905c.png","再见":"fc510306bae26c9aec7e287cdf201ded27b065b9.png","翻白眼":"eba54707c7168925b18f6f8b1f48d532fe08c2b1.png","哈欠":"888d877729cbec444ddbd1cf4c9af155a7a06086.png","奋斗":"bb2060c15dba7d3fd731c35079d1617f1afe3376.png","墨镜":"3a03aebfc06339d86a68c2d893303b46f4b85771.png","撇嘴":"531863568e5668c5ac181d395508a0eeb1f0cda4.png","难过":"a651db36701610aa70a781fa98c07c9789b11543.png","抓狂":"4c87afff88c22439c45b79e9d2035d21d5622eba.png","生气":"3195714219c4b582a4fb02033dd1519913d0246d.png","干杯":"8da12d5f55a2c7e9778dcc05b40571979fe208e6.png","爱心":"ed04066ea7124106d17ffcaf75600700e5442f5c.png","锦鲤":"643d6c19c8164ffd89e3e9cdf093cf5d773d979c.png","胜利":"b49fa9f4b1e7c3477918153b82c60b114d87347c.png","加油":"c7aaeacb21e107292d3bb053e5abde4a4459ed30.png","保佑":"fafe8d3de0dc139ebe995491d2dac458a865fb30.png","抱拳":"89516218158dbea18ab78e8873060bf95d33bbbe.png","响指":"1b5c53cf14336903e1d2ae3527ca380a1256a077.png","支持":"3c210366a5585706c09d4c686a9d942b39feeb50.png","拥抱":"41780a4254750cdaaccb20735730a36044e98ef3.png","怪我咯":"07cc6077f7f7d75b8d2c722dd9d9828a9fb9e46d.png","跪了":"f2b3aee7e521de7799d4e3aa379b01be032698ac.png","黑洞":"e90ec4c799010f25391179118ccd9f66b3b279ba.png","老鼠":"8e6fb491eb1bb0d5862e7ec8ccf9a3da12b6c155.png","福到了":"5de5373d354c373cf1617b6b836f3a8d53c5a655.png"}
+                })
+
+        </script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.scrolly.min.js"></script>
+        <script src="/js/jquery.dropotron.min.js"></script>
+        <script src="/js/jquery.scrollex.min.js"></script>
+        <script src="/js/browser.min.js"></script>
+        <script src="/js/breakpoints.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/lazyload.js"></script>
+        
+        <script type="text/javascript" src="/js/mouse.js"></script>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+
+</html>
