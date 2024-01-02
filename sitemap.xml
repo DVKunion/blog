@@ -2,63 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.dvkunion.cn/about/index.html</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.dvkunion.cn/categories/index.html</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.dvkunion.cn/comments/index.html</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.dvkunion.cn/gallery/index.html</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.dvkunion.cn/tags/index.html</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.dvkunion.cn/2023/12/30/2023%E7%9A%84%E5%89%AA%E5%BD%B1/</loc>
-    
-    <lastmod>2023-12-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.dvkunion.cn/2019/02/26/BugKu/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,7 +13,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/03/02/CCNP/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +22,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/01/21/CGCTF/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,7 +31,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2022/03/24/CodeQL-%E8%B8%A9%E5%9D%91%E6%8C%87%E5%8D%97/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,7 +40,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/06/10/Docker/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +49,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/01/17/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +58,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2022/01/19/Harbor%20%E6%9C%AA%E6%8E%88%E6%9D%83%E6%BC%8F%E6%B4%9E%E7%9A%84%E8%83%8C%E5%90%8E%E6%98%AF%E9%AD%94%E5%B9%BB%E7%9A%84%E8%8D%92%E8%AF%9E%E4%B8%BB%E4%B9%89/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,7 +67,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2018/10/20/Linux-CentOS/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,7 +76,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2018/12/04/Linux-KaLi/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,7 +85,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/01/30/Metasploit%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E9%AD%94%E9%AC%BC%E8%AE%AD%E7%BB%83%E8%90%A5%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -148,7 +94,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/02/16/XCTF/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,7 +103,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2018/10/17/python3-learning%E2%91%A0/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -166,7 +112,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2018/10/19/python3-learning%E2%91%A1/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -175,7 +121,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2018/10/20/python3-learning%E2%91%A2/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,7 +130,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2023/06/13/redis%20%E6%9C%AA%E6%8E%88%E6%9D%83%E7%9A%84%E6%80%9D%E8%80%83/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -193,7 +139,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2018/11/03/zabbix/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,7 +148,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/02/17/%E5%86%8D%E4%B9%9F%E6%B2%A1%E6%9C%89%E7%9C%8B%E4%B8%8D%E6%87%82%E7%9A%84%E7%BC%96%E7%A0%81!/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -211,7 +157,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2019/07/22/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -220,7 +166,16 @@
   <url>
     <loc>http://blog.dvkunion.cn/2023/11/07/%E5%AE%89%E5%85%A8%E7%9A%84%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/2023/12/30/%E6%84%9F%E8%B0%A22023%E6%89%80%E6%9C%89%E5%87%BA%E9%95%9C%E4%BA%BA%E5%91%98/</loc>
+    
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -229,7 +184,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2023/02/24/%E7%99%BD%E5%AB%96%E5%9B%BD%E5%A4%96%E4%B8%BB%E6%9C%BA%E6%96%B0%E6%80%9D%E8%B7%AF/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -238,7 +193,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2020/06/22/%E7%BB%99%E5%AD%A6%E5%BC%9F%E5%AD%A6%E5%A6%B9%E7%9A%84%E4%B8%80%E5%B0%81%E4%BF%A1/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,7 +202,7 @@
   <url>
     <loc>http://blog.dvkunion.cn/2023/12/21/%E8%81%8A%E8%81%8A%E6%88%91%E5%AF%B9%E5%AE%89%E5%85%A8%E4%BA%A7%E5%93%81%E7%9A%84%E6%80%9D%E8%80%83%E5%92%8C%E7%90%86%E8%A7%A3/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -256,7 +211,52 @@
   <url>
     <loc>http://blog.dvkunion.cn/2023/05/25/%E9%98%BF%E9%87%8C%E4%BA%91%20RCE%20%E6%88%98%E7%81%AB%E4%BD%99%E7%83%AC%E4%B8%8B%E7%9A%84%E5%90%AF%E7%A4%BA/</loc>
     
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/about/index.html</loc>
+    
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/categories/index.html</loc>
+    
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/comments/index.html</loc>
+    
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/gallery/index.html</loc>
+    
+    <lastmod>2024-01-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/tags/index.html</loc>
+    
+    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -265,204 +265,204 @@
 
   <url>
     <loc>http://blog.dvkunion.cn/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://blog.dvkunion.cn/tags/life/</loc>
-    <lastmod>2023-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.dvkunion.cn/tags/CTF/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/WP/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E6%80%9D%E7%A7%91%E8%AE%A4%E8%AF%81/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/WEB/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%AE%B9%E5%99%A8/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%B8%B8%E7%94%A8%E7%BC%96%E7%A0%81/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E4%BA%91%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E6%BC%8F%E6%B4%9E%E8%B7%9F%E8%B8%AA/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/Linux/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/Python3/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/tags/life/</loc>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E4%B8%BB%E6%9C%BA/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%9B%BD%E5%A4%96/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/tags/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -470,78 +470,78 @@
 
   
   <url>
-    <loc>http://blog.dvkunion.cn/categories/life/</loc>
-    <lastmod>2023-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.dvkunion.cn/categories/CTF/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Reading/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Coding/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Tools/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Crypto/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Bugs/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Operation/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/Language/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/essay/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.dvkunion.cn/categories/life/</loc>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.dvkunion.cn/categories/tools/</loc>
-    <lastmod>2023-12-30</lastmod>
+    <lastmod>2024-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
